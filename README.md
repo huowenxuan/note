@@ -1,3 +1,4 @@
+### atom+terminal+markdown
 打开setting  
 install  
 安装 `platform-ide-terminal` 下方可打开终端  

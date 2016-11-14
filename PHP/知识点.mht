@@ -1,0 +1,1493 @@
+MIME-Version: 1.0
+Content-Location: file:///C:/B323FD79/file0313.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3DProgId content=3DOneNote.File>
+<meta name=3DGenerator content=3D"Microsoft OneNote 14">
+<link id=3DMain-File rel=3DMain-File href=3Dfile0313.htm>
+<link rel=3DFile-List href=3D"file0313.files/filelist.xml">
+</head>
+
+<body lang=3Dzh-CN>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.3326in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.977in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>语法</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>14</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期四</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>12:14</=
+span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:4.3326=
+in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>字�=
+��串：</p>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>使用点号追加字符串：</span><span style=3D'font-famil=
+y:Calibri' lang=3Den-US> “</span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>row</span><span style=3D'font-fa=
+mily:Calibri'
+lang=3Den-US> ”.&quot;section&quot;<span style=3D'mso-spacerun:yes'>  </=
+span></span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>结果为</span><span
+style=3D'font-family:Calibri' lang=3Den-US>rowsection</span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>输�=
+��：</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>p=
+rint
+&quot;\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>e=
+cho
+&quot;\n&quot;;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.1201in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.977in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>基本</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>4</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>12</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期二</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>1:39</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:4.1201=
+in'>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>密码安全附加信息（用于md</span><span style=3D'font-=
+family:Calibri' lang=3Den-US>5</span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>加密）</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>defi=
+ne(ALL_PS,
+&quot;PHP100&quot;);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>md5�=
+��密密码，所以数据库密码的长度必须是32位</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$pas=
+sword
+=3D md5($_GET['password'].ALL_PS);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'>得到</span><span
+style=3D'font-family:Calibri'>get</span><span style=3D'font-family:"Microso=
+ft YaHei"'>请求的数据：</span></p>
+
+<p style=3D'margin:0in;font-family:"Andale Mono";font-size:13.5pt'><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black' lang=3Dzh-CN>$=
+</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black' lang=3Dzh-CN>u=
+sername</span><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black' lang=3Dzh-CN>=
+=3D$</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black' lang=3Dzh-CN>_=
+</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black' lang=3Den-US>G=
+ET</span><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black' lang=3Dzh-CN>[=
+</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black' lang=3Dzh-CN>'=
+</span><span
+style=3D'color:#EFC8C2;background:black;mso-highlight:black' lang=3Dzh-CN>u=
+sername</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black' lang=3Dzh-CN>'=
+</span><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black' lang=3Dzh-CN>]=
+</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black' lang=3Dzh-CN>;=
+</span></p>
+
+<p style=3D'margin:0in;font-family:"Andale Mono";font-size:13.5pt'><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black'>$</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black'>username</span=
+><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black'>=3D$</span><sp=
+an
+style=3D'color:#96DCE2;background:black;mso-highlight:black'>_REQUEST</span=
+><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black'>[</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black'>'</span><span
+style=3D'color:#EFC8C2;background:black;mso-highlight:black'>username</span=
+><span
+style=3D'color:#29F914;background:black;mso-highlight:black'>'</span><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black'>]</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>得�=
+��post请求：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>需�=
+��在php定义头部，才能使app与php正常通信</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>header('Conten=
+t-type:
+text/json; charset=3DUTF-8' );</p>
+
+<p style=3D'margin:0in;font-family:"Andale Mono";font-size:13.5pt'><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black' lang=3Dzh-CN>$=
+</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black' lang=3Dzh-CN>u=
+sername</span><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black' lang=3Dzh-CN>=
+=3D$</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black' lang=3Dzh-CN>_=
+</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black' lang=3Den-US>P=
+OST</span><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black' lang=3Dzh-CN>[=
+</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black' lang=3Dzh-CN>'=
+</span><span
+style=3D'color:#EFC8C2;background:black;mso-highlight:black' lang=3Dzh-CN>u=
+sername</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black' lang=3Dzh-CN>'=
+</span><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black' lang=3Dzh-CN>]=
+</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black' lang=3Dzh-CN>;=
+</span></p>
+
+<p style=3D'margin:0in;font-family:"Andale Mono";font-size:13.5pt'><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black'>$</span><span
+style=3D'color:#96DCE2;background:black;mso-highlight:black'>username</span=
+><span
+style=3D'color:#ECCAA8;background:black;mso-highlight:black'>=3D$</span><sp=
+an
+style=3D'color:#96DCE2;background:black;mso-highlight:black'>_REQUEST</span=
+><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black'>[</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black'>'</span><span
+style=3D'color:#EFC8C2;background:black;mso-highlight:black'>username</span=
+><span
+style=3D'color:#29F914;background:black;mso-highlight:black'>'</span><span
+style=3D'color:#F3C6F2;background:black;mso-highlight:black'>]</span><span
+style=3D'color:#29F914;background:black;mso-highlight:black'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>&nbs=
+p;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:7.0298in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.8006in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:20.0pt' lang=3Den-US>O=
+neNoteTitle
+mysql</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>13</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>12:44</=
+span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.3736in;margin-left:0in;width:7.0298=
+in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>连�=
+��数据库</p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>$con =3D mysql_connect('localhost', 'root', '</span><span
+style=3D'font-family:Calibri' lang=3Den-US>root</span><span style=3D'font-f=
+amily:
+"Microsoft YaHei"' lang=3Dzh-CN>');</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>选�=
+��数据库</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>mysq=
+l_select_db('FindFriends',
+$con);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>执�=
+��sql语句（增删改查所有）：</p>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>$result =3D mysql_query($sql);</span><span style=3D'font-famil=
+y:Calibri'
+lang=3Den-US> </span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>获�=
+��自增长最后一条id</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>mysq=
+l_insert_id()
+返回在最后一次执行了 INSERT 查询后，由 AUTO_INCREMENT 定义=
+的字段的值。（主键必须是自增）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>msyq=
+l_query(&quot;select
+last_insert_id()&quot;);</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>获�=
+��查询的下一行，每次都迭代到新的一行（查）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>while
+($row =3D mysql_fetch_array($result)) {</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>获�=
+��这一行的元素</p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>echo &quot;username =3D &quot;.$row['username'];</span><span
+style=3D'font-family:Calibri' lang=3Den-US> </span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>}</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>获�=
+��上一步受影响的行数（增删改）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$row=
+ =3D
+mysql_affected_rows();</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>关�=
+��数据库</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>mysq=
+l_close($con);</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.3277in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.7131in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:20.0pt' lang=3Den-US>O=
+neNoteTitle
+JSON</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>14</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期四</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>上午</span><span style=3D'font-family:Calibri'>11:56</=
+span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.3736in;margin-left:0in;width:5.3277=
+in'>
+
+<p style=3D'margin:0in;font-size:14.0pt'><span style=3D'font-family:Calibri'
+lang=3Den-US>PHP</span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>返回</span><span
+style=3D'font-family:Calibri' lang=3Den-US>JSON</span><span style=3D'font-f=
+amily:
+"Microsoft YaHei"' lang=3Dzh-CN>格式：</span></p>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>echo json_encode($json_array);</span><span style=3D'font-famil=
+y:Calibri'
+lang=3Den-US> // </span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>参数要是数组</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$msg=
+ =3D
+array(</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-size:11.5pt'><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>&quot;user_id&quot;=3D=
+&gt;&quot;$row('user_id')&quot;,</span><span
+style=3D'font-family:Calibri' lang=3Den-US> // </span><span style=3D'font-f=
+amily:
+"Microsoft YaHei"' lang=3Dzh-CN>从数据库取出后同样要加上双引�=
+��</span></p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>&quot;username&quot;=3D&gt;&quot;$row('username')&quot;,<=
+/p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>&quot;portrait&quot;=3D&gt;&quot;$row('portrait')&quot;</=
+p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>);</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.4062in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.8187in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:Calibri'
+lang=3Den-US>OneNoteTitle<span style=3D'mso-spacerun:yes'>  </span>XAMPP</=
+span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>：</span><span
+style=3D'font-family:Calibri' lang=3Den-US>M</span><span style=3D'font-fami=
+ly:Calibri'
+lang=3Dzh-CN>ac</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>3</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>7</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期一</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>3:20</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:5.4062=
+in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:14.0pt'>下�=
+��安装</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:14.0pt'><a
+href=3D"http://zhidao.baidu.com/question/110837506.html?fr=3Dala0">http://z=
+hidao.baidu.com/question/110837506.html?fr=3Dala0</a></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:13.5pt;color=
+:#4E7953'>mac下安装&nbsp;xampp&nbsp;无法启动apache</p>
+
+<p style=3D'margin:0in;line-height:15pt;font-family:simsun;font-size:10.5pt;
+color:#494949'><span lang=3Dzh-CN>1.查看端口是否被占用</span><span=
+ lang=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>s=
+udo
+lsof -i -n</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>2=
+.用终端运行xampp，查看具体的错误</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>s=
+udo su</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>/=
+Applications/XAMPP/xamppfiles/xampp
+start</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>�=
+��半是这个问题：</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>X=
+AMPP:
+Starting Apache...fail.</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'><=
+span
+lang=3Dzh-CN>XAMPP: </span><span lang=3Den-US>&nbsp;Another web server is a=
+lready
+running.</span></p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>�=
+��决办法：</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'>s=
+udo
+apachectl stop</p>
+
+<p style=3D'margin:0in;font-family:simsun;font-size:10.5pt;color:#494949'><=
+span
+lang=3Dzh-CN>//</span><span lang=3Den-US>&nbsp;This command killed Apache s=
+erver
+that was pre-installed on MAC OS X.</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.3118in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.2548in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>字符串</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>5</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>3</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期二</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>1:02</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:5.3118=
+in'>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>其他类型转换为字符串<br>
+</span><span style=3D'font-family:Calibri' lang=3Den-US>$str =3D strval()</=
+span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:7.359in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.8451in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle OneNoteTitle </span><span lang=3Dzh-CN>数组</sp=
+an></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>4</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>12</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期二</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>1:45</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:7.359i=
+n'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+?php</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/*</=
+p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>PHP有三种数组类型：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>索引数组（数组） - 带有数组=
+索引的数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>关联数组（字典） -<span style=
+=3D'mso-spacerun:yes'> 
+</span>带有指定键的数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>多维数组 - 包含一个或多个数=
+组的数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>*/</=
+p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN><span style=3D'mso-spacerun:yes'> </span>* 索引数组：</s=
+pan><span
+style=3D'font-family:Calibri' lang=3Den-US>a</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*/</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$arr=
+ay =3D
+array(&quot;Huo&quot;, &quot;wen&quot;, &quot;xuan&quot;); // 索引从0开=
+始</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��动分配索引</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$arr=
+ay[0]
+=3D &quot;Huo&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$arr=
+ay[1]
+=3D &quot;wen&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$arr=
+ay[2]
+=3D &quot;xuan&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��取元素</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+$array[0].&quot;\n&quot;; </p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��得数组的长度</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$cou=
+nt =3D
+count($array);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��历索引数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>for =
+($i =3D
+0; $i &lt; count($array); $i++) {</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>echo<span style=3D'mso-spacerun:yes'>  </span>$array[$i]=
+.&quot;
+&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>}</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 关联数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*/</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��建</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$dic=
+ =3D
+array(&quot;Huo&quot;=3D&gt;&quot;20&quot;, &quot;Wen&quot;=3D&gt;&quot;10&=
+quot;,
+&quot;Xuan&quot;=3D&gt;&quot;30&quot;);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��者</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$dic=
+['Huo']
+=3D &quot;20&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$dic=
+['Wen']
+=3D &quot;10&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$dic=
+['Xuan']
+=3D &quot;30&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��取元素</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;\n&quot;.$dic['Huo'].&quot;\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��历</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>fore=
+ach
+($dic as $key =3D&gt; $value) {</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>echo &quot;Key =3D &quot;.$key.&quot;, &quot;;</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>echo &quot;Value =3D &quot;.$value.&quot;\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>}</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 多维数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*/</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��维</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$peo=
+ple =3D
+array(</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>array(&quot;Huo&quot;, &quot;sex&quot;=3D&gt;&quot;m&quot=
+;,
+20),</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>array(&quot;Wen&quot;, &quot;sex&quot;=3D&gt;&quot;f&quot=
+;,
+30),</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>array(&quot;Xuan&quot;, &quot;sex&quot;=3D&gt;&quot;m&quo=
+t;,
+10),</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>array(&quot;Zeng&quot;, &quot;sex&quot;=3D&gt;&quot;f&quo=
+t;,
+50)</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��问：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;name: &quot;.$people[0][0].&quot;, &quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;sex: &quot;.$people[0]['sex'].&quot;, &quot;; // 根据下标和key�=
+�问</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;age: &quot;.$people[0][1]; //
+如果数组的中间有字典，取后面的索引数组时计算索引不=
+能包含中间的字典。所以这里第二个索引应该是1而不是2<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 公共</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*/</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��加</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>arra=
+y_push($array,
+&quot;Zeng&quot;);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>for =
+($i =3D
+0; $i &lt; count($array); $i++) {</p>
+
+<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.5pt'>echo<span style=3D'mso-spacerun:yes'>  </span>$array[$i]=
+.&quot;
+&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>}</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>?&gt=
+;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.375in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.8104in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>日期和时间</span><=
+/p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>4</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>12</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期二</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>2:17</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:5.375i=
+n'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+?php</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 日期 时间</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* date()函数对日期或时间进行�=
+��式化，php5默认为格林威治标准时间</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 格式：date(format, timestamp)</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* format：必须。规定时间戳的�=
+��式</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* timestamp：可选。规定时间戳�=
+��默认是当前时间和日期</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* d - 日（不足补0）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* m - 月</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* Y - 年（4位）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* w - 周（一个数字）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* y - 年（2位）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* F - 月份（英文全名）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* M - 月份（前三个英文字母Jan=
+） </p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* D - 星期几（前三个英文字母=
+Fir）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* j - 天（不足不补0）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* z - 一年的第几天</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* h - 12小时格式</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* H - 24小时</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* i - 分钟</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* s - 秒</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* a - am pm</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* A - AM PM</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 其他字符，比如/ . - 也可插�=
+��字符，以增加其他格式</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*/</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>date=
+_default_timezone_set(PRC);
+// 调到北京时间，要写在最前面</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>//
+得到从1970-01-01 00：00：00到现在的秒数</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+time(); </p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��期</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;今天是&quot;.date(&quot;Y-m-d&quot;).&quot;\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��出星期</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$wee=
+k =3D
+array('星期一', '星期二', '星期三', '星期四', '星期五', '星=
+期六', '星期日');</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;今天是&quot;.$week[date(&quot;w&quot;)].&quot;\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��间</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;北京时间：&quot;.date(&quot;h:i:sa&quot;.&quot;\n&quot;);</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��建日期</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$d =
+=3D
+mktime(9, 12, 31, 6, 10, 2015); // 分别是时分秒、月日年</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;创建的日期是：&quot;.date(&quot;Y-m-d h:i:sa\n&quot;, $d);</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>//
+用字符串创建日期</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$d =
+=3D
+strtotime(&quot;10:38pm April 15 2016&quot;);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;创建的日期是：&quot;.date(&quot;Y-m-d h:i:sa\n&quot;, $d);</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>//
+利用英文单词创建日期</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$d =
+=3D
+strtotime(&quot;tomorrow&quot;); // 明天</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;明天：&quot;.date(&quot;Y-m-d\n&quot;, $d);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$d =
+=3D
+strtotime(&quot;next Saturday&quot;); // 下周六</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;下一个周六，不是下周六：&quot;.date(&quot;Y-m-d\n&quot;, =
+$d);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$d =
+=3D
+strtotime(&quot;+3 Months&quot;); // 加三个月</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo
+&quot;三个月后：&quot;.date(&quot;Y-m-d\n&quot;, $d);</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��离某天的天数</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$d =
+=3D
+strtotime(&quot;December 31&quot;); // 12月31日</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>$day=
+s =3D
+ceil(($d - time())/60/60/24); // 计算（先相减得到秒数的差，再=
+计算天数）</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>echo=
+<span
+style=3D'mso-spacerun:yes'>  </span>&quot;距离12月31日还有&quot;.$da=
+ys.&quot;天\n&quot;;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>?&gt=
+;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:6.9993in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.5326in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>上传文件</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>5</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>11</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>8:38</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:6.9993=
+in'>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:Calibri'
+lang=3Den-US>HTML</span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>：</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+html&gt;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+body&gt;</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+form
+action=3D&quot;upload_portrait.php&quot; method=3D&quot;post&quot;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>enct=
+ype=3D&quot;multipart/form-data&quot;&gt;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+label
+for=3D&quot;file&quot;&gt;Filename:&lt;/label&gt;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+input
+type=3D&quot;file&quot; name=3D&quot;file&quot; id=3D&quot;file&quot; /&gt;=
+ </p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+br
+/&gt;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+input
+type=3D&quot;submit&quot; name=3D&quot;submit&quot; value=3D&quot;Submit&qu=
+ot; /&gt;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+/form&gt;</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+/body&gt;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+/html&gt;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:Calibri'
+lang=3Den-US>PHP</span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>：</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&lt;=
+?php</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 上传头像，必须是gif或者jpg�=
+��式</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*/</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>head=
+er('Content-type:
+text/json; charset=3DUTF-8' );</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>date=
+_default_timezone_set(PRC);
+// 调到北京时间，要写在最前面</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>incl=
+ude(&quot;config.php&quot;);</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* $_FILES
+文件上传变量，是一个二维数组，第一维保存上传的文件=
+的数组，第二维保存文件的属性，包括类型、大小等</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>* 要实现上传文件，必须修改�=
+��限为加入可写 chmod -R 777
+FindFriends/</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>*/</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>// �=
+��件类型限制</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>if
+(($_FILES[&quot;file&quot;][&quot;type&quot;] =3D=3D &quot;image/gif&quot;)=
+</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>||
+($_FILES[&quot;file&quot;][&quot;type&quot;] =3D=3D &quot;image/jpeg&quot;)=
+</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>||
+($_FILES[&quot;file&quot;][&quot;type&quot;] =3D=3D &quot;image/pjpeg&quot;=
+))</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>//
+&amp;&amp; ($_FILES[&quot;file&quot;][&quot;size&quot;] &lt; 20000)) // 小=
+于20k</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>{</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>    </span>if
+($_FILES[&quot;file&quot;][&quot;error&quot;] &gt; 0) {</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>responseJsonArray(&quot;1&=
+quot;,
+$_FILES[&quot;file&quot;][&quot;error&quot;], &quot;&quot;); // 错误代�=
+�</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>    </span>} else {<span style=3D'mso-spaceru=
+n:yes'>  
+</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>$fillname =3D $_FILES['fil=
+e']['name']; //
+得到文件全名</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>$dotArray =3D explode('.',=
+ $fillname); //
+以.分割字符串，得到数组</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>$type =3D end($dotArray); =
+//
+得到最后一个元素：文件后缀</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>$path =3D
+&quot;../portrait/&quot;.md5(uniqid(rand())).$type; // 产生随机唯一�=
+�名字</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>move_uploaded_file( // 从=
+临时目录复制到目标目录</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>         
+</span>$_FILES[&quot;file&quot;][&quot;tmp_name&quot;], // 存储在服务�=
+��的文件的临时副本的名称</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>          </span>$path);</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>$dirname =3D dirname($path=
+); //
+得到本地文件的绝对地址</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>responseJsonArray(&quot;0&=
+quot;,
+&quot;&quot;, $dirname);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>    </span>} </p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>} el=
+se {</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>        </span>responseJsonArray(&quot;1&=
+quot;,
+&quot;文件类型不正确&quot;, &quot;&quot;);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>}</p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>=
+
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>/**<=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>输出json</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'> </span>关闭数据库并且退出</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>*/</=
+p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>func=
+tion
+responseJsonArray($status, $message, $data) {</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>  </span>echo
+json_encode(array(&quot;status&quot;=3D&gt;$status,
+&quot;message&quot;=3D&gt;$message, &quot;data&quot;=3D&gt;$data));</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>  </span>mysql_close($con);</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'><span
+style=3D'mso-spacerun:yes'>  </span>exit();</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>}</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>?&gt=
+;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'text-align:left;margin:0in;font-family:宋体;font-size:9pt;col=
+or:#969696;
+direction:ltr'>已使用 Microsoft OneNote 2010 创建<br>
+一个用于存放所有笔记和信息的位置</p>
+
+</div>
+
+</body>
+
+</html>

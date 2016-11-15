@@ -117,3 +117,34 @@ android：
   * stretch 不等比，完全填充
 * tintColor: ios only，让图片的非透明区域有被染色的效果
 * overlayColor: android only，某些情况无法用过borderRadius设置圆角，用这个属性将圆角部分使用指定颜色填充，实现圆角效果
+
+##Text TextInput
+> Text不使用flexbox布局, justifyContent无效，想要垂直居中，需要在Text外套一个View
+* fontFamily
+* fontSize
+* fontWeight 粗细
+  * normal bold 100 200 300 400 500 600 700 800 900
+* textAlign
+  * auto left right center justify
+* letterSpacing: int 每个字符之间插入多少控件
+* writingDirection 文本方向
+  * auto
+  * ltr 左向右
+  * rtl 右向左
+* lineHeight 每行高度 (之前android会crash)
+* textDecorationLine 线样式
+  * none
+  * underline: 下划线
+  * line-through：贯穿线
+  * underline line-through: 下划线+贯穿线
+* textDecorationStyle 线风格, 设置了textDecorationLine才管用
+  * solid 实线
+  * double 双实线
+  * dotted 长条虚线
+  * dashed 虚线
+* textShadowOffset {
+    width
+    height
+  }
+* textShadowRadius
+* textShadowColor

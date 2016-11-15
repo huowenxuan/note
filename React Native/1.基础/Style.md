@@ -109,3 +109,11 @@ android：
   * skewY
 
   `旋转与倾斜：旋转不发生形变，倾斜按照3D空间进行形变`
+
+##Image
+* resizeMode 显示模式
+  * cover 等比例填充，如果超出区域，就缩小到区域大小，如果没超出，就放大到区域大小
+  * contain 等比例，如果图片超过区域大小，就缩小到区域边界，如果比区域小，就不缩放
+  * stretch 不等比，完全填充
+* tintColor: ios only，让图片的非透明区域有被染色的效果
+* overlayColor: android only，某些情况无法用过borderRadius设置圆角，用这个属性将圆角部分使用指定颜色填充，实现圆角效果

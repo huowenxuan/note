@@ -86,10 +86,13 @@
   * dashed 虚线
 ####阴影
 ios：
-* shadowColor 阴影颜色
-* shadowOffset 阴影位移值
-* shadowOpacity 阴影透明度
-* shadowRadius 阴影圆角率
+* shadowOffset:{ // 阴影位移值
+	width:2/2,
+	height:2/2
+},
+* shadowColor:'#c9c9c9', // 阴影颜色
+ * shadowRadius:4/2, // 阴影圆角率
+* shadowOpacity:0.5 // 阴影透明度
 
 android：
 * elevation: float 安卓阴影

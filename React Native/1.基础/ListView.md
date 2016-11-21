@@ -7,7 +7,7 @@ ListView可以使用ScrollView所有属性和方法
 * renderScrollComponent 返回一个可滚动的组件
 * renderSectionHeader 返回渲染的头部
 * renderSeparator 如果该回调存在，在每一行下（如果最后一行下是另一节的头部将不会渲染）渲染一个分割单元
-  ![每一行中间的横线](./images/1.png)
+  ![每一行中间的横线](media/1.png)
 * onChangeVisibleRows(visibleRows, changedRows) 通知哪些行已经成为屏幕上的可见行
 ##属性
 * dataSource
@@ -36,3 +36,5 @@ export default class MyListView extends React.Component {
 }
 
 ```
+
+

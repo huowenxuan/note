@@ -1,0 +1,861 @@
+MIME-Version: 1.0
+Content-Location: file:///C:/B32956D9/file0873.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3DProgId content=3DOneNote.File>
+<meta name=3DGenerator content=3D"Microsoft OneNote 14">
+<link id=3DMain-File rel=3DMain-File href=3Dfile0873.htm>
+<link rel=3DFile-List href=3D"file0873.files/filelist.xml">
+</head>
+
+<body lang=3Dzh-CN>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.3354in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.977in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>安装</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>上午</span><span style=3D'font-family:Calibri'>9:14</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:4.3354=
+in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>安�=
+��pip第三方管理库</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.5pt' lang=3Den-US>p=
+ython2:</p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'>下载</span><a
+href=3D"https://bootstrap.pypa.io/get-pip.py"><span style=3D'font-family:�=
+�札体-简'>https://bootstrap.pypa.io/get-pip.py</span></a></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:9.0pt;color:=
+#404040'><span
+style=3D'background:white'>执行</span></p>
+
+<p style=3D'margin:0in;font-family:Consolas;font-size:9.0pt;color:#404040'>=
+<span
+style=3D'background:white'>python get-pip.py</span></p>
+
+<p style=3D'margin:0in;font-family:Consolas;font-size:9.0pt;color:#404040'>=
+&nbsp;</p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:手札�=
+��-简'
+lang=3Den-US>python3: mac</span><span style=3D'font-family:"Microsoft YaHei=
+"'
+lang=3Dzh-CN>：</span></p>
+
+<p style=3D'margin:0in;font-size:11.5pt' lang=3Den-US><span style=3D'font-f=
+amily:
+手札体-简'>brew install python3 </span><span style=3D'font-family:"Micr=
+osoft YaHei"'>自带</span><span
+style=3D'font-family:Calibri'>p</span><span style=3D'font-family:手札体-=
+简'>i</span><span
+style=3D'font-family:Calibri'>p</span></p>
+
+<p style=3D'margin:0in;font-family:微软雅黑;font-size:11.5pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>如果电脑python默认版本是</span><span style=3D'font-fa=
+mily:Calibri' lang=3Den-US>2<span
+style=3D'mso-spacerun:yes'>  </span></span></p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>使用pip为python</span><span style=3D'font-family:Calibri' l=
+ang=3Den-US>2 </span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>安装第三方：pip<=
+/span><span
+style=3D'font-family:Calibri' lang=3Den-US> </span><span style=3D'font-fami=
+ly:Calibri'
+lang=3Dzh-CN>install</span><span style=3D'font-family:Calibri' lang=3Den-US=
+> </span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>。。。</span></p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>使用pip为python</span><span style=3D'font-family:Calibri' l=
+ang=3Den-US>3 </span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>安装第三方：pip<=
+/span><span
+style=3D'font-family:Calibri' lang=3Den-US>3 </span><span style=3D'font-fam=
+ily:Calibri'
+lang=3Dzh-CN>install</span><span style=3D'font-family:Calibri' lang=3Den-US=
+> </span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>。。。</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.6062in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:.2937in;width:3.1097=
+in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:20.0pt' lang=3Den-US>O=
+neNoteTitle
+requests</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:.2937in;width:1.=
+4437in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>1:32</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.3736in;margin-left:0in;width:5.6062=
+in'>
+
+<ul style=3D'margin-left:.2937in;direction:ltr;unicode-bidi:embed;margin-to=
+p:
+ 0in;margin-bottom:0in'>
+ <p style=3D'margin:0in;font-family:Calibri;font-size:11.5pt' lang=3Den-US>=
+pip3
+ install requsts</p>
+ <p style=3D'margin:0in;font-family:Calibri;font-size:11.5pt' lang=3Den-US>=
+&nbsp;</p>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>第=
+三方网络库</p>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nb=
+sp;</p>
+ <ul type=3Ddisc style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#33=
+3333'><span
+      style=3D'font-family:"Microsoft YaHei";font-size:12.75pt;background:#=
+EEEEEE'>对</span><span
+      style=3D'font-family:"Comic Sans MS";font-size:12.75pt;background:#EE=
+EEEE'>
+      GET&nbsp;</span><span style=3D'font-family:"Microsoft YaHei";font-siz=
+e:
+      12.75pt;background:#EEEEEE'>和</span><span style=3D'font-family:"Com=
+ic Sans MS";
+      font-size:12.75pt;background:#EEEEEE'> POST&nbsp;</span><span
+      style=3D'font-family:"Microsoft YaHei";font-size:12.75pt;background:#=
+EEEEEE'>方法的封装做的很好</span><span
+      style=3D'font-family:"Comic Sans MS";font-size:12.75pt;background:#EE=
+EEEE'>,
+      </span><span style=3D'font-family:"Microsoft YaHei";font-size:12.75pt;
+      background:#EEEEEE'>自动处理了编码等问题</span><span style=
+=3D'font-family:"Comic Sans MS";
+      font-size:12.75pt;background:#EEEEEE'>;</span></li>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#33=
+3333'><span
+      style=3D'font-family:"Microsoft YaHei";font-size:12.75pt;background:#=
+EEEEEE'>默认开启了</span><span
+      style=3D'font-family:"Comic Sans MS";font-size:12.75pt;background:#EE=
+EEEE'>
+      Cookies </span><span style=3D'font-family:"Microsoft YaHei";font-size=
+:12.75pt;
+      background:#EEEEEE'>处理</span><span style=3D'font-family:"Comic Sa=
+ns MS";
+      font-size:12.75pt;background:#EEEEEE'>, </span><span style=3D'font-fa=
+mily:
+      "Microsoft YaHei";font-size:12.75pt;background:#EEEEEE'>在处理需�=
+��登录的问题上面非常方便</span><span
+      style=3D'font-family:"Comic Sans MS";font-size:12.75pt;background:#EE=
+EEEE'>.</span></li>
+ </ul>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nb=
+sp;</p>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nb=
+sp;</p>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.4159in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.4229in'>
+
+<p style=3D'margin:0in;font-size:20.0pt;color:#333333'><span style=3D'font-=
+family:
+"Microsoft YaHei"' lang=3Den-US>OneNoteTitle </span><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"' lang=3Dzh-CN>BeautifulSoup</span><span style=3D'font-fam=
+ily:
+Calibri' lang=3Den-US>4</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>1:33</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:5.4159=
+in'>
+
+<p style=3D'margin:0in;font-size:12.75pt;color:#333333'><span style=3D'font=
+-family:
+"Comic Sans MS"'>BeautifulSoup </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>大大方便了我们对抓取的</span><span
+style=3D'font-family:"Comic Sans MS"'> HTML </span><span style=3D'font-fami=
+ly:"Microsoft YaHei"'>数据的解析</span><span
+style=3D'font-family:"Comic Sans MS"'>, </span><span style=3D'font-family:"=
+Microsoft YaHei"'>可以用</span><span
+style=3D'font-family:"Comic Sans MS"'>tag, class, id</span><span
+style=3D'font-family:"Microsoft YaHei"'>来定位我们想要的东西</spa=
+n><span style=3D'font-family:
+"Comic Sans MS"'>, </span><span style=3D'font-family:"Microsoft YaHei"'>可=
+以直接提取出正文信息</span><span
+style=3D'font-family:"Comic Sans MS"'>, </span><span style=3D'font-family:"=
+Microsoft YaHei"'>可以全文搜索</span><span
+style=3D'font-family:"Comic Sans MS"'>, </span><span style=3D'font-family:"=
+Microsoft YaHei"'>同样也支持正则表达式</span><span
+style=3D'font-family:"Comic Sans MS"'>, </span><span style=3D'font-family:"=
+Microsoft YaHei"'>相当给力</span><span
+style=3D'font-family:"Comic Sans MS"'>.</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.3201in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.9645in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>Kivy</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>2</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期四</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>上午</span><span style=3D'font-family:Calibri'>8:38</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:3.3201=
+in'>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>支持windows</span><span style=3D'font-family:Calibri' lang=
+=3Den-US> </span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>macos</span><span style=3D'font-=
+family:
+Calibri' lang=3Den-US> </span><span style=3D'font-family:Calibri' lang=3Dzh=
+-CN>linux</span><span
+style=3D'font-family:Calibri' lang=3Den-US><span style=3D'mso-spacerun:yes'=
+>  </span></span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>ios</span><span style=3D'font-fa=
+mily:Calibri'
+lang=3Den-US> </span><span style=3D'font-family:Calibri' lang=3Dzh-CN>andro=
+id</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>需�=
+��安装pygame</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.4159in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.5326in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+lang=3Den-US>OneNoteTitle </span><span lang=3Dzh-CN>无标题页</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>2</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期四</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>上午</span><span style=3D'font-family:Calibri'>8:43</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:5.4159=
+in'>
+
+<p style=3D'margin:0in;font-family:Menlo;font-size:9.0pt;color:black'><span
+style=3D'background:#F1F1F1'>fromkivy.appimportApp<br>
+fromkivy.uix.buttonimportButton</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:7pt;margin-bottom:7=
+pt;
+line-height:18pt;font-family:Menlo;font-size:9.0pt;color:black'><span
+style=3D'background:#F1F1F1'>classTestApp(App):<br>
+defbuild(self):<br>
+returnButton(text=3D'Hello,kivy')</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:7pt;margin-bottom:7=
+pt;
+line-height:18pt;font-family:Menlo;font-size:9.0pt;color:black'><span
+style=3D'background:#F1F1F1'>TestApp().run()</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:7pt;margin-bottom:7=
+pt;
+line-height:18pt;font-family:"Microsoft YaHei";font-size:10.5pt;color:#3737=
+37'><span
+style=3D'background:#F5F8FD'>然后会弹出一个框，大概如下，点�=
+��”hello,kivy”会变颜色</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:7pt;margin-bottom:7=
+pt;
+line-height:18pt;font-family:"Microsoft YaHei";font-size:10.5pt;color:#3737=
+37'><span
+style=3D'background:#F5F8FD'>点击窗口并按“F1”会这个窗口的�=
+�些属性</span></p>
+
+<p style=3D'margin:0in;font-size:9.0pt;color:black'><span style=3D'font-fam=
+ily:
+Menlo;background:#F1F1F1'>##</span><span style=3D'font-family:"Microsoft Ya=
+Hei";
+background:#F1F1F1'>导入</span><span style=3D'font-family:Menlo;backgroun=
+d:#F1F1F1'>App</span><span
+style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>，然后让</sp=
+an><span
+style=3D'font-family:Menlo;background:#F1F1F1'>TestApp</span><span
+style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>这个类继承<=
+/span><span
+style=3D'font-family:Menlo;background:#F1F1F1'><br>
+fromkivy.appimportApp<br>
+##</span><span style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>�=
+��入一个</span><span
+style=3D'font-family:Menlo;background:#F1F1F1'>Button,</span><span
+style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>运维有这个<=
+/span><span
+style=3D'font-family:Menlo;background:#F1F1F1'>button</span><span
+style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>，当你点击�=
+��时候才会有所反应</span><span
+style=3D'font-family:Menlo;background:#F1F1F1'><br>
+fromkivy.uix.buttonimportButton</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:7pt;margin-bottom:7=
+pt;
+line-height:18pt;font-size:9.0pt;color:black'><span style=3D'font-family:Me=
+nlo;
+background:#F1F1F1'>###</span><span style=3D'font-family:"Microsoft YaHei";
+background:#F1F1F1'>定义类，名字必须是</span><span style=3D'font-f=
+amily:Menlo;background:
+#F1F1F1'>xxxApp<br>
+classTestApp(App):<br>
+###build</span><span style=3D'font-family:"Microsoft YaHei";background:#F1F=
+1F1'>一个</span><span
+style=3D'font-family:Menlo;background:#F1F1F1'>Button<br>
+defbuild(self):<br>
+###</span><span style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>=
+返回一个</span><span
+style=3D'font-family:Menlo;background:#F1F1F1'>Button,</span><span
+style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>文字内容是�=
+��</span><span
+style=3D'font-family:Menlo;background:#F1F1F1'>Hello,kivy”<br>
+returnButton(text=3D'Hello,kivy')</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:7pt;margin-bottom:7=
+pt;
+line-height:18pt;font-size:9.0pt;color:black'><span style=3D'font-family:Me=
+nlo;
+background:#F1F1F1'>##</span><span style=3D'font-family:"Microsoft YaHei";
+background:#F1F1F1'>运行</span><span style=3D'font-family:Menlo;backgroun=
+d:#F1F1F1'>,</span><span
+style=3D'font-family:"Microsoft YaHei";background:#F1F1F1'>因为继承了<=
+/span><span
+style=3D'font-family:Menlo;background:#F1F1F1'>App</span><span style=3D'fon=
+t-family:
+"Microsoft YaHei";background:#F1F1F1'>，所以才有的</span><span style=
+=3D'font-family:
+Menlo;background:#F1F1F1'>run</span><span style=3D'font-family:"Microsoft Y=
+aHei";
+background:#F1F1F1'>这个方法</span><span style=3D'font-family:Menlo;bac=
+kground:#F1F1F1'><br>
+TestApp().run()</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:6pt;margin-bottom:6=
+pt;
+font-family:"Microsoft YaHei";font-size:10.5pt;color:#373737'><span
+style=3D'background:#F5F8FD'>上面就是我们的Hello了</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:6pt;margin-bottom:6=
+pt;
+font-family:"Microsoft YaHei";font-size:10.5pt;color:#373737'><span
+style=3D'background:#F5F8FD'>在windows上运行当然没有什么太大的=
+意义，怎么在安卓手机上运行才是我们想要的，</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:6pt;margin-bottom:6=
+pt;
+font-family:"Microsoft YaHei";font-size:10.5pt;color:#373737'><span
+style=3D'background:#F5F8FD'>这时我们需要一个编译环境。</span>=
+</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:7pt;margin-bottom:7=
+pt;
+line-height:18pt;font-family:"Microsoft YaHei";font-size:10.5pt;color:#3737=
+37'>&nbsp;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.5965in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.5965in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:Calibri'
+lang=3Den-US>OneNoteTitle P</span><span style=3D'font-family:Calibri' lang=
+=3Dzh-CN>y</span><span
+style=3D'font-family:Calibri' lang=3Den-US>game</span><span style=3D'font-f=
+amily:
+"Microsoft YaHei"' lang=3Dzh-CN>游戏</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>8:36</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:3.3763=
+in'>
+
+<p style=3D'margin:0in'><span style=3D'font-family:"Microsoft YaHei";font-s=
+ize:
+11.5pt' lang=3Dzh-CN>mac</span><span style=3D'font-family:Calibri;font-size=
+:11.5pt'
+lang=3Den-US> </span><span style=3D'font-family:"Microsoft YaHei";font-size=
+:11.5pt'
+lang=3Dzh-CN>需要安装</span><a href=3D"http://xquartz.macosforge.org/">=
+<span
+style=3D'font-family:"lucida grande";font-size:12.0pt;background:white'
+lang=3Dzh-CN>xQuartz</span></a></p>
+
+<p style=3D'margin:0in;font-family:Menlo;font-size:9.0pt;color:#657B83'>&nb=
+sp;</p>
+
+<p style=3D'margin:0in;font-size:9.0pt;color:#657B83'><span style=3D'font-f=
+amily:
+"Microsoft YaHei";background:#FDF6E3' lang=3Dzh-CN>然后</span><span
+style=3D'font-family:Calibri;background:#FDF6E3' lang=3Den-US>pip</span><sp=
+an
+style=3D'font-family:"Microsoft YaHei";background:#FDF6E3' lang=3Dzh-CN>安=
+装：</span></p>
+
+<p style=3D'margin:0in;font-family:Menlo;font-size:9.0pt;color:#657B83'><sp=
+an
+style=3D'background:#FDF6E3' lang=3Dzh-CN>pip</span><span style=3D'backgrou=
+nd:#FDF6E3'
+lang=3Den-US>3</span><span style=3D'background:#FDF6E3' lang=3Dzh-CN> insta=
+ll
+hg+http://bitbucket.org/pygame/pygame</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.3611in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.3611in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:Calibri'
+lang=3Den-US>OneNoteTitle P</span><span style=3D'font-family:Calibri' lang=
+=3Dzh-CN>ython</span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>游戏、黑客</span>=
+</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>8:37</s=
+pan></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.3493in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:.0104in;width:4.3388=
+in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Den-US>OneNoteTitle </span><span style=3D'font-family:"Microsoft YaHe=
+i"'
+lang=3Dzh-CN>wxPython</span><span style=3D'font-family:Calibri' lang=3Den-U=
+S> </span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>桌面</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:.0104in;width:1.=
+4437in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>6</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>8:52</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.1354in;margin-left:0in;width:2.1298=
+in'>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>windows</span><span style=3D'font-family:Calibri' lang=3Den-US=
+> </span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>linux</span><span style=3D'font-=
+family:
+Calibri' lang=3Den-US> </span><span style=3D'font-family:Calibri' lang=3Dzh=
+-CN>mac</span><span
+style=3D'font-family:Calibri' lang=3Den-US> </span><span style=3D'font-fami=
+ly:Calibri'
+lang=3Dzh-CN>os</span></p>
+
+<p style=3D'margin:0in;font-size:11.5pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>不支持</span><span style=3D'font-family:Calibri' lang=3Den-=
+US> </span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>python</span><span style=3D'font=
+-family:
+Calibri' lang=3Den-US>3</span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.5pt' lang=3Den-US>&=
+nbsp;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.4159in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.5187in'>
+
+<p style=3D'margin:0in;font-size:20.0pt' lang=3Den-US><span style=3D'font-f=
+amily:
+Calibri'>OneNoteTitle pil</span><span style=3D'font-family:"Microsoft YaHei=
+"'>图片处理</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.4437=
+in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:gray'>201=
+6年8月6日
+星期六</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:gray'>下=
+午3:31</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.1013in;margin-left:0in;width:5.4159=
+in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>p=
+ip3
+install pillow</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>f=
+rom PIL
+import *</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft Yahei";font-size:11.25pt;
+color:#333333'><span style=3D'background:white'>PIL是python与图片处理=
+相关的第三方扩展库，可以完成图片的粘贴，拷贝，添加=
+文字，层叠，合并，图片加强，操作像素点等等，非常强=
+大。</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.0895in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.5173in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:20.0pt' lang=3Den-US>O=
+neNoteTitle
+zlib</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:gray'>201=
+6年9月25日
+星期日</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:gray'>下=
+午10:10</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2388in;margin-left:0in;width:3.0895=
+in'>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>官网下载</span><span style=3D'font-family:Calibri' lang=3D=
+en-US> </span><a
+href=3D"http://zlib.net/zlib-1.2.8.tar.gz"><span style=3D'font-family:Calib=
+ri'
+lang=3Dzh-CN>http://zlib.net/zlib-1.2.8.tar.gz</span></a></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
+nbsp;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'text-align:left;margin:0in;font-family:宋体;font-size:9pt;col=
+or:#969696;
+direction:ltr'>已使用 Microsoft OneNote 2010 创建<br>
+一个用于存放所有笔记和信息的位置</p>
+
+</div>
+
+</body>
+
+</html>

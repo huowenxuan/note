@@ -1,5 +1,0 @@
-Xcode8会出现原生`NSLog`真机无法输出的问题，可以使用R`CTLog`来输出
-```
-#import "RCTLog.h"
-RCTLog(@"");
-```

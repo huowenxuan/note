@@ -1,5 +1,6 @@
 [TOC]
-# 新建项目
+# 搭建、集成
+## 新建项目
 目录结构
 
 ```txt
@@ -11,7 +12,7 @@
 |____templates
 ```
 
-# 安装依赖
+## 安装依赖
 Django REST framework
 
 ```shell
@@ -26,7 +27,7 @@ Django REST Swagger
 # pip3 install django-rest-swagger
 ```
 
-# 新建app 
+## 新建app 
 food
 ```txt
 |____food
@@ -48,7 +49,7 @@ food
 
 ```
 
-# 创建model
+## 创建model
 
 ```python
 from django.db import models
@@ -71,7 +72,7 @@ class Info(models.Model):
 ```
 随便插两条数据
 
-# 集成REST
+## 集成REST
 1. 修改project/setting.py
 	在INSTALLED_APPS中添加
 	
@@ -94,7 +95,10 @@ class Info(models.Model):
 	}
 	```
 
-2. 新建food/serializers.py
+2. 创建序列化类Serializer
+	> 为代码片段的实例（instances）提供序列化和反序列化的途径，使之可以转化为如json的格式 。我们可以借助声明序列器（serializer）来实现类似于Django表单（form）的运作方式。
+	
+	新建food/serializers.py
 
 	```python
 	from rest_framework import serializers
@@ -161,7 +165,7 @@ class Info(models.Model):
 5. 运行
 ![](media/14810069646519.jpg)
 
-# 集成Swagger
+## 集成Swagger
 1. 修改project/setting.py
 	在INSTALLED_APPS中添加
 	

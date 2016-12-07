@@ -496,14 +496,28 @@ Info.objects.get(name='1')
 * values_list 获取元组形式结果
 * values 获取字典形式的结果
 `values`和`values_list`返回的并不是真正的列表或字典，也是 queryset，他们也是 lazy evaluation 的（惰性评估，通俗地说，就是用的时候才真正的去数据库查） 
-可以用来输出JSON格式：  
 
-	```python
-	def queryset_tojson(query_set):
+### 查询到的结果转换为json
+
+```python
+# all或者filter得到的QuerySet转换为JSON，使用json
+import json
+obj = Info.objects.all().values()
+json.dumps(list(obj))
+
+# all或者filter得到的QuerySet转换为JSON，使用django内置的serializers，但是输出的是带有数据库信息的数据
+from django.core import serializers
+obj = Info.objects.all()
+json = serializers.serialize('json', obj)
+
+# get得到的obj转换为JSON
+# get得到的值不是QuerySet，而是model，无法直接转换为JSON，在model中内置toJSON方法
+class Info(models.Model):
+	...
+	def toJSON(self):
 		import json
-		from django.core.serializers.json import DjangoJSONEncoder
-		return json.dumps(list(result_set.values()),cls=DjangoJSONEncoder)
-	```
+		return json.dumps(dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]]))
+```
 
 ## 排序
 
@@ -517,8 +531,16 @@ Info.objects.filter(name='2').order_by('-name')
 ## 改
 
 ```python
-# 修改addr
+# 修改queryset中所有值
 Info.objects.filter(name='2').update(name='5')
+
+# 直接修改某个model
+info = Info.objects.get(id=1)
+info.name = "new name"
+info.save()
+
+info = Info(id=1, price=33)
+info.save()
 ```
 
 ## 删
@@ -528,6 +550,84 @@ Info.objects.filter(name='2').update(name='5')
 Info.objects.get(name='chris_unique').delete()  
 # 删除多条数据  
 Info.objects.filter(name='chris').delete()  
+```
+
+# 调试
+## 输出
+1. 使用print
+	但是print是在子线程进行的, 可能接收不到输出，使用下面的命令，缺点是每次修改代码都需要手动重启服务器
+	
+	```
+	python manage.py runserver --noreload
+	```
+2. 使用logging
+	在setting.py中配置
+	
+	```python
+	LOGGING = {
+	    'version': 1,
+	    'disable_existing_loggers': False,
+	    'formatters': {
+	        'simple': {
+	            'format': '%(levelname)s %(message)s'
+	        },
+	    },
+	    'handlers': {
+	        'console': {
+	            'level': 'DEBUG',
+	            'class': 'logging.StreamHandler',
+	            'formatter': 'simple'
+	        },
+	        'mail_admins': {
+	            'level': 'ERROR',
+	            'class': 'django.utils.log.AdminEmailHandler'
+	        }
+	    },
+	    'loggers': {
+	        'django.request': {
+	            'handlers': ['mail_admins'],
+	            'level': 'ERROR',
+	            'propagate': True,
+	        },
+	        'mylogger': {
+	            'handlers': ['console', ],
+	            'level': 'DEBUG'
+	        }
+	    }
+	}	
+	```
+	在需要输出的地方：
+	
+	```python
+	import logging
+	logging = logging.getLogger('django')
+	logging.debug("debug信息")
+	```
+
+# 网络请求
+在url.py中匹配网址
+
+```python
+from food import views as food_views
+...
+url(r'^food/(?P<id>[0-9]+)/$', food_views.detail),
+```
+在food/views.js中添加detail方法
+
+```python
+# 在url中写了id，必须在对应方法中有id这个参数
+# 例如访问 food/1/  id 就是1
+def detail(request, id):
+	# 区分请求方式
+	if request.method == 'GET':
+		# 得到get请求的某个参数, rest api一般不需要在get请求中传参数
+		request.GET.get('key')
+		return ...
+	elif request.method == 'POST':
+		# 获取post请求中的某个参数
+		request.POST.get('key')
+		return ...
+
 ```
 
 

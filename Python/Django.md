@@ -339,9 +339,9 @@ DATABASES = {
 * DecimalField 用python中 Decimal 的一个实例来表示十进制浮点数
 	* max_digits：必须参数，位数总数，包括小数点后的位数。该值必须大于等于decimal_places.
 	* decimal_places：必须参数，小数点后的数字数量
-* c FloatField 使用的是Python内部的 float 类型, 而DecimalField 使用的是Python的 Decimal 类型
+* FloatField 使用的是Python内部的 float 类型, 而DecimalField 使用的是Python的 Decimal 类型
 * EmailField 一个CharField 用来检查输入的email地址是否合法。它使用 EmailValidator 来验证输入合法性。
-* TextField 大段文字，不会限制长度
+* TextField 大段文字，不用会限制长度
 * CharField 
 	* max_length 必须参数
 * URLField 如果不指定max_length，则使用默认值200。
@@ -393,13 +393,23 @@ DATABASES = {
 	每个元组的第一个元素是组的名字。第二个元素是一组可迭代的二元元组，每一个二元元组包含一个值和一个给人看的名字构成一个选项。分组的选项可能会和未分组的选项合在同一个list中。 （就像例中的unknown选项）。
 
 ### 外键 
-* ForeignKey
-* ManyToManyField
-* OneToOneField
+* ForeignKey 一对多  一个表可以被多个用户使用，反向索引（通过Field得到Model）得到多个对应的值，是QuerySet，直接用等于号设置
+* OneToOneField 一对一 
+	* 一个表只属于一个用户
+	* 和ForeignKey的区别就是，OneToOne等于ForeignKey加上unique=True属性
+	* 反向索引得到一个唯一的Model，直接用等于号设置
+* ManyToManyField 多对多 
+	* 多个表属于多个用户
+	* 通过add设置，在add前需要两个Model都save过
+	* 不会显示在该表中，会放在一个新的关系表中
 
 ```python
+class Info(model.Model):
+	pass
 class Collect(models.Model):
-	# 与内部类建立外键
+	# 与内部类建立外键，Info需要写在上面
+	user_info = models.ForeignKey(Info)
+	# 如果类不知道Info，就加上引号
 	user_info = models.ForeignKey('Info')
 	# 与外部model建立外键
 	room_info = models.ForeignKey('room.Info')
@@ -422,8 +432,8 @@ class Info(models.Model):
 命令Django同步数据库。Django根据models.py中描述的数据模型，在MySQL中真正的创建各个关系表：
 
 ```
-# python manage.py makemigrations
-# python manage.py migrate
+# python3 manage.py makemigrations
+# python3 manage.py migrate
 ```
 注意：Django 1.7.0及以下的版本需要用以下命令
 
@@ -443,6 +453,8 @@ Info.objects.create(name='11', password='haha', gender=Info.MALE)
 # 2
 info = Info(name='1')
 info.age = 3
+info["age"] = 3 # 错误
+setattr(info, "age", 3) # 正确
 info.save()
 # 3 查询或者创建，返回一个元组,第一个为Info对象, 第二个为True或False, 新建时返回的是True, 已经存在时返回False。速度较慢
 Info.objects.get_or_create(name='1')
@@ -478,11 +490,14 @@ Info.objects.filter(name__iregex="^abc")
 Info.objects.exclude(name__contains="2") 
 # 查询后排除
 Info.objects.filter(name__contains="2").exclude(age=23)
+
+# TODO 多表查询
 ```
 以上都会返回QuerySet对象
 
 ```python
-# 查询一条, 如果有多个就报错, 并且不能用普通的转json方式
+# 查询一条, 如果有多个就报错
+# get得到的是具体的Model，因为只会得到固定的一条数据
 Info.objects.get(name='1')
 ```
 
@@ -497,35 +512,53 @@ Info.objects.get(name='1')
 * values 获取字典形式的结果
 `values`和`values_list`返回的并不是真正的列表或字典，也是 queryset，他们也是 lazy evaluation 的（惰性评估，通俗地说，就是用的时候才真正的去数据库查） 
 
-### 查询到的结果转换为json
-
+### 查询到的结果转换为JSON
 ```python
-# all或者filter得到的QuerySet转换为JSON，使用json
-import json
-obj = Info.objects.all().values()
-json.dumps(list(obj))
-
-# all或者filter得到的QuerySet转换为JSON，使用django内置的serializers，但是输出的是带有数据库信息的数据
+# all或者filter得到的QuerySet转换为JSON，使用django内置的serializers，但是输出的是带有数据库信息的数据，并且对于复杂的格式无法转换
 from django.core import serializers
 obj = Info.objects.all()
 json = serializers.serialize('json', obj)
 
-# get得到的obj转换为JSON
-# get得到的值不是QuerySet，而是model，无法直接转换为JSON，在model中内置toJSON方法
-class Info(models.Model):
-	...
-	def toJSON(self):
-		import json
-		return json.dumps(dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]]))
-```
+# QuerySet => JSON
+def query_set_to_json(query_set):
+    import json
 
-## 排序
+    json_list = []
+    for model in query_set:
+        json_list.append(json.loads(model_to_json(model)))
 
-```python
-# 排序
-Info.objects.order_by('name')
-# 查询 + 逆向排序
-Info.objects.filter(name='2').order_by('-name')
+    return json.dumps(json_list)
+
+# Model => JSON
+def model_to_json(model):
+    fields = []
+    for field in model._meta.fields:
+        fields.append(field.name)
+
+    json_dict = {}
+    import datetime
+    import json
+    from django.db.models import Model
+    from decimal import Decimal
+
+    for attr in fields:
+        # 处理datetime
+        if isinstance(getattr(model, attr), datetime.datetime):
+            json_dict[attr] = getattr(model, attr).strftime('%Y-%m-%d %H:%M:%S')
+        # 处理date
+        elif isinstance(getattr(model, attr), datetime.date):
+            json_dict[attr] = getattr(model, attr).strftime('%Y-%m-%d')
+        # 处理Model
+        elif isinstance(getattr(model, attr), Model):
+            import json
+            json_dict[attr] = json.loads(model_to_json(getattr(model, attr)))
+        # 处理Decimal
+        elif isinstance(getattr(model, attr), Decimal):
+            json_dict[attr] = float(getattr(model, attr)) # 或者str()
+        else:
+            json_dict[attr] = getattr(model, attr)
+
+    return json.dumps(json_dict)
 ```
 
 ## 改
@@ -550,6 +583,15 @@ info.save()
 Info.objects.get(name='chris_unique').delete()  
 # 删除多条数据  
 Info.objects.filter(name='chris').delete()  
+```
+
+## 排序
+
+```python
+# 排序
+Info.objects.order_by('name')
+# 查询 + 逆向排序
+Info.objects.filter(name='2').order_by('-name')
 ```
 
 # 调试

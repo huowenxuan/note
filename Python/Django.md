@@ -393,15 +393,20 @@ DATABASES = {
 	每个元组的第一个元素是组的名字。第二个元素是一组可迭代的二元元组，每一个二元元组包含一个值和一个给人看的名字构成一个选项。分组的选项可能会和未分组的选项合在同一个list中。 （就像例中的unknown选项）。
 
 ### 外键 
-* ForeignKey 一对多  一个表可以被多个用户使用，反向索引（通过Field得到Model）得到多个对应的值，是QuerySet，直接用等于号设置
+* ForeignKey 一对多
+	* 一个表可以被多个用户使用
+	* 反向索引（通过Field得到Model）得到QuerySet
+	* 直接用等于号设置
 * OneToOneField 一对一 
 	* 一个表只属于一个用户
 	* 和ForeignKey的区别就是，OneToOne等于ForeignKey加上unique=True属性
-	* 反向索引得到一个唯一的Model，直接用等于号设置
+	* 反向索引得到Model
+	* 反向索引得到一个唯一的Model，直接接用等于号设置
 * ManyToManyField 多对多 
 	* 多个表属于多个用户
+	* 反向索引得到QuerySet
 	* 通过add设置，在add前需要两个Model都save过
-	* 不会显示在该表中，会放在一个新的关系表中
+	* 不会显示在该表中，会放在一个新的关系表
 
 ```python
 class Info(model.Model):
@@ -410,9 +415,20 @@ class Collect(models.Model):
 	# 与内部类建立外键，Info需要写在上面
 	user_info = models.ForeignKey(Info)
 	# 如果类不知道Info，就加上引号
-	user_info = models.ForeignKey('Info')
-	# 与外部model建立外键
-	room_info = models.ForeignKey('room.Info')
+	user_info = models.OneToOneField('Info')
+	# 与外部model建立ManyToMany
+	room_info = models.ManyToManyField('room.Info')
+	
+# 查询
+collect = Collect.objects.get(id=1)
+info = Info.objects.filter(collect=collect)
+
+collect_id = Collect.objects.get(id=1).id
+info = Info.objects.filter(collect__id=collect_id)
+
+# 查询ManyToMany
+collect = Collect.objects.get(id=1) 
+room_infos = collect.room_info.all() 
 ```
 ### 创建
 在user/models.py中，创建一个表，即只有一个属性的类：
@@ -451,7 +467,7 @@ from user.models import Info
 # 1
 Info.objects.create(name='11', password='haha', gender=Info.MALE)
 # 2
-info = Info(name='1')
+info = Info(name='1') # 如果age不可为空，即使初始化时age为空也不会错，在save之前，不会对数据库进行操作
 info.age = 3
 info["age"] = 3 # 错误
 setattr(info, "age", 3) # 正确
@@ -652,13 +668,13 @@ Info.objects.filter(name='2').order_by('-name')
 ```python
 from food import views as food_views
 ...
+# ?P<id> 传递额外参数，在food_views.detail中必须有这个参数名
 url(r'^food/(?P<id>[0-9]+)/$', food_views.detail),
 ```
 在food/views.js中添加detail方法
 
 ```python
-# 在url中写了id，必须在对应方法中有id这个参数
-# 例如访问 food/1/  id 就是1
+# 例如访问 food/1/  id 就是
 def detail(request, id):
 	# 区分请求方式
 	if request.method == 'GET':

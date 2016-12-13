@@ -535,46 +535,53 @@ from django.core import serializers
 obj = Info.objects.all()
 json = serializers.serialize('json', obj)
 
-# QuerySet => JSON
-def query_set_to_json(query_set):
-    import json
+def qs_to_list(queryset):
+    """
+    QuerySet转换为list
+    """
+    arr = list()
+    for model in queryset:
+        arr.append(model_to_dict(model))
+    return arr
 
-    json_list = []
-    for model in query_set:
-        json_list.append(json.loads(model_to_json(model)))
 
-    return json.dumps(json_list)
-
-# Model => JSON
-def model_to_json(model):
+def model_to_dict(model):
+    """
+    Mode转换为dict
+    """
     fields = []
     for field in model._meta.fields:
         fields.append(field.name)
 
-    json_dict = {}
+    dic = {}
+    for name in fields:
+        dic[name] = field_to_var(getattr(model, name))
+
+    return dic
+
+
+def field_to_var(field):
+    """
+    Field转换为普通变量
+    """
     import datetime
-    import json
-    from django.db.models import Model
     from decimal import Decimal
+    from django.db.models import Model
 
-    for attr in fields:
-        # 处理datetime
-        if isinstance(getattr(model, attr), datetime.datetime):
-            json_dict[attr] = getattr(model, attr).strftime('%Y-%m-%d %H:%M:%S')
-        # 处理date
-        elif isinstance(getattr(model, attr), datetime.date):
-            json_dict[attr] = getattr(model, attr).strftime('%Y-%m-%d')
-        # 处理Model
-        elif isinstance(getattr(model, attr), Model):
-            import json
-            json_dict[attr] = json.loads(model_to_json(getattr(model, attr)))
-        # 处理Decimal
-        elif isinstance(getattr(model, attr), Decimal):
-            json_dict[attr] = float(getattr(model, attr)) # 或者str()
-        else:
-            json_dict[attr] = getattr(model, attr)
-
-    return json.dumps(json_dict)
+    # 处理datetime
+    if isinstance(field, datetime.datetime):
+        return field.strftime('%Y-%m-%d %H:%M:%S')
+    # 处理date
+    elif isinstance(field, datetime.date):
+        return field.strftime('%Y-%m-%d')
+    # 处理Model
+    elif isinstance(field, Model):
+        return model_to_dict(field)
+    # 处理Decimal
+    elif isinstance(field, Decimal):
+        return float(field)  # 或者str()
+    else:
+        return field
 ```
 
 ## 改
@@ -682,8 +689,13 @@ def detail(request, id):
 		request.GET.get('key')
 		return ...
 	elif request.method == 'POST':
-		# 获取post请求中的某个参数
+		# 获取post请求中的某个参数，但是这种方式只能得到通过表单POST的数据
 		request.POST.get('key')
+		# 要获取请的JSON数据，就要从body中获取（get请求不能有body）
+		body = request.body
+		# 得到类似b'{"title":"ccsdsafda","x_scale":0.3,"y_scale":0.5}'，它是一个btye类型的字符串，可以使用simplejson转化为python序列对象（json模块无法进行转换）
+		import simplejson
+		dic = simplejson.loads(body)
 		return ...
 
 ```

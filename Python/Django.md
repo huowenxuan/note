@@ -110,6 +110,8 @@ yum install sqlite-devel
 	```
 	# python3 manage.py makemigrations
 	# python3 manage.py migrate
+	
+	python3 manage.py makemigrations &&  python3 manage.py migrate
 	```
 	注意：Django 1.7.0及以下的版本需要用以下命令
 	

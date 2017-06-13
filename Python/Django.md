@@ -416,6 +416,12 @@ class Info(model.Model):
 class Collect(models.Model):
 	# 与内部类建立外键，Info需要写在上面
 	user_info = models.ForeignKey(Info)
+	# 如果有多个外键
+	user = models.ForeignKey(UserInfo, related_name='user') 	follow_user = models.ForeignKey(UserInfo, related_name='follow_user')
+	# 复合主键，写在models的class里
+	class Meta:     unique_together = ('user', 'follow_user')
+
+
 	# 如果类不知道Info，就加上引号
 	user_info = models.OneToOneField('Info')
 	# 与外部model建立ManyToMany
@@ -508,6 +514,9 @@ Info.objects.filter(name__iregex="^abc")
 Info.objects.exclude(name__contains="2") 
 # 查询后排除
 Info.objects.filter(name__contains="2").exclude(age=23)
+
+# in in前面加2个下划线
+Info.objects.filter(id__in=[1, 2])
 
 # TODO 多表查询
 ```

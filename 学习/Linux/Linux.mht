@@ -1,0 +1,1523 @@
+MIME-Version: 1.0
+Content-Location: file:///C:/CEF64718/Linux.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3DProgId content=3DOneNote.File>
+<meta name=3DGenerator content=3D"Microsoft OneNote 14">
+<link id=3DMain-File rel=3DMain-File href=3DLinux.htm>
+<link rel=3DFile-List href=3D"Linux.files/filelist.xml">
+</head>
+
+<body lang=3Dzh-CN>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.2416in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:3.4687in'>
+
+<p style=3D'margin:0in;font-family:SimSun;font-size:20.0pt'><span lang=3Den=
+-US>OneNoteTitle
+</span><span lang=3Dzh-CN>常用命令</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5833=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2015</span><span style=3D'font-family:SimSun'>年</span><span
+style=3D'font-family:Calibri'>10</span><span style=3D'font-family:SimSun'>�=
+��</span><span
+style=3D'font-family:Calibri'>14</span><span style=3D'font-family:SimSun'>�=
+��</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:SimSun'>�=
+�期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+SimSun'>下午</span><span style=3D'font-family:Calibri'>7:57</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2173in;margin-left:0in;width:5.2416=
+in'>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calibri'
+lang=3Dzh-CN>yum</span><span style=3D'font-family:Calibri' lang=3Den-US> </=
+span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>install</span><span style=3D'fon=
+t-family:
+Calibri' lang=3Den-US> ...<span style=3D'mso-spacerun:yes'>     </span>=
+</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>安装某个软件，</span><span=
+ style=3D'font-family:
+Calibri' lang=3Den-US> </span><span style=3D'font-family:Calibri' lang=3Dzh=
+-CN>yum</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>是</span><span style=3D'font-fam=
+ily:Calibri'
+lang=3Dzh-CN>linux</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>�=
+�软件库</span></p>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:SimSun'
+lang=3Dzh-CN>输入某个软件的名称查看可执行的命令</span><spa=
+n style=3D'font-family:Calibri'
+lang=3Den-US> </span><span style=3D'font-family:SimSun' lang=3Dzh-CN>，例=
+如：</span></p>
+
+<p style=3D'margin:0in;font-family:"Andale Mono";font-size:13.5pt;color:#29=
+F914'><span
+style=3D'background:black;mso-highlight:black'>[root@iZ2834tthbyZ ~]# tomca=
+t</span></p>
+
+<p style=3D'margin:0in;font-family:"Andale Mono";font-size:13.5pt;color:#29=
+F914'><span
+style=3D'background:black;mso-highlight:black'>Usage: /usr/sbin/tomcat
+{start|start-security|stop|version}</span></p>
+
+<p style=3D'margin:0in;font-family:SimSun;font-size:11.0pt'>执行这个软=
+件：</p>
+
+<p style=3D'margin:0in;font-family:"Andale Mono";font-size:13.5pt;color:#29=
+F914'><span
+style=3D'background:black;mso-highlight:black'>[root@iZ2834tthbyZ ~]# tomcat
+start</span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.0631in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:4.0631in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:Calibri'
+lang=3Den-US>OneNoteTitle </span><span style=3D'font-family:Calibri' lang=
+=3Dzh-CN>linux</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>简易命令集</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5833=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2015</span><span style=3D'font-family:SimSun'>年</span><span
+style=3D'font-family:Calibri'>10</span><span style=3D'font-family:SimSun'>�=
+��</span><span
+style=3D'font-family:Calibri'>15</span><span style=3D'font-family:SimSun'>�=
+��</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:SimSun'>�=
+�期四</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+SimSun'>下午</span><span style=3D'font-family:Calibri'>1:13</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2173in;margin-left:0in;width:3.9534=
+in'>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>文件和目录操作</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>ls </spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示目录内容</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>cd</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>将当=
+前工作目录切换到指定目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>cp</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>复制=
+文件或目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>mv</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：移动文件或改名</s=
+pan></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>pwd</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>打印=
+当前工作目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>rm</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>删除=
+文件或目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>rmdir</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>删除=
+空目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>chgrp</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：改变文件所属工作=
+组</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>chmod</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>改变=
+文件访问权限</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>chown</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>改变=
+文件的所有者和所属工作组</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>find</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>查找=
+文件并执行指定的操作</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>ln</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>为文=
+件创建链接</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>mkdir</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>创建=
+目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>whereis<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>显示=
+指令及相关文件的路径</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>which</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>显示=
+指令的绝对路径</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>file</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：探测文件类型</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>touch </=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：设置文件的时间属=
+性</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>locate/s=
+locate</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：快速定位文件的路=
+径</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>dd</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：复制文件并进行内=
+容转换</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>updated<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>创建=
+或更新</span><span
+style=3D'font-family:Calibri' lang=3Den-US>slocate</span><span style=3D'fon=
+t-family:
+SimSun' lang=3Dzh-CN>数据库</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>dirname<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指定：去除文件名中的非=
+目录部分</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>pathchk<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：检查文件刘景明的=
+有效性和可移植性</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>ulink</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：条用</span><span style=
+=3D'font-family:
+Calibri' lang=3Den-US>unlink</span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>系统条用删除指定文件</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>basename=
+</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：去掉文件名中的路=
+径和后缀</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>rename</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：批量为文件改名</s=
+pan></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>文本编辑</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Vi</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：全屏幕纯文本编辑=
+器</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Emacs</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：全屏幕文本编辑器=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Ed</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：行文本编辑器</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Ex</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：以</span><span style=3D=
+'font-family:Calibri'
+lang=3Den-US>ex</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>模�=
+�运行</span><span
+style=3D'font-family:Calibri' lang=3Den-US>vi</span><span style=3D'font-fam=
+ily:SimSun'
+lang=3Dzh-CN>指令</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Jed</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：程序员的文本编辑=
+器</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Pico</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：文本编辑器</span></=
+p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Sed</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：用于文本过滤和转=
+换的流式编辑器</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Joe</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：全屏幕文本编辑器=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>文本过滤与处理</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Cat</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：连续文件并显示内=
+容</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>More</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：文件内容分屏查看=
+器</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Less</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：分屏显示文件内容=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Grep</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>在文=
+件中搜索匹配的行</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Head</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>显示=
+文件的头部内容</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Tail</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：输出文件尾部内容=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Wc</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：统计文件的字节数=
+、单词书和行数</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Uniq</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>报告=
+或忽略文件中的重复行</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Cut</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>删除=
+文件中的指定字段</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Sort</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：对文件进行行排序=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Join</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：将两个文件的相同=
+字段合并</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Split</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：将文件分割成碎片=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Tr</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：转换和删除字符</s=
+pan></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Tee</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：将输入内容复制到=
+标准输出或文件</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Tac</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：为行为单位反序链=
+接和打印文件</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Spell</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：拼写检查</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Paste</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：合并文件</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Diff</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：比较两个文件的不=
+同</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Cmp</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：比较两个文件</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Look</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示文件中以指定=
+字符串开头的行</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Ispell</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>拼写=
+检查程序</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Fold</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：指定文件显示的宽=
+度</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Fmt</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：优化文本格式</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>备份压缩</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Tar</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>智力高：打包压缩</span></=
+p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Gzip</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：</span><span style=3D'fo=
+nt-family:Calibri'
+lang=3Den-US>GUN</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>的�=
+��缩与解压缩工具</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Gunzip</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>解压=
+缩</span><span
+style=3D'font-family:Calibri' lang=3Den-US>.gz</span><span style=3D'font-fa=
+mily:SimSun'
+lang=3Dzh-CN>压缩包</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Bzip2</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>创建=
+和管理</span><span
+style=3D'font-family:Calibri' lang=3Den-US>.bz2</span><span style=3D'font-f=
+amily:
+SimSun' lang=3Dzh-CN>压缩包</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Bunzip2<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>,</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>加压=
+缩</span><span
+style=3D'font-family:Calibri' lang=3Den-US>.bz2</span><span style=3D'font-f=
+amily:
+SimSun' lang=3Dzh-CN>压缩包</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Cpio</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>存取=
+归档包中的文件</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Dump</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:ext2/ext3</span><span style=3D'font-family:SimSun' lang=3Dzh-=
+CN>文件备份工具</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Restore<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：还原</span><span style=
+=3D'font-family:
+Calibri' lang=3Den-US>dump</span><span style=3D'font-family:SimSun' lang=3D=
+zh-CN>备份</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Compress=
+</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>解压=
+缩</span><span
+style=3D'font-family:Calibri' lang=3Den-US>.Z</span><span style=3D'font-fam=
+ily:SimSun'
+lang=3Dzh-CN>压缩包</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Zip</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：压缩和文件打包工=
+具</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Unzip</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令</span><span style=3D'font-=
+family:Calibri'
+lang=3Den-US>:</span><span style=3D'font-family:SimSun' lang=3Dzh-CN>解压=
+缩</span><span
+style=3D'font-family:Calibri' lang=3Den-US>.zip</span><span style=3D'font-f=
+amily:
+SimSun' lang=3Dzh-CN>压缩包</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Shell</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>内部指令</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Echo</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：打印变量或字符串=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Kill</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：杀死进程</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Alias</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：设置命令别名</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Unalias<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：取消命令别名</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Jobs</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示任务列表</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Bg</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：后台执行作业</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Fg</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：将后台作业放到前=
+台执行</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Set</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示或设置</span><s=
+pan style=3D'font-family:
+Calibri' lang=3Den-US>shell</span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>特性及</span><span
+style=3D'font-family:Calibri' lang=3Den-US>shell</span><span style=3D'font-=
+family:
+SimSun' lang=3Dzh-CN>变量</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Unset</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：删除指定的</span><s=
+pan style=3D'font-family:
+Calibri' lang=3Den-US>shell</span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>变量与函数</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Env</spa=
+n><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：在定义的环境中执=
+行指令</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Type</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：判断内部指令和外=
+部指令</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Logout</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：退出登录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Exit</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：退出</span><span style=
+=3D'font-family:
+Calibri' lang=3Den-US>shell</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>export</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：将变量输出为环境=
+变量</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>wait</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：等待进行执行完后=
+返回终端</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>history<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示历史命令</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>read</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：从键盘读取变量值=
+</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>enable</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：激活或关闭内部命=
+令</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>exec</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：调用并执行指令</s=
+pan></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>ulimit</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：限制用户对</span><s=
+pan style=3D'font-family:
+Calibri' lang=3Den-US>shell </span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>资源的使用</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>umask</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：设置权限掩码</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>shopt</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示和设置</span><s=
+pan style=3D'font-family:
+Calibri' lang=3Den-US>shell</span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>行为选项</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>help</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示内部命令的帮=
+助信息</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>bind</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：命令行键序列功能=
+绑定设置</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>builtin<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：执行</span><span style=
+=3D'font-family:
+Calibri' lang=3Den-US>shell </span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>内部命令</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>command<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：调用指定的指令并=
+执行</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>declare<=
+/span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：声明</span><span style=
+=3D'font-family:
+Calibri' lang=3Den-US>shell </span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>变量</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>dirs.</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：显示目录堆栈</span=
+></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>pushd</s=
+pan><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：想目录对战中压入=
+目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>popd</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：从目录对战中弹出=
+目录</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>readonly=
+</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：定义制度</span><span=
+ style=3D'font-family:
+Calibri' lang=3Den-US>shell</span><span style=3D'font-family:SimSun' lang=
+=3Dzh-CN>变量或函数</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>fc</span=
+><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：修改历史命令并执=
+行</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>系统关机</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Ctrlaltd=
+el</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：设置</span><span style=
+=3D'font-family:
+Calibri' lang=3Den-US>crtl+alt+del</span><span style=3D'font-family:SimSun'
+lang=3Dzh-CN>组合件功能</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Halt</sp=
+an><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：关闭计算机</span></=
+p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Poweroff=
+</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：关闭计算机并切断=
+电源</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Reboot</=
+span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：重新启动计算机</s=
+pan></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-size:11.0pt'><span style=3D'font-family:Calibri' lang=3Den-US>Shutdown=
+</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>指令：关闭计算机</span></=
+p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>系统管理指令</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>用户和工作组管理</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Useradd</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Userdel</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Passwd</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Groupadd</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Groupdel</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Su</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Usermod</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Chfn</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Chsh</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Finger</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Gpasswd</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Groupmod</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Groups</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pwck</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Grpck</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Logname</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Newusers</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Chpasswd</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Nologin</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pwconv</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pwunconv</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Grpconv</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Grpunconv</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>硬件相关</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Arch</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Cdrecord</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Eject</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Volname</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lsusb</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lspci</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Setpci</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Hwclock</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Systool</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>磁盘命令</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Df</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Fdisk</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Parted</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mkfs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Badblocks</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Partprobe</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Converquota</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Grub</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lilo</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mkbootdisk</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Hdparm</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mkinitrd</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mkisofs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mknod</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mkswap</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Blockdev</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvcreate</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvscan</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvdisplay</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvremove</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvck</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvchange</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Pvchange</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgcreate</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgscan</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgdisplay</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgextend</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgreduce</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgchange</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgremove</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Vgconvert</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lvcreate</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lvscan</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lvdisplay</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lvextend</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lvreduce</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lvremove</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Lvresize</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:SimSun;font-size:11.0pt'>文件系统管理</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mount</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Umount</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mkfs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mke2fs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Fsck</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Dumpefs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>E2fsck</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Mountpoint</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Edquota</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Quotacheck</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Quotaoff</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Quaton</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Quota</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Quotatats</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Requota</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Swapoff</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Swapon</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Sync</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>E2image</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>E2label</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Tune2fs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Resize2fs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Stat</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Findfs</p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:8=
+pt;
+font-family:Calibri;font-size:11.0pt' lang=3Den-US>Blkid</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.9125in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:2.9125in'>
+
+<p style=3D'margin:0in;font-family:SimSun;font-size:20.0pt'><span lang=3Den=
+-US>OneNoteTitle
+</span><span lang=3Dzh-CN>操作</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5833=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2015</span><span style=3D'font-family:SimSun'>年</span><span
+style=3D'font-family:Calibri'>10</span><span style=3D'font-family:SimSun'>�=
+��</span><span
+style=3D'font-family:Calibri'>14</span><span style=3D'font-family:SimSun'>�=
+��</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:SimSun'>�=
+�期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+SimSun'>下午</span><span style=3D'font-family:Calibri'>10:33</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2173in;margin-left:0in;width:1.9791=
+in'>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:SimSun'
+lang=3Dzh-CN>按下</span><span style=3D'font-family:Calibri' lang=3Den-US>=
+tab</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>键自动补全</span></p>
+
+<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:SimSun'
+lang=3Dzh-CN>两下</span><span style=3D'font-family:Calibri' lang=3Den-US>=
+tab</span><span
+style=3D'font-family:SimSun' lang=3Dzh-CN>列出文件列表</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'text-align:left;margin:0in;font-family:宋体;font-size:9pt;col=
+or:#969696;
+direction:ltr'>已使用 Microsoft OneNote 2010 创建<br>
+一个用于存放所有笔记和信息的位置</p>
+
+</div>
+
+</body>
+
+</html>

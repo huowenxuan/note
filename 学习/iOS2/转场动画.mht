@@ -1,0 +1,2552 @@
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary="----=_NextPart_01D23EBB.A5F1A810"
+
+���ĵ�Ϊ�������ļ���ҳ����Ҳ��Ϊ��Web �������ļ����������������Ϣ�����������������༭����֧�֡�Web �������ļ���������֧�֡�Web ����������������� Windows? Internet Explorer?��
+
+------=_NextPart_01D23EBB.A5F1A810
+Content-Location: file:///C:/6F6DB23B/file0027.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3DProgId content=3DOneNote.File>
+<meta name=3DGenerator content=3D"Microsoft OneNote 14">
+<link id=3DMain-File rel=3DMain-File href=3Dfile0027.htm>
+<link rel=3DFile-List href=3D"file0027.files/filelist.xml">
+</head>
+
+<body lang=3Dzh-CN>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:7.3173in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:5.2006in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Den-US>OneNoteTitle </span><span style=3D'font-family:"Microsoft YaHe=
+i"'
+lang=3Dzh-CN>自定义转场动画</span><span style=3D'font-family:Calibri=
+' lang=3Den-US>1_</span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>push</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5833=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2015</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>10</span><span style=3D'font-family:"Microsof=
+t YaHei"'>月</span><span
+style=3D'font-family:Calibri'>30</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期五</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>7:16</s=
+pan></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2361in;margin-left:0in;width:7.3173=
+in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><a
+href=3D"http://blog.csdn.net/h1078954008/article/details/49514885">http://b=
+log.csdn.net/h1078954008/article/details/49514885</a></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><a
+href=3D"http://blog.sina.com.cn/u/5394581270">http://blog.sina.com.cn/u/539=
+4581270</a></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:10.5pt;color=
+:black'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>版本：Xcode 7.0.1</span><span lang=3De=
+n-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>语言：Objective-C</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>转场动画就是viewController之间切=
+换的动画。</span><span
+lang=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>主要有以下三种自定义方法：</p>
+
+<ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:embe=
+d;
+ margin-top:0in;margin-bottom:0in'>
+ <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#3F3=
+F3F'><span
+     style=3D'font-family:"microsoft yahei";font-size:11.25pt'>列Push &amp=
+; Pop</span></li>
+ <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#3F3=
+F3F'><span
+     style=3D'font-family:"microsoft yahei";font-size:11.25pt'>Modal</span>=
+</li>
+</ul>
+
+<ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:embe=
+d;
+ margin-top:0in;margin-bottom:0in'>
+ <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#3F3=
+F3F'><span
+     style=3D'font-family:"microsoft yahei";font-size:11.25pt'>Segue</span>=
+</li>
+</ul>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>第一种是UINavigationController的转�=
+��方法</span><span
+lang=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>第二种是模态跳转</span><span lang=
+=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>第三种是 Stroyboard 中的拖线，�=
+�于 UIStoryboardSegue
+类，通过继承这个类来自定义转场过程动画。</span><span la=
+ng=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>我对Storyboard不感兴趣，所以没做研究。在这�=
+�分享一下转场动画的纯代码实现方法。</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>Push</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>首先说一下 Push 这种转场的自定义，操作步骤=
+如下：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>准备工作</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>1、新建工程，删掉Main storyboard，把程序设置�=
+�General的Main Interface清空。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、
+新建一个类继承UIViewController，在AppDelegate中创建一个UINavi=
+gationController，设置root为ViewController。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>3、在ViewController创建一个ImageView，放在.h中</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#000088'>@property</span><span style=3D'color:#333333'> (</s=
+pan><span
+style=3D'color:#000088'>nonatomic</span><span style=3D'color:#333333'>, ret=
+ain) </span><span
+style=3D'color:#660066'>UIImageView</span><span style=3D'color:#333333'> *
+sourceImageView; </span><span style=3D'color:#880000'>// 源imageView，在=
+fromVC中</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>给ImageView添加一张图片</span><spa=
+n lang=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>再创建一个按钮，设置点击按钮进入SecondViewCo=
+ntroller。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>4、在SecondViewController也创建一个ImageView</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#000088'>@property</span><span style=3D'color:#333333'> (</s=
+pan><span
+style=3D'color:#000088'>nonatomic</span><span style=3D'color:#333333'>, ret=
+ain) </span><span
+style=3D'color:#660066'>UIImageView</span><span style=3D'color:#333333'> *
+avatarImageView; </span><span style=3D'color:#880000'>// 替身imageView，=
+在toVC中</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>开始写动画</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>5、 创建一个文件继承自 NSObject（我把它取名�=
+��PushTransition）， 并在<span
+style=3D'font-weight:bold'>.h</span>文件中遵守UIViewControllerAnimated=
+Transitioning协议。</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>由于</span><span style=3D'color:#000088'>Push</sp=
+an><span
+style=3D'color:#333333'>和</span><span style=3D'color:#000088'>Pop</span><=
+span
+style=3D'color:#333333'>是两套动画，所以需要两个这样的文件=
+，判断动画类型的办法在下面讨论。</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>6、实现协议的两个方法</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#880000'>// 指定动画的持续时长</span><span style=3D=
+'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'> </span></span><span style=3D'color:#0066=
+66'>1.</span><span
+style=3D'color:#333333'> (</span><span style=3D'color:#660066'>NSTimeInterv=
+al</span><span
+style=3D'color:#333333'>)transitionDuration；<br>
+</span><span style=3D'color:#880000'>// 转场动画的具体内容</span><=
+span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'> </span></span><span style=3D'color:#0066=
+66'>2.</span><span
+style=3D'color:#333333'> (</span><span style=3D'color:#000088'>void</span><=
+span
+style=3D'color:#333333'>)animateTransition:(</span><span style=3D'color:#00=
+0088'>id</span><span
+style=3D'color:#333333'>
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext；</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>7、在其中编写 Push 的动画。 具体的动画实现�=
+��程都在代码的注释里 :</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 指定动画的持续时长<br>
+- (NSTimeInterval)transitionDuration:(nullable id
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br>
+<span style=3D'mso-spacerun:yes'>    </span>return </span><span style=3D=
+'color:
+#006666'>0.5</span><span style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>}<br>
+// 转场动画的具体内容<br>
+- (void)animateTransition:(id
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br>
+<span style=3D'mso-spacerun:yes'>    </span>// 获取动画的源控制�=
+��和目标控制器<br>
+<span style=3D'mso-spacerun:yes'>    </span>ViewController * fromVC =3D
+[transitionContext
+viewControllerForKey:UITransitionContextFromViewControllerKey]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>SecondViewController * toVC =
+=3D
+[transitionContext viewControllerForKey:UITransitionContextToViewController=
+Key]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>UIView * container =3D
+transitionContext</span><span style=3D'color:#444444'>.containerView</span>=
+<span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>//
+创建一个imageView的截图，并把原本imageView隐藏，造成以为=
+移动的就是imageView的假象<br>
+<span style=3D'mso-spacerun:yes'>    </span>UIView * snapshotView =3D [f=
+romVC</span><span
+style=3D'color:#444444'>.sourceImageView</span><span style=3D'color:#333333=
+'>
+snapshotViewAfterScreenUpdates:NO]</span><span style=3D'color:#880000'>;</s=
+pan><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>snapshotView</span><span
+style=3D'color:#444444'>.frame</span><span style=3D'color:#333333'> =3D [co=
+ntainer
+convertRect:fromVC</span><span style=3D'color:#444444'>.sourceImageView.fra=
+me</span><span
+style=3D'color:#333333'> fromView:fromVC</span><span style=3D'color:#444444=
+'>.view</span><span
+style=3D'color:#333333'>]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.sourceImageView.hidden</span><span
+style=3D'color:#333333'> =3D YES</span><span style=3D'color:#880000'>;</spa=
+n></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 设置目标控制器的位置，并把透明度=
+设为</span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'>，在后面的动画中慢慢显示出来变为</s=
+pan><span style=3D'color:#006666'>1</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>toVC</span><span style=3D'co=
+lor:#444444'>.view.frame</span><span
+style=3D'color:#333333'> =3D [transitionContext finalFrameForViewController=
+:toVC]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>toVC</span><span style=3D'co=
+lor:#444444'>.view.alpha</span><span
+style=3D'color:#333333'> =3D </span><span style=3D'color:#006666'>0</span><=
+span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 都添加到container中。注意顺序<br>
+<span style=3D'mso-spacerun:yes'>    </span>[container addSubview:toVC</=
+span><span
+style=3D'color:#444444'>.view</span><span style=3D'color:#333333'>]</span><=
+span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[container addSubview:snapsh=
+otView]</span><span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 执行动画<br>
+<span style=3D'mso-spacerun:yes'>    </span>[UIView
+animateKeyframesWithDuration:[self transitionDuration:transitionContext] de=
+lay:</span><span
+style=3D'color:#006666'>0</span><span style=3D'color:#333333'>
+options:UIViewKeyframeAnimationOptionCalculationModeLinear
+animations:^{<br>
+<span style=3D'mso-spacerun:yes'>        </span>snapshotView</span><=
+span
+style=3D'color:#444444'>.frame</span><span style=3D'color:#333333'> =3D toV=
+C</span><span
+style=3D'color:#444444'>.avatarImageView.frame</span><span style=3D'color:#=
+880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>toVC</span><span
+style=3D'color:#444444'>.view.alpha</span><span style=3D'color:#333333'> =
+=3D </span><span
+style=3D'color:#006666'>1</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>} completion:^(BOOL finished)
+{<br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.sourceImageView.hidden</span><span style=3D'color:=
+#333333'>
+=3D NO</span><span style=3D'color:#880000'>;</span><span style=3D'color:#33=
+3333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>toVC</span><span
+style=3D'color:#444444'>.avatarImageView.image</span><span style=3D'color:#=
+333333'>
+=3D fromVC</span><span style=3D'color:#444444'>.sourceImageView.image</span=
+><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>[snapshotView
+removeFromSuperview]</span><span style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>//一定要记得动画完成后执行此方法，�=
+��系统管理 navigation<br>
+<span style=3D'mso-spacerun:yes'>        </span>[transitionContext
+completeTransition:YES]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}]</span><span style=3D'colo=
+r:#880000'>;</span><span
+style=3D'color:#333333'><br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>使用动画</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>回到ViewController中</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>8、 在ViewController.h中遵守UINavigationControllerDeleg=
+ate协议，并设置为self</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#880000'>//
+必须在viewDidAppear或者viewWillAppear中写，因为每次都需要将=
+delegate设为当前界面</span><span
+style=3D'color:#333333'><br>
+- (</span><span style=3D'color:#000088'>void</span><span style=3D'color:#33=
+3333'>)viewDidAppear:(</span><span
+style=3D'color:#660066'>BOOL</span><span style=3D'color:#333333'>)animated{=
+<br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>super</span><span
+style=3D'color:#333333'> viewDidAppear:animated];<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>self</span><span
+style=3D'color:#660066'>.navigationController.delegate</span><span
+style=3D'color:#333333'> =3D </span><span style=3D'color:#000088'>self</spa=
+n><span
+style=3D'color:#333333'>;<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>9、实现 UINavigationControllerDelegate 协议方法：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (</span><span style=3D'color:#000088'>id</span><s=
+pan
+style=3D'color:#333333'>&lt;UIViewControllerAnimatedTransitioning&gt;)navig=
+ationController:(</span><span
+style=3D'color:#660066'>UINavigationController</span><span style=3D'color:#=
+333333'>
+*)navigationController
+animationControllerForOperation:(UINavigationControllerOperation)operation
+fromViewController:(</span><span style=3D'color:#660066'>UIViewController</=
+span><span
+style=3D'color:#333333'> *)fromVC toViewController:(</span><span
+style=3D'color:#660066'>UIViewController</span><span style=3D'color:#333333=
+'>
+*)toVC{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>if</span><span
+style=3D'color:#333333'> (operation =3D=3D UINavigationControllerOperationP=
+ush){ </span><span
+style=3D'color:#880000'>// 就是在这里判断是哪种动画类型</span=
+><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> [[PushTransition alloc] init]; </span><span
+style=3D'color:#880000'>// 返回push动画的类</span><span style=3D'colo=
+r:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}</span><span style=3D'color=
+:#000088'>else</span><span
+style=3D'color:#333333'>{<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#006666'>nil</span><sp=
+an
+style=3D'color:#333333'>;<br>
+<span style=3D'mso-spacerun:yes'>    </span>}<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>至此，push的转场动画就完成了</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:7.5361in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:6.6041in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Den-US>OneNoteTitle </span><span style=3D'font-family:"Microsoft YaHe=
+i"'
+lang=3Dzh-CN>自定义转场动画</span><span style=3D'font-family:Calibri=
+' lang=3Den-US>2_</span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>自定义</span><span
+style=3D'font-family:Calibri' lang=3Den-US>Pop</span><span style=3D'font-fa=
+mily:"Microsoft YaHei"'
+lang=3Den-US>转场动画并加入手势驱动</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2015</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>11</span><span style=3D'font-family:"Microsof=
+t YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期日</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>上午</span><span style=3D'font-family:Calibri'>10:32</=
+span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0701in;margin-left:0in;width:7.5361=
+in'>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>继续使用上个程序，把push改为pop只需要做很�=
+�的工作就能完成</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>1、复制PushTransition.h和PushTransition.m。命名为Pop=
+Transition.h和PopTransition.m</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、在PopTransition.m中把</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>ViewController * fromVC =3D</span><span style=3D'co=
+lor:#008800'>
+[transitionContext
+viewControllerForKey:UITransitionContextFromViewControllerKey];<br>
+SecondViewController * toVC =3D [transitionContext
+viewControllerForKey:UITransitionContextToViewControllerKey];</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>改为：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>SecondViewController * fromVC =3D</span><span
+style=3D'color:#008800'> [transitionContext
+viewControllerForKey:UITransitionContextFromViewControllerKey];<br>
+ViewController * toVC =3D [transitionContext
+viewControllerForKey:UITransitionContextToViewControllerKey];</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>两个类名交换位置即可</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>3、把所有的avatarImageView改为sourceImageView，把�=
+�有的sourceImageView改为avatarImageView，如下：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 转场动画的具体内容<br>
+- (void)animateTransition:(id
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br>
+<span style=3D'mso-spacerun:yes'>    </span>// 获取动画的源控制�=
+��和目标控制器<br>
+<span style=3D'mso-spacerun:yes'>    </span>SecondViewController * fromV=
+C =3D
+[transitionContext
+viewControllerForKey:UITransitionContextFromViewControllerKey]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>ViewController * toVC =3D
+[transitionContext viewControllerForKey:UITransitionContextToViewController=
+Key]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>UIView * container =3D
+transitionContext</span><span style=3D'color:#444444'>.containerView</span>=
+<span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>//
+创建一个imageView的截图，并把原本imageView隐藏，造成以为=
+移动的就是imageView的假象<br>
+<span style=3D'mso-spacerun:yes'>    </span>UIView * snapshotView =3D [f=
+romVC</span><span
+style=3D'color:#444444'>.avatarImageView</span><span style=3D'color:#333333=
+'>
+snapshotViewAfterScreenUpdates:NO]</span><span style=3D'color:#880000'>;</s=
+pan><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>snapshotView</span><span
+style=3D'color:#444444'>.frame</span><span style=3D'color:#333333'> =3D [co=
+ntainer
+convertRect:fromVC</span><span style=3D'color:#444444'>.avatarImageView.fra=
+me</span><span
+style=3D'color:#333333'> fromView:fromVC</span><span style=3D'color:#444444=
+'>.view</span><span
+style=3D'color:#333333'>]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.avatarImageView.hidden</span><span
+style=3D'color:#333333'> =3D YES</span><span style=3D'color:#880000'>;</spa=
+n></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 设置目标控制器的位置，并把透明度=
+设为</span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'>，在后面的动画中慢慢显示出来变为</s=
+pan><span style=3D'color:#006666'>1</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>toVC</span><span style=3D'co=
+lor:#444444'>.view.frame</span><span
+style=3D'color:#333333'> =3D [transitionContext finalFrameForViewController=
+:toVC]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>toVC</span><span style=3D'co=
+lor:#444444'>.sourceImageView.hidden</span><span
+style=3D'color:#333333'> =3D YES</span><span style=3D'color:#880000'>;</spa=
+n></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 都添加到container中。注意顺序<br>
+//<span style=3D'mso-spacerun:yes'>    </span>[container addSubview:toVC=
+</span><span
+style=3D'color:#444444'>.view</span><span style=3D'color:#333333'>]</span><=
+span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[container insertSubview:toV=
+C</span><span
+style=3D'color:#444444'>.view</span><span style=3D'color:#333333'>
+belowSubview:fromVC</span><span style=3D'color:#444444'>.view</span><span
+style=3D'color:#333333'>]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[container addSubview:snapsh=
+otView]</span><span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 执行动画<br>
+<span style=3D'mso-spacerun:yes'>    </span>[UIView
+animateKeyframesWithDuration:[self transitionDuration:transitionContext] de=
+lay:</span><span
+style=3D'color:#006666'>0</span><span style=3D'color:#333333'>
+options:UIViewKeyframeAnimationOptionCalculationModeLinear
+animations:^{<br>
+<span style=3D'mso-spacerun:yes'>        </span>snapshotView</span><=
+span
+style=3D'color:#444444'>.frame</span><span style=3D'color:#333333'> =3D toV=
+C</span><span
+style=3D'color:#444444'>.sourceImageView.frame</span><span style=3D'color:#=
+880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.alpha</span><span style=3D'color:#333333'> =
+=3D </span><span
+style=3D'color:#006666'>0</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>} completion:^(BOOL finished)
+{<br>
+<span style=3D'mso-spacerun:yes'>        </span>toVC</span><span
+style=3D'color:#444444'>.sourceImageView.hidden</span><span style=3D'color:=
+#333333'>
+=3D NO</span><span style=3D'color:#880000'>;</span><span style=3D'color:#33=
+3333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>[snapshotView
+removeFromSuperview]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.avatarImageView.hidden</span><span style=3D'color:=
+#333333'>
+=3D NO</span><span style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>//一定要记得动画完成后执行此方法，�=
+��系统管理 navigation<br>
+<span style=3D'mso-spacerun:yes'>        </span>[transitionContext
+completeTransition: ![transitionContext transitionWasCancelled]]</span><span
+style=3D'color:#880000'>; //
+如果参数写成yes，当用户取消pop时，会继续执行动画，也=
+就是让detailVC消失，设置成这个参数，会避免这样的错误<=
+/span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}]</span><span style=3D'colo=
+r:#880000'>;</span><span
+style=3D'color:#333333'><br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>4、修改ViewController中的判断动画类型的方法，=
+加入pop的判断：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (</span><span style=3D'color:#000088'>id</span><s=
+pan
+style=3D'color:#333333'>&lt;UIViewControllerAnimatedTransitioning&gt;)navig=
+ationController:(</span><span
+style=3D'color:#660066'>UINavigationController</span><span style=3D'color:#=
+333333'>
+*)navigationController
+animationControllerForOperation:(UINavigationControllerOperation)operation
+fromViewController:(</span><span style=3D'color:#660066'>UIViewController</=
+span><span
+style=3D'color:#333333'> *)fromVC toViewController:(</span><span
+style=3D'color:#660066'>UIViewController</span><span style=3D'color:#333333=
+'>
+*)toVC{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>if</span><span
+style=3D'color:#333333'> (operation =3D=3D UINavigationControllerOperationP=
+ush){<span
+style=3D'mso-spacerun:yes'>  </span></span><span style=3D'color:#880000'>//
+就是在这里判断是哪种动画类型</span><span style=3D'color:#3333=
+33'><br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> [[PushTransition alloc] init]; </span><span
+style=3D'color:#880000'>// 返回push动画的类</span><span style=3D'colo=
+r:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}</span><span style=3D'color=
+:#000088'>else</span><span
+style=3D'color:#333333'>{<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#006666'>nil</span><sp=
+an
+style=3D'color:#333333'>;<br>
+<span style=3D'mso-spacerun:yes'>    </span>}<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>系统默认的
+Push 和 Pop 动画都支持手势驱动，并且可以根据手势移动�=
+�离改变动画完成度。幸运的是，Cocoa
+已经集成了相关方法，我们只用告诉它百分比就可以了。=
+所以下一步就是 手势驱动。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>1、在 SecondViewController 的 viewDidLoad() 方法中，�=
+��入滑动手势。</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'><span style=3D'mso-spacerun:yes'>    </span></sp=
+an><span
+style=3D'color:#880000'>// 加入左侧边界手势</span><span style=3D'co=
+lor:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>UIScreenEdgePanGestureRecogn=
+izer *
+edgePan =3D [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:</span=
+><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'> action:</=
+span><span
+style=3D'color:#000088'>@selector</span><span style=3D'color:#333333'>(edge=
+PanGesture:)];<br>
+<span style=3D'mso-spacerun:yes'>    </span>edgePan</span><span style=3D=
+'color:
+#660066'>.edges</span><span style=3D'color:#333333'> =3D UIRectEdgeLeft;<br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>self</span><span
+style=3D'color:#660066'>.view</span><span style=3D'color:#333333'>
+addGestureRecognizer:edgePan];</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、遵循UINavigationControllerDelegate协议，因为navig=
+ationController的动画需要在这里执行，所以需要设置代理为=
+自己</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (</span><span style=3D'color:#000088'>void</span>=
+<span
+style=3D'color:#333333'>)viewDidAppear:(</span><span style=3D'color:#660066=
+'>BOOL</span><span
+style=3D'color:#333333'>)animated{<br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>super</span><span
+style=3D'color:#333333'> viewDidAppear:animated];<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>self</span><span
+style=3D'color:#660066'>.navigationController.delegate</span><span
+style=3D'color:#333333'> =3D </span><span style=3D'color:#000088'>self</spa=
+n><span
+style=3D'color:#333333'>;<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>3、在手势监听方法中，创建 UIPercentDrivenInterac=
+tiveTransition
+属性，并实现手势百分比更新。</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>//
+在手势监听方法中，创建UIPercentDrivenInteractiveTransition属性=
+，并实现手势百分比更新<br>
+- (void)edgePanGesture:(UIScreenEdgePanGestureRecognizer *)edgePan{<br>
+<span style=3D'mso-spacerun:yes'>    </span>// 进度值，这是左侧�=
+��界的算法，如果要改为右侧边界，改为self</span><span
+style=3D'color:#444444'>.view.bounds.size.width</span><span style=3D'color:=
+#333333'>
+/ [edgePan translationInView:self</span><span style=3D'color:#444444'>.view=
+</span><span
+style=3D'color:#333333'>]</span><span style=3D'color:#444444'>.x</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>CGFloat progress =3D [edgePan
+translationInView:self</span><span style=3D'color:#444444'>.view</span><span
+style=3D'color:#333333'>]</span><span style=3D'color:#444444'>.x</span><span
+style=3D'color:#333333'> / self</span><span style=3D'color:#444444'>.view.b=
+ounds.size.width</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>if (edgePan</span><span
+style=3D'color:#444444'>.state</span><span style=3D'color:#333333'> =3D=3D
+UIGestureRecognizerStateBegan) {<br>
+<span style=3D'mso-spacerun:yes'>        </span>self</span><span
+style=3D'color:#444444'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>
+=3D [[UIPercentDrivenInteractiveTransition alloc] init]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>[self</span><span
+style=3D'color:#444444'>.navigationController</span><span style=3D'color:#3=
+33333'>
+popViewControllerAnimated:YES]</span><span style=3D'color:#880000'>;</span>=
+</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>}else if(edgePan</span><span style=3D'color:#444444=
+'>.state</span><span
+style=3D'color:#333333'> =3D=3D UIGestureRecognizerStateChanged){<br>
+<span style=3D'mso-spacerun:yes'>        </span>[self</span><span
+style=3D'color:#444444'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>
+updateInteractiveTransition:progress]</span><span style=3D'color:#880000'>;=
+</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}else if(edgePan</span><span
+style=3D'color:#444444'>.state</span><span style=3D'color:#333333'> =3D=3D
+UIGestureRecognizerStateCancelled || edgePan</span><span style=3D'color:#44=
+4444'>.state</span><span
+style=3D'color:#333333'> =3D=3D UIGestureRecognizerStateEnded){<br>
+<span style=3D'mso-spacerun:yes'>        </span>if(progress &gt; </s=
+pan><span
+style=3D'color:#006666'>0.5</span><span style=3D'color:#333333'>){<br>
+<span style=3D'mso-spacerun:yes'>            </span>[self</span>=
+<span
+style=3D'color:#444444'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>
+finishInteractiveTransition]</span><span style=3D'color:#880000'>;</span><s=
+pan
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>}else{<br>
+<span style=3D'mso-spacerun:yes'>            </span>[self</span>=
+<span
+style=3D'color:#444444'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>
+cancelInteractiveTransition]</span><span style=3D'color:#880000'>;</span><s=
+pan
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>}<br>
+<span style=3D'mso-spacerun:yes'>        </span>self</span><span
+style=3D'color:#444444'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>
+=3D nil</span><span style=3D'color:#880000'>;</span><span style=3D'color:#3=
+33333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>4、实现返回 UIViewControllerInteractiveTransitioning �=
+�方法并返回刚刚创建的
+UIPercentDrivenInteractiveTransition属性。</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (</span><span style=3D'color:#000088'>id</span><s=
+pan
+style=3D'color:#333333'>&lt;UIViewControllerInteractiveTransitioning&gt;)na=
+vigationController:(</span><span
+style=3D'color:#660066'>UINavigationController</span><span style=3D'color:#=
+333333'>
+*)navigationController interactionControllerForAnimationController:(</span>=
+<span
+style=3D'color:#000088'>id</span><span style=3D'color:#333333'>&lt;UIViewCo=
+ntrollerAnimatedTransitioning&gt;)animationController{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>if</span><span
+style=3D'color:#333333'>([animationController isKindOfClass:[PopTransition
+class]]){<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#000088'>self</span><s=
+pan
+style=3D'color:#660066'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>;<br>
+<span style=3D'mso-spacerun:yes'>    </span>}</span><span style=3D'color=
+:#000088'>else</span><span
+style=3D'color:#333333'>{<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#006666'>nil</span><sp=
+an
+style=3D'color:#333333'>;<br>
+<span style=3D'mso-spacerun:yes'>    </span>}<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>5、还需要设置一下返回动画，否则手势驱动�=
+�会生效</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (</span><span style=3D'color:#000088'>id</span><s=
+pan
+style=3D'color:#333333'>&lt;UIViewControllerAnimatedTransitioning&gt;)navig=
+ationController:(</span><span
+style=3D'color:#660066'>UINavigationController</span><span style=3D'color:#=
+333333'>
+*)navigationController
+animationControllerForOperation:(UINavigationControllerOperation)operation
+fromViewController:(</span><span style=3D'color:#660066'>UIViewController</=
+span><span
+style=3D'color:#333333'> *)fromVC toViewController:(</span><span
+style=3D'color:#660066'>UIViewController</span><span style=3D'color:#333333=
+'>
+*)toVC{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>if</span><span
+style=3D'color:#333333'> (operation =3D=3D
+UINavigationControllerOperationPop){<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> [[PopTransition alloc] init]; </span><span
+style=3D'color:#880000'>// 返回pop动画的类</span><span style=3D'color=
+:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}</span><span style=3D'color=
+:#000088'>else</span><span
+style=3D'color:#333333'>{<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>return</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#006666'>nil</span><sp=
+an
+style=3D'color:#333333'>;<br>
+<span style=3D'mso-spacerun:yes'>    </span>}<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span style=3D'font-weight:bold'>完成</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:7.6305in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:.0215in;width:6.5in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Den-US>OneNoteTitle </span><span style=3D'font-family:"Microsoft YaHe=
+i"'
+lang=3Dzh-CN>自定义转场动画</span><span style=3D'font-family:Calibri=
+' lang=3Den-US>3_</span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>自定义模态跳转�=
+��</span><span
+style=3D'font-family:Calibri' lang=3Den-US>P</span><span style=3D'font-fami=
+ly:Calibri'
+lang=3Dzh-CN>resent</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:.0215in;width:1.=
+5138in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2015</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>11</span><span style=3D'font-family:"Microsof=
+t YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期日</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>12:35</=
+span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.1486in;margin-left:0in;width:7.6305=
+in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>Modal</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>modal转场方式即使用 presentViewController()
+方法推出的方式，默认情况下，第二个视图从屏幕下方弹=
+出。下面就来介绍下 modal 方式转场动画的自定义。</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>present</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>准备</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>1、创建一个新的工程，删掉Main，在AppDelegate�=
+�创建自定义UIWindow，设置rootVC为ViewController。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、在ViewController中创建一个全屏的ImageView，并=
+且指定一张图片；新建一个按钮用于present。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>3、新建一个SecondViewController。�=
+�样创建一个全屏的ImageView，指定一张和ViewController不同的=
+图片，新建一个同于dismiss的按钮</span><span
+lang=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>开始</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>1、创建一个文件继承自 NSObject，取名为PresentT=
+ransition并在.h中遵守
+UIViewControllerAnimatedTransitioning协议。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、实现协议的两个方法，并在其中编写 Push �=
+�动画。 具体的动画实现过程都在代码的注释里：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 返回动画的时间<br>
+- (NSTimeInterval)transitionDuration:(nullable id
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br>
+<span style=3D'mso-spacerun:yes'>    </span>return </span><span style=3D=
+'color:
+#006666'>0.8</span><span style=3D'color:#880000'>;</span><span style=3D'col=
+or:#333333'><br>
+}<br>
+- (void)animateTransition:(id
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br>
+<span style=3D'mso-spacerun:yes'>    </span>ViewController * fromVC =3D
+[transitionContext viewControllerForKey:UITransitionContextFromViewControll=
+erKey]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>SecondViewController * toVC =
+=3D
+[transitionContext viewControllerForKey:UITransitionContextToViewController=
+Key]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>UIView * container =3D
+[transitionContext containerView]</span><span style=3D'color:#880000'>;</sp=
+an></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>[container addSubview:toVC</span><span style=3D'col=
+or:#444444'>.view</span><span
+style=3D'color:#333333'>]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[container bringSubviewToFro=
+nt:fromVC</span><span
+style=3D'color:#444444'>.view</span><span style=3D'color:#333333'>]</span><=
+span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 改变m34<br>
+<span style=3D'mso-spacerun:yes'>    </span>CATransform3D transfrom =3D
+CATransform3DIdentity</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>transfrom</span><span
+style=3D'color:#444444'>.m</span><span style=3D'color:#333333'>34 =3D -</sp=
+an><span
+style=3D'color:#006666'>0.002</span><span style=3D'color:#880000'>;</span><=
+span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>container</span><span
+style=3D'color:#444444'>.layer.sublayerTransform</span><span style=3D'color=
+:#333333'>
+=3D transfrom</span><span style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 设置archPoint和position<br>
+<span style=3D'mso-spacerun:yes'>    </span>CGRect initalFrame =3D
+[transitionContext initialFrameForViewController:fromVC]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>toVC</span><span style=3D'co=
+lor:#444444'>.view.frame</span><span
+style=3D'color:#333333'> =3D initalFrame</span><span style=3D'color:#880000=
+'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.view.frame</span><span
+style=3D'color:#333333'> =3D initalFrame</span><span style=3D'color:#880000=
+'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.view.layer.anchorPoint</span><span
+style=3D'color:#333333'> =3D CGPointMake(</span><span style=3D'color:#00666=
+6'>0</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>0.5</span><s=
+pan
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.view.layer.position</span><span
+style=3D'color:#333333'> =3D CGPointMake(</span><span style=3D'color:#00666=
+6'>0</span><span
+style=3D'color:#333333'>, initalFrame</span><span style=3D'color:#444444'>.=
+size.height</span><span
+style=3D'color:#333333'> / </span><span style=3D'color:#006666'>2.0</span><=
+span
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 添加阴影效果<br>
+<span style=3D'mso-spacerun:yes'>    </span>CAGradientLayer * shadowLaye=
+r =3D
+[[CAGradientLayer alloc] init]</span><span style=3D'color:#880000'>;</span>=
+<span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.colors</span><span style=3D'color:#333333'> =3D@[<=
+br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>[UIColor
+colorWithWhite:</span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'> alpha:</span><span style=3D'color:#006666'>1</span=
+><span
+style=3D'color:#333333'>],<br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>[UIColor
+colorWithWhite:</span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'> alpha:</span><span style=3D'color:#006666'>0.5</sp=
+an><span
+style=3D'color:#333333'>],<br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>[UIColor
+colorWithWhite:</span><span style=3D'color:#006666'>1</span><span
+style=3D'color:#333333'> alpha:</span><span style=3D'color:#006666'>0.5</sp=
+an><span
+style=3D'color:#333333'>]<br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.startPoint</span><span style=3D'color:#333333'> =3D
+CGPointMake(</span><span style=3D'color:#006666'>0</span><span style=3D'col=
+or:#333333'>,
+</span><span style=3D'color:#006666'>0.5</span><span style=3D'color:#333333=
+'>)</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.endPoint</span><span style=3D'color:#333333'> =3D
+CGPointMake(</span><span style=3D'color:#006666'>1</span><span style=3D'col=
+or:#333333'>,
+</span><span style=3D'color:#006666'>0.5</span><span style=3D'color:#333333=
+'>)</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.frame</span><span style=3D'color:#333333'> =3D ini=
+talFrame</span><span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>UIView * shadow =3D [[UIView alloc]
+initWithFrame:initalFrame]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadow</span><span style=3D'=
+color:#444444'>.backgroundColor</span><span
+style=3D'color:#333333'> =3D [UIColor clearColor]</span><span style=3D'colo=
+r:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[shadow</span><span style=3D=
+'color:
+#444444'>.layer</span><span style=3D'color:#333333'> addSublayer:shadowLaye=
+r]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[fromVC</span><span style=3D=
+'color:
+#444444'>.view</span><span style=3D'color:#333333'> addSubview:shadow]</spa=
+n><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadow</span><span style=3D'=
+color:#444444'>.alpha</span><span
+style=3D'color:#333333'> =3D </span><span style=3D'color:#006666'>0</span><=
+span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 动画<br>
+<span style=3D'mso-spacerun:yes'>    </span>[UIView
+animateKeyframesWithDuration:[self transitionDuration:transitionContext] de=
+lay:</span><span
+style=3D'color:#006666'>0</span><span style=3D'color:#333333'> options:</sp=
+an><span
+style=3D'color:#006666'>2</span><span style=3D'color:#333333'>
+animations:^{<br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.transform</span><span style=3D'color:#3=
+33333'>
+=3D CATransform3DMakeRotation(-M_PI_2, </span><span style=3D'color:#006666'=
+>0</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>1</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>shadow</span><span
+style=3D'color:#444444'>.alpha</span><span style=3D'color:#333333'> =3D </s=
+pan><span
+style=3D'color:#006666'>1.0</span><span style=3D'color:#880000'>;</span><sp=
+an
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>} completion:^(BOOL finished)
+{<br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.anchorPoint</span><span style=3D'color:=
+#333333'>
+=3D CGPointMake(</span><span style=3D'color:#006666'>0.5</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>0.5</span><s=
+pan
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.position</span><span style=3D'color:#33=
+3333'> =3D
+CGPointMake(CGRectGetMidX(initalFrame), CGRectGetMidY(initalFrame))</span><=
+span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.transform</span><span style=3D'color:#3=
+33333'>
+=3D CATransform3DIdentity</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>[shadow removeFromSu=
+perview]</span><span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt'><span style=3D'font-family:Calibri;
+color:#333333' lang=3Den-US><span style=3D'mso-spacerun:yes'>       =
+   </span></span><span
+style=3D'font-family:"Microsoft YaHei";color:#333333' lang=3Dzh-CN>[transit=
+ionContext
+completeTransition:YES]</span><span style=3D'font-family:"Microsoft YaHei";
+color:#880000' lang=3Dzh-CN>;</span><span style=3D'font-family:"Microsoft Y=
+aHei";
+color:#333333' lang=3Dzh-CN><br>
+<span style=3D'mso-spacerun:yes'>    </span>}]</span><span style=3D'font=
+-family:
+"Microsoft YaHei";color:#880000' lang=3Dzh-CN>;</span><span style=3D'font-f=
+amily:
+"Microsoft YaHei";color:#333333' lang=3Dzh-CN><br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>使用动画</p>
+
+<p style=3D'margin:0in;font-size:11.25pt'><span style=3D'font-family:"micro=
+soft yahei";
+color:#3F3F3F' lang=3Dzh-CN>1、让 FirstViewController 遵守
+UIViewControllerTransitioningDelegate 协议，并在init中将 self.transi=
+tioningDelegate
+设置为 self。</span><span style=3D'font-family:"microsoft yahei";color:=
+#E84C22'
+lang=3Dzh-CN>（跳转前一定要设置将要跳转的</span><span style=
+=3D'font-family:Calibri;color:#E84C22'
+lang=3Den-US>VC</span><span style=3D'font-family:"microsoft yahei";color:#E=
+84C22'
+lang=3Dzh-CN>的delegate）</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'>.transitio=
+ningDelegate
+=3D </span><span style=3D'color:#000088'>self</span><span style=3D'color:#3=
+33333'>;</span></p>
+
+<p style=3D'margin:0in'><img src=3D"file0027.files/image001.png" width=3D299
+height=3D287 alt=3D"计算机生成了可选文字: dod "></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>如果想像上图，类似淘宝购买时一样present后�=
+�本视图不被移除，依然可以显示，需要设置、</p>
+
+<p style=3D'margin:0in;font-family:"Chalkboard SE Light";font-size:13.5pt'>=
+<span
+style=3D'color:#DE38A6'>self</span><span style=3D'color:#979797'>.</span><s=
+pan
+style=3D'color:#00B1FF'>modalPresentationStyle</span><span style=3D'color:#=
+979797'>
+=3D .</span><span style=3D'color:#00B1FF'>Custom</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、实现 UIViewControllerTransitioningDelegate 协议的�=
+�个方法，用来指定动画类。</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#880000'>// present动画</span><span style=3D'color:#333333=
+'><br>
+- (</span><span style=3D'color:#000088'>id</span><span style=3D'color:#3333=
+33'>&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForPre=
+sentedController:(</span><span
+style=3D'color:#660066'>UIViewController</span><span style=3D'color:#333333=
+'>
+*)presented presentingController:(</span><span style=3D'color:#660066'>UIVi=
+ewController</span><span
+style=3D'color:#333333'> *)presenting sourceController:(</span><span
+style=3D'color:#660066'>UIViewController</span><span style=3D'color:#333333=
+'>
+*)source{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>return</span><span
+style=3D'color:#333333'> [[PresentTransition alloc] init];<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>3、在present按钮的点击方法中，必须把SecondView=
+Controller的transitioningDelegate也设置为self，让ViewController管�=
+�Second的动画</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (</span><span style=3D'color:#000088'>void</span>=
+<span
+style=3D'color:#333333'>)presentClick{<br>
+<span style=3D'mso-spacerun:yes'>    </span>SecondViewController * secon=
+dVC =3D
+[[SecondViewController alloc] init];<br>
+<span style=3D'mso-spacerun:yes'>    </span>secondVC</span><span
+style=3D'color:#660066'>.transitioningDelegate</span><span style=3D'color:#=
+333333'>
+=3D </span><span style=3D'color:#000088'>self</span><span style=3D'color:#3=
+33333'>; </span><span
+style=3D'color:#880000'>// 必须second同样设置delegate才有动画</sp=
+an><span style=3D'color:
+#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>self</span><span
+style=3D'color:#333333'> presentViewController:secondVC animated:</span><sp=
+an
+style=3D'color:#006666'>YES</span><span style=3D'color:#333333'>
+completion:^{<br>
+<span style=3D'mso-spacerun:yes'>    </span>}];<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>自定义Present动画完成</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:7.7131in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:6.5in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Den-US>OneNoteTitle </span><span style=3D'font-family:"Microsoft YaHe=
+i"'
+lang=3Dzh-CN>自定义转场动画</span><span style=3D'font-family:Calibri=
+' lang=3Den-US>4_</span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>自定义模态跳转�=
+��dismiss与手势驱动</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2015</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>11</span><span style=3D'font-family:"Microsof=
+t YaHei"'>月</span><span
+style=3D'font-family:Calibri'>1</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期日</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>下午</span><span style=3D'font-family:Calibri'>12:36</=
+span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2597in;margin-left:0in;width:7.7131=
+in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>Dismiss</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'><span lang=3Dzh-CN>接着使用上一个代码</span><span l=
+ang=3Den-US>&nbsp;</span></p>
+
+<p style=3D'margin:0in'><a
+href=3D"http://blog.csdn.net/h1078954008/article/details/49556809"><span
+style=3D'font-family:"microsoft yahei";font-size:11.25pt'>http://blog.csdn.=
+net/h1078954008/article/details/49556809</span></a></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt'>&nb=
+sp;</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>1、新建PresentTransition继承NSObject，并在.h中遵�=
+�UIViewControllerAnimatedTransitioning协议。</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、实现协议的两个方法，并在其中编写 Push �=
+�动画。类似Present，只需要修改少量代码：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 返回动画的时间<br>
+- (NSTimeInterval)transitionDuration:(nullable id
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br>
+<span style=3D'mso-spacerun:yes'>    </span>return </span><span style=3D=
+'color:
+#006666'>0.8</span><span style=3D'color:#880000'>;</span><span style=3D'col=
+or:#333333'><br>
+}<br>
+- (void)animateTransition:(id
+&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br>
+<span style=3D'mso-spacerun:yes'>    </span>ViewController * fromVC =3D
+[transitionContext viewControllerForKey:UITransitionContextFromViewControll=
+erKey]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>SecondViewController * toVC =
+=3D
+[transitionContext viewControllerForKey:UITransitionContextToViewController=
+Key]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>UIView * container =3D
+[transitionContext containerView]</span><span style=3D'color:#880000'>;</sp=
+an></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>[container addSubview:toVC</span><span style=3D'col=
+or:#444444'>.view</span><span
+style=3D'color:#333333'>]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[container bringSubviewToFro=
+nt:fromVC</span><span
+style=3D'color:#444444'>.view</span><span style=3D'color:#333333'>]</span><=
+span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 改变m34<br>
+<span style=3D'mso-spacerun:yes'>    </span>CATransform3D transfrom =3D
+CATransform3DIdentity</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>transfrom</span><span
+style=3D'color:#444444'>.m</span><span style=3D'color:#333333'>34 =3D -</sp=
+an><span
+style=3D'color:#006666'>0.002</span><span style=3D'color:#880000'>;</span><=
+span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>container</span><span
+style=3D'color:#444444'>.layer.sublayerTransform</span><span style=3D'color=
+:#333333'>
+=3D transfrom</span><span style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 设置archPoint和position<br>
+<span style=3D'mso-spacerun:yes'>    </span>CGRect initalFrame =3D
+[transitionContext initialFrameForViewController:fromVC]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>toVC</span><span style=3D'co=
+lor:#444444'>.view.frame</span><span
+style=3D'color:#333333'> =3D initalFrame</span><span style=3D'color:#880000=
+'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.view.frame</span><span
+style=3D'color:#333333'> =3D initalFrame</span><span style=3D'color:#880000=
+'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.view.layer.anchorPoint</span><span
+style=3D'color:#333333'> =3D CGPointMake(</span><span style=3D'color:#00666=
+6'>0</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>0.5</span><s=
+pan
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>fromVC</span><span style=3D'=
+color:#444444'>.view.layer.position</span><span
+style=3D'color:#333333'> =3D CGPointMake(</span><span style=3D'color:#00666=
+6'>0</span><span
+style=3D'color:#333333'>, initalFrame</span><span style=3D'color:#444444'>.=
+size.height</span><span
+style=3D'color:#333333'> / </span><span style=3D'color:#006666'>2.0</span><=
+span
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 添加阴影效果<br>
+<span style=3D'mso-spacerun:yes'>    </span>CAGradientLayer * shadowLaye=
+r =3D
+[[CAGradientLayer alloc] init]</span><span style=3D'color:#880000'>;</span>=
+<span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.colors</span><span style=3D'color:#333333'> =3D@[<=
+br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>[UIColor
+colorWithWhite:</span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'> alpha:</span><span style=3D'color:#006666'>1</span=
+><span
+style=3D'color:#333333'>],<br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>[UIColor
+colorWithWhite:</span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'> alpha:</span><span style=3D'color:#006666'>0.5</sp=
+an><span
+style=3D'color:#333333'>],<br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>[UIColor
+colorWithWhite:</span><span style=3D'color:#006666'>1</span><span
+style=3D'color:#333333'> alpha:</span><span style=3D'color:#006666'>0.5</sp=
+an><span
+style=3D'color:#333333'>]<br>
+<span style=3D'mso-spacerun:yes'>                     =
+    </span>]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.startPoint</span><span style=3D'color:#333333'> =3D
+CGPointMake(</span><span style=3D'color:#006666'>0</span><span style=3D'col=
+or:#333333'>,
+</span><span style=3D'color:#006666'>0.5</span><span style=3D'color:#333333=
+'>)</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.endPoint</span><span style=3D'color:#333333'> =3D
+CGPointMake(</span><span style=3D'color:#006666'>1</span><span style=3D'col=
+or:#333333'>,
+</span><span style=3D'color:#006666'>0.5</span><span style=3D'color:#333333=
+'>)</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadowLayer</span><span
+style=3D'color:#444444'>.frame</span><span style=3D'color:#333333'> =3D ini=
+talFrame</span><span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>UIView * shadow =3D [[UIView alloc]
+initWithFrame:initalFrame]</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadow</span><span style=3D'=
+color:#444444'>.backgroundColor</span><span
+style=3D'color:#333333'> =3D [UIColor clearColor]</span><span style=3D'colo=
+r:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[shadow</span><span style=3D=
+'color:
+#444444'>.layer</span><span style=3D'color:#333333'> addSublayer:shadowLaye=
+r]</span><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[fromVC</span><span style=3D=
+'color:
+#444444'>.view</span><span style=3D'color:#333333'> addSubview:shadow]</spa=
+n><span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>shadow</span><span style=3D'=
+color:#444444'>.alpha</span><span
+style=3D'color:#333333'> =3D </span><span style=3D'color:#006666'>0</span><=
+span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>// 动画<br>
+<span style=3D'mso-spacerun:yes'>    </span>[UIView
+animateKeyframesWithDuration:[self transitionDuration:transitionContext] de=
+lay:</span><span
+style=3D'color:#006666'>0</span><span style=3D'color:#333333'> options:</sp=
+an><span
+style=3D'color:#006666'>2</span><span style=3D'color:#333333'>
+animations:^{<br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.transform</span><span style=3D'color:#3=
+33333'>
+=3D CATransform3DMakeRotation(-M_PI_2, </span><span style=3D'color:#006666'=
+>0</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>1</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>0</span><span
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>shadow</span><span
+style=3D'color:#444444'>.alpha</span><span style=3D'color:#333333'> =3D </s=
+pan><span
+style=3D'color:#006666'>1.0</span><span style=3D'color:#880000'>;</span><sp=
+an
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>} completion:^(BOOL finished)
+{<br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.anchorPoint</span><span style=3D'color:=
+#333333'>
+=3D CGPointMake(</span><span style=3D'color:#006666'>0.5</span><span
+style=3D'color:#333333'>, </span><span style=3D'color:#006666'>0.5</span><s=
+pan
+style=3D'color:#333333'>)</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.position</span><span style=3D'color:#33=
+3333'> =3D
+CGPointMake(CGRectGetMidX(initalFrame), CGRectGetMidY(initalFrame))</span><=
+span
+style=3D'color:#880000'>;</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>fromVC</span><span
+style=3D'color:#444444'>.view.layer.transform</span><span style=3D'color:#3=
+33333'>
+=3D CATransform3DIdentity</span><span style=3D'color:#880000'>;</span><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>        </span>[shadow removeFromSu=
+perview]</span><span
+style=3D'color:#880000'>;</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt'><span style=3D'font-family:Calibri;
+color:#333333' lang=3Den-US><span style=3D'mso-spacerun:yes'>       =
+   </span></span><span
+style=3D'font-family:"Microsoft YaHei";color:#333333' lang=3Dzh-CN>[transit=
+ionContext
+completeTransition: ![transitionContext transitionWasCancelled]]</span><span
+style=3D'font-family:"Microsoft YaHei";color:#880000' lang=3Dzh-CN>; //
+如果参数写成yes，当用户取消pop时，会继续执行动画，也=
+就是让detailVC消失，设置成这个参数，会避免这样的错误<=
+/span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>}]</span><span style=3D'colo=
+r:#880000'>;</span><span
+style=3D'color:#333333'><br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>3、在ViewController.m中加入一个方法即可：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#880000'>// dismiss动画</span><span style=3D'color:#333333=
+'><br>
+- (</span><span style=3D'color:#000088'>id</span><span style=3D'color:#3333=
+33'>&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForDis=
+missedController:(</span><span
+style=3D'color:#660066'>UIViewController</span><span style=3D'color:#333333=
+'>
+*)dismissed{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>return</span><span
+style=3D'color:#333333'> [[DismissTransition alloc] init];<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>&nbs=
+p;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>加入手势驱动</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>1、想要同时实现 present 和 dismiss 手势，就需�=
+�给两个 viewController.view
+添加手势。首先在 ViewController 中给自己添加一个屏幕右�=
+�的手势，在init
+SecondViewController时给它的view添加一个屏幕左边的手势，让=
+它们使用同一个手势监听方法，都交给viewController处理，�=
+��就是self</p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>在ViewController中封装了一个增加手势的方法，�=
+��数为承载手势的view和手势</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#880000'>// 添加手势的方法</span><span style=3D'color=
+:#333333'><br>
+- (</span><span style=3D'color:#000088'>void</span><span style=3D'color:#33=
+3333'>)addScreenEdgePanGestureRecognizer:(</span><span
+style=3D'color:#660066'>UIView</span><span style=3D'color:#333333'> *)view
+edges:(UIRectEdge)edges{<br>
+<span style=3D'mso-spacerun:yes'>    </span>UIScreenEdgePanGestureRecogn=
+izer *
+edgePan =3D [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:</span=
+><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'> action:</=
+span><span
+style=3D'color:#000088'>@selector</span><span style=3D'color:#333333'>(edge=
+PanGesture:)];
+</span><span style=3D'color:#880000'>//
+viewController和SecondViewController的手势都由self管理</span><span =
+style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>edgePan</span><span style=3D=
+'color:
+#660066'>.edges</span><span style=3D'color:#333333'> =3D edges;<br>
+<span style=3D'mso-spacerun:yes'>    </span>[view
+addGestureRecognizer:edgePan];<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>2、在viewDidLoad()和用于present的按钮的点击方法=
+中分别加入手势：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (void)viewDidLoad {<br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>super</span><span
+style=3D'color:#333333'> viewDidLoad];</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'>.transitio=
+ningDelegate
+=3D </span><span style=3D'color:#000088'>self</span><span style=3D'color:#3=
+33333'>;<br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>self</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#006666'>addScreenEdge=
+PanGestureRecognizer:</span><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'>.view </sp=
+an><span
+style=3D'color:#006666'>edges:</span><span style=3D'color:#333333'>UIRectEd=
+geRight];
+</span><span style=3D'color:#008800'>//</span><span style=3D'color:#333333'=
+> 为</span><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'>.view增�=
+�右侧的手势，用于push<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>- (</span><span style=3D'color:#000088'>void</span>=
+<span
+style=3D'color:#333333'>)presentClick{<br>
+<span style=3D'mso-spacerun:yes'>    </span>SecondViewController * secon=
+dVC =3D
+[[SecondViewController alloc] init];<br>
+<span style=3D'mso-spacerun:yes'>    </span>secondVC</span><span
+style=3D'color:#660066'>.transitioningDelegate</span><span style=3D'color:#=
+333333'>
+=3D </span><span style=3D'color:#000088'>self</span><span style=3D'color:#3=
+33333'>; </span><span
+style=3D'color:#880000'>// 必须second同样设置delegate才有动画</sp=
+an><span style=3D'color:
+#333333'><br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>self</span><span
+style=3D'color:#333333'> addScreenEdgePanGestureRecognizer:secondVC</span><=
+span
+style=3D'color:#660066'>.view</span><span style=3D'color:#333333'>
+edges:UIRectEdgeLeft];<br>
+<span style=3D'mso-spacerun:yes'>    </span>[</span><span style=3D'color=
+:#000088'>self</span><span
+style=3D'color:#333333'> presentViewController:secondVC animated:</span><sp=
+an
+style=3D'color:#006666'>YES</span><span style=3D'color:#333333'>
+completion:^{<br>
+<span style=3D'mso-spacerun:yes'>    </span>}];<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>3、实现手势的监听方法，首先定义一个属性�=
+�</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#333333'>@</span><span style=3D'color:#000088'>property</spa=
+n><span
+style=3D'color:#333333'> (nonatomic, retain) UIPercentDrivenInteractiveTran=
+sition
+* percentDrivenTransition;</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>4、因为有两个手势，要区别他们使用的是 KeyW=
+indow。手势监听方法：</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#880000'>// 手势的监听方法</span><span style=3D'color=
+:#333333'><br>
+- (</span><span style=3D'color:#000088'>void</span><span style=3D'color:#33=
+3333'>)edgePanGesture:(UIScreenEdgePanGestureRecognizer
+*)edgePan{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#660066'>CGFloat</span><span
+style=3D'color:#333333'> progress =3D fabs([edgePan translationInView:[</sp=
+an><span
+style=3D'color:#660066'>UIApplication</span><span style=3D'color:#333333'>
+sharedApplication]</span><span style=3D'color:#660066'>.keyWindow</span><sp=
+an
+style=3D'color:#333333'>]</span><span style=3D'color:#660066'>.x</span><span
+style=3D'color:#333333'> / [</span><span style=3D'color:#660066'>UIApplicat=
+ion</span><span
+style=3D'color:#333333'> sharedApplication]</span><span style=3D'color:#660=
+066'>.keyWindow.bounds.size.width</span><span
+style=3D'color:#333333'>);</span><span style=3D'color:#880000'>//
+有两个手势，所以这里计算百分比使用的是 KeyWindow</span><=
+/p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#000088'>if</span><span style=3D'color:#333333'>(edgePan</sp=
+an><span
+style=3D'color:#660066'>.state</span><span style=3D'color:#333333'> =3D=3D
+UIGestureRecognizerStateBegan){<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>self</span><span
+style=3D'color:#660066'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>
+=3D [[UIPercentDrivenInteractiveTransition alloc] init];<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>if</span><span
+style=3D'color:#333333'>(edgePan</span><span style=3D'color:#660066'>.edges=
+</span><span
+style=3D'color:#333333'> =3D=3D UIRectEdgeRight){<br>
+<span style=3D'mso-spacerun:yes'>            </span></span><span
+style=3D'color:#880000'>// present，避免重复，直接调用点击方�=
+�</span><span style=3D'color:#333333'><br>
+<span style=3D'mso-spacerun:yes'>            </span>[</span><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'>
+presentClick];<br>
+<span style=3D'mso-spacerun:yes'>        </span>}</span><span style=
+=3D'color:#000088'>else</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#000088'>if</span><span
+style=3D'color:#333333'>(edgePan</span><span style=3D'color:#660066'>.edges=
+</span><span
+style=3D'color:#333333'> =3D=3D UIRectEdgeLeft){<br>
+<span style=3D'mso-spacerun:yes'>            </span>[</span><span
+style=3D'color:#000088'>self</span><span style=3D'color:#333333'>
+dismissViewControllerAnimated:</span><span style=3D'color:#006666'>YES</spa=
+n><span
+style=3D'color:#333333'> completion:^{<br>
+<span style=3D'mso-spacerun:yes'>            </span>}];<br>
+<span style=3D'mso-spacerun:yes'>        </span>}<br>
+<span style=3D'mso-spacerun:yes'>    </span>}</span><span style=3D'color=
+:#000088'>else</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#000088'>if</span><span
+style=3D'color:#333333'>(edgePan</span><span style=3D'color:#660066'>.state=
+</span><span
+style=3D'color:#333333'> =3D=3D UIGestureRecognizerStateChanged){<br>
+<span style=3D'mso-spacerun:yes'>        </span>[</span><span style=
+=3D'color:#000088'>self</span><span
+style=3D'color:#660066'>.percentDrivenTransition</span><span style=3D'color=
+:#333333'>
+updateInteractiveTransition:progress];<br>
+<span style=3D'mso-spacerun:yes'>    </span>}</span><span style=3D'color=
+:#000088'>else</span><span
+style=3D'color:#333333'> </span><span style=3D'color:#000088'>if</span><span
+style=3D'color:#333333'>(edgePan</span><span style=3D'color:#660066'>.state=
+</span><span
+style=3D'color:#333333'> =3D=3D UIGestureRecognizerStateCancelled || edgePa=
+n</span><span
+style=3D'color:#660066'>.state</span><span style=3D'color:#333333'> =3D=3D
+UIGestureRecognizerStateEnded){<br>
+<span style=3D'mso-spacerun:yes'>        </span></span><span style=
+=3D'color:#000088'>if</span><span
+style=3D'color:#333333'>(progress &gt; </span><span style=3D'color:#006666'=
+>0.5</span><span
+style=3D'color:#333333'>){<br>
+<span style=3D'mso-spacerun:yes'>            </span>[_percentDri=
+venTransition
+finishInteractiveTransition];<br>
+<span style=3D'mso-spacerun:yes'>        </span>}</span><span style=
+=3D'color:#000088'>else</span><span
+style=3D'color:#333333'>{<br>
+<span style=3D'mso-spacerun:yes'>            </span>[_percentDri=
+venTransition
+cancelInteractiveTransition];<br>
+<span style=3D'mso-spacerun:yes'>        </span>}<br>
+<span style=3D'mso-spacerun:yes'>        </span>_percentDrivenTransi=
+tion =3D </span><span
+style=3D'color:#006666'>nil</span><span style=3D'color:#333333'>;<br>
+<span style=3D'mso-spacerun:yes'>    </span>}<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"microsoft yahei";font-size:11.25pt;
+color:#3F3F3F'>5、最后实现 UIViewControllerTransitioningDelegate 协�=
+�的另外两个方法，分别返回
+Present 和 Dismiss 动画的百分比。</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt'><span
+style=3D'color:#880000'>// 百分比present</span><span style=3D'color:#333=
+333'><br>
+- (</span><span style=3D'color:#000088'>id</span><span style=3D'color:#3333=
+33'>&lt;UIViewControllerInteractiveTransitioning&gt;)interactionControllerF=
+orPresentation:(</span><span
+style=3D'color:#000088'>id</span><span style=3D'color:#333333'>&lt;UIViewCo=
+ntrollerAnimatedTransitioning&gt;)animator{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>return</span><span
+style=3D'color:#333333'> _percentDrivenTransition;<br>
+}<br>
+</span><span style=3D'color:#880000'>// 百分比dismiss</span><span style=
+=3D'color:#333333'><br>
+- (</span><span style=3D'color:#000088'>id</span><span style=3D'color:#3333=
+33'>&lt;UIViewControllerInteractiveTransitioning&gt;)interactionControllerF=
+orDismissal:(</span><span
+style=3D'color:#000088'>id</span><span style=3D'color:#333333'>&lt;UIViewCo=
+ntrollerAnimatedTransitioning&gt;)animator{<br>
+<span style=3D'mso-spacerun:yes'>    </span></span><span style=3D'color:=
+#000088'>return</span><span
+style=3D'color:#333333'> _percentDrivenTransition;<br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.0pt;color=
+:#3F3F3F'>现在，关于Modal的自定义跳转动画就完成了</p>
+
+</div>
+
+</div>
+
+</div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:6.5in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:6.5in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Den-US>OneNoteTitle </span><span style=3D'font-family:"Microsoft YaHe=
+i"'
+lang=3Dzh-CN>自定义转场动画</span><span style=3D'font-family:Calibri=
+' lang=3Den-US>5_</span><span
+style=3D'font-family:Calibri' lang=3Dzh-CN>tabBarController</span><span
+style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>动画</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.5138=
+in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+Calibri'>2016</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>4</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>20</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span><span
+style=3D'font-family:Calibri'> </span><span style=3D'font-family:"Microsoft=
+ YaHei"'>星期三</span></p>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:gray'><span style=3D'font-fam=
+ily:
+"Microsoft YaHei"'>上午</span><span style=3D'font-family:Calibri'>10:47</=
+span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.1486in;margin-left:0in;width:5.3451=
+in'>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:20.0pt'><span
+style=3D'font-weight:bold'>UITabBarController转场动画</span></p>
+
+<p style=3D'margin-left:0pt;margin-right:0pt;margin-top:11pt;margin-bottom:=
+11pt;
+font-size:10.5pt;color:black'><span style=3D'font-family:Helvetica;backgrou=
+nd:
+white'>1.</span><span style=3D'font-family:"Microsoft YaHei";background:whi=
+te'>实现</span><span
+style=3D'font-family:Helvetica;background:white'>UITabBarControllerDelegate=
+&nbsp;</span></p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>2.�=
+�现</p>
+
+<p style=3D'margin:0in;font-size:9.75pt;color:black'><span style=3D'font-fa=
+mily:
+Helvetica;background:#F8F8F8'>func tabBarController(tabBarController:
+UITabBarController, animationControllerForTransitionFromViewController from=
+VC:
+UIViewController, toViewController toVC: UIViewController) -&gt;
+UIViewControllerAnimatedTransitioning? {<br>
+<span style=3D'mso-spacerun:yes'>    </span>// </span><span style=3D'fon=
+t-family:
+"Microsoft YaHei";background:#F8F8F8'>返回动画类</span><span style=3D'=
+font-family:
+Helvetica;background:#F8F8F8'><br>
+}</span></p>
+
+<p style=3D'margin:0in;font-family:Helvetica;font-size:9.75pt;color:black'>=
+&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.5pt'>3.�=
+�画类和push
+pop实现方法一样</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'text-align:left;margin:0in;font-family:宋体;font-size:9pt;col=
+or:#969696;
+direction:ltr'>已使用 Microsoft OneNote 2010 创建<br>
+一个用于存放所有笔记和信息的位置</p>
+
+</div>
+
+</body>
+
+</html>
+
+------=_NextPart_01D23EBB.A5F1A810
+Content-Location: file:///C:/6F6DB23B/file0027.files/image001.png
+Content-Transfer-Encoding: base64
+Content-Type: image/png
+
+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
+JzMEDIHLQMB8VpcBnjU1BAyB1w8BI6vXD2u7kyFgCFwGApflYL+M+17xpjMX/kHOvPgjGRuZlNQk
+dqdYhtTWZQq15uobpS2VlZnz5+Xr3z4qjz5+THJc3renVbLYNad7Yl5y+RlpT2Uk07JKVrW2yrp0
+TkYnJ2Ucq5UOnZyU546elKFMi5wcmJbc9ILMYvOD1dhBhimlsblOMvX1MjE06a5Zlm68+CNYtXqV
+K+dLTZlyLZxvqdNTl9ZkaqUdW5KNYrnn+dbieyupVOYiNXLe5U7JnNxzZ480rGmSqXP90rR+raxp
+Kj5LmaYuq6kleA+ZzMXvpTO//OfIttW6/tam6qSpNThnRntTraTr6qQ9n3KfxdrzOUk1NUl+asrV
+719V+T+3tSHAaHxmTkZzCzKAzyybDxbrH87npDMVtMU2lDKKz1aFdVhOYZo9HyxJm1kVvEe9XoOt
+yZzMZGUA35+osHwg3LpMy5infWs/WuanC3PYQy6U1RPFJbyZNVATrJm5ZiHlzjVlWf1I0G5Egufp
+wL4Fm9Zul9u7b5E33HAnq1SlXPztqrK3MXjiaTn+6vcLT113YVoEJDQ/d/EXp1DJOyFJsQ2PmTD/
+prt65dnj49jg4oQcy+Rk5Plz8ra37ZOe5g2uxszIORBVsztvb26W8VGQT2taerdtlOZcsDzywGRW
+ZgcmCkTFytOTc9LoWi3+Mo+d2Fc318oCCG9qaEqaurD4vCdT+CE14YdVOzEnUcIiUS1k56V2XAqE
+VTseYBElsDX48Q+OYgcPCImqSepkZgjr2a/BmveZRkdUbfgxj4U/Wu8RCqcs5884LlEpMWXG5kXP
+tdP53JwMZrPSnQmIcnRqHoSF0tp6reJSElbfgn5qJUUlF0pUzFyTS8u5kFSUqJhfi/3ashL8yDMe
+abHMJxT/nGUkojWLELKSEuuqsI2SnuaVS2vqioSdqclKdsFbwztsQNIiUS0mJK2R/sNyAMefHvx/
+5Tf3/lJVklblv6TF3v0KKTv24l84onIEFT4TyScOUbEZ21DYjuddLQ3Sjn/hXL5FXj4xjn/BFnn0
++VMylQYRQtKZBnnmeJ/04YtPaWtJS1drozT3dsmOjhbp7GhyGhE1KWpPKqpZ6bVqXHqtKYmKJEWt
+iloWSWt2svgvS6LyhRpVVEhY1Jh48JyiGhTPSWCjE9i6bBOYKRT2Mzw2JoMHg5CUganzjqi6alZB
+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
+
+------=_NextPart_01D23EBB.A5F1A810
+Content-Location: file:///C:/6F6DB23B/file0027.files/filelist.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml; charset="utf-8"
+
+<xml xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+ <o:MainFile HRef=3D"../file0027.htm"/>
+ <o:File HRef=3D"image001.png"/>
+ <o:File HRef=3D"filelist.xml"/>
+</xml>
+------=_NextPart_01D23EBB.A5F1A810--

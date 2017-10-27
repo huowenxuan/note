@@ -41,6 +41,7 @@ ionic platform add/rm ios/android
 ### 运行
 
 在所有连接的设置上运行
+
 ```
 ionic cordova run
 ```
@@ -90,6 +91,7 @@ ionic cordova run ios --devices
 ### 编译
 
 使用ionic build代替cordova build
+
 ```
 ionic build ios
 ionic build android

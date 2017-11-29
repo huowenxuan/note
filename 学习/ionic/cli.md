@@ -32,7 +32,7 @@ ionic serve
 ### 添加运行平台
 
 ```
-ionic platform add/rm ios/android
+ionic cordova platform add/rm ios/android
 ```
 --noresources|-r	不要添加默认的Ionic图标和启动屏幕资源
 --nosave|-e	 不要把平台保存到package.json 文件中

@@ -6,7 +6,7 @@
 生成的build、config、index.html、static、src移动到cordova项目根目录中，node_module不变，合并package.json。
 
 index.html就作为程序入口，src作为项目代码目录  
-static虽然为空，但是不能删除，webpack用到
+static虽然为空，但是不能删除，vue存放静态资源，webpack也会用到
 
 ## 配置cordova
 删掉www/下所有文件

@@ -27,3 +27,9 @@ git checkout master
 git cherry-pick 62ecb3 
 ```
 
+# 回退commit
+
+```
+git reset --hard d27ab20
+```
+

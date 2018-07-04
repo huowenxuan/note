@@ -6,9 +6,21 @@
 
 # flow自带一个变量type，用于声明对象或者类的类型
 
-```
-type Prop = {}
-class App extends PureComponent<Props> {
+```js
+type Prop = {
+    a: any,
+    b: mixed,
+    c: Object,
+    imgs: Array<string>,
+    imgs2: string[]
+}
+type State = {}
+class App extends PureComponent<Props, State> {
+  constructor(props: Props) {
+    super(props)
+    this.state = {
+    }
+  }
 }
 ```
 
@@ -93,3 +105,6 @@ export type ContainerProps = {
 // 导入
 import type {ContainerProps} from '../utils/PropTypes'
 ```
+
+# Flow / PropType
+Flow type是编码时的检查，propTypes是运行时的检查，都是必要的

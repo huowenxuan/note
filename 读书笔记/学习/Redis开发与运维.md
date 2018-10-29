@@ -93,7 +93,16 @@ redis-cli shutdown save|nosave
 
 ## 第2章 API的理解和使用
 
-### 命令
+### 单线程
+单线程处理命令，所以不会立刻被执行，所有命令都会进入一个队列，逐个执行，不会有两条命令是同时执行的
+
+为什么单线程还能这么快
+1. 纯内存
+2. 非阻塞I/O。使用epoll作为I、O多路复用技术的实现
+3. 避免了线程切换和竞态产生的消耗
+
+### 字符串
+**命令**
 
 ```shell
 // 查看所有键
@@ -162,26 +171,416 @@ setrange key offset value
 getrange key start end
 ```
 
-### 内部编码
-
-#### 字符串
-
+**内部编码**
 1. int：8个字节的长整型
 2. embstr：小于等于39个字节的字符串
 3. raw：大于39个字节的字符串
-
 Redis会根据当前值的类型和长度决定使用哪种内部编码实现
 
-### 使用场景
+**使用场景**
+1. 缓存功能
+    Redis作为缓存层，MySQL作为存储层。大部分请求都是从Redis中获取，加速读写、降低后端压力。先从redis获取信息，如果没有，就从mysql获取，然后存储到redis中，并设置过期时间
 
-#### 字符串
+2. 计数
+      可实现快速计数、查询缓存的功能，**同时数据可以异步地落地到其他数据源**。（redis可以很方便地自增）
+      
+3. 共享session
+    分布式Web可将用户session保存到Redis中，而不是保存到各自的服务器，造成用户经常需要登录
+    
+4. 限速
+    设置过期时间来限制某些接口不能被频繁访问，例如短信，例如限制一个IP不能在一秒钟之内访问超过n次（一秒钟之内自增数是否超过n）
 
-### 单线程
-单线程处理命令，所以不会立刻被执行，所有命令都会进入一个队列，逐个执行，不会有两条命令是同时执行的
+### 哈希
+> 在Redis中，哈希指值本身又是一个键值对，如value={{field1, value1}, ...{fieldN, valueN}}
 
-为什么单线程还能这么快
-1. 纯内存
-2. 非阻塞I/O。使用epoll作为I、O多路复用技术的实现
-3. 避免了线程切换和竞态产生的消耗
+**命令**
 
-2.2.3
+```shell
+// 设置值，成功返回1，失败返回0
+hset user:1 name tom 
+hsetnx
+// 批量设置
+hmset user:2 name mike age 12 ...
+
+// 获取
+hget user:1 name
+// 批量获取
+hmget user:1 name age city ...
+
+// 删除
+hdel user:1 name
+
+// 计算哈希中，field的个数
+hlen user:1
+
+// 判断field是否存在，存在返回1，不存在返回0
+hexists user:1 name
+
+// 获取所有field的key
+hkeys user:1
+// 获取所有field的value
+hvals user:1
+// 获取所有的key+value
+hgetall user:1
+
+// 自增
+hincrby user:1 age
+hincrbyfloat user:1 age
+
+// 计算value的字符串长度
+hstrlen user:1 name
+```
+
+**内部编码**
+1. ziplist(压缩列表)：元素个数小于hash-max-ziplist-entries配置（默认512）、同时所有值都小于hash-max-ziplist-value配置（默认64字节）时，使用ziplist实现。ziplist使用更加紧凑的结构实现多个元素的连续从存储，节省内存
+2. hashtable(哈希表)：当无法满足ziplist时使用，因为此时ziplist读写效率会下降，hashtable读写时间复杂度为O(1)
+
+使用场景
+记录map时，使用hgetAll来获取，hmset来设置
+
+### ==> 列表 <==
+> 可在列表两端push和pop，可指定范围内的元素列表、获取指定索引下表的元素等，比较灵活
+
+**命令**
+
+```shell
+
+```
+
+# 命名
+Redis没有命令空间，也没有对键名又强制要求。设计合理的键名，有利于防止键冲突和项目的可维护性，比较推荐的方式是使用`业务名:对象名:id:[属性]`作为键名（也可以不是分号），例如`vs:user:111:name`（vs为业务名，如果只有一个业务，可省略）。如果键名比较长，例如`user:{uid}:friends:messages:{mid}`，可以减少键的长度，减少由于键过长的内存浪费：`u:{uid}:fr:m:{mid}`.   
+
+
+## 第3章 小功能大用处
+
+### 慢查询分析
+在命令执行前后计算每条命令的执行时间，当超过预设阈值，就将这条命令的相关信息（如发生时间、耗时、命令的详细信息）记录下来
+
+只记录执行时间，不记录排队等待时间和网络传输时间
+
+- slowlog-log-slower-then 为预设阈值，单位是微秒（毫秒的千分之一），默认10 000，设置为0会记录所有命令，设置为小于0不会记录任何信息。建议设置为1000
+
+- slowlog-max-length 慢查询日志最多存储多少条。建议设置为1000以上
+
+- redis修改配置有两种方法，一种是修改配置文件，一种是使 config set xxx value 命令动态修改，修改后使用 config rewrite 持久化到本地配置文件
+
+```
+slowlog get n  // 获取慢查询日志，n为条数
+slowlog len // 慢查询日志列表的长度
+slowlog reset // 重置日志
+```
+
+### Redis Shell
+
+#### redis-cli
+
+```
+// -r  将命令执行多次。执行3次ping：
+redis-cli -r 3 ping
+
+// -i 每隔几秒执行一次命令，必须和-r一起使用，单位是秒，可以设置为0.001。每隔1s执行一次ping，共执行5次：
+redis-cli -r 5 -i 1 ping
+
+// -x从标准输入读取数据作为redis-cli的最后一个参数。将world作为set hello的值
+echo “hello” | redis-cli -x set hello
+
+// -c（cluster）是连接Reids Cluster节点时需要使用的，防止moved和ask异常
+
+// -a （auth）如果redis配置了密码，用-a就不需要手动输入auth命令
+
+// —scan —pattern 用于扫描指定模式的键，相当于scan命令
+
+// —slave 把当前客户端模拟成当前Redis节点的从节点，可以用来获取当前Redis节点的更新操作
+
+// —rdb会请求Redis实例并发送RDB持久化文件，保存在本地，可使用它做持久化文件的定期备份
+
+// —pipe 将命令封装成Redis通信协议定义的数据格式，批量发送给Redis执行
+
+// —bigkeys 使用scan命令对Redis的键进行采样，从中找到内存占用比较大的键值
+
+// —eval 执行指定lua脚本
+
+// —latency 检测网络延迟
+
+// —stat 实时获取重要统计信息（info命令的统计信息更全，但不是实时）
+
+// —raw和—no-raw：no-raw返回结果必须是原始格式，raw返回格式化后的结果
+```
+
+#### redis-service
+
+```
+redis-server —test-momory 1024 用来检测当前操作系统是否能稳定地分配指定大小的内存给Reids
+```
+
+#### redis-benchmark
+可为Reids做基准性能测试
+
+```
+// -c（client）代表客户端的并发数量（默认50）
+// -n 代表客户端的请求总量（默认100 000）
+
+// 100个客户端同时请求Redis，一共执行20000次：
+redis-benchmark -c 100 -n 20000
+
+// -q 仅限时requests per second信息
+// -r（random）向Redis插入更多随机的键
+// -P 每个请求pipeline的数据量（默认为1）
+// -k 是否使用keepalive，1为使用，0为不使用，默认1
+// -t 对指定命令进行基准测试
+
+redis-benchmark -t get，set -q
+
+// —csv 将结果按照csv格式输出
+```
+
+### Pipeline
+Pipeline（流水线）机制能将一组Redis命令进行组装，一次性传输给Redis，再将这组命令的执行结果按顺序返回给客户端。Pipeline执行速度一般比逐条执行快
+
+原生批量命令和Pipeline的对比
+
+* 原生批量命令是原子的，Pipeline是非原子的
+* 原生批量命令是一个命令对应多个key，Pipeline支持多个命令
+* 原生批量命令是Redis服务端支持实现的，Pipeline需要服务端和客户端的共同实现
+
+Pipeline组装的命令个数不能没有节制，如果数据量过大，会增加客户端的等待时间，也会造成一定的网络堵塞，可以将一次大量的Pipeline拆分成多次较小的Pipeline来完成
+
+### 事务与Lua
+
+#### 事务
+表示一组动作，要么全部执行，要么全部不执行。Redis提供了简单的事物功能，将一组命令放到multi（事务开始）和exec（事务结束）之间。multi之后的命令并没有真正执行，而是暂时保存在Redis中，数据没变，只有当exec执行后，操作才真正完成。如果要停止事务的执行，使用discard代替exec
+
+Redis不支持回滚
+
+watch命令确保事务中的key没有被其他客户端修改过，才执行事务，否则不执行 
+
+#### Lua
+
+Lua数据类型：booleans布尔、numbers数值、strings字符串、tables表格
+
+```lua
+— 定义局部hello字符串。local代表局部变量，没有local代表全局变量
+local strings hello = “world”
+print(hello)
+
+— 数组。使用tables来实现数组，数组下标从1开始
+local tables myArray = {“redis”, “jedis”, true, 88}
+
+— for
+local int sum = 0
+for i = 0, 100
+do
+    sum = sum + i
+end
+
+— 遍历myArray，需要知道tables的长度，只需要在变量前加一个#号即可
+for i = 1, #myArray
+do 
+    print(myArray[i])
+end
+
+— ipairs 可遍历出所有的索引下标和值
+for index, value ipairs(myArray)
+do 
+    print(index)
+    print(value)
+end
+
+— while
+local int sum = 0
+local int i = 0
+while i <= 100
+do 
+    sum = sum + i
+    i = i + 1
+end
+
+— if else
+if hello == “world”
+then 
+    print(“yes”)
+else 
+    — do nothing
+end
+
+— 哈希也可以使用tables来创建
+local tables user = {age = 10, num = “tom”}
+print(user[“age”])
+
+— 函数定义
+function func(num) 
+    ...
+end
+func(1)
+```
+
+#### Redis与Lua
+Redis将Lua脚本语言可以帮助开发者定制自己的Reis命令
+
+在Redis执行Lua
+
+```
+// eval
+// eval 脚本内容 key个数 key列表 参数列表
+eval ‘return “hello” ...KEYS[1] ...ARGV[1]’ 1 redis world “hello redisword”
+// 此时KEYS[1]=“redis”，ARGV[1]=“world”，最终返回“hello redisworld”
+
+// 如果lua脚本较长，使用redis-cli —eval直接执行文件（把脚本作为字符串发送给服务端）
+
+// evalsha执行Lua脚本。首先将脚本加载到redis服务器，得到sha1。evalsha使用sha1作为参数可以直接执行对应lua脚本，避免每次发送脚本的开销
+// 加载脚本：将脚本内容加载到redis内存中，得到sha1
+redis-cli script load “$(cat **.lua)”
+evalsha sha1值 key个数 key列表 参数列表
+
+// 是否存在
+script exists sha1
+// 清除已加载的所有脚本
+script flush
+// 杀掉这个正在执行的脚本
+script kill
+```
+
+Lua的Redis API
+
+```
+redis.call实现对redis的访问，遇到错误会直接返回错误，redis.pcall遇到错误会忽略错误继续执行。调用redis的set和get：
+redis.call(“set”, “hello”, “world”)
+redis.call(“get”, “hello”)
+```
+
+### Bitmaps
+可以实现对位的操作。本身并不是数据结构，实际上是字符串，但是可以对字符串的位进行操作。可以想象成是一个以位为单位的数组，每个单元只能是0或1
+
+### HyperLogLog
+实际类型为字符串，是一种基数算法，可以利用极小的内存完成独立总数的统计，但是存在误差（大概0.18%）
+
+场景：如果只为了计算独立总数，不需要获取单条数据，而且可以容忍一定的误差率
+
+### 发布订阅
+Redis提供了基于”发布/订阅”模式的消息机制，消息发布者和订阅者不能直接通信，发布者客户端向指定的频道channel发布消息，订阅该频道的每个客户端都可以接收到该消息
+
+```
+// 发布消息。向频道channel:sports发布一条消息hello
+publish channel:sports “Hello”
+
+// 订阅消息，订阅者可订阅一个或多个频道。
+subscribe channel 
+
+// 取消订阅
+unsubscribe channel1 channel2
+
+// 按照模式订阅和取消订阅，支持glob风格的订阅命令和取消订阅命令
+// 订阅以it开头的所有频道
+psubscribe it*
+punsubscribe it*
+
+// 查询订阅
+// 查看活跃的频道：当前频道至少有一个订阅着
+pubsub channels 
+pubsub channels channel:*r*
+
+// 查看频道订阅数
+pubsub numsub channel
+
+// 查看模式订阅数
+pubsub numpat
+```
+
+使用场景：聊天室、公告牌、服务之间
+
+### GEO
+地理信息定位功能，支持存储地理位置信息，底层实现是zset
+
+```
+// 增加地理位置信息
+geoadd key longitude latitude member
+geoadd cities:locations 116.28 39.55 beijing
+
+// 获取
+geopos key member
+geopos cities:locations beijing
+
+// 获取两个地理位置的距离。unit：m km mi英里 ft 尺
+geodist key member1 member2 【unit】
+geodist cities:locations beijing tianjin km
+
+// 获取指定位置范围内的 地理信息位置集合
+georadius key longitude latitude 
+georadiusbymember key member 
+参数：rediusm|km|ft|mi 【withcoord】【withdist】【withhash】【COUNT count】【asc|desc】【store key】【storedist key】
+
+georadius和georadiusbymember都是以一个地理位置为中心算出指定半径内的其他地理信息位置，前者的中心位置给出了具体的经纬度，后者只需给出成员即可
+
+withcoord：返回结果中包含经纬度
+withdist：包含离中心点位置的距离
+withhash：结果包含geohash
+COUNT count：指定返回结果的数量
+asc|desc：按中心节点的距离升序、降序
+store key：将返回结果的地理位置信息保存到指定键
+storedist key：将返回结果离中心点的距离保存到指定键
+
+georadiusbymember cities-locations beijing 150 km
+
+// 获取geohash：将二纬经纬度转换为一维字符串
+geohash cities-locations beijing
+
+// 删除地理位置信息
+zrem key member
+```
+
+## 第4章 客户端
+Java和Python版Redis客户端基本用法，略过
+
+## 第5章 持久化
+### RDB
+把当前进程数据生成快照保存到磁盘，触发RDB持久化过程分为手动触发和自动触发
+
+手动触发分别对应save和bgsave命令
+- save：阻塞当前Redis服务器，直到RDB完成，线上环境不建议使用，已废弃
+- bgsave：Redis进程fork操作创建子进程，持久化由子进程负责，完成后自动结束，阻塞只发生在fork阶段，时间很短
+
+自动触发：
+1. 使用“save”相关配置，如“save m n”，表示m秒内数据集存在n次修改时，自动触发bgsave
+2. 如果从节点执行全量复制，主节点自动执行bgsave生成RDB文件并发送给从节点
+3. 执行debug reload重新加载Redis时，自动触发save
+4. 默认情况下执行shutdown命令，如果没有开启AOF，则自动执行bgsave
+
+RDB文件的处理
+- 保存：保存在dir配置指定的目录下，文件名通过dbfilename指定。通过执行config set dir {newDir} 和 config set dbfilename {newFileName}运行期动态执行，下次运行时RDB会保存到新目录
+- 压缩：默认LZF算法对生成的RDB文件压缩，默认开启，压缩后文件远小于内存大小。通过config set rdbcompresssion yes|no 动态修改
+- 校验：如果加载损坏的RDB文件时拒绝启动，可使用redis-check-dump工具检测RDB文件
+
+优点：
+- 紧凑压缩的二进制文件，代表Redis在某个时间点上的数据快照，适用于备份，全量复制等场景，比如每6小时备份，并把RDB文件拷贝到远程机器或文件系统
+- Redis加载RDB恢复数据远快于AOF
+
+缺点：
+- 没办法做到实时化/秒级持久化，因为bgsave每次都要执行fork，属于重量级操作，频繁操作成本太高
+
+### AOF（append only file）
+以独立日志的方式记录每次写命令，重启时再重新执行AOF文件中的命令达到恢复数据的目的。主要作用是解决了数据持久化的实时性，是Redis持久化的主流方式
+
+开启AOF需要设置配置：appendonly yes，默认不开启。AOF文件名通过appendfilename配置设置，默认文件名是appendonly.aof，保存路径和RDB一致，通过dir配置 
+
+AOF工作流程
+1. 命令写入append：所有的写入命令追加到aof_buff（缓冲区）中。写入的内容直接是文本协议格式
+2. 文件同步（sync）：缓冲区根据对应的策略向硬盘做同步操作
+3. 重写（rewrite）：压缩。超时的数据不再写入；只保留最终数据写入命令；多条写命令合并为一个，以64元素为界拆分为多条
+4. 重启加载（load）：Redis重启，可加载AOF文件进行数据恢复。手动触发：bgrewriteaof命令；自动触发：auto-aof-rewrite-min-size（AOF重写时文件最小体积，默认64M），auto-aof-rewrite-percentage（当前AOF文件空间aof_current_size和上一次重写后AOF文件空间aof_base_size的比值）。触发AOF后，父进程会fork创建子进程，开销等同于bgsave，fork完成后，继续影响其他命令，所有修改命令写入AOF缓冲区...
+
+
+**AOF开启并且存在AOF文件时，优先加载AOF，否则加载RDB**
+
+### 优化
+RDB和AOF都会执行fork，fork是重量级操作。改善fork的耗时：
+1. 使用物理机或高效支持fork的虚拟化技术，避免使用Xen
+2. 控制Redis实例最大可用内存，fork耗时和内存量成正比，建议每个Redis实力内存控制在10GB内
+3. 合理配置Linux内存分配策略，避免内存不足导致fork失败
+4. 降低fork操作的频率，如放宽AOF自动触发时机
+
+## 第6章 复制
+## 第7章 Redis的噩梦：阻塞
+## 第8章 哨兵
+## 第10章 集群
+
+## 第11章 缓存设计

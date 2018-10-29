@@ -15,6 +15,7 @@ class Components extends React.Components {
 ```
 
 # 静态变量
+
 ```
 class A {
     a = 1;
@@ -26,6 +27,7 @@ class A {
 ```
 
 # ?.
+
 ```
 a = undefined
 a.b // 错误

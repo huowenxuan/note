@@ -13,11 +13,11 @@ me.refs.tabView.setNativeProps({
 ```
 
 # shouldComponentUpdate
+
 ```
 shouldComponentUpdate(nextProps, nextState) {
 	return false
 }
-
 ```
 
 # 不要使用阴影效果

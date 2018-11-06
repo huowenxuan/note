@@ -348,9 +348,142 @@ sdiffstore destination key key1 key2
 ### 有序集合
 保留了集合不能有重复的特性，但可排序，它给每个元素设置一个分数（score）最为排序的依据（元素不能排序，但是score可重复）
 
-**集合**
+**命令**
+集合内
 
 ```
+// 添加。有四个参数：nx：member必须不存在才可以设置成功，用于添加；xx：member必须存在，才能设置成功，用于更新。ch：返回此次操作后，有序集合和分数发生变化的个数。incr：对score做增加，相当于zincrby。有序集合相比集合提供了排序字段，但是添加效率降低了
+zadd key score member [sorce member...]
+
+// 计算成员个数
+zcard key
+// 计算成员的排名
+zrank key member // 分数从高到低
+zrevrank key member // 分数从低到高
+
+// 删除成员
+zrem key member
+
+// 增加成员的分数
+zincrby key increment member
+zincrby key 9 tom // 给tom增加了9分
+
+// 返回指定排名范围的成员，加上withscores参数，会同时返回分数
+zrange key start end [withscores]
+zrevrange key start end [withscores]
+
+// 返回指定分数范围的成员。limit offset count选项可限制输出的起始位置和个数。min和max支持开区间（小括号）和闭区间（中括号），-inf和+inf分别代表无限小和无限大
+zrangebyscore key min max [withscores] [limit offset count]
+zrevrangebyscore 
+zrangebyscore key （200 +inf 
+
+// 返回指定分数范围成员个数
+zcount key min max
+
+// 删除指定排名内的生序元素
+zremrangebyrank key start end
+// 删除指定分数范围的成员
+zremrangebyscore key min max
+```
+
+集合间的操作
+
+```
+// 交集，destination：计算结果保存到这个键，numkeys：需要做交集计算的键的个数，key...：需要做交集计算的键，weights 每个键的权重，每个member都以自己的分数乘以这个权重，默认为1
+zinterstore destination numkeys key [key...] [weights weight [weight...]]
+// 并集
+zunionstore
+```
+
+**编码方式**
+- ziplist
+- skiplist
+- hashtable
+
+**使用场景**
+排行榜系统（点赞排行榜等）
+
+### 键管理
+#### 单个键管理
+
+```
+// 键重命名，如果已具有newkey，之前的数据会被覆盖。重命名期间会指定del命令删除旧的键，如果值比较大，可能会阻塞Redis
+rename key newkey
+// 只有当newkey不存在时才可以重命名
+renamenx key newkey
+
+// 随机返回一个键
+randomkey
+```
+
+**键过期**
+
+**对于字符串类型的键，执行set命令会去掉过期时间**，在redis源码中，set 命令最后执行了删除过期时间
+
+Redis不支持二级数据结构内部元素的过期
+
+```
+// expire key seconds // seconds秒后过期。如果键不存在返回0，如果过期时间为负数，键会立即删除
+expireat key timestamp // 秒级时间戳之后过期
+pexpire key milliseconds // 毫秒后过期
+ttl key // 大于0的整数为剩余过期时间；-1键没有设置过期时间，-2键不存在（已过期）
+pttl key // 剩余过期时间，精度更高，可达到毫秒级别
+persist key // 将键的过期时间清除
+```
+
+**迁移键**
+把数据从一个Redis迁移到另一个Redis，建议使用merge
+
+```
+// 把指定的键从源数据库移动到目标数据库中。redis内部可以有多个数据库，彼此在数据上互相隔离。多数据库功能不建议在生成环境使用
+move key db 
+
+// dump+restore
+// 在源Redis执行dump
+dump key
+// 目标Redis执行restore。ttl表示过期时间
+restore key ttl value
+
+/*
+ * merge：实际上就是将dump、restore、del组合，简化了流程，具有原子性，支持多个键的迁移
+ * key|"" 如果只迁移一个键，写要迁移的键，如果要迁移多个，设为""，要迁移的键通过keys指定
+ * timeout 迁移的超时时间（毫秒）
+ * [copy] 如果添加此选项，迁移后不删除源键
+ * [replace] 如果添加此选项，不管目标是否存在该键都会正常迁移进行数据覆盖
+ * keys 迁移多个键 例: keys key1 key2 key3
+ */ 
+merge host port key|"" destination-db timeout [copy] [replace] keys
+merge 127.0.0.1 6380 hello 0 1000
+```
+
+**遍历键**
+
+```
+// keys通配符匹配，如果包含了大量的键，可能造成阻塞，不要在生产环境使用
+keys *
+
+/* 
+ * 渐进式遍历，避免了keys的阻塞。但是在scan的过程中有键的变化，那么新增的键可能会没有遍历到，或遍历出重复的键等情况
+ * cursor 必须参数，游标，每次遍历从0开始，scan完都会返回当前的游标值，直到游标为0，遍历完成
+ * pattern 匹配
+ * count 每次要遍历的键个数，默认10
+ */
+scan cursor [match pattern] [count number]
+
+```
+
+#### 数据库管理
+默认redis有16个数据从，index为0-15。每个数据库之间没有任何关联。但是Redis已经逐渐弱化这个功能，原因：
+
+1. Redis是单线程的。如果使用多个数据库，这些数据库仍然是使用一个CPU，彼此之间还是会受到影响
+2. 多数据库的使用方式，让调试和运维不同业务的数据库变得困难，假如有一个慢查询，依然会想象到其他数据库
+3. 部分Redis客户端根本不支持这种方式。即使支持，在开发时来回切换数字形式的数据库，容易混乱
+
+建议如果要使用多个数据库，可以在一台机器上部署多个redis实例，用端口区分，合理利用CPU资源
+
+```
+select dbIndex // 切换数据库 
+flushdb/flushall // 清除当前数据库/清除所有数据库
 ```
 
 # 命名

@@ -1,8 +1,4 @@
----
-title: README
----
-
-NOTE
+# NOTE
 
 ## Hexo
 把note/下所有的文件夹放入hexo根目录/source/_posts/下

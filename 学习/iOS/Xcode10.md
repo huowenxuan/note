@@ -1,3 +1,7 @@
+---
+title: Xcode10
+---
+
 在Xcode10上运行新旧项目
 
 1. 报错`Build input file cannot be found: '/.../node_modules/react-native/Libraries/WebSocket/libfishhook.a'`
@@ -12,3 +16,4 @@ libstdc++几年前就被废弃，在Xcode10中正式被删除，用libc++代替�
     sudo xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
     cd ./node_modules/react-native/third-party/glog-0.3.4 && ../../scripts/ios-configure-glog.sh && cd ../../../../
     ```
+                      

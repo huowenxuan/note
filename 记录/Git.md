@@ -1,3 +1,7 @@
+---
+title: Git
+---
+
 # Git
 ![git2](media/git2.jpg)
 
@@ -33,3 +37,5 @@ git cherry-pick 62ecb3
 git reset --hard d27ab20
 ```
 
+
+                      

@@ -1,3 +1,7 @@
+---
+title: Wine
+---
+
 ```
 // 安装wine
 brew install wine
@@ -9,3 +13,5 @@ export LC_ALL=zh_CN
 wine /Users/huowenxuan/Downloads/LEGUPC/LeguPC.exe
 ```
 
+
+                      

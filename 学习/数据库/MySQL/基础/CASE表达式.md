@@ -1,3 +1,7 @@
+---
+title: CASE表达式
+---
+
 # CASE表达式
 条件分支
 
@@ -24,3 +28,4 @@ SELECT name,
         END AS ab_name
 FROM tb1;
 ```
+                      

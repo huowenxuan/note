@@ -1,3 +1,7 @@
+---
+title: cordova+vue
+---
+
 ## 初始化
 使用vue-cli创建基于webpack的项目
 > vue init webpack ProjectName
@@ -19,3 +23,5 @@ index.html就作为程序入口，src作为项目代码目录
 > assetsRoot: path.resolve(__dirname, '../www'),
 > assetsPublicPath: './', // 从'/'改为'./'，否则在手机上为空白页面
 
+
+                      

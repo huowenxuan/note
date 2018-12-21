@@ -1,3 +1,7 @@
+---
+title: flow
+---
+
 # 安装
 
 1. 安装时候不能使用brew，会卡住，使用npm install flow-bin -g
@@ -107,3 +111,4 @@ import type {ContainerProps} from '../utils/PropTypes'
 
 # Flow / PropType
 Flow type是编码时的检查，propTypes是运行时的检查，都是必要的
+                      

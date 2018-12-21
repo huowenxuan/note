@@ -1,3 +1,7 @@
+---
+title: Git 王者超神之路
+---
+
 > Git再识 拥抱开始
 >   这些应该可以让你对Git的使用更进一步  ^*^
 
@@ -780,3 +784,5 @@ $ git remote rename oldName newName
 $ git remote rm 仓库名
 ```
 
+
+                      

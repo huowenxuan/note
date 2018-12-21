@@ -1,3 +1,7 @@
+---
+title: nginx
+---
+
 
 ```
 # 使用yum，安装在/etc/nginx, 配置文件在/etc/nginx/conf/nginx.conf或/etc/nginx/nginx.conf
@@ -10,3 +14,4 @@ nginx -s reload #平滑重启
 ```
 // 源码安装，安装在/usr/local/nginx
 ```
+                      

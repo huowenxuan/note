@@ -1,3 +1,7 @@
+---
+title: 按数据库设计store
+---
+
 ### 按照数据库设计state
 ```
 // 帖子state
@@ -71,3 +75,5 @@ const byId = (state, action) => {
 	}
 }
 
+
+                      

@@ -1,3 +1,7 @@
+---
+title: cli
+---
+
 ## 新建
 > cordova init ProjectName
 ## 添加平台
@@ -5,3 +9,5 @@
 ## 运行
 > cordova run ios/browser 
 
+
+                      

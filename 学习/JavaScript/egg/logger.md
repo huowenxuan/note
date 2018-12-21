@@ -1,3 +1,7 @@
+---
+title: logger
+---
+
 # Logger
 ## 分类
 - **appLogger** `app.logger` 和 contextLogger `ctx.logger`
@@ -53,3 +57,4 @@ config.logger = {
 prod的日志是按天来切分的，格式为`***.log.2018-09-03`，当天的日志无日期，直接是`***.logs`
 
 dev的日志全放在一个文件中，在重新运行后会清空原日志
+                      

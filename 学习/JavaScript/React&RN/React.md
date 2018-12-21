@@ -1,3 +1,7 @@
+---
+title: React
+---
+
 # children
 
 ```javascript
@@ -10,3 +14,5 @@ React.Children.Only()
 
 
 
+
+                      

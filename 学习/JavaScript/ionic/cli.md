@@ -1,3 +1,7 @@
+---
+title: cli
+---
+
 ### 创建项目
 
 ```
@@ -129,3 +133,5 @@ ionic g provider MyData
 
 
 
+
+                      

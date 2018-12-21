@@ -1,3 +1,7 @@
+---
+title: 在sublime执行es6
+---
+
 # 在sublime运行es6
 Tools->Build System->New Build System
 编辑
@@ -11,3 +15,5 @@ Tools->Build System->New Build System
 
 cmd+b运行js代码
 
+
+                      

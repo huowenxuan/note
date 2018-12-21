@@ -1,3 +1,11 @@
+---
+title: Redis开发与运维
+---
+
+---
+title: Redis开发与运维
+---
+
 [TOC]
 
 ## 第1章 初识Redis
@@ -191,7 +199,7 @@ Redis会根据当前值的类型和长度决定使用哪种内部编码实现
     设置过期时间来限制某些接口不能被频繁访问，例如短信，例如限制一个IP不能在一秒钟之内访问超过n次（一秒钟之内自增数是否超过n）
 
 ### 哈希
-> 在Redis中，哈希指值本身又是一个键值对，如value={{field1, value1}, ...{fieldN, valueN}}
+> 在Redis中，哈希指值本身又是一个键值对，如value={ {field1, value1}, ...{fieldN, valueN} }
 
 **命令**
 
@@ -916,3 +924,5 @@ RDB和AOF都会执行fork，fork是重量级操作。改善fork的耗时：
 ## 第12章 开发运维中的“陷阱”
 ## 第13章 Redis监控运维云平台CacheCloud
 ## 第14章 Redis配置统计字典
+                      
+                      

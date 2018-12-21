@@ -1,3 +1,7 @@
+---
+title: 深入浅出Nodejs
+---
+
 [TOC]
 
 # 深入浅出Node.js
@@ -118,3 +122,4 @@ cluster.setupMaster()
 - *压力测试：*对网络接口进行压力测试以判断网络接口的性能。常用的工具为ab、siege、http_load
 
 - *QPS/RPS（Requests per second 每秒查询率）：*例如页面每天访问量PV为100万，主要访问量集中在10小时以内，那么QPS=PV/10h=1,000,000/10/60/60≈27.7，即服务器需要每秒处理27.7个请求才能胜任业务量
+                      

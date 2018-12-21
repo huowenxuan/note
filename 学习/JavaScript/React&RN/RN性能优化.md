@@ -1,3 +1,7 @@
+---
+title: RN性能优化
+---
+
 # 使用setNativeProps方法
 setNativeProps 方法可以理解为web的直接修改dom。使用该方法修改 View 、 Text 等 RN自带的组件 ，则不会触发组件的 componentWillReceiveProps 、 shouldComponentUpdate、 componentWillUpdate 等组件生命周期中的方法。
 建议频繁更新的操作，如slider、tabs切换等拖曳操作时，使用 setNativeProps 来更新属性，会获得意想不到的性能体验。
@@ -28,3 +32,5 @@ React Native 里面的 shadow 相关的样式，是非常耗性能的css属性�
 
 
 
+
+                      

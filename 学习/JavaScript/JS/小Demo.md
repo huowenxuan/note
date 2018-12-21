@@ -1,3 +1,7 @@
+---
+title: 小Demo
+---
+
 # byte转kb, mb, gb
 ```javascript
 formatBytes(bytes, decimals=0) {
@@ -11,3 +15,5 @@ formatBytes(bytes, decimals=0) {
 ```
 
 
+
+                      

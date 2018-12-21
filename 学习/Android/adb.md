@@ -1,3 +1,7 @@
+---
+title: adb
+---
+
 ```
 // 进入shell模式
 adb shell
@@ -104,3 +108,5 @@ adb shell input swipe <X1> <Y1> <X2> <Y2>
 
 
 
+
+                      

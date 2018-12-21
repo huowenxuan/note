@@ -1,3 +1,7 @@
+---
+title: docker
+---
+
 将代码pull到sword目录，在当前目录下执行一下操作：
 
 ```
@@ -35,3 +39,4 @@ docker image rm imageid
 # 查看端口占用
 lsof -i:7002
 ```
+                      

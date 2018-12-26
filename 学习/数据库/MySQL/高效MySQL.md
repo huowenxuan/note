@@ -1,7 +1,3 @@
----
-title: 高效MySQL
----
-
 [TOC]
 
 ## MySQL优化的关键

@@ -1,7 +1,3 @@
----
-title: flow
----
-
 # 安装
 
 1. 安装时候不能使用brew，会卡住，使用npm install flow-bin -g

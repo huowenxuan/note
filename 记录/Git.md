@@ -1,7 +1,3 @@
----
-title: Git
----
-
 # Git
 ![git2](media/git2.jpg)
 

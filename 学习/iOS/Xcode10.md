@@ -1,7 +1,3 @@
----
-title: Xcode10
----
-
 在Xcode10上运行新旧项目
 
 1. 报错`Build input file cannot be found: '/.../node_modules/react-native/Libraries/WebSocket/libfishhook.a'`

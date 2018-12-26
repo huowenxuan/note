@@ -1,7 +1,3 @@
----
-title: WebDriverAgent
----
-
 # 安装WebDriverAgent
 1. git clone https://github.com/facebook/WebDriverAgent.git
 2. ./Scripts/bootstrap.sh

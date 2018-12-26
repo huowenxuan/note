@@ -1,7 +1,3 @@
----
-title: React 16
----
-
 # createRef
 ref有三种创建方式
 

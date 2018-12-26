@@ -1,7 +1,3 @@
----
-title: Wine
----
-
 ```
 // 安装wine
 brew install wine

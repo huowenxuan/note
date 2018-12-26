@@ -1,7 +1,3 @@
----
-title: 深入浅出Nodejs
----
-
 [TOC]
 
 # 深入浅出Node.js

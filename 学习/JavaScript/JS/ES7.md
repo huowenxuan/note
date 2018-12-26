@@ -1,7 +1,3 @@
----
-title: ES7
----
-
 # 自动绑定this
 property initializers会自动为class中定义的方法绑定this，默认是不支持的，需要添加transform-class-properties插件
 

@@ -1,7 +1,3 @@
----
-title: adb
----
-
 ```
 // 进入shell模式
 adb shell

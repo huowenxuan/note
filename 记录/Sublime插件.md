@@ -1,7 +1,3 @@
----
-title: Sublime插件
----
-
 * [合辑](https://github.com/jikeytang/sublime-text)
 * [Side Bar 增强的侧边栏](https://github.com/titoBouzout/SideBarEnhancements)
 * [Docblockr 增强js注释](https://github.com/spadgos/sublime-jsdocs)

@@ -1,11 +1,3 @@
----
-title: Redis开发与运维
----
-
----
-title: Redis开发与运维
----
-
 [TOC]
 
 ## 第1章 初识Redis

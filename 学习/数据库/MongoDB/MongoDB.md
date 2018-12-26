@@ -1,7 +1,3 @@
----
-title: MongoDB
----
-
 [TOC]
 
 # mac 下安装

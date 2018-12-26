@@ -1,7 +1,3 @@
----
-title: React
----
-
 # children
 
 ```javascript

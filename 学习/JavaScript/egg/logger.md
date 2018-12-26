@@ -1,7 +1,3 @@
----
-title: logger
----
-
 # Logger
 ## 分类
 - **appLogger** `app.logger` 和 contextLogger `ctx.logger`

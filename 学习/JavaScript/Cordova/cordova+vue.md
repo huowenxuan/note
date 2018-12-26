@@ -1,7 +1,3 @@
----
-title: cordova+vue
----
-
 ## 初始化
 使用vue-cli创建基于webpack的项目
 > vue init webpack ProjectName

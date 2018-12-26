@@ -1,7 +1,3 @@
----
-title: django-rest-framework
----
-
 [TOC]
 # 搭建、集成
 ## 新建项目

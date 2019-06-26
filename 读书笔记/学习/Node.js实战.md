@@ -118,6 +118,125 @@ yarn
 ```
 
 ## 第3章 构建后端API服务
+### 使用Sequelize构建ORM
+
+执行 `sequelize model:generate —name User`，会分别在model和migration创建一个文件
+
+```
+// 配置 package.json scripts
+“m:new”: “sequelize migration:create”,// TODO migration:create和model:generate的区别
+“m:up”: “sequelize db:migrate”,
+“m:down”: “sequelize db:migrate:undo”
+```
+
+```
+// 配置.sequelizerc
+module.exports = {
+    config: path.resolve(‘config’, ‘config.json’),
+   ‘models-path’: path.resolve(‘app’, ‘model’),
+   ‘seeders-path’: path.resolve(‘app’, ‘seeder’),
+   ‘migrations-path’: path.resolve(‘app’, ‘migration’),
+}
+```
+
+app/migration/ 存放数据库迁移文件
+app/seeder/ 存放如何生成假数据的文件
+app/model/ 表中字段如何映射到JS对象的逻辑
+
+`sequelize db:migrate -debug`：当语法错误时，debug选项可获得详细错误
+`sequelize db:migrate`：同步到数据库
+
+#### 创建假数据
+
+`sequelize seed:generate —name create_user`: 会在seeder目录下新建一个js文件，和迁移文件结构相同
+
+```
+const utils = require(‘utility’) // 是Egg依赖的
+“up”: ()=>{
+    return queryInterface.bulkInsert(‘Users’,[{
+        email: ‘xxx@xx.xx’,
+        password: utils.md5(‘00000’),
+        username: ‘xxx’,
+        avatar: ‘xxx’,
+        ...
+    }])
+}
+“down”: ()=>{
+    queryInterface.bulkDelete(‘Users’)
+}
+```
+
+### 注册服务
+app/model/xx.js中 beforeCreate等生命周期方法支持异步
+
+```
+ModelA.beforeCreate((instance,options)=>{
+    instance.code = await generatorCode();
+})
+```
+
+#### User模型
+
+## 实用
+
+## Egg
+### 使用Sequelize构建ORM
+
+执行 `sequelize model:generate —name User`，会分别在model和migration创建一个文件
+
+```
+// 配置 package.json scripts
+“m:new”: “sequelize migration:create”,// TODO migration:create和model:generate的区别
+“m:up”: “sequelize db:migrate”,
+“m:down”: “sequelize db:migrate:undo”
+```
+
+```
+// 配置.sequelizerc
+module.exports = {
+    config: path.resolve(‘config’, ‘config.json’),
+   ‘models-path’: path.resolve(‘app’, ‘model’),
+   ‘seeders-path’: path.resolve(‘app’, ‘seeder’),
+   ‘migrations-path’: path.resolve(‘app’, ‘migration’),
+}
+```
+
+app/migration/ 存放数据库迁移文件
+app/seeder/ 存放如何生成假数据的文件
+app/model/ 表中字段如何映射到JS对象的逻辑
+
+`sequelize db:migrate -debug`：当语法错误时，debug选项可获得详细错误
+`sequelize db:migrate`：同步到数据库
+
+#### 创建假数据
+
+`sequelize seed:generate —name create_user`: 会在seeder目录下新建一个js文件，和迁移文件结构相同
+
+```
+const utils = require(‘utility’) // 是Egg依赖的
+“up”: ()=>{
+    return queryInterface.bulkInsert(‘Users’,[{
+        email: ‘xxx@xx.xx’,
+        password: utils.md5(‘00000’),
+        username: ‘xxx’,
+        avatar: ‘xxx’,
+        ...
+    }])
+}
+“down”: ()=>{
+    queryInterface.bulkDelete(‘Users’)
+}
+```
+
+### 注册服务
+app/model/xx.js中 beforeCreate等生命周期方法支持异步
+
+```
+ModelA.beforeCreate((instance,options)=>{
+    instance.code = await generatorCode();
+})
+```
+
 
 ## 工具代码
 
@@ -128,4 +247,8 @@ getIp(ctx) {
     }
     return ctx.request.ip || '
 }
+
+const {forEachObjIndexed} = require(‘ramda’); forEachObjIndexed(a,b=>{})  // 可遍历对象
+
+process.env.NODE_ENV // 判断环境 
 ```

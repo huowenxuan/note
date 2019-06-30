@@ -1,13 +1,13 @@
 
 ```
-# 使用yum，安装在/etc/nginx, 配置文件在/etc/nginx/conf/nginx.conf或/etc/nginx/nginx.conf
+# 使用yum或apt，安装在/etc/nginx, 配置文件在/etc/nginx/conf/nginx.conf或/etc/nginx/nginx.conf
 yum install nginx
+apt-get install nginx
 
 nginx # 启动
 nginx -s reload #平滑重启
 
 pkill -9 nginx
-
 ```
 
 ```

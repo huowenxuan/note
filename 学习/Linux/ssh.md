@@ -13,7 +13,10 @@ Host super
 Host testsuper
     HostName 39.96.33.13
     User root
+    Port 22
 ```
 
 保存后即可
-                      
+
+# 指定端口号
+ssh -p xxx xx@xxx.xxx.xxx.xxx      

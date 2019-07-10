@@ -11,10 +11,10 @@ visudo  //或者vi /etc/sudoers
 修改su的配置文件/etc/pam.d/su,增加下列项：
 
 ```
- auth       required   pam_wheel.so group=wheel 
+auth       required   pam_wheel.so group=wheel 
 # Uncomment this if you want wheel members to be able to
 # su without a password.
- auth       sufficient pam_wheel.so trust use_uid
- ```
+auth       sufficient pam_wheel.so trust use_uid
+```
  
  使用su root不需要密码

@@ -16,3 +16,10 @@ sudo apt-get update
 一直报错`ImportError: libhdf5_serial.so.100: cannot open shared object file: No such file`
 
 然后重新安装 pip3 install opencv-python 成功
+
+## 安装torchvision
+pip3 install torchvision
+pip3 search torchvision
+出现一个`torchvision-raspi`
+pip3 install torchvision-raspi
+sudo apt-get install libopenblas-dev

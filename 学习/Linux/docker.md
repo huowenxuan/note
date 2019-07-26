@@ -21,7 +21,7 @@ docker ps # 查看运行的容器，获得containerid
 docker ps -a  # 查看挂掉的容器
 
 # 追踪log 后面的参数为container id
-docker logs -f 75164ca7e7cb
+docker logs -f ec6d7d403ca0
 
 # 停止容器
 sudo docker stop containerId
@@ -36,7 +36,7 @@ docker image rm imageid
 lsof -i:7002
 
 # 进入容器
-docker exec -it <name> /bin/bash
+docker exec -it prodxx /bin/bash
 
 # 宿主机重启后自动启动容器
 # 前提有两个：

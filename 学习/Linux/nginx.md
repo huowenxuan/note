@@ -22,6 +22,12 @@ pkill -9 nginx
 nginx -s reload
 ```
 
+或者
+```
+nginx -c /etc/nginx/nginx.conf
+nginx -s reload
+```
+
 ## 例子
 ###  nginx.conf
 ```

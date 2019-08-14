@@ -1,3 +1,3 @@
 git add .
-git commit -m "note"
+git commit -m "update"
 git push 

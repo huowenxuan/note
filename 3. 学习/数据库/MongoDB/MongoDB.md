@@ -9,8 +9,14 @@ sudo mongod
 # 第一次启动报错Data directory /data/db not found., terminating
 sudo mkdir /data
 sudo mkdir /data/db
-sudo mkdir/data/logs
+sudo mkdir /data/logs
 # 如果报错没有可读权限，进入/data，增加读与写的权限
+
+# mac上报错 exception in initAndListen: IllegalOperation: Attempted to create a lock file on a read-only directory: /data/db, terminating
+sudo mkdir -p /data/db
+sudo  chmod 777 -R /data
+sudo chown -R huowenxuan /data # 给用户赋予权限
+# 再次启动
 
 # 进入命令行
 mongo

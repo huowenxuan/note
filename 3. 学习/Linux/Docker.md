@@ -1,4 +1,14 @@
 # Docker
+## CentOS安装
+
+```
+yum install -y docker
+# 启动
+systemctl start docker.service
+# 开机启动
+sudo systemctl enable docker
+```
+
 ## 命令
 
 ```
@@ -156,3 +166,6 @@ sudo docker pull registry.cn-beijing.aliyuncs.com/chudao/sword:v1
 docker tag registry.cn-beijing.aliyuncs.com/chudao/sword:v1 testsuper:v1
 env=test docker-compose up -d
 ```
+
+## 注意
+docker应用的host不能设置为127.0.0.1，设置为0.0.0.0，否则宿主机器无法访问

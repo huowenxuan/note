@@ -3,6 +3,7 @@
 
 ```
 yum install -y docker
+yum install -y docker-compose
 # 启动
 systemctl start docker.service
 # 开机启动

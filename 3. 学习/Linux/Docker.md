@@ -170,3 +170,7 @@ env=test docker-compose up -d
 
 ## 注意
 docker应用的host不能设置为127.0.0.1，设置为0.0.0.0，否则宿主机器无法访问
+
+## 错误
+### Cannot start service xxx: oci runtime error: container_linux.go:235:
+yum update

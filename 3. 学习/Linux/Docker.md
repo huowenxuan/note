@@ -1,6 +1,7 @@
 # Docker
 ## CentOS安装
 
+CentOS 7
 ```
 yum install -y docker
 yum install -y docker-compose
@@ -8,6 +9,42 @@ yum install -y docker-compose
 systemctl start docker.service
 # 开机启动
 sudo systemctl enable docker
+```
+
+CentOS 6
+
+```
+yum install epel-release
+yum install docker-io
+# 如果报错 No package docker available，执行下面两句
+cd /etc/yum.repos.d
+sudo wget http://www.hop5.in/yum/el6/hop5.repo
+# 再次运行
+yum install docker-io
+# 启动
+service docker start
+# 开机启动
+chkconfig docker on
+# 如果报错 docker: 未被识别的服务，使用nohup
+nohup docker -d &
+
+
+
+# 安装python2.7，安装后，可通过python2.7命令打开
+wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
+tar xf Python-2.7.8.tgz
+cd Python-2.7.8
+./configure --prefix=/usr/local
+make && make install
+
+# 安装easy_install、pip，安装好后可通过pip2.7安装
+vi /etc/resolv.conf
+新增 nameserver 8.8.8.8
+wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+easy_install-2.7 pip
+
+# 安装docker-compose，最低要求python2.7
+pip3 install docker-compose
 ```
 
 ## 命令
@@ -47,7 +84,7 @@ docker image rm imageid
 lsof -i:7002
 
 # 进入容器
-docker exec -it prodxx /bin/bash
+docker exec -it es:v1 /bin/bash
 
 # 宿主机重启后自动启动容器
 # 前提有两个：

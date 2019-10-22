@@ -20,16 +20,35 @@ yum install docker-io
 cd /etc/yum.repos.d
 sudo wget http://www.hop5.in/yum/el6/hop5.repo
 # 再次运行
-yum install docker-io
+yum install -y docker-io
 # 启动
+docker -d
 service docker start
+
+# 如果报错 Error creating bridge: ip failed: ip link add docker0 type bridge (output: )
+# 手动创建docker0网桥
+sudo ip link set dev docker0 down
+sudo brctl delbr docker0
+sudo iptables -t nat -F POSTROUTING 
+brctl addbr docker0
+ip addr add 192.168.5.1/24 dev docker0
+ip link set dev docker0 up
+ip addr show docker0
+echo 'DOCKER_OPTS="-b=docker0"' >> /etc/default/docker
+docker -d & 
+
 # 开机启动
 chkconfig docker on
 # 如果报错 docker: 未被识别的服务，使用nohup
 nohup docker -d &
+# nohup停止
+# 查看进程id
+ps
+# 关闭
+kill -9 pid
 
-
-
+# 安装依赖 
+yum install gcc g++ zlib zlib-devel openssl-devel
 # 安装python2.7，安装后，可通过python2.7命令打开
 wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
 tar xf Python-2.7.8.tgz
@@ -40,11 +59,22 @@ make && make install
 # 安装easy_install、pip，安装好后可通过pip2.7安装
 vi /etc/resolv.conf
 新增 nameserver 8.8.8.8
-wget https://bootstrap.pypa.io/ez_setup.py -O - | python
-easy_install-2.7 pip
+# 安装setuptools
+wget https://pypi.io/packages/source/s/setuptools/setuptools-33.1.1.zip
+unzip setuptools-33.1.1.zip
+cd setuptools-33.1.1
+python2.7 setup.py install
+
+# 安装pip https://pypi.python.org/pypi/pip找到下载地址
+wget https://files.pythonhosted.org/packages/ce/ea/9b445176a65ae4ba22dce1d93e4b5fe182f953df71a145f557cffaffc1bf/pip-19.3.1.tar.gz
+tar -zxvf pip-19.3.1.tar.gz 
+cd pip-19.3.1
+python2.7 setup.py install
 
 # 安装docker-compose，最低要求python2.7
-pip3 install docker-compose
+pip2.7 install docker-compose
+# 最后报错 Internal server error: 404 trying to fetch remote history for xxx
+放弃
 ```
 
 ## 命令

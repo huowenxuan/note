@@ -14,11 +14,13 @@ git push  origin  api:api2
 ```
 本地api分支上传到远程的api2分支
 
-# 从本地上传一个新的github项目
+# 上传到第二个新的远程仓库
 
 ```sh
-git remote add origin https://github.com/huowenxuan/***.git
-git push -u origin master
+git remote add github https://github.com/huowenxuan/girtu-jieba-python.git
+git push -u github master
+# 删除
+git remote remove github
 ```
 
 # 合并特定commit到另一个分支
@@ -46,3 +48,7 @@ git push origin xxx
 # 删除远程分支
 git branch -r -d origin/xxx
 ```
+
+# 记住密码
+git config --global credential.helper store
+再次执行远程操作（git pull等）之后再输入一次账号密码就可以了

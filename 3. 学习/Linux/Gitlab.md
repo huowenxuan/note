@@ -32,33 +32,35 @@ kill -9 4473 # 杀掉第一个守护进程
 find / -name *gitlab*|xargs rm -rf # 删掉所有文件
 find / -name gitlab |xargs rm -rf 
 
+
+## 更换root密码
+gitlab-rails console production
+等待进入控制台
+user = User.where(id: 1).first
+user.password="xxx"
+user.password_confirmation="xxx"
+user.save!
+
+## gitlab-rails控制台
+
+```
+gitlab-rails console production
+# 全部用户
+User.all
+# 输出全部字符串，而非ActiveRecord :: Relation对象
+User.all.to_a
+# 输出json格式
+User.all.as_json
+```
+
 ## Gitlab迁移、升级
-### 查看版本
-/opt/gitlab/embedded/service/gitlab-rails/VERSION
+### 查看Gitlab版本
+cat /opt/gitlab/embedded/service/gitlab-rails/VERSION
 ### 数据备份、导出到本机
+
 ```
 # gitlab代码保存在/var/opt/gitlab/git-data/repositories（gitlab-satellites目录为临时目录）
-
-# 使用rvm升级ruby，安装bundle
-yum -y update nss # 更新nss，否则下一步无法成功
-curl -sSL https://get.rvm.io | bash -s stable --ruby
-# 按提示执行
-gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-# 再次执行
-curl -sSL https://get.rvm.io | bash -s stable --ruby
-根据提示执行source
-rvm list known # 查看已有列表
-rvm install 2.6.1 # 至少需要2.3.0，同时安装好gem
-rvm use 2.6.1 --default # 设为默认版本 
-# 安装bundle
-gem sources --remove https://rubygems.org/ # 或改成http
-gem sources -a https://gems.ruby-china.com/ # 或改成http
-gem sources -l # 查看换源结果，需要只剩下一个国内源
-gem install bundler
-# 如果报错`bundler requires Ruby version >= 2.3.0.`
-gem install bundler -v 1.17.3
-
-# 备份，不可用
+# 备份
 cd /var/opt/gitlab
 sudo -sH # git-data可能无权限，无法cd，默认缺省为获取root用户
 cd git-data
@@ -67,18 +69,32 @@ tar -zcvf repositories.tar repositories/
 mv repositories.tar .. # 移动到上级目录，否则无权限scp
 # 查看文件大小
 ls -lht
-# 传输文件到另一台服务器
-scp /var/opt/gitlab/repositories.tar xxx@xxx.xxx.xxx.xxx:/var/opt/gitlab/repositories.tar
-# 另一台服务器
+# 传输文件到新服务器
+scp /var/opt/gitlab/repositories.tar x@x.x.x.x:/var/opt/repositories.tar
+
+# 新服务器
 # 解压
+cd /var/opt/
 tar -xzf repositories.tar
+chown -R git:git repositories # 必须给git权限
+sudo gitlab-ctl reconfigure # 安装成功后先更新配置，失败就重试
+gitlab-rake gitlab:import:repos['/var/opt/repositories/'] # 导入备份，填入解压后的目录地址。有输出Processing...则成功，无输出则失败
+```
 
+### **同版本**备份和恢复
 
-# 备份。网上说的复制repositories和用bundle导出都不可用，前者不生效，后者报错
+```
 gitlab-rake gitlab:backup:create
 cd /var/opt/gitlab/backups # 发现生成一个类似1574047630_gitlab_backup.tar的文件
 # 查看文件大小
 ls -lht
-# 传输文件到另一台服务器
-scp *.tar x@x.x.x.x:/var/opt/gitlab
+# 传输文件到新服务器
+scp *.tar x@x.x.x.x:/var/opt/gitlab/backups
+# 登录到新的服务器
+chmod 777 1574047630_gitlab_backup.tar
+# 停止相关数据连接服务
+gitlab-ctl stop unicorn
+gitlab-ctl stop sidekiq
+# 恢复BACKUP为备份文件编号
+gitlab-rake gitlab:backup:restore BACKUP=1574047630
 ```

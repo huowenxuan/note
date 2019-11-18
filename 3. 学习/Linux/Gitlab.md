@@ -33,9 +33,32 @@ find / -name *gitlab*|xargs rm -rf # 删掉所有文件
 find / -name gitlab |xargs rm -rf 
 
 ## Gitlab迁移、升级
+### 查看版本
+/opt/gitlab/embedded/service/gitlab-rails/VERSION
 ### 数据备份、导出到本机
 ```
 # gitlab代码保存在/var/opt/gitlab/git-data/repositories（gitlab-satellites目录为临时目录）
+
+# 使用rvm升级ruby，安装bundle
+yum -y update nss # 更新nss，否则下一步无法成功
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+# 按提示执行
+gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+# 再次执行
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+根据提示执行source
+rvm list known # 查看已有列表
+rvm install 2.6.1 # 至少需要2.3.0，同时安装好gem
+rvm use 2.6.1 --default # 设为默认版本 
+# 安装bundle
+gem sources --remove https://rubygems.org/ # 或改成http
+gem sources -a https://gems.ruby-china.com/ # 或改成http
+gem sources -l # 查看换源结果，需要只剩下一个国内源
+gem install bundler
+# 如果报错`bundler requires Ruby version >= 2.3.0.`
+gem install bundler -v 1.17.3
+
+# 备份，不可用
 cd /var/opt/gitlab
 sudo -sH # git-data可能无权限，无法cd，默认缺省为获取root用户
 cd git-data
@@ -49,4 +72,13 @@ scp /var/opt/gitlab/repositories.tar xxx@xxx.xxx.xxx.xxx:/var/opt/gitlab/reposit
 # 另一台服务器
 # 解压
 tar -xzf repositories.tar
+
+
+# 备份。网上说的复制repositories和用bundle导出都不可用，前者不生效，后者报错
+gitlab-rake gitlab:backup:create
+cd /var/opt/gitlab/backups # 发现生成一个类似1574047630_gitlab_backup.tar的文件
+# 查看文件大小
+ls -lht
+# 传输文件到另一台服务器
+scp *.tar x@x.x.x.x:/var/opt/gitlab
 ```

@@ -1,8 +1,10 @@
 [TOC]
 
-```
 # mac 下安装
 brew install mongodb
+
+# 配置文件
+cat /etc/mongod.conf
 
 # 启动
 sudo mongod
@@ -16,7 +18,7 @@ sudo mkdir /data/logs
 sudo mkdir -p /data/db
 sudo  chmod 777 -R /data
 sudo chown -R huowenxuan /data # 给用户赋予权限
-# 再次启动
+再次启动
 
 # 进入命令行
 mongo
@@ -28,3 +30,7 @@ db.xxxx.stats(1024 * 1024); // storageSize为所占空间大小
 mongoexport --port 27017 --db dbname --collection cname --out export.json
 mongoimport -h localhost:27017 -d dbname --collection cname2 --file export.json
 ```
+
+# 开启第二个实例，fork后台运行
+mkdir -p /mnt/db/mongodb/data
+mongod --port 27018 --dbpath /mnt/db/mongodb/data --smallfiles -oplogSize 128 --logpath /mnt/db/mongodb/mongo5.log --fork

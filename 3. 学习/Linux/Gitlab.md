@@ -79,7 +79,18 @@ tar -xzf repositories.tar
 chown -R git:git repositories # 必须给git权限
 sudo gitlab-ctl reconfigure # 安装成功后先更新配置，失败就重试
 gitlab-rake gitlab:import:repos['/var/opt/repositories/'] # 导入备份，填入解压后的目录地址。有输出Processing...则成功，无输出则失败
+
+导出后所有的group、project都默认为private，需要手动更新，成员需要添加为Maintainer或Developer，否则无法进行push
 ```
+
+### 替换项目remote url
+所有项目根目录（本地和线上）
+
+Mac本地执行：
+sed -i '' "s/115.28.166.109/123.57.86.216/g" .git/config
+
+某些服务器上sed需要去掉第一个参数，否则报错"sed：无法读取..."
+sed -i '' "s/115.28.166.109/123.57.86.216/g" .git/config
 
 ### **同版本**备份和恢复
 
@@ -98,3 +109,7 @@ gitlab-ctl stop sidekiq
 # 恢复BACKUP为备份文件编号
 gitlab-rake gitlab:backup:restore BACKUP=1574047630
 ```
+
+
+
+

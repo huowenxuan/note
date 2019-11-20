@@ -1,3 +1,5 @@
+[TOC]
+
 # Gitlab
 ## 安装
 https://about.gitlab.com/install/#centos-7
@@ -110,6 +112,41 @@ gitlab-ctl stop sidekiq
 gitlab-rake gitlab:backup:restore BACKUP=1574047630
 ```
 
+# 完成后交给成员的迁移文档
+## 注册
+进入[新的GitLab](http://)注册，和[旧的GitLab](http://)使用完全一样的邮箱、用户名
 
+## 新增SSH Key
+1. 点击右上角头像 -> Settings -> 左侧SSH Keys
+2. 将旧账号下的所有key都复制过来，title可重复
 
+## 本地
+1. 替换remote url。在项目根目录执行
 
+	```sh
+	# Mac本地执行：
+	sed -i '' "s/x.x.x.x/x.x.x.x/g" .git/config
+	```
+2. 测试
+
+	```sh
+	git push
+	```
+
+## 服务器
+1. 替换remote url：在项目根目录执行
+	
+	### 
+	```sh
+	# 某些服务器上sed需要去掉第一个参数，否则报错"sed：无法读取..."
+	sed -i "s/x.x.x.x/x.x.x.x/g" .git/config
+	```
+
+2. 然后直接使用git pull尝试，如果失败就继续执行下面的步骤
+3. 查看服务器公钥
+	
+	```
+	cat ~/.ssh/id_rsa.pub
+	```
+
+4. 复制后添加到`gitlab `的`ssh keys`中

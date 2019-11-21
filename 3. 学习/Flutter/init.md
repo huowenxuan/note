@@ -11,6 +11,7 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 source ~/.bash_profile
 ```
 ## 执行无反应，需要设置镜像
+
 每次打开终端都要切换一下镜像
 
 ```
@@ -20,3 +21,4 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ## 让当前执行的命令停止
 killall -9 dart
+

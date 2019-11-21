@@ -1,7 +1,7 @@
 # Root
 树莓派默认没有root用户
 
-```
+```sh
 # 设置密码
 sudo passwd root
 # 开启root

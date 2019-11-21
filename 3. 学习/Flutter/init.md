@@ -21,4 +21,3 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ## 让当前执行的命令停止
 killall -9 dart
-

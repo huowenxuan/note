@@ -104,8 +104,6 @@ vim authorized_keys
 # 在gitlab服务器上ssh一次目标服务器，将服务器信息加入到known_hosts，即可正常部署。同时解决Host key verification failed.的错误
 ```
 
-
-
 ### 错误 `git fetch-pack: expected shallow list`
 
 需要git 1.9+版本。升级git版本，centos中yum版本为1.8.3.1

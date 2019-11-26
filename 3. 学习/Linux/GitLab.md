@@ -151,14 +151,53 @@ gitlab-rake gitlab:import:repos['/var/opt/repositories/'] # 导入备份，填�
 导出后所有的group、project都默认为private，需要手动更新，成员需要添加为Maintainer或Developer，否则无法进行push
 ```
 
-### 替换项目remote url
-所有项目根目录（本地和线上）
+### 注册 
 
-Mac本地执行：
-sed -i '' "s/115.28.166.109/123.57.86.216/g" .git/config
+进入[新的GitLab](http://)注册，和[旧的GitLab](http://)使用完全一样的邮箱、用户名
 
-某些服务器上sed需要去掉第一个参数，否则报错"sed：无法读取..."
-sed -i '' "s/115.28.166.109/123.57.86.216/g" .git/config
+### 新增SSH Key
+
+1. 点击右上角头像 -> Settings -> 左侧SSH Keys
+2. 将旧账号下的所有key都复制过来，title可重复
+
+### 本地
+
+1. 替换remote url。在项目根目录执行
+
+   ```sh
+   # Mac本地执行：
+   sed -i '' "s/x.x.x.x/x.x.x.x/g" .git/config
+   ```
+
+2. 测试
+
+   ```sh
+   git push
+   ```
+
+### 服务器
+
+1. 替换remote url：在项目根目录执行
+
+   ### 
+
+   ```sh
+   # 某些服务器上sed需要去掉第一个参数，否则报错"sed：无法读取..."
+   sed -i "s/x.x.x.x/x.x.x.x/g" .git/config
+   ```
+
+2. 然后直接使用git pull尝试，如果失败就继续执行下面的步骤
+
+3. 查看服务器公钥
+
+   ```
+   cat ~/.ssh/id_rsa.pub
+   # 如果文件不存在
+   ssh-keygen
+   # 之后再输入username和登录密码
+   ```
+
+4. 复制后添加到`gitlab `的`ssh keys`中
 
 ### 迁移后commit数为0的解决方法
 设置->仓库->默认分支 修改为其他分支再修改回来即可
@@ -180,42 +219,3 @@ gitlab-ctl stop sidekiq
 # 恢复BACKUP为备份文件编号
 gitlab-rake gitlab:backup:restore BACKUP=1574047630
 ```
-
-# 完成后交给成员的迁移文档
-## 注册
-进入[新的GitLab](http://)注册，和[旧的GitLab](http://)使用完全一样的邮箱、用户名
-
-## 新增SSH Key
-1. 点击右上角头像 -> Settings -> 左侧SSH Keys
-2. 将旧账号下的所有key都复制过来，title可重复
-
-## 本地
-1. 替换remote url。在项目根目录执行
-
-	```sh
-	# Mac本地执行：
-	sed -i '' "s/x.x.x.x/x.x.x.x/g" .git/config
-	```
-2. 测试
-
-	```sh
-	git push
-	```
-
-## 服务器
-1. 替换remote url：在项目根目录执行
-	
-	### 
-	```sh
-	# 某些服务器上sed需要去掉第一个参数，否则报错"sed：无法读取..."
-	sed -i "s/x.x.x.x/x.x.x.x/g" .git/config
-	```
-
-2. 然后直接使用git pull尝试，如果失败就继续执行下面的步骤
-3. 查看服务器公钥
-	
-	```
-	cat ~/.ssh/id_rsa.pub
-	```
-
-4. 复制后添加到`gitlab `的`ssh keys`中

@@ -45,7 +45,7 @@ user.save!
 
 ## gitlab-rails控制台
 
-```
+```sh
 gitlab-rails console production
 # 全部用户
 User.all
@@ -126,7 +126,7 @@ yum install gitlab-runner
 cat /opt/gitlab/embedded/service/gitlab-rails/VERSION
 ### 数据备份、导出到本机
 
-```
+```sh
 # gitlab代码保存在/var/opt/gitlab/git-data/repositories（gitlab-satellites目录为临时目录）
 # 备份
 cd /var/opt/gitlab
@@ -204,7 +204,7 @@ gitlab-rake gitlab:import:repos['/var/opt/repositories/'] # 导入备份，填�
 
 ### **同版本**备份和恢复
 
-```
+```sh
 gitlab-rake gitlab:backup:create
 cd /var/opt/gitlab/backups # 发现生成一个类似1574047630_gitlab_backup.tar的文件
 # 查看文件大小

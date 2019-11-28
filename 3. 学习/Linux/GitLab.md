@@ -114,8 +114,8 @@ yum info git
 yum remove -y git
 # https://stackoverflow.com/questions/21820715/how-to-install-latest-version-of-git-on-centos-7-x-6-x
 # 安装源
-yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm # 失败重试
-yum install git # 升级到2.22.0。失败重试
+yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm # 失败就重试
+yum install git # 升级到2.22.0。失败就重试
 # 重新安装gitlab-runner，不需要先卸载，安装后不需要重新register
 yum install gitlab-runner
 ```

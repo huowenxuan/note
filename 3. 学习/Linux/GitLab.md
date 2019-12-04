@@ -69,7 +69,7 @@ gitlab-runner register
 
 ### 编辑项目`.gitlab-ci.yml`
 
-deploy部署。only test只在test分支执行
+deploy部署。only test只在test分支执行。如果
 
 ```yml
 stages:

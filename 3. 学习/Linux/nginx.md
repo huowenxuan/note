@@ -73,7 +73,7 @@ http {
 整合http、https，把localhost:7002转发到/api/，把/build/index.html转发到/react/（结尾都有/）
 
 ```py
-#HTTP server
+# HTTP server
 #
 server {
     listen 80;

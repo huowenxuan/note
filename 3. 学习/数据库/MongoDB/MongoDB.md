@@ -27,7 +27,7 @@ mongo
 db.xxxx.stats(1024 * 1024); // storageSize为所占空间大小
 
 # 数据库导出与导入
-mongoexport --port 27017 --db dbname --collection cname --out export.json
+mongoexport --port 57134 --db dbname --collection cname --out export.json
 mongoimport -h localhost:27017 -d dbname --collection cname2 --file export.json
 ```
 

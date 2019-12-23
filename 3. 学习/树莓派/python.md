@@ -1,4 +1,4 @@
-# Python
+#  Python
 ## 安装opencv
 使用 pip3 install opencv-python。import cv2后报错 ` libcblas.so.3: cannot open shared object file: No such file or directory`
 

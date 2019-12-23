@@ -3,9 +3,10 @@
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 最后填写
 network={
-        ssid="1007"
-        psk="cs10071007"
+        ssid="ziroom1007"
+        psk="4001007100"
 }
+
 ## 获取私网ip
 ifconfig
 ## 配置路由器DMZ

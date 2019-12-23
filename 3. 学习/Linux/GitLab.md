@@ -21,7 +21,7 @@ gitlab_workhorse['auth_backend'] = "http://localhost:8888"
 
 或杀掉
 lsof -i:8080
-或
+或 
 netstat -tunlp |grep 8080
 
 第二种：内存不足，要求2G内存，所以2G的服务器

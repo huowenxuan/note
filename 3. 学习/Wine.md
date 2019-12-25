@@ -8,6 +8,3 @@ export LC_ALL=zh_CN
 // 从指定位置安装exe
 wine /Users/huowenxuan/Downloads/LEGUPC/LeguPC.exe
 ```
-
-
-                      

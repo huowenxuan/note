@@ -30,3 +30,4 @@ docker run --rm --privileged multiarch/qemu-user-static:register
 ```
 
 docker run --rm -v /Users/huowenxuan/Desktop/qemu-arm-static:/usr/bin/qemu-arm-static arm32v7/python:3.6.5-slim-stretch qemu-arm-static /usr/local/bin/python3.6 -V
+

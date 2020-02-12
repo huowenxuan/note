@@ -1,4 +1,11 @@
+[TOC]
+
 # Docker
+
+curl -sSL https://get.daocloud.io/docker | sh
+
+下载镜像加速——百度“docker加速器”
+
 ## CentOS安装
 
 CentOS 7
@@ -86,6 +93,8 @@ sudo docker build -t sword .
 # sudo docker run -d --net=host  --name sowrd sword
 # 只能使用 这种方法将docker7002端口映射到宿主环境的7002
 sudo docker run -d  --name sowrd  -p 7002:7002 sword
+# 添加-ti参数可直接进入容器shell
+docker run -ti ubantu /bin/bash
 
 # 启动一个关闭的容器
 docker container start cid
@@ -145,25 +154,34 @@ docker build http://server/context.tar.gz
 ## Dockerfile
 
 ```shell
-# RUN
-# 当前镜像的顶层执行任何命令，并commit成新的（中间）镜像，提交的镜像会在后面继续用到
+# FROM写在最前，代表以何种镜像为基础
+FROM node:10.10.0
+
+# RUN 执行一些shell命令，比如安装依赖，通常写到一行，因为一个指令就是一个镜像层，安装的指令合在一层是最佳实践
+RUN apt-get install -y vim
+
+# 三种写法示例
 RUN npm run dev # shell格式，相当于执行/bin/sh -c "<command>"：
 RUN ["npm", "run", "dev"] # exec格式，不会触发shell，所以$HOME这样的环境变量无法使用，但它可以在没有bash的镜像中执行，而且可以避免错误的解析命令字符串
 RUN ["/bin/bash", "-c", "npm run dev"] # 与shell相同
 
 # CMD
-# 一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。CMD指令的主要功能是在build完成后，为了给docker run启动到容器时提供默认命令或参数，这些默认值可以包含可执行的命令，也可以只是参数（此时可执行命令就必须提前在ENTRYPOINT中指定）。
-# 同样有以上两种格式
+# 一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效
+# docker run会执行CMD：是在build完成后，启动容器时的命令
 CMD ./node_modules/.bin/egg-scripts start --env=$env --port=7002
+# docker run如果加参数，参数会替换CMD的内容，ENTRYPOINT不会
+ENTRYPOINT ["/bin/echo"]
+docker run xxx hello
+# 此时会输出hello，而不是替换掉命令
 
+# VOLUME 将本机的目录挂在到镜像中
+# COPY和ADD 把文件复制到容器中，一般使用COPY，远程文件使用ADD
+# WORKDIR 切换目录，类似cd
 ```
 
 ### 自定义参数
 ```
 # Dockerfile
-# FROM写在最前
-FROM node:10.10.0
-
 ARG user1 # 参数必须先使用ARG声明
 ARG user2
 # 默认值
@@ -195,12 +213,65 @@ docker build --build-arg user1=def
 可以利用 docker container start 命令，直接将一个已经终止的容器启动运行
 
 ## docker-componse
-以本地的docker-compose.yml构建，指定yml文件使用-f
+```
+# 以本地的docker-compose.yml构建，指定yml文件使用-f
 docker-compose  build
-运行，代替docker run。-d 后台运行；如果docker-compose.yml指定了image，并且存在，就直接运行，否则会执行build
+# 运行，代替docker run。-d 后台运行；如果docker-compose.yml指定了image，并且存在，就直接运行，否则会执行build
 docker-compose up -d
+# 查看后台启动的服务日志
+docker-compose logs
+# 将所有通过up启动的容器停止并销毁，加入--volumes会清空储存卷
+docker-compose down
+# 查看启动的容器的信息
+docker-compose ps
+# 停止所有up的容器
+docker-compose stop
+# 启动被stop的容器
+docker-compose start
+# 重启
+docker-compose restart
+# 在某个容器中执行命令，进入命令行
+docker-compose exec web sh
+```
+
+### 配置包含egg+mysql+adminer的docker-compose.yml
+
+```
+version: 1.0
+services:
+	web:
+		build: .
+		restart: always
+		volumes:
+			- .:/myapp
+		ports: 
+			- "7001:7001"
+	
+	db:
+		image: mysql:5.6
+		restart: always
+		volumes:
+			- "db-data:/var/lib/mysql"
+		environment: 
+			MYSQL_ROOT_PASSWORD: 88888
+			MYSQL_DATABASE: app
+	
+	adminer:
+		image: adminer
+		restart: always
+		ports: 
+			-9000:8080
+
+volumes:
+	db-data:
+```
+
+volumes为了让数据持久化，下一次up时不会丢失数据，restart启动失败后一直重启，因为Web连不上数据库会异常退出，adminer可管理数据库，也可进行数据库的迁移
+
+
 
 ## 阿里云仓库 https://cr.console.aliyun.com/repository
+
 创建docker仓库：在`容器镜像服务`创建镜像仓库，代码仓库选择本地
 
 ```shell

@@ -1,6 +1,6 @@
 [TOC]
 
-# Node.js实战
+# Node.js实战 Egg+Vue+Docker
 
 ## 实用
 
@@ -329,6 +329,8 @@ initRouterMap('/api/v1', require('./api')(controller), router)
 
 ### CSRF
 
+csrf确保用户在本站发起的请求，在egg中由egg-security插件提供
+
 config.defualt.js
 
 ```
@@ -374,6 +376,7 @@ const chalk = require('chalk')
 config.jwt = {
   secret: '123456',
   enable: true,
+  ignore: [/\/passport/i, /\/api/],
   // 注册和登录不需要jwt验证，忽略掉
   ignore(ctx) {
     const paths = ['/api/v1/signin', '/api/v1/signup']
@@ -492,3 +495,252 @@ egg-mail
 
 ### 调试
 
+修改init.js，添加log，之后在app.js运行该方法
+
+```
+function golobalLogger(app) {
+	if (DEV) {
+		global.debug = app.logger.debug.bind(app.logger)
+		global.info...
+	} else {
+		global.debug = ()=>{}
+		global.info...
+	}
+}
+```
+
+chrome调试、断点调试
+
+```
+npm run debug
+// 或
+egg-bin debug
+```
+
+chrome跳转到命令行提示的地址 `chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9999/__ws_proxy__`，进入Sources，左侧page，file://，可在文件的任意一行打断点，当执行到该处就会停在这个地方
+
+例如有一行为 `const {ctx, app} = this`，鼠标选中ctx，右键选择`add seledct text to watchs`，执行到该行的断点时，发现右边面板watch栏多了一个`ctx:Object`
+
+
+
+vscode使用vscode-eggjs调试
+
+### RESTful API、Controller(Service)基类
+
+| Method | Path            | Route Name | Controller.Action             |
+| ------ | --------------- | ---------- | ----------------------------- |
+| GET    | /posts          | posts      | app.controllers.posts.index   |
+| GET    | /posts/new      | new_post   | app.controllers.posts.new     |
+| GET    | /posts/:id      | post       | app.controllers.posts.show    |
+| GET    | /posts/:id/edit | edit_post  | app.controllers.posts.edit    |
+| POST   | /posts          | posts      | app.controllers.posts.create  |
+| PUT    | /posts/:id      | post       | app.controllers.posts.update  |
+| DELETE | /posts/:id      | post       | app.controllers.posts.destroy |
+
+其中new_post和edit_post都是HTML视图，构建API一般用不到
+
+| Method | Path      | Route Name | Controller.Action             |
+| ------ | --------- | ---------- | ----------------------------- |
+| GET    | /posts    | posts      | app.controllers.posts.index   |
+| GET    | /post/:id | post       | app.controllers.posts.show    |
+| POST   | /post     | post       | app.controllers.posts.create  |
+| PUT    | /post/:id | post       | app.controllers.posts.update  |
+| DELETE | /post/:id | post       | app.controllers.posts.destroy |
+
+*个人喜欢这种方法，`posts/xx`可调用其他资源，类似 `posts/types` 获取所有post的类别，如果按照上面的方法，`posts/types`会访问`id`为`types`的`post`*
+
+
+
+RESTController基类封装增删改查
+
+``` js
+class RESTController extends Controller {
+  constructor(ctxx, modelName) {
+    super(ctx)
+    this.model = this.ctx.model[modelName]
+  }
+  ...
+}
+
+class TmpController extends RESTController {
+  constructor(ctx) {
+    super(ctx, 'Tmp')
+  }
+}
+```
+
+*个人喜欢封装到service中，其他的controller也可调用*
+
+```js
+class BaseModelService extends Service {
+  constructor(ctxx, modelName) {
+    super(ctx)
+    this.model = this.ctx.model[modelName]
+    if (!this.model) return this.ctx.throw(400, ...没有model:modelName...)
+  }
+  ...
+  
+  // model格式标准化
+  normarlize(data) {
+  	...  
+    return data
+  }
+}
+
+class TmpService extends BaseModelService {
+  constructor(ctx) {
+    super(ctx, 'Tmp')
+  }
+}
+```
+
+### OAuth 2.0
+
+OAuth几种类型：授权码模式、密码模式、客户端模式、简化模式
+
+授权码最安全，最复杂
+
+## 第四章 构建后台管理页面
+
+### 跨域
+
+都需要在服务端做一些处理
+
+#### CORS
+
+当前最常用的方式，大多浏览器支持，在HTTP请求头和返回头添加一些参数让浏览器识别
+
+CORS对GET、HEAD、POST会发起一次请求，对于PUT、DELETE会发起两次，第一次是OPTIONS请求，用于向服务器询问，是否支持方法与请求头
+
+在服务器设置返回的头字段。Access-Control-Allow-Origin: http://xxx 代表来自xxx的请求，可以跨域访问，也可以设置为*允许所有
+
+**Egg配置CORS**
+
+npm i egg-cors -S
+
+config.default.js
+
+```
+config.security = {
+	csrf: {},
+	domainWhiteList: ['http://xxx']
+}
+```
+
+#### JSONP
+
+浏览器的XHR请求有跨域，但是script标签没有，通过createElement创建一个script dom，再去请求，无法添加Header，也就无法完成验证等，因为请求是由script dom发起的，所以没办法做自定义，前几年常用
+
+**Egg配置JSONP**
+
+config.local.js
+
+```
+config.jsonp = { whiteList: [''] }
+```
+
+jsonp都需要在中间件处理，因为没办法在header中验证，只能放在query中
+
+router.js
+
+```
+router.get('/api/jsonp', app.jsonp(), ()=>{})
+```
+
+## 第五章 前端界面设计与实现
+
+## 第六章 部署与运维
+
+### Docker
+
+docker-compose.yml可同时启动多个容器，并定义他们之间的存储和网络关系
+
+对容器激进型编排做更多的配置，可使用kubernetes在不间断服务的情况下更新容器，并有强大的重启策略
+
+**Docker、Docker集群都记录在[学习/Docker]中**
+
+### 持续部署
+
+通过Git的客户端钩子实现，当客户端commit时自动部署
+
+```
+ssh-copy-id root@xxx.xx.xx.xx # 把本机的公钥复制到部署机上，免密登录，之后ssh连接一次
+
+# 修改package.json，添加post-commit，表示commit后执行deploy.sh脚本
+"husky": {
+	"hooks": {
+		"post-commit": "deploy.sh"
+	}
+}
+
+# deploy.sh
+#!/bin/bash
+tar -zcvf ../node_project.tar.gz --exclude ./node_modules .
+scp -r ../node_project.tar.gz root@xx.xx.xx.xx:~/workspace
+ssh root@xx.xx.xx.xx "cd ~/wordspace; tar -zxvf node_project.tar.gz; npm run start"
+
+chmod a+x ./deploy.sh # 添加执行权限
+```
+
+通过服务器端钩子部署，当服务器接收push时执行，package.json husky作者没有成功，使用git原生钩子机制
+
+```
+# 项目根目录node_project新建/hook/post_receive文件
+#!/bin/bash
+rm -rf ~/work
+git clone ~/node_project ~/work
+cd ~/work
+npm install
+...运行命令...
+
+chown a+x ./post_receive
+```
+
+npm包 shipit
+
+python专业运维工具ansible
+
+### 持续集成
+
+通过Gitlab的CI/CD完成
+
+## 第七章 性能分析与优化
+
+### alinode
+
+```
+# 去alinode申请开通
+# 安装环境
+npm i nodeinstall -g
+cd 项目
+nodeinstall --install-alinode ^3
+npm i egg-alinode -S
+# config.default.js
+config.alinode = {
+	server: '',
+	appid: '',
+	secret: ''
+}
+# 启动项目后进入alinode查看表盘
+```
+
+### 压测
+
+```
+npm i wrk -g
+# 开始测试，会以200个线程去请求地址，请求时长为2分钟
+wrk -c 200 -d 120 http://xxxx
+# Avg 平均值，每次测试的平均值
+# Stdev 标准偏差，越高说明越不稳定
+# +/- Stdev 正负一个标准差占比 越大越不稳定
+
+# autocannon 和wrk结果差不多
+autocannon -c 200 -d 120 http://
+
+# locust，python工具，比较强大，会启动一个服务，有GUI，文档 locust.io
+pip install locust
+```
+
+### 用户追踪
+
+网页端：百度分析 https://tongji.baidu.com 需要把一段js代码放在网站的每个页面，可统计pv，来源，搜索词，排行榜，地域分布

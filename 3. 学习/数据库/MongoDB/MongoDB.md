@@ -1,5 +1,32 @@
 [TOC]
 
+## centos
+
+```
+配置MongoDB的yum源
+cd /etc/yum.repos.d 
+vim mongodb-org-4.0.rep
+
+使用阿里云的源
+
+[mngodb-org]
+name=MongoDB Repository
+baseurl=http://mirrors.aliyun.com/mongodb/yum/redhat/7Server/mongodb-org/4.0/x86_64/
+gpgcheck=0
+enabled=1
+
+安装
+yum -y install mongodb-org
+启动
+systemctl start mongod.service
+systemctl status mongod.service
+systemctl stop mongod.service
+开机启动
+sudo systemctl enable mongod.service
+
+配置文件 /etc/mongod.conf
+```
+
 ## mac 下安装
 
 brew install mongodb
@@ -11,10 +38,6 @@ brew tap mongodb/brew
 brew install mongodb-community
 
 ## 配置文件
-
-cat /etc/mongod.conf
-
-mac 
 
 etc /usr/local/etc/mongod.conf ?
 

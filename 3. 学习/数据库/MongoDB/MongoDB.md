@@ -25,6 +25,10 @@ systemctl stop mongod.service
 sudo systemctl enable mongod.service
 
 配置文件 /etc/mongod.conf
+bindIp默认为127.0.0.1，修改为0.0.0.0可允许所有ip访问
+
+日志
+/var/log/mongodb/mongod.log
 ```
 
 ## mac 下安装

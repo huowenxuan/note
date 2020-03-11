@@ -14,6 +14,14 @@ git push  origin  api:api2
 ```
 本地api分支上传到远程的api2分支
 
+# 拉取分支
+
+```
+git pull  origin  api:api2
+```
+
+
+
 # 上传到第二个新的远程仓库
 
 ```sh

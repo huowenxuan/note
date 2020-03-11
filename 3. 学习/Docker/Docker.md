@@ -123,6 +123,7 @@ docker image rm imageid
 lsof -i:7002
 
 # 进入容器
+docker exec -it <containerID> /bin/sh
 docker exec -it <containerID> /bin/bash
 
 # 宿主机重启后自动启动容器

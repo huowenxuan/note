@@ -2,10 +2,10 @@
 
 ## centos
 
-```
+```sh
 配置MongoDB的yum源
 cd /etc/yum.repos.d 
-vim mongodb-org-4.0.rep
+vim mongodb-org-4.0.repo
 
 使用阿里云的源
 
@@ -14,6 +14,7 @@ name=MongoDB Repository
 baseurl=http://mirrors.aliyun.com/mongodb/yum/redhat/7Server/mongodb-org/4.0/x86_64/
 gpgcheck=0
 enabled=1
+
 
 安装
 yum -y install mongodb-org

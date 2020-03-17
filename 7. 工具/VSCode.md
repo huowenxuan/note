@@ -9,6 +9,9 @@
 * Color Picker 取色器
 * prettier 代码格式化
 *  Git History 查看文件/目录的修改历史（右键 Git: View File History）
+*  vscode-icons 文件(夹)图标
+*  indent-rainbow 缩进显示不同颜色
+*  Rainbow Brackets 大小括号显示不同颜色
 
 ## 禁用
 

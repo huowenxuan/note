@@ -125,6 +125,9 @@ lsof -i:7002
 # 进入容器
 docker exec -it <containerID> /bin/sh
 docker exec -it <containerID> /bin/bash
+# 交互式运行容器（运行并命令行进入）
+# 其中centos可改为本地容器image，即使run失败的容器也可进入
+docker run -i -t centos /bin/bash
 
 # 宿主机重启后自动启动容器
 # 前提有两个：
@@ -133,6 +136,11 @@ docker exec -it <containerID> /bin/bash
 docker update --restart=always <name>
 docker update --restart=no <name>
 ```
+
+## 容器内访问宿主机端口
+
+1. 宿主机 ip addr show docker0 
+2. inet后面为172.18.0.1/16，则在容器内可通过172.18.0.1访问到宿主机
 
 ## 使用Dockerfile定制镜像
 

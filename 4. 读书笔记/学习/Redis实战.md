@@ -57,7 +57,7 @@ zinterstore将一个或多个有序集合求并集并计算，生成一个新的
 
 ```python
 redis.zremrangebyrank("viewed:", 0, -20001) // 删除2000名之后的商品
-redis.zinterstore("viewed:", {'viewed': .5}) // 将浏览次数降低为原来的一半
+redis.zinterstore("viewed:", {'viewed': .5}) // 将浏览次数降低为原来的一半，给新商品流行的机会
 ```
 
 最终可将前10000个商品进行缓存

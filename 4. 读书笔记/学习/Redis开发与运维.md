@@ -168,6 +168,9 @@ setrange key offset value
 
 // 获取部分字符
 getrange key start end
+
+// 把串当做二进制，将偏移量为offset的值设置为value
+setbit key offset value
 ```
 
 **内部编码**
@@ -220,6 +223,7 @@ hlen user:1
 hexists user:1 name
 
 // 获取所有field的key
+// 作用在于如果hgetall数据太大导致服务器阻塞，可以hkeys获取所有key，在hget一个个取出来
 hkeys user:1
 // 获取所有field的value
 hvals user:1
@@ -227,8 +231,8 @@ hvals user:1
 hgetall user:1
 
 // 自增
-hincrby user:1 age
-hincrbyfloat user:1 age
+hincrby user:1 age 10
+hincrbyfloat user:1 age 10.1
 
 // 计算value的字符串长度
 hstrlen user:1 name
@@ -285,13 +289,16 @@ ltrim listkey 1 3
 // 修改
 lset key index newValue 
 
-// 阻塞操作
-// 阻塞式弹出。timeout阻塞时间，单位秒。
+// 阻塞操作，用于消息传递和任务队列
+// 阻塞式弹出。。从第一个飞空列表中弹出位于最左端的元素，如果列表不为空，立即返回；如果为空，会在timeout秒之内阻塞并等待可弹出的元素出现，如果timeout=0，一直阻塞，如果期间添加了数据，立即返回
 blpop key ... timeout
+// 最右端
 brpop key ... timeout
-// 1）列表为空：timeout=3客户端等3秒后返回，如果timeout=0，那么客户端一直阻塞下去。如果此期间添加了数据，客户端立即返回
-// 2）列表不为空：客户端立即返回
 brpopp listkey 3
+// 从firstkey列表中弹出最右侧的元素，推入secondkey列表的最左侧，并返回这个元素
+rpoplpush firstkey secondkey 
+// 和上面相同，但是如果firstkey为空，那么timeout秒阻塞
+brpoplpush firstkey secondkey timeout
 ```
 
 **内部编码**
@@ -315,7 +322,9 @@ brpopp listkey 3
 **命令**
 
 ```
+// 添加，返回原本不存在与集合中的元素数量
 sadd myset a b c
+// 删除  返回数量
 srem myset a
 
 // 计算元素个数
@@ -328,17 +337,19 @@ srandmember key n
 spop key
 // 获取所有元素
 smembers key
+// 如果firstkey中包含元素a，那么移除firstkey中的a，添加到secondkey中，返回1/0
+smove firstkey secondkey a
 
-// 多个集合的交集
-sinter key1 key2
-// 并集
-suinon key1 key2
-// 差集
-sdiff key1 key2
-// 将交集、并集、差集的集合保存在一个key中
-sinterstore destination key key1 key2
-suinonstore destination key key1 key2
-sdiffstore destination key key1 key2
+// 差集，存在于第一，不存在于其他
+sdiff key1 key2 ...
+// 差集，将存在于key，不存在于key1 key2...的元素保存在myset中
+sdiffstore myset key key1 key2 ...
+// 交集 同时存在于所有集合的元素
+sinter key1 key2 ...
+sinterstore myset key key1 key2
+// 并集 至少存在于一个集合的
+suinon key1 key2 ...
+suinonstore myset key key1 key2
 ```
 
 **编码**

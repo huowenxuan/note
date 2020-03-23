@@ -41,14 +41,12 @@
 
 > 找出热门数据对它们进行缓存，而非缓存所有
 
-首先需要一个用户浏览记录的有序集合recent:userid
-
-还需要一个记录所有商品浏览次数的有序集合viewed:userid，对浏览次数进行排序，浏览最多的商品放在索引0的位置（？），且具有序集合最少的分值(scope)
+需要一个记录所有商品浏览次数的有序集合viewed:userid，对浏览次数进行排序，浏览最多的商品放在索引0的位置（？），且具有序集合最少的分值(scope)
 
 ```python
 redis.add("viewed:" + userid, data, timestamp)
-redis.zremrangebyrank('viewed' + userid, 0, -26) // 删除25名之后的浏览
-redis.zincrby('viewed:', data, -1) // 减1分
+redis.zremrangebyrank('viewed' + userid, 0, -26) // 删除用户25名之后的浏览
+redis.zincrby('viewed:', data, -1) // 减1分?
 ```
 
 需要定期对排行榜数据进行更新，删除排名中多余的商品，并将剩余商品的浏览次数减半

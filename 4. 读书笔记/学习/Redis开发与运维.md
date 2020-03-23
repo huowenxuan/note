@@ -52,7 +52,6 @@ Redis是基于键值对的NoSQL数据库。还可以将内存的数据利快照�
     
 5. 消息队列系统
     消息队列系统是大型网站必备的基础组件，具有业务解耦、非实时业务削峰的功能特性。Redis提供了发布订阅和阻塞队列的功能
-    
 ### 不适合做什么
 数据分为热数据和冷数据，热数据是需要频繁更新的数据。将冷数据放在Redis是对内存的浪费，但是对于一些热数据，可以放在Redis中加速读写，减轻后端存储的负载。（例如视频网站，视频基本信息是经常更新的数据，属于热数据；用户的观看记录不一定是经常需要访问的数据，属于冷数据）
 
@@ -198,14 +197,18 @@ Redis会根据当前值的类型和长度决定使用哪种内部编码实现
 ```shell
 // 设置值，成功返回1，失败返回0
 hset user:1 name tom 
+// redis4.0后可批量设置
+hset user:1 name tom age 12
 hsetnx
-// 批量设置
+// 批量设置。redis4.0被弃用，直接使用hset
 hmset user:2 name mike age 12 ...
 
 // 获取
 hget user:1 name
+// 获取所有键值对
+hgetall user:1
 // 批量获取
-hmget user:1 name age city ...
+// hmget user:1 name age city ...
 
 // 删除
 hdel user:1 name
@@ -232,6 +235,7 @@ hstrlen user:1 name
 ```
 
 **内部编码**
+
 1. ziplist(压缩列表)：元素个数小于hash-max-ziplist-entries配置（默认512）、同时所有值都小于hash-max-ziplist-value配置（默认64字节）时，使用ziplist实现。ziplist使用更加紧凑的结构实现多个元素的连续从存储，节省内存
 2. hashtable(哈希表)：当无法满足ziplist时使用，因为此时ziplist读写效率会下降，hashtable读写时间复杂度为O(1)
 
@@ -346,7 +350,7 @@ sdiffstore destination key key1 key2
 抽奖。生成随机数
 
 ### 有序集合
-保留了集合不能有重复的特性，但可排序，它给每个元素设置一个分数（score）最为排序的依据（元素不能排序，但是score可重复）
+保留了集合不能有重复的特性，但可排序，根据每个元素的分值（score）从大到小排序，score可重复，必须为浮点数
 
 **命令**
 集合内
@@ -380,7 +384,7 @@ zrangebyscore key （200 +inf
 // 返回指定分数范围成员个数
 zcount key min max
 
-// 删除指定排名内的生序元素
+// 删除指定排名内的元素
 zremrangebyrank key start end
 // 删除指定分数范围的成员
 zremrangebyscore key min max
@@ -486,7 +490,8 @@ select dbIndex // 切换数据库
 flushdb/flushall // 清除当前数据库/清除所有数据库
 ```
 
-# 命名
+### 命名
+
 Redis没有命令空间，也没有对键名又强制要求。设计合理的键名，有利于防止键冲突和项目的可维护性，比较推荐的方式是使用`业务名:对象名:id:[属性]`作为键名（也可以不是分号），例如`vs:user:111:name`（vs为业务名，如果只有一个业务，可省略）。如果键名比较长，例如`user:{uid}:friends:messages:{mid}`，可以减少键的长度，减少由于键过长的内存浪费：`u:{uid}:fr:m:{mid}`.   
 
 
@@ -916,5 +921,5 @@ RDB和AOF都会执行fork，fork是重量级操作。改善fork的耗时：
 ## 第12章 开发运维中的“陷阱”
 ## 第13章 Redis监控运维云平台CacheCloud
 ## 第14章 Redis配置统计字典
-                      
-                      
+
+​                      

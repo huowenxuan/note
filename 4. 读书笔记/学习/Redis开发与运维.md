@@ -373,8 +373,8 @@ zadd key score member [sorce member...]
 // 计算成员个数
 zcard key
 // 计算成员的排名
-zrank key member // 分数从高到低
-zrevrank key member // 分数从低到高
+zrank key member // 按照分数从高到低排
+zrevrank key member // 按照分数从低到高排
 
 // 删除成员
 zrem key member
@@ -383,6 +383,9 @@ zrem key member
 zincrby key increment member
 zincrby key 9 tom // 给tom增加了9分
 
+// 返回成员member的分值
+zscore key member
+
 // 返回指定排名范围的成员，加上withscores参数，会同时返回分数
 zrange key start end [withscores]
 zrevrange key start end [withscores]
@@ -390,7 +393,7 @@ zrevrange key start end [withscores]
 // 返回指定分数范围的成员。limit offset count选项可限制输出的起始位置和个数。min和max支持开区间（小括号）和闭区间（中括号），-inf和+inf分别代表无限小和无限大
 zrangebyscore key min max [withscores] [limit offset count]
 zrevrangebyscore 
-zrangebyscore key （200 +inf 
+zrangebyscore key 200 +inf 
 
 // 返回指定分数范围成员个数
 zcount key min max
@@ -404,13 +407,41 @@ zremrangebyscore key min max
 集合间的操作
 
 ```
-// 交集，destination：计算结果保存到这个键，numkeys：需要做交集计算的键的个数，key...：需要做交集计算的键，weights 每个键的权重，每个member都以自己的分数乘以这个权重，默认为1
-zinterstore destination numkeys key [key...] [weights weight [weight...]]
+// 交集，计算结果保存到key，需要做交集计算的键的个数key-count，key...：需要做交集计算的键，weights 每个键的权重，每个member都以自己的分数乘以这个权重，默认为1。aggregate为分值计算函数（结果分值为两个集合分值相加或者最小、最大），交集默认使用sum函数
+zinterstore key key-count key [key...] [weights weight [weight...]] [aggregate sum|min|max]
 // 并集
-zunionstore
+zunionstore 
 ```
 
+并集使用sum函数示例
+
+集合1
+
+| 值   | 分值 |
+| ---- | ---- |
+| a    | 1    |
+| b    | 2    |
+| c    | 3    |
+
+集合2
+
+| 值   | 分值 |
+| ---- | ---- |
+| d    | 0    |
+| c    | 1    |
+| b    | d    |
+
+结果
+
+| 值   | 分值 |
+| ---- | ---- |
+| c    | 4    |
+| b    | 6    |
+
+a和d被去掉，因为使用sum函数，c和b的结果分值为两个集合分值相加
+
 **编码方式**
+
 - ziplist
 - skiplist
 - hashtable
@@ -716,7 +747,7 @@ Redis提供了基于”发布/订阅”模式的消息机制，消息发布者�
 
 ```
 // 发布消息。向频道channel:sports发布一条消息hello
-publish channel:sports “Hello”
+publish channel “Hello”
 
 // 订阅消息，订阅者可订阅一个或多个频道。
 subscribe channel 
@@ -727,6 +758,7 @@ unsubscribe channel1 channel2
 // 按照模式订阅和取消订阅，支持glob风格的订阅命令和取消订阅命令
 // 订阅以it开头的所有频道
 psubscribe it*
+// 退订
 punsubscribe it*
 
 // 查询订阅

@@ -86,8 +86,30 @@ redis.zinterstore("viewed:", {'viewed': .5}) // 将浏览次数降低为原来�
 
 ### 有序集合
 
-存储着成员和分值之间的映射，提供了分值（双精度浮点数）处理命令，可根据分值大小有序地获取或扫描成员和分值
+存储着成员和分值之间的映射，提供了分值（双精度浮点数）处理命令，可根据分值大小有序地获取或扫描成员和分值。交集和并集可实现搜索系统
 
-PDF 69 页
+### 发布与订阅 pub/sub
 
-书 49 页
+订阅者listener订阅频道channel，发布者publisher发送二进制字符串消息binary string message，订阅者会接收到消息
+
+一般不使用redis的该模式
+
+1. 旧版本redis，如果客户端读取消息的速度不够快，积压的消息会使redis输出缓冲区的体积越来越大，导致redis速度变慢，甚至崩溃，或者被系统杀死，甚至导致操作系统不可用。新版redis不存在这种问题，会自动断开不符合client-output-buffer-limit pubsub配置选项要求的订阅客户端
+2. 传输可靠性，如果客户端在执行订阅中短线，那么客户端将在丢失断线期间发送的所有消息
+
+### 其他命令
+
+排序sort，用于列表、集合、有序集合的排序，默认升序
+
+```
+// 排序。返回或者存储结果
+SORT key [BY xxx] [LIMIT offset count] [GET xxx [GET xxx ...]] [ASC|DESC] [ALPHA] [STORE key2]
+```
+
+### 基本的redis事务
+
+watch、multi、exec、unwatch
+
+PDF  页
+
+书  页

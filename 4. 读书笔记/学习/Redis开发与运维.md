@@ -472,6 +472,7 @@ Redis不支持二级数据结构内部元素的过期
 // expire key seconds // seconds秒后过期。如果键不存在返回0，如果过期时间为负数，键会立即删除
 expireat key timestamp // 秒级时间戳之后过期
 pexpire key milliseconds // 毫秒后过期
+pexpireat key timestamp // 将时间戳设置为键的过期时间，redis2.6
 ttl key // 大于0的整数为剩余过期时间；-1键没有设置过期时间，-2键不存在（已过期）
 pttl key // 剩余过期时间，精度更高，可达到毫秒级别
 persist key // 将键的过期时间清除

@@ -218,9 +218,93 @@ redis-chaeck-dump <dump.rdb>
 
 multi和exec在执行exec后才会有实际操作，所以没办法根据读取到的数据来做决定
 
+通过使用watch、multi/exec、unwatch/discard等命令，可确保自己正在使用的数据没有发生变化来避免出错
+
+```
+// 使用watch对key监听后，直到exec这段时间里，如果有其他客户端抢先对key进行了写操作，执行exec时，事务将失败并返回错误。
+watch key
+
+// watch执行后、multi执行前对连接进行重置（取消监听）
+unwatch
+
+// multi执行后、exec执行前对连接进行重置，取消监听，清空已入队的任务
+discard
+```
+
+为什么Redis没有实现加锁功能：典型的关系型数据库加锁的缺点是持有锁的客户端运行越慢，等待解锁的客户端被阻塞的时间就越长，redis为了减少客户端等待时间，不会在watch时加锁，只会在其他客户端修改后通知执行了watch的客户端，这种做法为乐观锁，只需要在事务执行失败时重试即可，关系数据库的锁为悲观锁
+
+执行事务的好处之一就是客户端会通过使用流水线来提高事务执行时的性能（只在exec才发送命令）
+
+### 非事务型流水线
+
+> 在不使用事务的情况下通过流水线提升命令的执行性能（一次性发送多个命令来减少通信次数降低延迟）
+>
+> multi和exec会消耗资源，也可能导致其他重要的命令被延迟执行
+
+在python中使用pipline()函数传入True或者无参数调用，将会使用事务来包裹命令，如果传入False，也会收集命令但是不使用事务，需要注意一个命令的结果不会影响另一个命令
+
+### 关于性能方面的注意事项
+
+```
+// redis自带的性能测试程序，可了解redis在自己服务器上各种性能特征，一些命令在1秒内可执行的次数
+// 无参数时将使用50个客户端进行性能测试，-c 客户端数量
+redis-benchmark -c 1 -q
+```
+
+## 第 5 章 使用Redis构建支持程序
+
+帮助和支持系统
+
+### 使用Redis来记录日志（不推荐）
+
+* 使用列表lpush记录日志的name、message、级别、时间，ltrim去掉早期日志，无法分辨哪些消息重要
+* 使用有序集合，将出现的频率设置为分值，每一小时对老的消息集合根据时间重命名，再新增新的集合
+
+### 计数器
+
+> 为了收集指标数据并进行监控分析（例如网站响应速度、点击量），构建一个能够持续创建并维护计数器的工具，这个工具创建的每个计数器都有名字，这些计时器以不同的时间精度（1s、5s、1min）存储最新的n个数据
+
+如网站点击量计时器，使用一个hash（count:）保存每5秒之内获得的点击量，每个key都是开始时间，值为点击量
+
+清理旧的计数器，还需要一个有序集合（konw:），不能重复，可遍历，对计数器进行记录，集合的每个成员由计数器精度和名称组成（5:hits），所有成员分值为0，redis会自动使用成员名排序，按条件循环查询需要清理的计数器进行清理
+
+```python
+# 计数器精度，1s 5s 1min 5min 1h 5h 1d
+PRECISION = [1, 5, 60, 300, 3600, 18000, 86400]
+
+# 更新计数器
+def update_counter(conn, name, count=1, now=None):
+    now = now or time.time()
+    pipe = conn.pipeline()  # 创建流水线
+    # 为每个精度都创建一个计时器
+    for prec in PRECISION:
+        pnow = int(now / prec) * prec # 当前时间片的开始时间
+        key = '%s:%s' % (prec, name)
+        # 计时器的引用信息添加到有序集合，分值设为0
+        pipe.zadd('know:', key, 0)
+        # 更新计数器
+        pipe.hincrby('count:' + key, pnow, count)
+    pipe.execute()
+
+# 获取计数器
+def get_counter(conn, name, precision):
+    key = '%s:%s' % (prec, name)
+    # 取出计数器数据
+    data = conn.hgetall('count:' + key)
+    to_return = []
+    # 转化格式
+    for key, value in data.iteritems():
+        to_return.append((int(key), int(value)))
+    # 排序，把旧数据排在前面
+    to_return.sort()
+    return to_return
+```
+
+### 统计数据
 
 
-PDF  页
 
-书  页
+PDF 116 页
+
+书 96 页
 

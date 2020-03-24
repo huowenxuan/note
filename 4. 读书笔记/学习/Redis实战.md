@@ -255,10 +255,48 @@ redis-benchmark -c 1 -q
 
 帮助和支持系统
 
-### 使用Redis来记录日志（不推荐）
+### 使用Redis来记录日志
 
 * 使用列表lpush记录日志的name、message、级别、时间，ltrim去掉早期日志，无法分辨哪些消息重要
 * 使用有序集合，将出现的频率设置为分值，每一小时对老的消息集合根据时间重命名，再新增新的集合
+
+```python
+# 记录常见日志
+def log_common(conn, name, message, severity=loggin.INFO, timeout=5):
+  # 存储近期常见日志消息的key
+  destination = 'common:' + name + ':' + severity
+  # 程序每小时要轮换一次日志，所以使用一个键来记录当前所处的小时数
+  start_key = destination + ':start'
+  pipe = conn.pipeline()
+  end = time.time() + timeout
+  while time.time() < end:
+    try: 
+      # 监视，确保轮换能操作正确执行
+      pipe.watch(start_key)
+      now = datetime.utcnow().timetuple()
+      # 当前所处小时数
+      hour_start = datetime(*now[:4]).isoformat()
+      existing = pipe.get(start_key)
+      pipe.multi()
+      # 如果这个常见日志列表记录的是上一个小时的日志
+      if existing and existing < hour_start:
+        # 将旧的常见日志归档
+        pipe.rename(destination, destination + ':last')
+        pipe.rename(start_key, destination + ':pstart')
+        # 更新当前所处的小时数
+        pipe.set(start_key, hour_start)
+      # 对记录日志出现次数的计数器执行自增操作
+      pipe.zincrby(destination, message)
+      execute()
+      # 可用来记录日志
+      log_recent(pipe, name, message, severity, pipe)
+      return 
+    except redis.exceptions.WatchError:
+      # 监视错误，重试
+      continue
+```
+
+
 
 ### 计数器
 
@@ -302,9 +340,72 @@ def get_counter(conn, name, precision):
 
 ### 统计数据
 
+保存统计结果数据：记录数据（某个页面一小时内的访问时间）的最小值，最大值，数量count，和，平方和sumsq，并通过这些信息计算平均值和标准差。保存在有序集合可进行并集计算，并通过min和max筛选相交的元素
+
+```python
+# 更新 value可以是页面响应时间、停留时间等，可在每次访问后计算出响应时间后调用
+def update_stats(conn, page='UserPage', type='AccessTime', value, timeout=5):
+  destination = 'stats:' + page + ':' + type
+  # 开始处理当前一小时的数据和上一小时的数据，将不属于当前一小时的数据归档
+  start_key = destination + ':start'
+  pipe = conn.pipeline()
+  end = time.time() + timeout
+  while time.time() < end: 
+    try: 
+      pipe.watch(start_key)
+      now = datetime.utcnow().timetuple()
+      hour_start = datetime(*now[:4].isoformat())
+      existing = pipe.get(start_key)
+      pipe.multi()
+      if (existing and existing < hour_start):
+        pipe.rename(destination, destination + ':last')
+        pipe.rename(start_key, destination + ':pstart')
+        pipe.set(start_key, hour_start)
+
+      tkey1 = str(uuid.uuid4())
+      tkey2 = str(uuid.uuid4())
+      # 值添加到临时键
+      pipe.zadd(tkey1, 'min', value)
+      pipe.zadd(tkey2, 'max', value)
+      # 使用聚合函数对存储统计数据的key和两个key并集
+      pipe.zunionstore(destination, [destination, tkey1], aggregate='min')
+      pipe.zunionstore(destination, [destination, tkey2], aggregate='max')  
+      # 删除临时键
+      pipe.delete(tkey1, tkey2)
+      # 对有序集合的3个统计数据更新
+      pipe.zincrby(destination, 'count')
+      pipe.zincrby(destination, 'sum', value)
+      pipe.zincrby(destination, 'sumsq', value * value) 
+      return pipe.execute()[-3: ]
+    except redis.exceptions.WatchError:
+      # 重试
+      continue
+
+# 获取
+def get_stats(conn, page, type):
+  key = xxx
+  # 取出基本统计数据，放在dict中
+  data = dict(conn.zrange(key, 0, -1, withscores=True))
+  # 平均值
+  data['average'] = data['sum'] / data['count']
+  numerator = data['sumsql'] - data['sum'] ** 2 / data['count']
+  # 标准差
+  data['stddev'] = (numerator / (data['count'] -1 or 1)) ** .5
+  return data
+
+# 将页面平均访问时长加入到记录最长访问时间的有序集合中
+pipe.zadd('slowest:AccessTime', page, average)
+# 集合值保留最慢的100条
+pipe.zremrangebyrank('slowest:AccessTime', 0, -101)
+```
+
+工具：Graphite可用于收集并绘制计数器以及统计结果
+
+### 查找IP所属城市以及国家
 
 
-PDF 116 页
 
-书 96 页
+PDF 120 页
+
+书 100 页
 

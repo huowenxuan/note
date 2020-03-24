@@ -376,7 +376,7 @@ def update_stats(conn, page='UserPage', type='AccessTime', value, timeout=5):
       pipe.zincrby(destination, 'count')
       pipe.zincrby(destination, 'sum', value)
       pipe.zincrby(destination, 'sumsq', value * value) 
-      return pipe.execute()[-3: ]
+      return pipe.execute()[-3: ] # 返回基本的计数信息
     except redis.exceptions.WatchError:
       # 重试
       continue

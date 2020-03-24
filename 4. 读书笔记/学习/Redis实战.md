@@ -364,7 +364,7 @@ def update_stats(conn, page='UserPage', type='AccessTime', value, timeout=5):
 
       tkey1 = str(uuid.uuid4())
       tkey2 = str(uuid.uuid4())
-      # 值添加到临时键
+      # 值添加到临时键（是否可优化为只使用一个临时键）
       pipe.zadd(tkey1, 'min', value)
       pipe.zadd(tkey2, 'max', value)
       # 使用聚合函数对存储统计数据的key和两个key并集

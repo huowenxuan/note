@@ -586,5 +586,5 @@ def buy_whit_lock(conn, buyerid, itemid):
 
 使用有序集合，为每个尝试获取信号量的进程生成一个唯一标识符，当做集合的成员，分值是时间戳
 
-PDF 147 页
+PDF 147 页 中间的表下面
 

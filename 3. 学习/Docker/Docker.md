@@ -98,6 +98,8 @@ docker run -ti ubantu /bin/bash
 
 # 启动一个关闭的容器
 docker container start cid
+docker start cid
+docker start name # 是name而不是imagename + port
 # 关闭一个容器
 docker container stop cid
 

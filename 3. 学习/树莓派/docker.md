@@ -15,7 +15,7 @@ docker pull armhf/debian
 ARM架构使用pip
 sudo pip3 install docker-compose
 
-## x86为arm构建docker image
+## x86机器为arm构建docker image
 
 Mac
 在https://github.com/multiarch/qemu-user-static/releases，找到qemu-arm-static

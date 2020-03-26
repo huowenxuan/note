@@ -580,11 +580,42 @@ def buy_whit_lock(conn, buyerid, itemid):
 
 ### 计数信号量
 
-一种锁，限制一项资源最多能同时被多少进程访问，通常用于限定能同时使用的资源数量。上一节的锁为只能被一个进程访问的信号量。区别在于普通锁获取失败，一般等待直到拿到锁为止；当获取计数信号量失败时通常立即返回错误。例如只允许5个进程同时获取，第六个进程获取时会马上失败。需要考虑超时、未释放时崩溃的问题
+> 一种锁，限制一项资源最多能同时被多少进程访问，通常用于限定能同时使用的资源数量。上一节的锁为只能被一个进程访问的信号量。区别在于普通锁获取失败，一般等待直到拿到锁为止；当获取计数信号量失败时通常立即返回错误。例如只允许5个进程同时获取，第六个进程获取时会马上失败。需要考虑超时、未释放时崩溃的问题
 
 案例：限制每个账号只能同时在5个进程（设备）访问（单点登录，多点登录？）
 
 使用有序集合，为每个尝试获取信号量的进程生成一个唯一标识符，当做集合的成员，分值是时间戳
+
+#### 基本的计数信号量
+
+```python
+# 获取信号量
+# 优点：简单，快速
+# 缺点：不公平的信号量：因为每个进程（系统）访问到的时间可能不同，导致无法取得原本应得到的锁或信号量
+def acquire_semephore(conn, semname, limit, timeout=10):
+  identifier = str(uuid.uuid4())
+  now = time.time()
+  pipeline = conn.pupeline()
+  # 清理过期信号量持有者：所有时间戳大于超时数
+  pipeline = zremrangebyscore(semname, '-inf', now - timeout)
+  # 先将标识符添加到集合中，获取信号量
+  pipeline.zadd(semname, identifier, now)
+  pipeline.zrank(semname, identifier)
+  # 检查排名，如果低于限制数，就成功获取了信号量
+  if pipeline.execute()[-1] < limit:
+    return identifier
+  # 获取失败，删除之前添加的标识符
+  conn.zrem(semname, identifier)
+  return None
+
+# 释放信号量
+def release_semaphore(conn, semname, identifier):
+  return conn.zrem(semname, identifier)
+```
+
+#### 公平信号量
+
+
 
 PDF 147 页 中间的表下面
 

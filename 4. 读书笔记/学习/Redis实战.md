@@ -570,7 +570,7 @@ def buy_whit_lock(conn, buyerid, itemid):
     if locked is False:
         return False
 
-    pipe = conn.pipe()
+    pipe = conn.pipeline()
     try:
         # ...执行检查并支付...
         pipe.execute()
@@ -581,41 +581,81 @@ def buy_whit_lock(conn, buyerid, itemid):
 ### 计数信号量
 
 > 一种锁，限制一项资源最多能同时被多少进程访问，通常用于限定能同时使用的资源数量。上一节的锁为只能被一个进程访问的信号量。区别在于普通锁获取失败，一般等待直到拿到锁为止；当获取计数信号量失败时通常立即返回错误。例如只允许5个进程同时获取，第六个进程获取时会马上失败。需要考虑超时、未释放时崩溃的问题
+>
+> 作用：限制同时可运行的api调用数量？限制针对数据库的并发请求数量，从而降低单个查询时间？
 
 案例：限制每个账号只能同时在5个进程（设备）访问（单点登录，多点登录？）
 
 使用有序集合，为每个尝试获取信号量的进程生成一个唯一标识符，当做集合的成员，分值是时间戳
 
-#### 基本的计数信号量
+**解决不公平的信号量**：因为每个进程（系统）访问到的时间可能不同，导致系统时间慢的客户端偷走时间快的信号量。解决这一问题，需要给信号量实现添加一个计数器string和有序集合。计数器通过持续自增，创建出类似于计时器的机制，确保最先对计数器自增的客户端能够获得信号量；将计数器生成的值作分值，存储到一个信号量拥有者的有序集合中，通过客户端生成的标识符在有序集合的排名来判断客户端是否取得了信号量
 
 ```python
 # 获取信号量
-# 优点：简单，快速
-# 缺点：不公平的信号量：因为每个进程（系统）访问到的时间可能不同，导致无法取得原本应得到的锁或信号量
 def acquire_semephore(conn, semname, limit, timeout=10):
-  identifier = str(uuid.uuid4())
-  now = time.time()
-  pipeline = conn.pupeline()
-  # 清理过期信号量持有者：所有时间戳大于超时数
-  pipeline = zremrangebyscore(semname, '-inf', now - timeout)
-  # 先将标识符添加到集合中，获取信号量
-  pipeline.zadd(semname, identifier, now)
-  pipeline.zrank(semname, identifier)
-  # 检查排名，如果低于限制数，就成功获取了信号量
-  if pipeline.execute()[-1] < limit:
-    return identifier
-  # 获取失败，删除之前添加的标识符
-  conn.zrem(semname, identifier)
-  return None
+    identifier = str(uuid.uuid4())
+    czset = semname + ':owner' # 信号量拥有者集合，分值为计数器的值
+    ctr = semname + ':counter' # 计数器
+
+    now = time.time()
+    pipeline = conn.pupeline()
+    # 清理过期信号量持有者：所有时间戳大于超时数
+    pipeline = zremrangebyscore(semname, '-inf', now - timeout)
+    # 对超时集合和信号量拥有者集合交集，并将结果覆盖到信号量拥有者集合中
+    pipeline.zinterstore(czset, {czset: 1, semname: 0})
+
+    # 对计数器自增
+    pipeline.incr(ctr)
+    counter = pipeline.execute()[-1]
+
+    # 先将标识符添加到集合中，获取信号量
+    pipeline.zadd(semname, identifier, now)
+    # 将计数器自增结果添加到信号量拥有者集合
+    pipeline.zadd(czset, identifier, counter)
+    pipeline.zrank(semname, identifier)
+    # 检查排名，如果低于限制数，就成功获取了信号量
+    if pipeline.execute()[-1] < limit:
+        return identifier
+    # 获取失败，删除之前添加的标识符
+    pipeline.zrem(semname, identifier)
+    pipeline.zrem(czset, identifier)
+    pipeline.execute()
+    return None
 
 # 释放信号量
-def release_semaphore(conn, semname, identifier):
-  return conn.zrem(semname, identifier)
+def release_fair_semaphore(conn, semname, identifier):
+    pipeline = conn.pupeline()
+    pipeline.zrem(semname, identifier)
+    pipeline.zrem(semname + ':owner', identifier)
+    return pipeline.execute()[0]
+  
+# 刷新失败的信号量：防止信号量过期，对超时集合进行更新，就可以立即刷新超时时间
+def refresh_fair_samaphore(conn, semname, identifier):
+  # 更新客户端持有的信号量（？？？）
+  if conn.zadd(semname, identifier, time.time()):
+    # 如果添加成功，该函数会对信号量的超时时间进行刷新（这里存在错误，该函数中并没有刷新，而是直接删除？？？）
+    release_fair_semaphore(conn, semname, identifier)
+    return False # 告诉客户端之前信号量已经失去（但是又成功添加了一个，这个返回值不认同）
+	return True # 添加失败说明仍然持有信号量
 ```
 
-#### 公平信号量
+**消除竞争条件**：当A和B都尝试获取剩余的一个信号量时，即使A先来也有可能B先执行完。解决方法是使用上面的分布式锁，当想要获取信号量时，先获取一个短暂超时时间的锁，如果获得了锁，那么就可以正常执行，否则就失败（不重试吗？）
+
+```python
+def acquire_semaphore_with_lock(conn, semname, limit, timeout=10):
+    identifier = acquire_lock(conn, semname, acquire_timeout=.01)
+    if identifier:
+        try:
+            return acquire_fair_semaphore(conn, semname, limit, timeout)
+        finally:
+            release_lock(conn, semname, identifier)
+```
+
+### 任务队列
+
+#### 先进先出队列
 
 
 
-PDF 147 页 中间的表下面
+PDF 154
 

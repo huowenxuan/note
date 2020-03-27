@@ -211,7 +211,3 @@ if __name__ == '__main__':
     for w in sim_words:
         print(w)
 ```
-
-## 如何应用到推荐系统
-
-[如何使用 word2vec 来做推荐系统](https://blog.csdn.net/Xw_Classmate/article/details/99028680)

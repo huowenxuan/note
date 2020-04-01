@@ -148,7 +148,295 @@
 
 #### 关键词提取
 
-两种方法都是无需标注数据，属于无监督的方式
+两种方法都是无需标注数据，属于无监督的方式。获取的标签都是稀疏的，为了覆盖面更广，需要引入大量近义标签，Embedding可解决这些问题
 
 ##### TF-IDF
+
+在一篇文章中反复出现的词重要，在所有文档中都出现的词不重要
+
+TF词频：某个词在文本中出现的次数，文本越大越有用
+
+IDF逆文本频率指数：提前统计好的，在已有文档中统计某个词出现在多少文档中
+
+两值相乘获取权重，根据权重筛选关键词的几种方式：
+
+* 给定一个K，取topK个词，但如果词的个数小于k，所有都是关键词，不合理
+* 计算平均值，取权重在均值之上的值
+* 设定阈值，保留阈值之上的词
+* 其他过滤措施：只提取动词和名词等
+
+##### TextRank
+
+词和词的关系为无向图，每个词把自己的权重平均分给和自己有连接的其他词，每个词把其他词分配给自己的权重求和，作为新权重
+
+#### Embedding向量 Word2Vec
+
+也叫嵌入，能通过学习得到每个词低纬度的稠密向量，就可以计算词之间的距离，实现标签归一化，提高标签库的经济性。还可用于 文本分类和聚类，得到更抽象的标签。根据用户行为直接学习到的向量本身就可以作为用户画像的一部分
+
+一个词可能有包含很多语义信息，北京包含首都、中国、直辖市等语义，这些语义是有限的，比如128个，那么这个词就用一个128维的向量表达，各个维度的大小表示词包含这个语义的量
+
+Word2Vec可通过浅层神经网络学习得到每个词的向量表达，百万词汇几分钟内跑完。工具有python的gensim，可对语料库批量训练，还能以数据流的方式在线更新模型
+
+```python
+from gensim.models import Word2Vec
+import sys
+import argparse
+
+class Embedding(object):
+    def __init__(self, size=128, window=5, min_count=5, workers=2, epochs=10, pretrained_model=None):
+        """
+        训练词的Embedding向量
+        :param size: 向量维度
+        :param window: 窗口长度
+        :param min_count: 最小词频
+        :param workers: 并行化
+        :param epochs: 迭代次数
+        :param pretrained_model: 预训练的模型
+        """
+        self._size = size
+        self._window = window
+        self._min_count = min_count
+        self._workers = workers
+        self._epochs = epochs
+        if pretrained_model:
+            self._model = Word2Vec.load(pretrained_model)
+
+    def train(self, sentences=[]):
+        if self._model:
+            self._model.train(sentences,
+                              total_examples=len(sentences),
+                              epochs=self._epochs)
+        else:
+            self._model = Word2Vec(sentences,
+                                   self._size,
+                                   window=self._window,
+                                   min_count=self._min_count,
+                                   workers=self._workers)
+
+    @property
+    def model(self):
+        return self._model
+```
+
+得到词的Embedding向量后，就可对原本标签库进行扩展或者归一化：相同语义的词只保留标准的，提高经济型
+
+#### 文本分类 FastText
+
+咨询内容需要将内容自动分类到不同频道中，得到最粗粒度的结构化信息，可用来在冷启动时探索用户兴趣
+
+长文本分类容易，短文本困难。短文本的经典算法是SVM，工具是Facebook的FastText——学习词语的Embedding向量和文本分类，尤其是句子分类。可给句子打标签，输出多个标签
+
+可以不分词，但是分词之后效果更好，样本格式要求：一行一个样本，类名名字随便写，但是需要__label__前缀，用空格和正文分开
+
+```python
+import fasttext
+tag_extractor = fasttext.supervised('train.txt', 'model.bin', label_prefix="__label__")
+result = tag_extractor.test('test.txt')
+print(result.precision)
+print(result.recall)
+```
+
+#### 命名实体识别
+
+NER，识别有特定意义的实体，地名、电影名书名等。非常有价值，有利于构建高质量标签库
+
+经典的模型有HMM、CRF，深度学习的BiLSTM结合CRF有非常好的效果。还有非模型做法：词典法提前准备好各种实体的地点，使用tire-tree存储，拿分好的词去词典找。CRF++是CRF的开源
+
+```
+# 训练模型
+crf_learn 模板 模板语料 模板文件
+# 从文本识别
+crf_learn -m 模板文件 测试文件
+```
+
+#### 文本聚类
+
+将文本聚成几堆，每堆都有相似语义。类之间更独立，有经济性
+
+1. 对全量文本聚类，得到每个类的中心
+2. 将新的文本加入距离最近的类中心所在的类
+3. 每个类赋予一个id，从该类中找出最能代表该类的主题词作为类别标签
+
+方法：基于距离的聚类方法（Kmeans）计算复杂度大，效果不理想。多选择主题模型或者隐语义模型（LSI），LDA模型能更准确的抓住主题，能得到软聚类的方式（一条文本属于多个类）
+
+LDA需要设定主题个数k，k可根据多次实验对比来选择：每次计算k个主题两两相似度的平均值，选择一个较低k。如果计算资源够用，k可选择较大的值。
+
+开源的LDA训练工具有LightLDA、gemsim、PLDA，以gemsim为例
+
+```python
+from gensim.models.ldamodel import LdaModel
+from gensim.corpora.dictionary import Dictionary
+
+
+class LDA(object):
+    def __init__(self, topics=10,
+                 worker=3,
+                 pretrained_model=None,
+                 dictionary=None):
+        """
+        lda训练模型初始化
+        :param topics: 主题个数
+        :param worker: 并行化参数，一般为core数量-1
+        :param pretrained_model: 预训练的模型，由于支持在线更新，可加载上次训练的模型
+        :param dictionary: 训练时词需要转换成ID，所以跟模型配套有一个ID映射的词典
+        """
+        self._topics = topics
+        self._worker = worker
+        self._model = None
+        self._common_dictionary = None
+        if pretrained_model and dictionary:
+            self._model = LdaModel.load(pretrained_model)
+            self._common_dictionary = Dictionary.load(dictionary)
+
+    def save(self, model_file, dictionary_file):
+        """
+        保存训练的模型，同时保存对应词典
+        :param model_file: 模型文件
+        :param dictionary_file: 词典文件
+        :return:
+        """
+        if self._model:
+            self._model.save(model_file)
+        if self._common_dictionary:
+            self._common_dictionary.save(dictionary_file)
+
+    def update(self, corpus=[]):
+        """
+        在已有模型的基础上在线更新
+        :param corpus: 用于更新的文档列表
+        :return: 
+        """
+        if not self._model and len(corpus) > 0:
+            print('train from scratch...')
+            self._common_dictionary = Dictionary(corpus)
+            corpus_data = [self._common_dictionary.doc2bow(sentence) for sentence in corpus]
+            self._model = LdaModel(corpus_data, self._topics)
+        elif self._model and len(corpus) > 0:
+            self._common_dictionary.add_documents(corpus)
+            new_corpus_data = [self._common_dictionary.doc2bow(sentence) for sentence in corpus]
+            self._model.update(new_corpus_data)
+
+    def inference(self, document=[]):
+        """
+        推断新文档的话题发布
+        :param document: 文档（词列表） 
+        :return: 话题分布列表 
+        """
+        if self._model:
+            doc = [self._common_dictionary.doc2bow(document)]
+            return self._model.get_document_topics(doc)
+        return []
+
+    @property
+    def model(self):
+        return self._model
+
+    @property
+    def dictionary(self):
+        return self._common_dictionary
+
+
+# 使用
+lda = LDA(topics=20, worker=2, pretrained_model=model_file, dictionary=dic_file)
+corpus = read_file(corpus_file)
+lda.update(corpus)
+lda.save(model_file, dic_file)
+topics = lda.inference(['word1', 'word2'])
+```
+
+#### 标签选择
+
+把物品的结构化信息传递给用户（？？？哪里传递了）
+
+从用户对物品的行为中，挑选用户感兴趣的物品特征
+
+下面两种方法都是有监督的特征选择方法，需要提供分类标注信息。思想：
+
+* 把用户的结构化内容看成文档
+* 把用户对物品的行为看成类别
+* 每个用户见过的物品就是一个文本集合
+* 在这个文本集合上使用特征选择算法选出每个用户关心的东西
+
+**卡方检验**
+
+本质是检测某个词和某个类别相互独立，如果和假设偏离越大，越说明有关联，就是关键词
+
+**信息增益** IG
+
+信息熵
+
+* 各个类别的文本数量差不多时，信息熵较大
+* 其中少数类别的文本数量明显较多时，信息熵小
+
+IG计算步骤
+
+1. 统计全局文本信息熵，通常是按照类别的分布计算
+2. 统计每个词的条件熵
+3. 两者相减就是词的信息增益
+
+在数据挖掘中的决策树分类算法中应用得最多。卡方检验针对每个分类单独筛选一套标签出来，后者是全局统一筛选。
+
+都是在离线层批量完成的，每天更新一次，次日就可以使用新的用户画像。新用户快速生成画像需要用到MAB（多臂老虎机）
+
+### 基于内容的推荐
+
+就是包装成推荐系统的信息检索系统，处在推荐系统的初级
+
+##### 抓
+
+抓数据，补充内容源，增加分析维度
+
+##### 洗
+
+冗余、垃圾、政治、色情
+
+##### 挖（内容分析）
+
+对已有内容的深入挖掘是基于内容的推荐系统最重要的一步，只要内容挖掘足够深，即使推荐算法一般，也能取得好效果。
+
+1. 通过文本进行分类（如娱乐类）
+2. 分析文本的主题
+3. 识别内容的主角（如吴亦凡）
+4. Embedding向量分析，抓住潜藏的语义，更能精确表达内容
+
+内容分析的产出：
+
+* 结构化的内容库：结合用户行为去学习用户画像（之前的算法）
+
+* 内容分析模型：模型如：
+
+  * 分类模型
+  * 主题模型
+  * 实体识别模型
+  * Embedding模型
+
+  它们的主要应用场景：新的物品刚刚进入时，需要实时地被推荐出去，要对内容进行实时分析、提取结构化内容，再去和用户画像做比对
+
+##### 算
+
+将用户的兴趣和物品的属性相匹配
+
+最简单的方法是计算相似性：用户的画像内容表示为稀疏向量，内容端也有对应的稀疏向量，两者之间计算余弦相似度，根据相似度对推荐物品排序
+
+借鉴信息检索中的相关性计算方法来推荐匹配计算，BM25F算法
+
+两种算法都可快速实现，但不属于学习型算法，因为目标没有最优化
+
+学习型算法的思路：典型的场景是提高行为的转化率，如点击、转发，收集这类行为的日志，转换成训练样本，训练预估模型。样本由两部分构成：特征，包含用户画像、物品的结构化内容，还可加入场景信息如时间、位置、设备。另一部分是用户行为。作为标注信息，包含有反馈和无反馈两类。用这样的样本训练一个二分器，常用模型是逻辑回归LR和梯度提升树GBDT，或两者结合。在推荐匹配时，预估用户行为发生的概率，并按照概率排序。可一直迭代优化下去
+
+## 4 近邻推荐
+
+### 协同过滤
+
+重点在协同，协同过滤算法简单直接、历久弥新
+
+基于内容的推荐系统一段时间后，就有可观的用户行为了。用户行为可表达成一个用户和物品的关系矩阵，或叫网络或图。填充的就是用户对物品的态度，单不一定每个位置都有内容，需要把没有内容的地方填满。这个关系矩阵是协同过滤的命根子，一切围绕它来进行
+
+基于记忆的协同过滤 Memory-Based：记住每个用户消费过什么，然后给他推荐相似的东西，或把相似的人喜欢的东西推荐给他
+
+基于模型的协同过滤 Model-Based：从用户和物品的关系矩阵中学习一个可以泛化的模型，从而把那些矩阵空白处填满
+
+### 基于用户的协同过滤
+
+是基于记忆的协同过滤算法之一。根据历史消费行为找到一群和你口味相近的用户，把他们消费的新的、你妹见过的物品推荐给你。
 

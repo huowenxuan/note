@@ -74,8 +74,10 @@ db.xxxx.stats(1024 * 1024); // storageSize为所占空间大小
 
 ## 数据库导出与导入
 
-mongoexport --port 57134 --db dbname --collection cname --out export.json 
+mongoexport -h localhost --port 8888 --db aituwen --collection likes --out export.json --skip 10000000 --limit 100000 -q '{x: {$gt: 1}}' --sort '{x: 1}'
+
 mongoimport -h localhost:27017 -d dbname --collection cname2 --file export.json
+
 ```
 
 # 开启第二个实例，fork后台运行

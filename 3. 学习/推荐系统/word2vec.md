@@ -155,7 +155,7 @@ if __name__ == '__main__':
 
     logger.info('running ' + program)
 
-    # parse the parameters
+    # 命令行参数
     parser = OptionParser()
     parser.add_option('-i','--input',dest='infile',default='corpus.zhwiki.segwithb.txt',help='zhwiki corpus')
     parser.add_option('-m','--outmodel',dest='wv_model',default='zhwiki.word2vec.model',help='word2vec model')
@@ -206,7 +206,7 @@ if __name__ == '__main__':
     # print('北京：', vec)
 
     # 查看相似词
-    sim_words = model.most_similar('德甲')
+    sim_words = model.wv.most_similar('德甲')
     print('The most similar words: ')
     for w in sim_words:
         print(w)

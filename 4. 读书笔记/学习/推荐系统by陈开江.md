@@ -264,10 +264,6 @@ LDA需要设定主题个数k，k可根据多次实验对比来选择：每次计
 开源的LDA训练工具有LightLDA、gemsim、PLDA，以gemsim为例
 
 ```python
-from gensim.models.ldamodel import LdaModel
-from gensim.corpora.dictionary import Dictionary
-
-
 class LDA(object):
     def __init__(self, topics=10,
                  worker=3,
@@ -282,11 +278,11 @@ class LDA(object):
         """
         self._topics = topics
         self._worker = worker
-        self._model = None
-        self._common_dictionary = None
+        self._model: LdaModel = None
+        self._dictionary = None
         if pretrained_model and dictionary:
             self._model = LdaModel.load(pretrained_model)
-            self._common_dictionary = Dictionary.load(dictionary)
+            self._dictionary = Dictionary.load(dictionary)
 
     def save(self, model_file, dictionary_file):
         """
@@ -297,33 +293,34 @@ class LDA(object):
         """
         if self._model:
             self._model.save(model_file)
-        if self._common_dictionary:
-            self._common_dictionary.save(dictionary_file)
+        if self._dictionary:
+            self._dictionary.save(dictionary_file)
 
     def update(self, corpus=[]):
         """
         在已有模型的基础上在线更新
         :param corpus: 用于更新的文档列表
-        :return: 
+        :return:
         """
         if not self._model and len(corpus) > 0:
-            print('train from scratch...')
-            self._common_dictionary = Dictionary(corpus)
-            corpus_data = [self._common_dictionary.doc2bow(sentence) for sentence in corpus]
-            self._model = LdaModel(corpus_data, self._topics)
+            self._dictionary = Dictionary(corpus)
+            corpus_data = [self._dictionary.doc2bow(sentence) for sentence in corpus]
+            self._model = LdaModel(corpus_data, num_topics=self._topics,
+                                   id2word=self._dictionary,  # 指定dict才能返回id对应的文本
+                                   )
         elif self._model and len(corpus) > 0:
-            self._common_dictionary.add_documents(corpus)
-            new_corpus_data = [self._common_dictionary.doc2bow(sentence) for sentence in corpus]
-            self._model.update(new_corpus_data)
+            self._dictionary.add_documents(corpus)
+            corpus_data = [self._dictionary.doc2bow(sentence) for sentence in corpus]
+            self._model.update(corpus_data)
 
-    def inference(self, document=[]):
+    def get_document_topics(self, document=[]):
         """
         推断新文档的话题发布
-        :param document: 文档（词列表） 
-        :return: 话题分布列表 
+        :param document: 文档（词列表）
+        :return: 话题分布列表
         """
         if self._model:
-            doc = [self._common_dictionary.doc2bow(document)]
+            doc = [self._dictionary.doc2bow(document)]
             return self._model.get_document_topics(doc)
         return []
 
@@ -333,15 +330,7 @@ class LDA(object):
 
     @property
     def dictionary(self):
-        return self._common_dictionary
-
-
-# 使用
-lda = LDA(topics=20, worker=2, pretrained_model=model_file, dictionary=dic_file)
-corpus = read_file(corpus_file)
-lda.update(corpus)
-lda.save(model_file, dic_file)
-topics = lda.inference(['word1', 'word2'])
+        return self._dictionary
 ```
 
 #### 标签选择

@@ -723,3 +723,5 @@ ffm_model.setSigmoid()
 ffm_model.fit(param, './ffm_model.out')
 ```
 
+### Wide & Deep 模型
+

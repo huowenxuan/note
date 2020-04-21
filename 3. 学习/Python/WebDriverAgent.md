@@ -90,4 +90,3 @@ def fun_timer():
 timer = threading.Timer(3, fun_timer)
 timer.start()
 ```
-                      

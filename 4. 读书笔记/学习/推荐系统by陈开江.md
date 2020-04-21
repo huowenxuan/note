@@ -659,7 +659,7 @@ print((end - start) * 1000)
 
 常见，开源成熟，落地快
 
-逻辑回归LR用来执行CTR预估。逻辑回归是广义线性模型，对非线性关系无能为力。需要两个东西：
+逻辑回归**LR**用来执行**CTR**预估。逻辑回归是广义线性模型，对非线性关系无能为力。需要两个东西：
 
 1. 特征
 
@@ -667,8 +667,8 @@ print((end - start) * 1000)
 
    数据库字段转为特征：
 
-   1. 独热编码。例如三个类别可变为 001 010  100
-   2. 特征分段。是否是可变为布尔值；连续值可分段，例如热度可分为0,50 51,100...
+   1. 独热编码。枚举值，例如三个类别可变为 001 010  100
+   2. 特征分段。“是否是”可变为布尔值；连续值可分段，例如热度可分为0,50 51,100...
    3. 特征变换。把连续值变到有限的值域内，例如0-1，或做离散化
 
 2. 权重
@@ -685,5 +685,41 @@ print((end - start) * 1000)
 
 ### 因子分解机 FM
 
+可代替逻辑回归，用隐因子向量的点积代替单个权重参数，可用来做模型融合
 
+FFM为因子分解机的扩展模型，认为特征和特征之间有某种关系
+
+开源实现有libfm、libffm、xlearn(c++、命令行、Python、R)，xlearn输入格式为libsvm(最普遍的稀疏样本采用的格式)，包含LR、FM、FFM（模型文件依次显著增大）
+
+```python
+import xlearn as xl
+
+param = {'task':'binary', 'lr':0.2,
+         'epoch': 20, 'k':2,
+         'lambda':0.002, 'metric':'auc'}
+
+train_data = "../../data/criteo_conversion_logs/small_train.txt"
+test_data = "../../data/criteo_conversion_logs/small_test.txt"
+
+lr_model = xl.create_linear()
+lr_model.setTrain(train_data)
+lr_model.setValidate(test_data)
+lr_model.setTest(test_data)
+lr_model.setSigmoid()
+lr_model.fit(param, './lr_model.out')
+
+fm_model = xl.create_fm()
+fm_model.setTrain(train_data)
+fm_model.setValidate(test_data)
+fm_model.setTest(test_data)
+fm_model.setSigmoid()
+fm_model.fit(param, './fm_model.out')
+
+ffm_model = xl.create_ffm()
+ffm_model.setTrain(train_data)
+ffm_model.setValidate(test_data)
+ffm_model.setTest(test_data)
+ffm_model.setSigmoid()
+ffm_model.fit(param, './ffm_model.out')
+```
 

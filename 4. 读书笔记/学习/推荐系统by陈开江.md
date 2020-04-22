@@ -725,3 +725,854 @@ ffm_model.fit(param, './ffm_model.out')
 
 ### Wide & Deep 模型
 
+特征工程+线性模型为宽(wide)模型，深度神经网络是深(deep)模型。深度学习，可以更精准表达用户和物品的关系，但是可解释性不好。Wide&Deep为两者结合。  
+
+模型训练完成后，每次请求都输入用户特征和内容列表，对每个内容进行评分，评分用W&D模型计算，再按计算的CTR从高到低排序；为了达到10ms响应，多线程并行批量计算内容
+
+```python
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+import argparse
+import shutil
+import sys
+import tempfile
+
+import pandas as pd
+from six.moves import urllib
+import tensorflow as tf
+
+"""
+构建特征
+深模型使用数值模型和编码后的类别特征（indicator编码用于可枚举值、embedding用于无法枚举的值，例如文本关键字）
+"""
+CSV_COLUMNS = [
+    "age", "workclass", "fnlwgt", "education", "education_num",
+    "marital_status", "occupation", "relationship", "race", "gender",
+    "capital_gain", "capital_loss", "hours_per_week", "native_country",
+    "income_bracket"
+]
+
+gender = tf.feature_column.categorical_column_with_vocabulary_list(
+    "gender", ["Female", "Male"])
+education = tf.feature_column.categorical_column_with_vocabulary_list(
+    "education", [
+        "Bachelors", "HS-grad", "11th", "Masters", "9th",
+        "Some-college", "Assoc-acdm", "Assoc-voc", "7th-8th",
+        "Doctorate", "Prof-school", "5th-6th", "10th", "1st-4th",
+        "Preschool", "12th"
+    ])
+marital_status = tf.feature_column.categorical_column_with_vocabulary_list(
+    "marital_status", [
+        "Married-civ-spouse", "Divorced", "Married-spouse-absent",
+        "Never-married", "Separated", "Married-AF-spouse", "Widowed"
+    ])
+relationship = tf.feature_column.categorical_column_with_vocabulary_list(
+    "relationship", [
+        "Husband", "Not-in-family", "Wife", "Own-child", "Unmarried",
+        "Other-relative"
+    ])
+workclass = tf.feature_column.categorical_column_with_vocabulary_list(
+    "workclass", [
+        "Self-emp-not-inc", "Private", "State-gov", "Federal-gov",
+        "Local-gov", "?", "Self-emp-inc", "Without-pay", "Never-worked"
+    ])
+
+# 针对“取值不能提前枚举”的类别特征，使用hash
+occupation = tf.feature_column.categorical_column_with_hash_bucket(
+    "occupation", hash_bucket_size=1000)
+native_country = tf.feature_column.categorical_column_with_hash_bucket(
+    "native_country", hash_bucket_size=1000)
+
+# Continuous base columns.
+age = tf.feature_column.numeric_column("age")
+education_num = tf.feature_column.numeric_column("education_num")
+capital_gain = tf.feature_column.numeric_column("capital_gain")
+capital_loss = tf.feature_column.numeric_column("capital_loss")
+hours_per_week = tf.feature_column.numeric_column("hours_per_week")
+
+# 离散化
+age_buckets = tf.feature_column.bucketized_column(
+    age, boundaries=[18, 25, 30, 35, 40, 45, 50, 55, 60, 65])
+
+# Wide columns and deep columns.
+base_columns = [
+    gender, education, marital_status, relationship, workclass, occupation,
+    native_country, age_buckets,
+]
+
+crossed_columns = [
+    tf.feature_column.crossed_column(
+        ["education", "occupation"], hash_bucket_size=1000),
+    tf.feature_column.crossed_column(
+        [age_buckets, "education", "occupation"], hash_bucket_size=1000),
+    tf.feature_column.crossed_column(
+        ["native_country", "occupation"], hash_bucket_size=1000)
+]
+
+deep_columns = [
+    # indicator编码用于可枚举值
+    tf.feature_column.indicator_column(workclass),
+    tf.feature_column.indicator_column(education),
+    tf.feature_column.indicator_column(gender),
+    tf.feature_column.indicator_column(relationship),
+    # embedding用于无法枚举的类别特征
+    tf.feature_column.embedding_column(native_country, dimension=8),
+    tf.feature_column.embedding_column(occupation, dimension=8),
+    age,
+    education_num,
+    capital_gain,
+    capital_loss,
+    hours_per_week,
+]
+
+
+def maybe_download(train_data, test_data):
+  """Maybe downloads training data and returns train and test file names."""
+  if train_data:
+    train_file_name = train_data
+  else:
+    train_file = tempfile.NamedTemporaryFile(delete=False)
+    urllib.request.urlretrieve(
+        "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
+        train_file.name)  # pylint: disable=line-too-long
+    train_file_name = train_file.name
+    train_file.close()
+    print("Training data is downloaded to %s" % train_file_name)
+
+  if test_data:
+    test_file_name = test_data
+  else:
+    test_file = tempfile.NamedTemporaryFile(delete=False)
+    urllib.request.urlretrieve(
+        "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.test",
+        test_file.name)  # pylint: disable=line-too-long
+    test_file_name = test_file.name
+    test_file.close()
+    print("Test data is downloaded to %s"% test_file_name)
+
+  return train_file_name, test_file_name
+
+
+def build_estimator(model_dir, model_type):
+  """
+  训练模型
+  """
+  if model_type == "wide":
+    # LinearClassifier线性分类器: 以为0/1特征为代表的wide_columns及交叉特征
+    m = tf.estimator.LinearClassifier(
+        model_dir=model_dir, feature_columns=base_columns + crossed_columns)
+  elif model_type == "deep":
+    # DNNClassifier DNN分类器: 以数值型特征、Embedding特征为代表的deep_columns
+    m = tf.estimator.DNNClassifier(
+        model_dir=model_dir,
+        feature_columns=deep_columns,
+        hidden_units=[100, 50])
+  else:
+    # DNNLinearCombinedClassifier 复合分类器
+    m = tf.estimator.DNNLinearCombinedClassifier(
+        model_dir=model_dir,
+        linear_feature_columns=crossed_columns,
+        dnn_feature_columns=deep_columns,
+        dnn_hidden_units=[100, 50])
+  return m
+
+
+def input_fn(data_file, num_epochs, shuffle):
+  """训练样本，对原始样本做处理"""
+  df_data = pd.read_csv(
+      tf.gfile.Open(data_file),
+      names=CSV_COLUMNS,
+      skipinitialspace=True,
+      engine="python",
+      skiprows=1)
+  # remove NaN elements
+  df_data = df_data.dropna(how="any", axis=0)
+  # 收入大于50k
+  labels = df_data["income_bracket"].apply(lambda x: ">50K" in x).astype(int)
+  return tf.estimator.inputs.pandas_input_fn(
+      x=df_data,
+      y=labels,
+      batch_size=100,
+      num_epochs=num_epochs,
+      shuffle=shuffle,
+      num_threads=5)
+
+
+def train_and_eval(model_dir, model_type, train_steps, train_data, test_data):
+  """Train and evaluate the model."""
+  train_file_name, test_file_name = maybe_download(train_data, test_data)
+  # Specify file path below if want to find the output easily
+  model_dir = tempfile.mkdtemp() if not model_dir else model_dir
+
+  m = build_estimator(model_dir, model_type)
+  # set num_epochs to None to get infinite stream of data.
+  m.train(
+      input_fn=input_fn(train_file_name, num_epochs=None, shuffle=True),
+      steps=train_steps)
+  # set steps to None to run evaluation until all data consumed.
+  results = m.evaluate(
+      input_fn=input_fn(test_file_name, num_epochs=1, shuffle=False),
+      steps=None)
+  print("model directory = %s" % model_dir)
+  for key in sorted(results):
+    print("%s: %s" % (key, results[key]))
+  # Manual cleanup
+  shutil.rmtree(model_dir)
+
+
+FLAGS = None
+
+
+def main(_):
+  train_and_eval(FLAGS.model_dir, FLAGS.model_type, FLAGS.train_steps,
+                 FLAGS.train_data, FLAGS.test_data)
+
+
+if __name__ == "__main__":
+  parser = argparse.ArgumentParser()
+  parser.register("type", "bool", lambda v: v.lower() == "true")
+  parser.add_argument(
+      "--model_dir",
+      type=str,
+      default="",
+      help="Base directory for output models."
+  )
+  parser.add_argument(
+      "--model_type",
+      type=str,
+      default="wide_n_deep",
+      help="Valid model types: {'wide', 'deep', 'wide_n_deep'}."
+  )
+  parser.add_argument(
+      "--train_steps",
+      type=int,
+      default=2000,
+      help="Number of training steps."
+  )
+  parser.add_argument(
+      "--train_data",
+      type=str,
+      default="",
+      help="Path to the training data."
+  )
+  parser.add_argument(
+      "--test_data",
+      type=str,
+      default="",
+      help="Path to the test data."
+  )
+  FLAGS, unparsed = parser.parse_known_args()
+  tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+```
+
+## 7 探索和利用
+
+解决冷启动和探索新兴趣
+
+### MAB问题和Bandit算法
+
+MAB多臂老虎机问题，关于选择的问题，都可简化为MAB问题，冷启动、探索与利用（EE）问题（不断探索用户新兴趣）都是MAB问题，在不确定中试错找到一定程度的确定性
+
+解决MAB的一类Bandit算法，关键元素：
+
+* 臂：每次推荐要选择候选池，推荐策略或物品类别
+* 回报：用户是否喜欢推荐结果
+* 环境：无法控制的因素——用户
+
+核心思想是：看选择会带来多少遗憾，好坏的指标就是累计遗憾，越少越好。套路是小心的试，确定某个选项好就多选择，不好就少选择，不确定就多选择
+
+对比不同的Bandit算法效果：那个算法累计遗憾增长的慢，就是效果好
+
+* 汤普森采样算法
+
+  每次选择时候，每个臂的概率分布（贝塔分布）独自产生一个随机数（收益越好，分布越窄，越在中心，越接近1），按照这个随机数排序，输出最大的臂对应的物品
+
+  有效，一行代码可实现，简单的数学基础。要为每个用户保存一套参数，臂有m个，用户有n个，就要保存2mn个参数（每个臂有两个参数α和β）
+
+  效果最好，最简单
+
+* UCB算法
+
+  置信区间上界，为每个臂评分，选择评分最高的，输出后观察反馈，更新参数
+
+* Epsilon贪婪算法
+
+  朴素，简单有效
+
+Bindit是动态的推荐过程；所有的Bindit算法同时处理的臂数不能太多，通常几百个，太多计算代价太大
+
+```python
+import numpy as np
+from numpy.random import beta
+import matplotlib.pyplot as plt
+
+class Bandit(object):
+
+    def __init__(self, arm_priority):
+        self._cumulative_regret_list = []
+        self._cumulative_regret = 0
+        self._priority = arm_priority
+        self._best= np.max(self._priority)
+        self._win_of_arms = np.zeros(len(arm_priority))
+        self._loss_of_arms = np.zeros(len(arm_priority))
+
+    def pull(self, arm):
+        return int(np.random.rand() < self._priority[arm])
+
+    def select(self):
+        raise Exception('not implement')
+
+    def update(self, arm, reward):
+        self._win_of_arms[arm] += reward
+        self._loss_of_arms[arm] += 1 - reward
+        regret = self._best - self._priority[arm]
+        self._cumulative_regret += regret
+        self._cumulative_regret_list.append(
+            self._cumulative_regret)
+
+    def simulate(self):
+        arm = self.select()
+        reward = self.pull(arm)
+        self.update(arm, reward)
+    
+    @property
+    def cumulative_regret(self):
+        return self._cumulative_regret
+
+    @property
+    def cumulative_regret_list(self):
+        return self._cumulative_regret_list
+
+class ThompsonSamplingBandit(Bandit):
+
+    def __init__(self, arm_priority):
+        Bandit.__init__(self, arm_priority)
+
+    def select(self):
+        randoms = beta(1+self._win_of_arms, 1+self._loss_of_arms)
+        return np.argmax(randoms)
+
+class UCBBandit(Bandit):
+
+    def __init__(self, arm_priority):
+        Bandit.__init__(self, arm_priority)
+        self._trials = 0
+        self._avg_reward = np.zeros(len(arm_priority))
+
+    def select(self):
+        trial_of_arms = self._win_of_arms + self._loss_of_arms
+        avg = self._avg_reward
+        avg += np.sqrt(2*np.log(1+self._trials)/(1+trial_of_arms)) 
+        return np.argmax(avg)
+
+    def update(self, arm, reward):
+        Bandit.update(self, arm, reward)
+        self._trials += 1
+        trials_of_arm = self._win_of_arms[arm] + self._loss_of_arms[arm]
+        self._avg_reward[arm] = ((trials_of_arm - 1)*self._avg_reward[arm]
+                            + self._win_of_arms[arm])/trials_of_arm
+
+
+class EpsilonGreedyBandit(Bandit):
+
+    def __init__(self, arm_priority, epsilon, min_trials = 0):
+        Bandit.__init__(self, arm_priority)
+        self._epsilon = epsilon
+        self._avg_reward = np.zeros(len(arm_priority))
+        self._trials = 0
+        self._min_trials =  min_trials
+
+    def select(self):
+        if (np.random.rand() < self._epsilon
+            or self._trials <  self._min_trials):
+            return np.random.choice(range(len(self._win_of_arms)))
+        arm = np.argmax(self._avg_reward)
+        return arm
+
+    def update(self, arm, reward):
+        Bandit.update(self, arm, reward)
+        self._trials += 1
+        trials_of_arm = self._win_of_arms[arm] + self._loss_of_arms[arm]
+        self._avg_reward[arm] = self._win_of_arms[arm]/trials_of_arm
+#        self._avg_reward[arm] = ((trials_of_arm - 1)*self._avg_reward[arm]
+#                            + self._win_of_arms[arm])/trials_of_arm
+    
+
+if __name__ == '__main__':
+    priority = [0.15, 0.20, 0.42]
+    name1, bandit_1 = "ThompsonSampling", ThompsonSamplingBandit(priority)
+    name2, bandit_2 = "UCB", UCBBandit(priority)
+    name3, bandit_3 = "greedy", EpsilonGreedyBandit(priority, 0)
+    name5, bandit_5 = "epsilon0.05", EpsilonGreedyBandit(priority, 0.05)
+    name8, bandit_8 = "random", EpsilonGreedyBandit(priority, 1)
+    name9, bandit_9 = "greedy-naive", EpsilonGreedyBandit(priority, 3)
+    t = 1000
+    for i in range(t):
+        bandit_1.simulate()
+        bandit_2.simulate()
+        bandit_3.simulate()
+        bandit_5.simulate()
+        bandit_8.simulate()
+        bandit_9.simulate()
+   
+    c1, = plt.plot(range(t), bandit_1.cumulative_regret_list)
+    c2, = plt.plot(range(t), bandit_2.cumulative_regret_list)
+    c3, = plt.plot(range(t), bandit_3.cumulative_regret_list)
+    c5, = plt.plot(range(t), bandit_5.cumulative_regret_list)
+    c8, = plt.plot(range(t), bandit_8.cumulative_regret_list)
+    c9, = plt.plot(range(t), bandit_9.cumulative_regret_list)
+
+    plt.ylabel('cumulative regret')
+    plt.xlabel('t')
+    plt.legend(handles= [c1, c2, c3, c5,  c8, c9],
+               labels = [name1, name2, name3, name5, name8, name9],
+               loc = 'best')
+    plt.show()
+```
+
+解决冷启动：
+
+* 用分类或Topic表示每个用户的兴趣，通过几次试验，刻画出新用户心中对每个Topic的感兴趣程度
+* 如果用户对某Topic感兴趣，就表示我们得到了收益，如果给用户推荐了不感兴趣的Topic，推荐系统就表示很遗憾了（效果一般？）
+* 针对每个新用户，用汤普森采样为每个Topic采样一个随机数，排序后，输出采样值Top K的推荐物品。这里一次性选择了Top K个臂
+* 等待获取用户反馈，没有反馈则直接更新对应Topic的β值，用户点击则更新α值
+
+### 加入特征的UCB算法
+
+前面的算法都没有使用臂的特征信息（特征是机器学习的核心要素），对于新加入的臂，只能从零开始积累
+
+雅虎提出了LinUCB算法，加入特征信息，每次估算臂的置信区间时，不仅会根据实验，也会根据特征信息来进行估算
+
+构建用户特征：
+
+* 人口统计学：性别（2类）、年龄（离散成10个区间）
+* 地域信息
+* 行为类别：代表用户历史行为的1000个类别取值
+
+内容特征：
+
+* 几十个类别
+* 内容标签
+
+用户矩阵和内容矩阵都归一化变成单位向量，再用逻辑回归拟合用户对文章的点击行为矩阵，预测点击与否的概率，训练后得到矩阵：把用户的特征空间映射到物品的特征空间，相当于用户特征降维。最后对投影后的特征对用户聚类，得到5个类，文章也聚类成5个类，加上常数1，用户和文章各自被表示成6维向量，就可以应用LinUCB了
+
+```python
+import numpy as np
+import scipy as sp
+from scipy import linalg
+
+"""
+推荐、更新模型参数
+"""
+class LinUCB(object):
+
+    def __init__(self, alpha = 0.25,
+                 r1 = 0.8, r0 = 0,
+                 d = 2, arms = []):
+        self._alpha = alpha
+        self._r1 = r1
+        self._r0 = r0
+        self._d = d
+        self._arms = arms
+        self._Aa = []
+        self._AaI = []
+        self._ba = []
+        self._theta = []
+        for arm in range(len(self._arms)):
+            self._Aa.append(np.identity(d))
+            self._ba.append(np.zeros((d, 1)))
+            self._AaI.append(np.identity(d))
+            self._theta.append(np.zeros((d, 1)))
+        self._x = None
+        self._xT = None
+
+    def pull(self, arm):
+        return int(np.random.rand() < self._arms[arm])
+
+    def select(self, user_feature = None):
+        if not user_feature:
+            user_feature = np.identity(self._d)
+        # context feature d x 1
+        xaT = np.array([user_feature])
+        xa = np.transpose(xaT)
+        arm_count = len(self._arms)
+        AaI_tmp = np.array([self._AaI[arm] for arm in range(arm_count)])
+        theta_tmp = np.array([self._theta[arm] for arm in range(arm_count)])
+        expected_reward = np.array([np.dot(xaT, self._theta[arm])
+                                    for arm in range(arm_count)])
+        bound = np.array([self._alpha * np.sqrt(np.dot(np.dot(xaT,
+                                                              self._AaI[arm]),
+                                                       xa))
+                          for arm in range(arm_count)])
+        confidence_bound = expected_reward + bound
+        selected_arm = np.argmax(confidence_bound)
+
+        self._x = xa
+        self._xT = xaT
+        return selected_arm
+
+    def update(self, arm, reward):
+        r = self._r1 if reward == 1 else self._r0
+        self._Aa[arm] += np.dot(self._x, self._xT)
+        self._ba[arm] += r * self._x
+        self._AaI[arm] = linalg.solve(self._Aa[arm], np.identity(self._d))
+        self._theta[arm] = np.dot(self._AaI[arm], self._ba[arm])
+
+    def simulate(self, user):
+        arm = self.select(user)
+        reward = self.pull(arm)
+        self.update(arm, reward)
+        return arm
+
+
+if __name__ == '__main__':
+    arms = [0.8, 0.3]
+    linucb = LinUCB(arms = arms)
+    users = [[1,0], [0, 1]]
+    t = 10
+    for i in range(t):
+        for user in users:
+            arm = linucb.simulate(user)
+```
+
+### Bandit与协同过滤
+
+COFIBA算法：根据用户对物品偏好不同，将用户分为不同的群体，在下一次由用户所在的群体集体预估物品可能的收益，这个集体就有了协同效果，再实时根据用户的真实反馈，更新用户的个人参数用于下次调整收益和置信区间。和LinUCB的区别是针对所在集体而不是个人
+
+（原理和过程没写，太复杂，需要时候根据步骤自行总结）
+
+```python
+import numpy as np
+import networkx as nx
+import math
+from scipy.sparse import csr_matrix
+from scipy.sparse.csgraph import connected_components as cc
+
+class Item(object):
+    """
+    Item 类，两个元素：
+    _id -- Item ID
+    _feature -- 特征向量
+    """
+
+    def __init__(self, item_id, feature, priority):
+        self._id = item_id
+        self._feature = feature
+        self._priority = priority
+
+    def pull(self):
+        return int(np.random.rand() < self._priority)
+
+    @property
+    def id(self):
+        return self._id
+
+    @property
+    def x(self):
+        return self._feature
+
+    @property
+    def feature(self):
+        return self._feature
+
+class User(object):
+    """
+    User 类， 单个用户的诸多参数，同LinUCB中的参数
+    """
+    def __init__(self, d, lambda_, uid):
+        '''
+        personal parameters:
+        '''
+        self._d = d
+        self._reward = 0
+        self._A = lambda_*np.identity(n = self._d)
+        self._b = np.zeros(self._d)
+        self._AI = np.linalg.inv(self._A)
+        self._theta = np.zeros(self._d)
+        self._I = lambda_ * np.identity(n = d)
+        '''
+        cluster parameters:
+        '''
+        self._avg_A = self._A
+        self._avg_b = self._b
+        self._avg_AI = np.linalg.inv(self._avg_A)
+        self._avg_theta = np.dot(self._avg_AI, self._avg_b)
+
+    def update(self, x, reward, alpha_2):
+        self._A += np.outer(x,x)
+        self._b += x * reward
+        self._AI = np.linalg.inv(self._A)
+        self._theta = np.dot(self._AI, self._b)
+
+    def update_cluster_avg_parameters(self, clusters, uid, graph, users):
+        self._avg_A = self._I
+        self._avg_b = np.zeros(self._d)
+        for i in range(len(clusters)):
+            if clusters[i] == clusters[uid]:
+                self._avg_A += (users[i]._A - self._I)
+                self._avg_b += users[i]._b
+        self._avg_AI = np.linalg.inv(self._avg_A)
+        self._avg_theta = np.dot(self._avg_AI, self._avg_b)
+
+    def predict(self, alpha, x, trials):
+        expected_reward = np.dot(self._avg_theta, x)
+        bound = np.sqrt(np.dot(np.dot(x, self._avg_AI),  x))
+        ucb = expected_reward + alpha * bound * np.sqrt(math.log10(trials + 1))
+        return ucb
+
+class Cofiba(object):
+    def __init__(self, d, alpha, alpha_2, lambda_, user_count, item_count):
+        self._trials = 0
+        self._d = d
+        self._alpha = alpha
+        self._alpha_2 = alpha_2
+        self._item_count = item_count
+        self._user_count = user_count
+        self._users = [User(d, lambda_, i) for i in range(user_count)]
+        self._item_graph = np.ones([self._item_count, self._item_count])
+        cluster_count, item_clusters = cc(csr_matrix(self._item_graph))
+        self._cluster_count_of_item = cluster_count
+        self._item_clusters = item_clusters
+        self._user_graph = []
+        self._user_clusters = []
+        for i in range(self._cluster_count_of_item):
+            self._user_graph.append(np.ones([user_count, user_count]))
+            _, user_clusters = cc(csr_matrix(self._user_graph[i]))
+            self._user_clusters.append(user_clusters)
+  
+    @property
+    def alpha(self):
+        return self._alpha
+
+    @property
+    def trials(self):
+        return self._trials
+
+    @property
+    def alpha_2(self):
+        return self._alpha_2
+
+    @property
+    def users(self):
+        return self._users
+
+    def get_item_cluster(self, item):
+        return self._item_clusters[item]
+
+    def select(self, items, uid):
+        max_exptected_reward = -1
+        item_selected = None
+        for item in items:
+            item_cluster_index = self._item_clusters[item._id]
+            self.update_user_clusters(uid, item._feature, item_cluster_index)
+            user = self._users[uid]
+            user_cluster = self._user_clusters[item_cluster_index]
+            user.update_cluster_avg_parameters(user_cluster,
+                                               uid,
+                                               self._user_graph,
+                                               self._users)
+            ucb_prob = self._users[uid].predict(self.alpha,
+                                                item._feature,
+                                                self._trials)
+            if max_exptected_reward < ucb_prob:
+                item_selected = item.id
+                feature = item._feature
+                max_exptected_reward = ucb_prob
+        self._trials += 1
+        return item_selected
+
+    def update_user_clusters(self, uid, feature, item_cluster_index):
+        n = len(self._users)
+        user_expected_reward = np.dot(self._users[uid]._theta, feature)
+        user_cb = np.sqrt(np.dot(np.dot(feature, self._users[uid]._AI),  feature)) 
+        trials_alpha = np.sqrt(np.log10(self._trials + 1))
+        for j in range(n):
+            theta = self._users[j]._theta
+            AI = self._users[j]._AI
+            expected_reward = np.dot(theta, feature)
+            user_cb = np.sqrt(np.dot(np.dot(feature, AI), feature))
+            center_distance = math.fabs(user_expected_reward - expected_reward)
+            bounds = self.alpha_2 * (user_cb + user_cb) * trials_alpha
+            if center_distance > bounds:
+                self._user_raph[item_cluster_index][uid][j] = 0
+                self._user_graph[item_cluster_index][j][uid] = 0
+
+        user_graph = csr_matrix(self._user_graph[item_cluster_index])
+        cluster_count, user_clusters = cc(user_graph)
+        self._user_clusters[item_cluster_index] = user_clusters
+        return cluster_count
+
+    def update_item_clusters(self, uid, item_selected, items):
+        m = self._item_count
+        n = self._user_count
+        user_neighbor = {}
+        item_cluster_index = self.get_item_cluster(item_selected)
+        trials_alpha = np.sqrt(np.log10(self._trials + 1))
+        AI1 = self._users[uid]._AI
+        for item in items:
+            if self._item_graph[items[item_selected].id][item._id] == 1:
+                user_neighbor[item._id] = np.ones([n,n])
+                for i in range(n):
+                    theta1 = self._users[uid]._theta
+                    feature = item._feature
+                    theta2 = self._users[i]._theta
+                    center_distance = math.fabs(np.dot(theta1, feature)
+                                     - np.dot(theta2, feature))
+                    AI2 = self._users[i]._AI
+                    expected_reward1 = np.sqrt(np.dot(np.dot(feature, AI1), feature))
+                    expected_reward2 = np.sqrt(np.dot(np.dot(feature, AI2), feature))
+                    bounds = self.alpha_2 * (expected_reward1 + expected_reward2)
+                    bounds *= trials_alpha
+                    if center_distance > bounds:
+                        user_neighbor[item._id][uid][i] = 0
+                        user_neighbor[item._id][i][uid] = 0
+                if not np.array_equal(user_neighbor[item._id],
+                                      self._user_graph[item_cluster_index]):
+                    self._item_graph[item_selected._id][item._id] = 0
+                    self._item_graph[item._id][item_selected._id] = 0
+        item_graph = csr_matrix(self._item_graph)
+        self._cluster_count_of_item, self._item_clusters = cc(item_graph)
+
+        self._user_graph = []
+        self._user_clusters = []
+        n = self._user_count
+        for i in range(self._cluster_count_of_item):
+            self._user_graph.append(np.ones([n, n]))
+            cluster_count, user_clusters = cc(csr_matrix(self._user_graph[i]))
+            self._user_clusters.append(user_clusters)
+        return self._cluster_count_of_item
+
+if __name__ == '__main__':
+    lambda_ = 0.1
+    alpha  = 0.2
+    d = 5
+    alpha_2 = 2.0
+    item_count = 100
+    user_count = 100
+    items = [Item(i, np.random.rand(d), np.random.rand())
+                for i in range(item_count)]
+    cofiba = Cofiba(d = d,
+                    alpha = alpha,
+                    alpha_2 = alpha_2,
+                    lambda_ = lambda_,
+                    user_count = user_count,
+                    item_count = item_count)
+    uid = 5
+
+    item_selected = cofiba.select(items, uid)
+    reward = items[item_selected].pull()
+    cofiba.users[uid].update(items[item_selected].feature,
+                             reward,
+                             alpha_2)
+    cofiba.update_user_clusters(uid,
+                                items[item_selected].feature,
+                                cofiba.get_item_cluster(item_selected))
+    cofiba.update_item_clusters(uid,
+                                item_selected,
+                                items)
+```
+
+## 9 其他算法
+
+### 排行榜
+
+热门榜也是非常重要的推荐算法。1）解决冷启动。2）老用户发现兴趣。3）当推荐系统出问题或者无任何推荐时，排行榜作为兜底策略
+
+按点赞数、转发数、评论数、销量排序的缺点：1）容易刷榜。2）马太效应，热门物品永远在榜单。3）不能反映不同时间段的变化，同样马太效应
+
+**考虑时间因素**
+
+Hacker News计算热度分数算法。排行榜想象成梯子，物品在梯子上随着时间下降，增加热度可以抵挡重力
+
+> $P-1/(T+2)^G$
+>
+> P 帖子得票数，减去作者自己的投票
+>
+> T 帖子发布距离现在的小时数
+>
+> G 帖子热度重力因子，越大热度分数衰减越快 0.5，1.2，1.5，1.8
+
+牛顿冷却算法。关注度如温度，物体冷却速度和当前温度与环境温度之差成正比
+
+> $T(t) = H + Ce^{-αt}$
+>
+> H 环境温度，可以是平均投票数，如平均销量，不影响排序，可忽略
+>
+> t 物品存在小时
+>
+> C 净剩票数，t时刻物品已经得到的票数
+>
+> α 冷却系数，自然冷却的速度
+>
+> | 过去24小时后票数翻多少倍才能保证热度不变 | Α    |
+> | ---------------------------------------- | ---- |
+> | 翻倍                                     | 0.03 |
+> | 增加2倍                                  | 0.05 |
+> | 增加3倍                                  | 0.06 |
+> | 增加300倍                                | 0.24 |
+
+**考虑好评率**（评分）
+
+威尔逊区间，为每个物品计算出威尔逊区间后，使用bandit算法，使用类似UCB算法的方式取出物品，构建排行榜
+
+*贝叶斯平均*
+
+### 采样算法
+
+问题：保留多少用户兴趣标签
+
+加权采样，每次召回不使用全部的用户标签，按照权重采样一部分标签来使用。好处：
+
+1. 减少召回的时间复杂度
+2. 保留更多用户标签
+3. 每次召回时标签还能有所变化
+4. 依然受标签权重大小制约
+
+**有限数据集**
+
+已知样本总量。希望每次输出一部分标签，每次的标签都不一样，但又能反映权重，输出的概率和权重成正比
+
+针对每个标签计算，前k个就是采样结果
+
+> $S_i = R^{1/w_i}$
+>
+> $w_i$ 第i个标签的权重
+>
+> R 遍历第i个标签时产生的0-1之间随机数
+>
+> $S_i$ 第i个标签的采样分数，用于排序选择结果
+
+**无限数据集（流式数据）**
+
+不知样本总量，或者总量太大，不愿意遍历（流采样）。使用蓄水池采样，可对推荐结果采样，将采样结果用于质量监控，也可以对用户实时行为采样，实时计算推荐结果。加权蓄水池可用于对内容按热度采样输出
+
+例如有n个样本，取出k个，蓄水池采样：
+
+1. 先取出前k个留着，随时准备输出
+2. 从第k+1个开始，每个都以k/n的概率替换k个样本中的一个
+
+加权蓄水池采样：
+
+1. 为每个样本生成一个分数，分时使用有限数据集算出
+2. 如果推荐结果不足k，则将这个新的样本直接保存到推荐结果
+3. 如果已有k个，对比分数，如果小于k个样本中最小的，就替换它（排序）
+
+### 重复检测
+
+消费端避免采集到重复的内容，消费端防止用户消费到重复的内容
+
+**生成端的重复检测**
+
+检测内容重复，主要用于抓取数据
+
+Simhash算法：希望只要主要内容不变，不重要的词不同，就认为是重复的。为每个内容生成一个整数表示指纹，根据这个指纹做重复或相似的检查
+
+**消费端的重复检测**
+
+想要保留更长的已读列表，需要布隆过滤器
+
+不是百分百准确，可以设置一个概率
+
+## 10 架构总览

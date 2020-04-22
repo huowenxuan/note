@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
 保存为`file.py`，执行 `python3 file.py wiki_00`，几分钟后，在相同目录下会生成一个`std_wiki_00`（重命名为 zhwiki_raw.txt 即可）
 
-### gensim的wikicorpus库
+### gensim的wikicorpus库（推荐）
 
 执行转换
 
@@ -117,12 +117,12 @@ brew install opencc
 opencc -i zhwiki_raw.txt -o zhswiki_raw.txt -c t2s.json
 ```
 
-最终生成  zhswiki_raw.txt
+几秒生成  zhswiki_raw.txt
 
 ### 分词
 
 ```sh
-# 直接使用jieba分词，得到zhswiki_cut.txt，1秒完成
+# 直接使用jieba分词，得到zhswiki_cut.txt
 python3 -m jieba -d " " ./zhswiki_raw.txt >./zhswiki_cut.txt
 ```
 

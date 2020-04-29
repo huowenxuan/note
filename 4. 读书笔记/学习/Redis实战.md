@@ -655,7 +655,11 @@ def acquire_semaphore_with_lock(conn, semname, limit, timeout=10):
 
 #### 先进先出队列
 
+#### 延迟队列
 
+### 消息拉取
+
+消息推送使用PUBLISH、SUBSCRIBE，当无法一直保持在线或避免故障，可以使用消息拉取代替
 
 PDF 154
 

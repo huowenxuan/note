@@ -1,7 +1,7 @@
 # Git
-![git2](media/git2.jpg)
+![git2](./media/git2.jpg)
 
-![git](media/git.jpg)
+![git](./media/git.jpg)
 
 # 根据commit创建分支
 ```

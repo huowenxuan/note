@@ -1,8 +1,74 @@
-### 1. javascript的typeof返回哪些数据类型.
+
+
+[TOC]
+
+### 箭头函数和普通函数的区别
+
+1. 箭头函数相当于匿名函数简化了函数定义
+2. 箭头函数不能使用 new 命令，且没有prototype属性
+   不能使用new实例化的原因：
+   * 没有自己的this，无法调用call、apply
+   * 没有prototype属性，而new命令在执行时需要将构造函数的prototype复制给新的对象`__proto__`
+3. this指向不同
+   * 普通函数this指向调用它的对象，可以通过bind，call，apply改变this的指向
+   * 箭头函数this永远指向其上下文的this。通过call、apple调用时只传入了一个参数，对this无影响
+4. 普通函数可通过arguments获取参数，箭头函数只能通过“...” 
+5. 箭头函数不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。
+
+TODO 对象和函数 
+
+TODO constructor
+
+TODO apply bind call
+
+### new发生了什么 TODO
+
+https://www.cnblogs.com/bear-ff/p/5489386.html
+
+帮你彻底搞懂JS中的prototype、__proto__与constructor（图解）https://blog.csdn.net/cc18868876837/article/details/81211729
+
+1. 创建空对象 `var obj = {}`
+
+2. 设置新对象的constructor属性为构造函数的名称，设置新对象的`__proto__`属性指向构造函数的prototype对象
+
+   ```
+   obj.__proto__ = Class.prototype
+   ```
+
+3. 使用新对象调用函数，函数中的this被指向新实例对象
+4. 返回this指针f
+
+### 模拟new的过程
+
+```js
+function _new(){
+  // 1、创建一个新对象
+  let target = {};
+  let [constructor, ...args] = [...arguments];  // 第一个参数是构造函数
+  // 2、原型链连接
+  target.__proto__ = constructor.prototype;
+  // 3、将构造函数的属性和方法添加到这个新的空对象上。
+  let result = constructor.apply(target, args);
+  if(result && (typeof result == "object" || typeof result == "function")){
+    // 如果构造函数返回的结果是一个对象，就返回这个对象
+    return result
+  }
+  // 如果构造函数返回的不是一个对象，就返回创建的新对象。
+  return target
+}
+let p2 = _new(Person, "小花")console.log(p2.name)  // 小花
+console.log(p2 instanceof Person) // true
+```
+
+### js对象中自身声明的方法和属性与prototype声明的对象有什么差别
+
+原型方法或属性作用于所有对象，同名以对象优先
+
+### javascript的typeof返回哪些数据类型.
 
 答案：string,boolean,number,undefined,function,object
 
-### 2. 例举3种强制类型转换和2种隐式类型转换?
+### 例举3种强制类型转换和2种隐式类型转换?
 
 答案：强制（parseInt,parseFloat,number） 隐式（==  ===）
 
@@ -16,13 +82,13 @@
 
 　　typeof(undefined) -- undefined
 
-## Promise
+### Promise
 
 异步操作，避免回调地狱
 
 三种状态，等待态（Pending）、执行态（Fulfilled）和拒绝态（Rejected）。一旦Promise被resolve或reject，不能再迁移至其他任何状态（即状态 immutable）
 
-## 闭包
+### 闭包
 
 闭包就是能够读取其他函数内部变量的函数，即定义在函数内部的函数，且该函数作为返回值，在本质上就是将函数内部和函数外部连接起来的桥梁。最大用处
 

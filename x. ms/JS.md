@@ -12,31 +12,53 @@
 3. this指向不同
    * 普通函数this指向调用它的对象，可以通过bind，call，apply改变this的指向
    * 箭头函数this永远指向其上下文的this。通过call、apple调用时只传入了一个参数，对this无影响
-4. 普通函数可通过arguments获取参数，箭头函数只能通过“...” 
+4. 普通函数可通过arguments获取参数，箭头函数只能通过rest“...” 
 5. 箭头函数不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。
 
-TODO 对象和函数 
+### 对象和函数的关系
 
-TODO constructor
+函数是对象（基本类型并不是对象，其他的所有引用类型都是对象（函数、数组、null））
+
+### class和function的关系
+
+```js
+class Point {
+  constructor(x) {
+    this.x = x;
+  }
+  toString() {
+    return this.x;
+  }
+}
+
+// 与下列方式等价
+function Point(x) {
+  this.x = x;
+}
+Point.prototype.toString = function () {
+    return this.x;
+}
+```
+
+### constructor
+
+对象的constructor指向它的构造函数。所有函数（对象）最终的构造函数都指向**Function**。
 
 TODO apply bind call
 
-### new发生了什么 TODO
+### new发生了什么
 
-https://www.cnblogs.com/bear-ff/p/5489386.html
-
-帮你彻底搞懂JS中的prototype、__proto__与constructor（图解）https://blog.csdn.net/cc18868876837/article/details/81211729
-
-1. 创建空对象 `var obj = {}`
-
+1. 创建空对象
 2. 设置新对象的constructor属性为构造函数的名称，设置新对象的`__proto__`属性指向构造函数的prototype对象
 
-   ```
-   obj.__proto__ = Class.prototype
-   ```
+3. 执行构造函数中年的代码，构造函数中的this指向新对象
+4. 返回新对象（如果构造器函数有返回值且为对象，则以该对象作为返回值。若没有`return`或`return`了基本类型，则将上述的新对象作为返回值）
 
-3. 使用新对象调用函数，函数中的this被指向新实例对象
-4. 返回this指针f
+```js
+var obj = {}
+obj.__proto__ = Class.prototype
+Class.call(obj)
+```
 
 ### 模拟new的过程
 
@@ -44,7 +66,7 @@ https://www.cnblogs.com/bear-ff/p/5489386.html
 function _new(){
   // 1、创建一个新对象
   let target = {};
-  let [constructor, ...args] = [...arguments];  // 第一个参数是构造函数
+  let [constructor, ...args] = [...arguments];  // 第一个参数是构造函数（下面的Person）
   // 2、原型链连接
   target.__proto__ = constructor.prototype;
   // 3、将构造函数的属性和方法添加到这个新的空对象上。
@@ -53,10 +75,13 @@ function _new(){
     // 如果构造函数返回的结果是一个对象，就返回这个对象
     return result
   }
-  // 如果构造函数返回的不是一个对象，就返回创建的新对象。
+  // 如果构造函数返回的不是一个对象或为空，就返回创建的新对象。
   return target
 }
-let p2 = _new(Person, "小花")console.log(p2.name)  // 小花
+
+function Person() {}
+let p2 = _new(Person, "小花")
+console.log(p2.name)  // 小花
 console.log(p2 instanceof Person) // true
 ```
 

@@ -4,6 +4,10 @@
 
 [Mysql面试题（通俗）](https://www.cnblogs.com/yangk1996/p/12864004.html)
 
+### 分布式
+
+zookeeper
+
 ### char和varchar
 
 char固定长度、varchar可变长度；char速度快，但是浪费存储空间；在myisaml中，对于长度基本相同的优先使用char，相差很大的使用varchar。在innodb中，内部并没有区分可变和固定长度，都指向数据的头指针，所以char的性能不一定比varchar好，又由于char平均空间多余varchar，所以建议使用varchar

@@ -124,6 +124,23 @@ console.log(p2 instanceof Person) // true
 
 三种状态，等待态（Pending）、执行态（Fulfilled）和拒绝态（Rejected）。一旦Promise被resolve或reject，不能再迁移至其他任何状态（即状态 immutable）
 
+### Promise写一个axios
+
+```javascript
+new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest()
+    xhr.open(method, url)
+    xhr.onreadystatechange = () => {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+            resolve(xhr.response)
+        } else {
+            reject(xhr.statusText)
+        }
+    }
+    xhr.send(data)
+})
+```
+
 ### 闭包
 
 闭包就是能够读取其他函数内部变量的函数，即定义在函数内部的函数，且该函数作为返回值，在本质上就是将函数内部和函数外部连接起来的桥梁。最大用处
@@ -140,4 +157,99 @@ console.log(p2 instanceof Person) // true
 
 **由于闭包会携带包含它的函数的作用域，因此会比其他函数占用更多的内存。过度使用闭包可能会导致内存占用过多**
 
-### 
+###Node同步和异步区别
+
+* 同步方法调用一旦开始，调用者必须等到方法调用返回后，才能继续后续的行为
+* 异步方法调用一旦开始，方法调用就会立即返回，调用者就可以继续后续的操作。而异步方法通常会在另外一个线程中，整个过程，不会阻碍调用者的工作
+
+### 手写实现数组扁平化
+
+```js
+function bp(arr){
+	return arr.reduce((a,cur)=>{
+		return Array.isArray(cur) ? [...a, ...bp(cur)] : [...a, cur]
+	},[])
+}
+```
+
+### 执行顺序
+
+```
+// 宏任务，微任务 
+// 存在微任务的话，那么就执行所有的微任务
+// 微任务都执行完之后，执行第一个宏任务，
+setTimeout(function () {
+    console.log(1);
+}, 0);
+new Promise(function (a, b) {
+    console.log(2);
+    for (var i = 0; i < 10; i++) {
+        i == 9 && a();
+    }
+    console.log(3)
+}).then(function () {
+    console.log(4)
+});
+console.log(5);
+
+// 2 3 5 4 1
+```
+
+### 实现继承的方法
+
+```js
+function Animal(){}
+
+// 1. 原型链继承
+function Cat(){}
+Cat.prototype = new Animal()
+Cat.prototype.xxx = xxx
+
+// 2. 构造继承，使用 call 复制父类的实例属性给子类
+function Cat() {
+	Animal.call(this)
+}
+
+// 3. 实例继承
+function Cat() {
+	let obj = new Animal()
+	obj.xxx = xxx
+	return obj
+}
+
+// 4. 拷贝继承
+function Cat(name){
+  var animal = new Animal();
+  for(var p in animal){
+    Cat.prototype[p] = animal[p];
+  }
+  Cat.prototype.name = name || 'Tom';
+}
+
+// 5. 组合继承（原型链 + 构造）
+function Cat(name){
+  Animal.call(this);
+  this.name = name || 'Tom';
+}
+Cat.prototype = new Animal();
+Cat.prototype.constructor = Cat;
+```
+
+
+
+### node如何利用多个cpu
+
+cluster模块 fork进程
+
+### node防止程序异常退出
+
+try/catch 捕获异常
+
+或者监听`uncaughtException` 未捕获异常
+
+```
+process.on('uncaughtException', function (err) {
+    console.log('Caught exception: ' + err);
+});
+```
+

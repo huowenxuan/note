@@ -132,7 +132,30 @@ const fn2 = fn1.bind2({x: 100}, 10, 20, 30)
 console.log(fn2())
 ```
 
+手写call
 
+```js
+Function.prototype.call = function(ctx) {
+  ctx = ctx || window
+  ctx.func = this // 为了能以对象调用的形式绑定this
+  const args = [...arguments].slice(1) || [] // 获取参数
+  const res = ctx.func(...args)
+  delete ctx.func
+  return res
+}
+```
+
+手写apply
+
+```js
+Function.prototype.apply = function(ctx) {
+  ctx = ctx || window
+  ctx.func = this // 为了能以对象调用的形式绑定this
+  const res = argumensts[1] ? ctx.func(...arguments[1]) : ctx.func()
+  delete ctx.func
+  return res
+}
+```
 
 ### 异步
 

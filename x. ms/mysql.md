@@ -10,7 +10,7 @@ zookeeper
 
 ### char和varchar
 
-char固定长度、varchar可变长度；char速度快，但是浪费存储空间；在myisaml中，对于长度基本相同的优先使用char，相差很大的使用varchar。在innodb中，内部并没有区分可变和固定长度，都指向数据的头指针，所以char的性能不一定比varchar好，又由于char平均空间多余varchar，所以建议使用varchar
+char固定长度、varchar可变长度；char速度快，但是浪费存储空间；在myisam中，对于长度基本相同的优先使用char，相差很大的使用varchar。在innodb中，内部并没有区分可变和固定长度，都指向数据的头指针，所以char的性能不一定比varchar好，又由于char平均空间多余varchar，所以建议使用varchar
 
 ### 事务四大特性
 
@@ -31,7 +31,7 @@ char固定长度、varchar可变长度；char速度快，但是浪费存储空�
 
 不可重复度和幻读的区别是：不可重复的针对修改，幻读针对增加或删除
 
-隔离级别
+隔离级别。级别越高性能越低
 
 * 未提交读(Read Uncommitted)：所有事务都可以看到其它事务未提交的数据。此隔离级别没有解决任何并发问题，不常用
 * 提交读(Read Committed)：一个事务只能读取其它事务已经提交的数据。此隔离级别解决了脏读。是大多数数据库的默认隔离级别

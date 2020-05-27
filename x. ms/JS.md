@@ -2,10 +2,186 @@
 
 [TOC]
 
+
+
+### 闭包
+
+可以访问另一个函数作用域中的变量的函数，由函数和创建该函数的环境组成。可以读取函数内部的变量，并且让变量始终保持在内存中
+
+使用场景：作为参数被传递、作为返回值被返回、隐藏数据，不让外部改变
+
+影响：变量会常驻内存，得不到释放内部，闭包不要乱用
+
+```js
+function fn() {
+	const data = {} // 闭包中年的数据，外界无法访问
+}
+```
+
+```js
+// 闭包中自由变量的查找：是在函数定义的地方，向上级作用域查找，不是在执行的地方
+// 闭包作为返回值
+function create() {
+  let a = 100
+  return function() {
+    console.log(a)
+  }
+}
+let fn = create()
+let a = 200
+fn() // 100
+
+// 闭包作为参数
+function print(fn) {
+  let a = 200
+  fn()
+}
+let a = 100
+function fn() {
+  console.log(a)
+}
+print(fn) // 100
+```
+
+```js
+// 题，点击后输出什么？
+let i, a
+for (i = 0; i < 10; i++) {
+  a = document.createElement('a')
+  a.innerHTML = i + '<br>'
+  a.addEventListener('click', function (e) {
+		e.preventDefault()
+		console.log(i) // 每次都输出10，因为点击后才执行，i是全局变量，早已变为10
+	})
+  document.body.appendChild(a)
+}
+// 点击后输出什么?
+let a
+for (let i = 0; i < 10; i++) {
+  a = document.createElement('a')
+  a.innerHTML = i + '<br>'
+  a.addEventListener('click', function (e) {
+		e.preventDefault()
+		console.log(i) // 依次为0-9，因为此时i是块级变量，优先从块级作用域查找
+	})
+  document.body.appendChild(a)
+}
+```
+
+
+
+### this不同场景内的取值
+
+关键点：this指向定义的地方，this的值是执行时才能确定的，不是定义时确定的
+
+* 当做普通函数被调用：window/global
+* 使用call，apply，bind：传入的对象
+* 作为对象的方法调用：对象本身
+* class中的方法：实例本身
+* 箭头函数：上级作用域的this
+
+```js
+const obj = {
+  wait() {
+    setTimeout(function () {
+      console.log(this) // window，因为调用者是setTimeout
+    }, 1000);
+  }
+}
+
+const obj = {
+  wait() {
+    setTimeout(() => {
+      console.log(this) // 当前对象，因为是箭头函数
+    }, 1000);
+  }
+}
+```
+
+### 手写bind
+
+```js
+// 标准
+Function.prototype.bind2 = function () {
+  // 参数解析为数组
+  const args = Array.prototype.slice.call(arguments)
+  // 获取bind第一个参数（要绑定的对象）
+  const t = args.shift()
+  // 获取执行的对象
+  const self = this
+  return function () {
+    return self.apply(t, args)
+  }
+}
+
+// 简易
+Function.prototype.bind2 = function () {
+  const [t, ...args] = [...arguments]
+  const self = this
+  return function () {
+    return self.apply(t, args)
+  }
+}
+
+// 检验
+function fn1(a, b, c) {
+  console.log('this:', this)
+  console.log(a, b, c)
+}
+const fn2 = fn1.bind2({x: 100}, 10, 20, 30)
+console.log(fn2())
+```
+
+
+
+### 异步
+
+* 同步方法调用一旦开始，调用者必须等到方法调用返回后，才能继续后续的行为
+* 异步方法调用一旦开始，方法调用就会立即返回，调用者就可以继续后续的操作。而异步方法通常会在另外一个线程中，整个过程，不会阻碍调用者的工作
+
+JS是单线程语言，所以需要异步执行一些操作。同步会阻塞代码执行，异步不会
+
+当主线程空闲后，开始执行异步任务的回调函数
+
 ### 事件循环机制
 
+解决JS单线程一次只能同时执行一个任务。
+
 同步任务直接在主线程中执行。
-异步任务进入事件队列中，主线程内的任务执行完毕为空，会去实践队列读取任务，堆入主线程执行，不断循环就是事件循环
+异步任务进入事件队列中，主线程内的任务执行完毕为空，会去事件队列读取任务，堆入主线程执行，不断循环就是事件循环
+
+异步任务分为两类：微任务和宏任务，遇到宏任务，先执行宏任务
+
+（宏任务队列）包括setTimeout, setInterval, setImmediate,  I/O等
+
+（微任务队列）包括 如Promise、process.nextTick
+
+执行栈执行完毕时会立刻先处理所有微任务队列中的事件，然后再去宏任务队列中取出一个事件。同一次事件循环中，微任务永远在宏任务之前执行
+
+```js
+setTimeout(() => {
+  console.log(1)
+}, 0)
+new Promise((resolve, reject) => {
+  console.log(2)
+  for (let i = 0; i < 10000; i++) {
+    i === 9999 && resolve()
+  }
+  console.log(3)
+}).then(() => {
+  console.log(4)
+})
+console.log(5)
+
+// 2 3 5 4 1
+// new promise是同步，所以先输出2，3，然后顺序执行到5，promise.then和process.nextTick都是先执行，所以4，最后setTimeout，1
+```
+
+### process.nextTick() setTimeout() setImmediate()
+
+process.nextTick()任务在所有异步任务之前，主线程的末尾执行
+
+setTimeout() 和 setImmediate() 执行顺序不定
 
 ### 箭头函数和普通函数的区别
 
@@ -197,6 +373,8 @@ console.log(5);
 
 ### 实现继承的方法
 
+JS实现继承一般是复制父对象，通过call、apply等，只是形式上的模仿，本质上不是继承
+
 ```js
 function Animal(){}
 
@@ -234,8 +412,6 @@ function Cat(name){
 Cat.prototype = new Animal();
 Cat.prototype.constructor = Cat;
 ```
-
-
 
 ### node如何利用多个cpu
 

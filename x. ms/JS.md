@@ -170,14 +170,13 @@ JS是单线程语言，所以需要异步执行一些操作。同步会阻塞代
 
 解决JS单线程一次只能同时执行一个任务。
 
-同步任务直接在主线程中执行。
-异步任务进入事件队列中，主线程内的任务执行完毕为空，会去事件队列读取任务，堆入主线程执行，不断循环就是事件循环
+同步任务直接在主线程中执行。异步任务进入事件队列中。主线程内的任务执行完毕为空，会去事件队列读取任务，堆入主线程执行，不断循环就是事件循环
 
-异步任务分为两类：微任务和宏任务，遇到宏任务，先执行宏任务
+异步任务分为两类：微任务和宏任务
 
 （宏任务队列）包括setTimeout, setInterval, setImmediate,  I/O等
 
-（微任务队列）包括 如Promise、process.nextTick
+（微任务队列）包括 如Promise.then、process.nextTick
 
 执行栈执行完毕时会立刻先处理所有微任务队列中的事件，然后再去宏任务队列中取出一个事件。同一次事件循环中，微任务永远在宏任务之前执行
 
@@ -208,7 +207,7 @@ setTimeout() 和 setImmediate() 执行顺序不定
 
 ### 箭头函数和普通函数的区别
 
-1. 箭头函数相当于匿名函数简化了函数定义
+1. 箭头函数相当于匿名函数，简化了函数定义
 2. 箭头函数不能使用 new 命令，且没有prototype属性
    不能使用new实例化的原因：
    * 没有自己的this，无法调用call、apply
@@ -218,10 +217,6 @@ setTimeout() 和 setImmediate() 执行顺序不定
    * 箭头函数this永远指向其上下文的this。通过call、apple调用时只传入了一个参数，对this无影响
 4. 普通函数可通过arguments获取参数，箭头函数只能通过rest“...” 
 5. 箭头函数不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。
-
-### 对象和函数的关系
-
-函数是对象（基本类型并不是对象，其他的所有引用类型都是对象（函数、数组、null））
 
 ### class和function的关系
 
@@ -261,7 +256,7 @@ a、b、c。b调用才执行，a、c立即执行，a的第二个参数是array
 1. 创建空对象
 2. 设置新对象的constructor属性为构造函数的名称，设置新对象的`__proto__`属性指向构造函数的prototype对象
 
-3. 执行构造函数中年的代码，构造函数中的this指向新对象
+3. 执行构造函数中的代码，构造函数中的this指向新对象
 4. 返回新对象（如果构造器函数有返回值且为对象，则以该对象作为返回值。若没有`return`或`return`了基本类型，则将上述的新对象作为返回值）
 
 ```js
@@ -281,6 +276,7 @@ function _new(){
   target.__proto__ = constructor.prototype;
   // 3、将构造函数的属性和方法添加到这个新的空对象上。
   let result = constructor.apply(target, args);
+  
   if(result && (typeof result == "object" || typeof result == "function")){
     // 如果构造函数返回的结果是一个对象，就返回这个对象
     return result
@@ -289,6 +285,7 @@ function _new(){
   return target
 }
 
+// 验证
 function Person() {}
 let p2 = _new(Person, "小花")
 console.log(p2.name)  // 小花
@@ -301,11 +298,11 @@ console.log(p2 instanceof Person) // true
 
 ### javascript的typeof返回哪些数据类型.
 
-答案：string,boolean,number,undefined,function,object
+string, boolean, number, undefined, function, object
 
 ### 例举3种强制类型转换和2种隐式类型转换?
 
-答案：强制（parseInt,parseFloat,number） 隐式（==  ===）
+强制（parseInt, parseFloat, number） 隐式（==  ===）
 
 **null，undefined的区别?**
 
@@ -340,27 +337,6 @@ new Promise((resolve, reject) => {
 })
 ```
 
-### 闭包
-
-闭包就是能够读取其他函数内部变量的函数，即定义在函数内部的函数，且该函数作为返回值，在本质上就是将函数内部和函数外部连接起来的桥梁。最大用处
-
-一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
-
-使用闭包的注意点
-
-1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。
-
-2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。
-
-闭包不会造成内存泄露，造成泄露的原因一般是被全局变量引用，没有及时释放
-
-**由于闭包会携带包含它的函数的作用域，因此会比其他函数占用更多的内存。过度使用闭包可能会导致内存占用过多**
-
-###Node同步和异步区别
-
-* 同步方法调用一旦开始，调用者必须等到方法调用返回后，才能继续后续的行为
-* 异步方法调用一旦开始，方法调用就会立即返回，调用者就可以继续后续的操作。而异步方法通常会在另外一个线程中，整个过程，不会阻碍调用者的工作
-
 ### 手写实现数组扁平化
 
 ```js
@@ -369,29 +345,6 @@ function bp(arr){
 		return Array.isArray(cur) ? [...a, ...bp(cur)] : [...a, cur]
 	},[])
 }
-```
-
-### 执行顺序
-
-```
-// 宏任务，微任务 
-// 存在微任务的话，那么就执行所有的微任务
-// 微任务都执行完之后，执行第一个宏任务，
-setTimeout(function () {
-    console.log(1);
-}, 0);
-new Promise(function (a, b) {
-    console.log(2);
-    for (var i = 0; i < 10; i++) {
-        i == 9 && a();
-    }
-    console.log(3)
-}).then(function () {
-    console.log(4)
-});
-console.log(5);
-
-// 2 3 5 4 1
 ```
 
 ### 实现继承的方法

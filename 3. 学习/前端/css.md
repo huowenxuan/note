@@ -91,3 +91,20 @@
 | border-top-width | 局部样式，可对上下左右的width、style、color设置              |
 | border-top       | 局部样式的简洁写法                                           |
 
+### 背景样式
+| 属性                  | 说明                                                         |
+| :-------------------- | :----------------------------------------------------------- |
+| background-color      | 背景色                                                       |
+| background-image      | 背景图像的路径（元素必须有宽高） url(...)                    |
+| background-repeat     | 背景图如何平铺<br />no-repeat不平铺、repeat-y纵向平铺、repeat-x横向平铺、repeat两个方向都平铺（默认） |
+| background-position   | 设置背景图像的位置，只能用于块级元素和替换元素（img、input、textarea、select和object）  <br />像素值：80px 40px 表示距离左边80，上边40<br />关键字：top left左上、center center居中、bottom right右下等 |
+| background-attachment | 设置背景图像是随对象滚动还是固定不动 scroll/fixed            |
+| background-color      |                                                              |
+
+### 超链接样式
+
+a标签外观
+
+去除a的下划线：text-decoration:none;
+
+http://www.lvyestudy.com/les_cj/cj_7.2.aspx

@@ -1,32 +1,4 @@
-| 标签名   | 英文全称               | 中文解释             |
-| :------- | :--------------------- | :------------------- |
-| div      | division               | 分割（块元素）       |
-| span     | span                   | 区域（行内元素）     |
-| p        | paragraph              | 段落                 |
-| ol       | ordered list           | 有序列表             |
-| ul       | unordered list         | 无序列表             |
-| li       | list item              | 列表项               |
-| dl       | definition list        | 定义列表             |
-| dt       | definition term        | 定义术语             |
-| dd       | definition description | 定义描述             |
-| h1~h6    | header1 ~header6       | 标题1~标题6          |
-| hr       | horizontal rule        | 水平线               |
-| a        | anchor                 | 锚点，超链接         |
-| strong   | strong                 | 强调（粗体）         |
-| em       | emphasized             | 强调（斜体）         |
-| sup      | superscripted          | 上标                 |
-| sub      | subscripted            | 下标                 |
-| br       | break                  | 换行                 |
-| fieldset | fieldset               | 域集                 |
-| legend   | legend                 | 图例                 |
-| caption  | caption                | （表格、图像等）标题 |
-| thead    | table head             | 表头                 |
-| tbody    | table body             | 表身                 |
-| tfoot    | table foot             | 表脚                 |
-| th       | table header           | 表头单元格           |
-| td       | td                     | 表身单元格           |
-
-
+避免使用center、font、basefont、s、strike、u标签，align、bgcolor、color属性，使用样式代替
 
 ### HTML
 
@@ -34,14 +6,49 @@
 * 加粗尽量用string不用b，更有语义
 * 斜体用em，不用i，cite
 * 水平线 `<hr/>`
-
 * 复选框是checkbox必须和label标签配合使用的
 * `<input type="submit" />` 和 `<input type="button" />`，button是定义一个按钮，onclick可执行js，submit是提交表单
 * input type="hidden"，用于隐藏，后台传递数据（不要使用hidden来传递敏感信息）
 * button标签和 `<input type="button" />`的区别是button开始符号和结束符号中间可以插入其他标签或文本。在表单中使用input，因为需要提交数据，在开发中一般使用div+css来制作美观的按钮
 * name是HTML中的标准，而id是XHTML中的标准，现在网页的标准都是使用id
 
+### head
 
+```html
+<!-- base元素：页面上的所有链接规定默认地址或默认目标 -->
+<base href="http://www.w3school.com.cn/images/" />
+<base target="_blank" />
+
+link外部资源
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+
+meta元数据
+页面描述
+<meta name="description" content="Free Web tutorials on HTML, CSS, XML" />
+针对搜索引擎的关键字
+<meta name="keywords" content="HTML, CSS, XML" />
+```
+
+
+
+### 响应式
+
+尺寸可变，使用平板和移动设备
+
+```html
+<style>
+.city {
+	float: left;
+}
+</style>
+
+<div class="city">
+</div>
+<div class="city">
+</div>
+<div class="city">
+</div>
+```
 
 ### window
 
@@ -185,41 +192,59 @@ e.onclick = function() { // 变量名.事件处理器
 
 #### 键盘事件
 
-http://www.lvyestudy.com/les_js/js_14.4.aspx
+| 方法       | 说明                                 |
+| :--------- | :----------------------------------- |
+| onkeydown  | 按下事件（包括字符键、功能键）       |
+| onkeypress | 按下事件（只包含字符键）             |
+| onkeyup    | 按下后放开事件（包括数字键、功能键） |
 
-| 方法       | 说明                             |
-| :--------- | :------------------------------- |
-| onkeydown  | 按下键事件（包括数字键、功能键） |
-| onkeypress | 按下键事件（只包含数字键）       |
-| onkeyup    | 放开键事件（包括数字键、功能键） |
+```js
+function refresh() {
+		//判断是否按下大写R键
+		if (window.event.keyCode == 82) {
+			location.reload();    //刷新页面
+		}
+}
+//调用函数
+document.onkeypress = refresh;
+```
+
+字符键包括A-Z、数组，功能键包括ctrl、shift、alt、F等
+
+按下字符键会同时触发onkeydown和onkeypress，onkeydown先于onkeypress执行
 
 #### 表单事件
 
-http://www.lvyestudy.com/les_js/js_14.5.aspx
-
-| 事件     | 说明         |
-| :------- | :----------- |
-| onfocus  | 获取焦点事件 |
-| onblur   | 失去焦点事件 |
-| onchange | 状态改变事件 |
-| onselect | 选中文本事件 |
+| 事件     | 说明                                |
+| :------- | :---------------------------------- |
+| onfocus  | 获取焦点事件 text，textarea，select |
+| onblur   | 失去焦点事件 text，textarea，select |
+| onchange | 状态改变事件 text，textarea，select |
+| onselect | 选中文本事件 text，textarea         |
 
 #### 编辑事件
 
-http://www.lvyestudy.com/les_js/js_14.6.aspx
+| 方法                                             | 说明                        |
+| :----------------------------------------------- | :-------------------------- |
+| oncopy                                           | 复制事件                    |
+| oncut                                            | 剪切事件                    |
+| onpaste                                          | 粘贴事件                    |
+| onbeforecopy<br />onbeforecut<br />onbeforepaste | 复制之前触发，返回false禁止 |
 
-| 方法    | 说明     |
-| :------ | :------- |
-| oncopy  | 复制事件 |
-| oncut   | 剪切事件 |
-| onpaste | 粘贴事件 |
+```js
+obj.oncopy=function(){
+	alert("版权所有，禁止复制！");
+  return false;  //返回false，表示屏蔽复制功能。浏览器禁用Javascript后失效
+}
+```
 
 #### 页面相关事件
 
-http://www.lvyestudy.com/les_js/js_14.7.aspx
+window.xxx = xxx
 
-| 方法     | 说明                   |
-| :------- | :--------------------- |
-| onload   | 页面加载事件           |
-| onresize | 页面大小事件           |
-| onerror  | 页面或图片加载出错事件 |
+| 方法     | 说明                                                         |
+| :------- | :----------------------------------------------------------- |
+| onload   | 页面加载事件。文档加载完毕再执行。在head > script中onload完成后才能对dom进行操作 |
+| onresize | 页面大小改变事件                                             |
+| onerror  | 页面或图片加载出错事件，只在IE有效 <br />`<img src="logo.jpg" onerror="alert('图片没有加载成功！')"/>` |
+

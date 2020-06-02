@@ -101,10 +101,99 @@
 | background-attachment | 设置背景图像是随对象滚动还是固定不动 scroll/fixed            |
 | background-color      |                                                              |
 
-### 超链接样式
+### 超链接样式 a
 
 a标签外观
 
 去除a的下划线：text-decoration:none;
 
-http://www.lvyestudy.com/les_cj/cj_7.2.aspx
+#### 超链接伪类
+
+使用伪类定义不同状态下a标签的样式，4种样式定义顺序不能改变
+
+| 属性      | 说明                     |
+| :-------- | :----------------------- |
+| a:link    | 定义a元素未访问时的样式  |
+| a:visited | 定义a元素访问后的样式    |
+| a:hover   | 定义鼠标经过显示的样式   |
+| a:active  | 定义鼠标单击激活时的样式 |
+
+一般情况下只用到两种状态：未访问状态 `a{...}`（不需要a:link）、鼠标经过状态`a:hover{...}`
+
+####鼠标样式
+
+div {cursor: default}  default/pointer....
+
+#### hover伪类
+
+:hover伪类可以定义任何一个元素（块元素+行内元素）在鼠标经过时的样式。例 div:hover{}
+
+### 图片样式 img
+
+width/height/border
+
+父元素设置水平对齐 text-align(left right center)
+
+父元素设置垂直对齐 vertical-align(top middle bottom baseline基线对齐)
+
+### 列表样式 ol、ul
+
+在ol、ul中，设置列表符号是通过type定义，在css中使用`list-style-type`，设置为none为去除符号
+
+`list-style-image:url(...)`设置图像
+
+### 表格样式 table
+
+`border-collapse` table独有属性，设置单元格间隙，separate（边框分开）/collapse（边框合并）
+
+border-spacing:px 边框间隔
+
+caption-side:top/bottom 表格标题的位置
+
+### 盒子模型
+
+所有元素都可看做是一个盒子，占据空间，盒子由content内容、padding内边距、margin外边距、border组成。内容有3个属性：width、height、overflow(指定超出如何处理)
+
+宽高是针对内容区的，只有块元素能设置宽高，行内元素无法设置
+
+```
+div {display: inline-block} /* 将块元素转换为inline-block元素 */
+```
+
+### 浮动布局
+
+正常文档流：从上到下分成一行一行，块元素占一行，相邻行内元素在每行中按从左到右依次排列
+
+float:left/right 浮动使任何元素向左或向右浮动
+
+```css
+/* 图文混排，文字环绕图片布局 */
+img{float: left/right; margin:20px;}
+p{}
+```
+
+clear:left/right/both 清除浮动
+
+```css
+/* 对p清除浮动，p元素的前一个元素产生的浮动不会对后续元素产生影响，因此p不会环绕在浮动元素周围 */
+p {clear: both;}
+```
+
+### 定位布局
+
+静态定位static，默认
+
+固定定位fixed，相对于窗口边框的位置
+
+```css
+{position:fixed; left:0px; top:10px;} /* 固定元素，不会随滚动条拖动而改变位置 */
+```
+
+相对定位relative，相对于原始位置（父元素）
+
+```css
+{position:relative; left:0px; top:10px;}
+```
+
+绝对定位absolute，脱离了正常文档流，前面或后面的元素会认为这个元素不存在，是浮动于其他元素上面的
+

@@ -76,4 +76,7 @@ Safair只支持mp3和wav，Chrome只支持mp3和ogg
 | [preload](https://www.w3school.com.cn/tags/att_audio_preload.asp) | preload  | 如果出现该属性，则音频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。 |
 | [src](https://www.w3school.com.cn/tags/att_audio_src.asp)    | *url*    | 要播放的音频的 URL。                                         |
 
-https://www.w3school.com.cn/html5/html_5_draganddrop.asp
+### 存储
+
+- localStorage - 没有时间限制的数据存储
+- sessionStorage - 针对一个 session 的数据存储，关闭窗口数据删除

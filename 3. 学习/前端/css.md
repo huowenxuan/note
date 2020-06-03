@@ -65,16 +65,16 @@
 
 段落样式设涉及多个文字（整个段落）的排版效果，注重整体。font前缀是文字样式，text前缀是段落样式
 
-| 属性            | 说明                                                        |
-| :-------------- | :---------------------------------------------------------- |
-| text-decoration | none、下划线underline、删除线line-through、顶划线overline   |
-| text-transform  | （英文）文本大小写 uppercase lowercase capitalize首字母大写 |
-| font-varient    | 将英文文本转换为“小型”大写字母 normal small-caps。不常用    |
-| text-indent     | 段落首行缩进值，一个字的缩进值为font-size值                 |
-| text-align      | 文本水平对齐方式 left center right，只对文本文字和img有效   |
-| line-height     | 行高                                                        |
-| letter-spacing  | 字距                                                        |
-| word-spacing    | 词距                                                        |
+| 属性            | 说明                                                         |
+| :-------------- | :----------------------------------------------------------- |
+| text-decoration | none、下划线underline、删除线line-through、顶划线overline    |
+| text-transform  | （英文）文本大小写 uppercase lowercase capitalize首字母大写  |
+| font-varient    | 将英文文本转换为“小型”大写字母 normal small-caps。不常用     |
+| text-indent     | 段落首行缩进值，一个字的缩进值为font-size值                  |
+| text-align      | 文本水平对齐方式 left center right justify两端对齐 inherit从父元素继承，只对文本文字和img有效 |
+| line-height     | 行高                                                         |
+| letter-spacing  | 字距                                                         |
+| word-spacing    | 词距                                                         |
 
 ### 边框样式
 
@@ -122,7 +122,7 @@ a标签外观
 
 ####鼠标样式
 
-div {cursor: default}  default/pointer....
+div {cursor: default}  default/pointer/not-allow....
 
 #### hover伪类
 
@@ -181,19 +181,32 @@ p {clear: both;}
 
 ### 定位布局
 
-静态定位static，默认
+静态定位static，默认，没有定位
 
-固定定位fixed，相对于窗口边框的位置
+固定定位fixed，相对于浏览器窗口位置定位
 
 ```css
 {position:fixed; left:0px; top:10px;} /* 固定元素，不会随滚动条拖动而改变位置 */
 ```
 
-相对定位relative，相对于原始位置（父元素）
+相对定位relative，相对于其本身位置进行定位
 
 ```css
 {position:relative; left:0px; top:10px;}
 ```
 
-绝对定位absolute，脱离了正常文档流，前面或后面的元素会认为这个元素不存在，是浮动于其他元素上面的
+绝对定位absolute，相对于不是 static 定位的第一个父元素进行定位。脱离文档流
 
+**要使用position来布局，父级元素的position必须为relative；absolve不受父元素padding的影响**
+
+### display
+
+行内元素可以和其他元素并列，块元素可以有宽高
+
+block 呈现为块元素
+
+inline 呈现为行内元素
+
+inline-block 让元素既可以和其他元素并列，又可以设置宽高
+
+none 不显示，不占据空间（visibility:hidden 不显示，但是占据空间）

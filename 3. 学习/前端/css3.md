@@ -90,11 +90,16 @@ overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
 
-/** 显示多行 **/
-/** 因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端； **/
+/* 显示多行，多余部分省略号 */
+/* 因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端； */
 display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 3;
+overflow: hidden;
+
+/* 显示多行，多余部分不显示，设置高度为 行数x行高，超出部分省略 */
+line-height: 20px;
+height: 40px;
 overflow: hidden;
 ```
 
@@ -339,11 +344,38 @@ css设置box-sizing: border-box后，再设置宽高，会将内边距和边框�
   flex-direction: row; 
 	-webkit-flex-direction: row-reverse;
 	
-  /* justify-content */
+  /* justify-content 子元素沿容器主轴线对齐 flex-start | flex-end | center | space-between | space-around */
   
+  /* align-items 子元素在纵轴的对齐方式 flex-start flex-end center baselinne stretch拉伸*/
+  
+  /* flex-wrap 子元素换行方式 nowrap 单行，超出后溢出 | wrap 多行，溢出部分放置到新行 | wrap-reverse 反转wrap排列 | initial | inherit */
+  
+  /* align-content 子元素行之间的对齐 flex-start | flex-end | center | space-between | space-around | stretch */
+  
+  /* flex 弹性子元素如何分配空间 */
 }
 ```
 
+![justify-content](./media/2259AD60-BD56-4865-8E35-472CEABF88B2.jpg)
 
+### 多媒体查询 @media
 
-https://www.runoob.com/css3/css3-flexbox.html
+多媒体查询由多种媒体组成，可以包含一个或多个表达式，表达式根据条件是否成立返回 true 或 false。可用于检测：
+
+- viewport(视窗) 的宽度与高度
+- 设备的宽度与高度
+- 朝向 (智能手机横屏，竖屏) 。
+- 分辨率
+
+媒体类型：all、print 打印机、screen 电脑屏幕，平板，手机、speech 屏幕阅读器
+
+```
+not表示除掉某些设备
+only表示指定某种设备f
+@media not|only mediatype and (...) {
+  css
+}
+
+@media screen and (min-width: 480px) {}
+```
+

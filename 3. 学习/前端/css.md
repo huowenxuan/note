@@ -1,8 +1,15 @@
-## 选择器
+[TOC]
+
+### 选择器
 
 * 子元素选择器：/#father div{...} 选择 id 为father的元素下的所有div元素
-* 相邻选择器：\#lv+div {...} 选择id为lv相邻的下一个兄弟元素div
 * 群组选择器：h3,div,p,span {...}
+* 后代选择器：M N    元素内部所有子元素和后代元素
+* 子代选择器：M > N 元素内部所有一级子元素
+* 兄弟选择器：M ~ N 元素之后的所有同级
+* 相邻选择器：\#lv+div {...} 选择id为lv相邻的下一个同级元素div
+* :first-letter: 选中元素内容第一个字
+* :first-line：第一行
 
 | 选择器                                                       | 例子                  | 例子描述                                            | CSS  |
 | :----------------------------------------------------------- | :-------------------- | :-------------------------------------------------- | :--- |
@@ -50,6 +57,65 @@
 | [:checked](https://www.w3school.com.cn/cssref/selector_checked.asp) | input:checked         | 选择每个被选中的 <input> 元素。                     | 3    |
 | [:not(*selector*)](https://www.w3school.com.cn/cssref/selector_not.asp) | :not(p)               | 选择非 <p> 元素的每个元素。                         | 3    |
 | [::selection](https://www.w3school.com.cn/cssref/selector_selection.asp) | ::selection           | 选择被用户选取的元素部分。                          | 3    |
+
+### CSS规范
+
+TODO
+
+
+
+### 单位
+
+绝对单位：cm、mm、in、pt、pc
+
+相对单位：px、%、em、rem
+
+px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，但不考虑分辨率就可作为绝对单位
+
+%: width、height、font-size百分比相对于父元素的相同属性值计算的；line-height相对于当前元素的font-size；vertical-align相对于当前元素line-height
+
+1em = 当前元素字体大小font-size的px，当前元素没定义则找父元素，浏览器默认16px。技巧：
+
+* 首行缩进使用text-indent: 2em
+
+* 使用em作为字体大小单位。百分比作为字体大小不符合习惯，使用em，当网页字体需要修改时直接改变根元素的大小即可
+
+* 使用em作为统一单位
+
+  ```
+  因为浏览器默认16px，提前声明 body{font-size: 62.5%}，可使默认你字体大小变为16*62.5% = 10px; 则：
+  1em = 10px
+  0.75em = 7.5px
+  1.5em = 15px
+  
+  例：p元素width 150px，height 75px，font-size 15px，使用em：
+  {
+  	font-size: 1.5em;
+  	width: 10em;
+  	height: 5em
+  }
+  为什么width不是15em，而是10em：因为em相对于当前元素字体大小而言，所以需要以当前元素的font-size值再算一次，则 width: 150px / 15px = 10em
+  ```
+
+1rem = 根元素字体大小。css3，移动端布局产常用
+
+### css特性
+
+继承性：除了padding、margin、border等，子元素都会继承父元素的某些样式属性
+> 例外：a元素因自身有颜色，所以默认不继承，想要继承使用 {color: inherit};
+
+层叠性：同一个元素重复定义相同属性，权重相同的后面覆盖前面
+> 权重：
+> 引用方式优先级：行内样式 > (内部样式 = 外部样式)
+> 继承方式优先级：最近的祖先最优先；
+> 选择器权重：只针对当前元素，不能用于继承样式。行内样式 1000 > id选择器 100 > class选择器=伪类=属性选择器 10 > 元素选择器=伪元素 1 > 通配符 0。权重累加：#outer .inner strong 的权重为 100 + 10 + 1 = 111
+> 指定样式 > 继承样式
+> !important优先级最高。两个important以后面为主
+
+### css加载方式
+外部样式表：使用link，当被应用到多个页面是最理想的选择
+内部样式表：某个页面的个别样式表，如果放在公共的外部样式表，会导致每个页面都会加载一次，影响加载速度
+行内样式表：出现一两次、修改幅度小、优先级高的样式
 
 ### 文字样式
 

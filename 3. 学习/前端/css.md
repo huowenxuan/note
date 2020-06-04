@@ -324,11 +324,10 @@ p {clear: both;}
 **要使用position来布局，父级元素的position必须为relative；absolve不受父元素padding的影响**
 
 ### display
-行内元素可以和其他元素并列，块元素可以有宽高
-block 呈现为块元素
-inline 呈现为行内元素
-inline-block 让元素既可以和其他元素并列，又可以设置宽高
-table 表格形式显示，类似table
-table-row 表格行形式，类似tr
-table-cell 以表格单元格形式，类似td
-none 不显示，不占据空间（visibility:hidden 不显示，但是占据空间）
+* block 呈现为块元素。独占一行，内部可容纳块元素和行内元素，可定义宽高、margin
+* inline 呈现为行内元素。可以和其他元素同一行，内部可容纳行内不可容纳块，无法定义宽高，可定义margin-left和right，无法定义bottom、top
+* inline-block 行内块元素。可以和其他元素并列，又可以设置宽高，最常用的inline-block有img和input
+* table 表格形式显示，类似table
+* table-row 表格行形式，类似tr
+* table-cell 以表格单元格形式，类似td
+* none 不显示，不占据空间（visibility:hidden 不显示，但是占据空间）

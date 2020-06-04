@@ -60,28 +60,42 @@
 
 ### CSS规范
 
-TODO
+#### 文件命名
 
+reset.css重置，重置元素默认样式；global.css 全局样式；theme主题；module模块；master母版；column专栏；form表单；mend补丁。以上是开发阶段，发布时使用webpack打包
 
+#### id、class命名
+为了避免class命名重复，一般取父元素的class名作为前缀：column column-title。
+主体命名：wrapper最外层；content/container主体；sidebar侧栏；column栏目；main-left左侧；main主体；menu菜单；submenu
+导航：main-nav、sub-nav、side-nav边导航、leftside-nav左导航、top-nav
+其他：tool toolbar工具条、related相关文章、siteinfolegal法律声明
+
+#### 书写顺序
+
+按样式功能的重要性排列；对于实现某一功能的集中列出；最好都加注释
+
+| 属性类别   | 举例                                              |
+| ---------- | ------------------------------------------------- |
+| 布局       | display、position、float、clear                   |
+| 自身盒模型 | width、height、padding、marginn、border、overflow |
+| 文本       | font、line-height、text-align、text-indent        |
+| 装饰       | color、background-color、opacity、cursor          |
+| 其他       | content等                                         |
+
+### CSS Rest 重置样式
+不同浏览器默认样式不同，需要重置
+不建议使用 `*{padding: 0; margin: 0}`，性能低，对于表格、input是不希望去掉的
+可以参考Eric Meyer重置样式表，更建议自己根据需求来定制
 
 ### 单位
-
 绝对单位：cm、mm、in、pt、pc
-
 相对单位：px、%、em、rem
-
 px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，但不考虑分辨率就可作为绝对单位
-
 %: width、height、font-size百分比相对于父元素的相同属性值计算的；line-height相对于当前元素的font-size；vertical-align相对于当前元素line-height
-
 1em = 当前元素字体大小font-size的px，当前元素没定义则找父元素，浏览器默认16px。技巧：
-
 * 首行缩进使用text-indent: 2em
-
 * 使用em作为字体大小单位。百分比作为字体大小不符合习惯，使用em，当网页字体需要修改时直接改变根元素的大小即可
-
 * 使用em作为统一单位
-
   ```
   因为浏览器默认16px，提前声明 body{font-size: 62.5%}，可使默认你字体大小变为16*62.5% = 10px; 则：
   1em = 10px
@@ -218,13 +232,57 @@ caption-side:top/bottom 表格标题的位置
 
 ### 盒子模型
 
-所有元素都可看做是一个盒子，占据空间，盒子由content内容、padding内边距、margin外边距、border组成。内容有3个属性：width、height、overflow(指定超出如何处理)
+所有元素都可看做是一个盒子，占据空间，盒子之间互相影响，盒子由content内容、padding内边距、margin外边距、border组成。内容有3个属性：width、height、overflow(指定超出如何处理 visible默认，可见；hidden；scroll显示滚动条；auto在需要时给滚动条)
+
+border:0和border:none：border:0浏览器依然会渲染一个0px的border，占用内存，border:none不占用内存，在IE6IE7有兼容性问题，可忽略
 
 宽高是针对内容区的，只有块元素能设置宽高，行内元素无法设置
 
 ```
 div {display: inline-block} /* 将块元素转换为inline-block元素 */
 ```
+
+#### margin叠加 外边距叠加
+
+两个marin相遇，会合并，叠加之后为两个边距的最大值，只有垂直外边距会存在叠加，只针对block、inline-block元素，因为inline的margin无效
+
+解决：（非必要）可统一使用margin-top或margin-bottom，不混合，降低风险
+
+#### 负margin
+
+当margin-left或top为负数，当前元素被拉向指定方向，bottom和right为负数，后续元素拉向指定方向
+
+应用：
+
+1. 图片与文本对齐
+
+   当图片和文字放一起时，底部水平方向是不对齐的，因为都是基线对齐，vertical-align:baseline，可改为vertical-align:text-bottom;或使用负margin
+
+2. 自适应两列布局：其中一列宽度固定，另一列宽度自适应
+
+   用浮动只能实现固定的左右两列布局，无法实现其中一列自适应
+
+   ```css
+   #main, #sidebar 
+   {
+     float:left;
+   }
+   #main
+   {
+     width:100%;
+     margin-right:-200px;
+   }
+   #sidebar
+   {
+     width: 200px;
+   }
+   #main p {margin-right: 210px;} /* 防止浏览器可视宽度不足发生文本重叠 10为边距 */
+   
+   <div id="mainn"><p>自适应</p></div>
+   <div id="sidebar"><p>固定</p></div>
+   ```
+
+3. 元素垂直居中：父元素position:relative; 子元素position:absolute;top:50%;left:50%;margin-top:height一半的负数;margin-left:width一半的负数
 
 ### 浮动布局
 
@@ -266,13 +324,11 @@ p {clear: both;}
 **要使用position来布局，父级元素的position必须为relative；absolve不受父元素padding的影响**
 
 ### display
-
 行内元素可以和其他元素并列，块元素可以有宽高
-
 block 呈现为块元素
-
 inline 呈现为行内元素
-
 inline-block 让元素既可以和其他元素并列，又可以设置宽高
-
+table 表格形式显示，类似table
+table-row 表格行形式，类似tr
+table-cell 以表格单元格形式，类似td
 none 不显示，不占据空间（visibility:hidden 不显示，但是占据空间）

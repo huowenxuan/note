@@ -329,5 +329,26 @@ p {clear: both;}
 * inline-block 行内块元素。可以和其他元素并列，又可以设置宽高，最常用的inline-block有img和input
 * table 表格形式显示，类似table
 * table-row 表格行形式，类似tr
-* table-cell 以表格单元格形式，类似td
-* none 不显示，不占据空间（visibility:hidden 不显示，但是占据空间）
+* table-cell 以表格单元格形式，具有td的特点
+* none 隐藏，不占据空间（visibility:hidden 不显示，但是占据空间）
+
+table-cell用途：
+
+1. 图片垂直居中于元素
+
+   ```css
+   父元素
+   {
+   	display: tabel-cell;
+     vertical-align:middle;
+   }
+   img {vertical-align:middle;}
+   ```
+
+2. 等高布局：同一行的单元格高度是相等的
+
+   ```
+   TODO
+   ```
+
+   

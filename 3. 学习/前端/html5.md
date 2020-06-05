@@ -1,3 +1,5 @@
+[TOC]
+
 新特性
 
 - 用于绘画的 canvas 元素
@@ -5,6 +7,22 @@
 - 对本地离线存储的更好的支持
 - 新的特殊内容元素（语义元素布局），比如 article、footer、header、nav、section
 - 新的表单控件，比如 calendar、date、time、email、url、search
+
+### 结构元素
+
+header用于页头（网页名称、Logo、顶部导航、介绍信息）、文章头部article（文章标题、meta信息（作者、点赞数、评论数等））、区块头部section（标题）
+
+nav 顶部导航、侧栏导航、分页导航。可放在header里或外，主导航一般用无序列表实现
+
+article只用于文章内容部分，可当做独立的部分，可包含header、section、footer，每个artlce内部都应该有一个header
+
+aside TODO
+
+页头包含：等
+
+文章头包含：
+
+区块头部包含：标题内容 
 
 ### 视频 video
 

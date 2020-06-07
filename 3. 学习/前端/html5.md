@@ -384,6 +384,10 @@ dom
 </video>
 ```
 
+#### 自定义
+
+TODO
+
 ### 音频 audio
 
 Safair只支持mp3和wav，Chrome只支持mp3和ogg

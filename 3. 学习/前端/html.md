@@ -29,8 +29,6 @@ meta元数据
 <meta name="keywords" content="HTML, CSS, XML" />
 ```
 
-
-
 ### 响应式
 
 尺寸可变，使用平板和移动设备

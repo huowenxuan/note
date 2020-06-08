@@ -384,9 +384,20 @@ dom
 </video>
 ```
 
-#### 自定义
+#### 自定义视频播放
 
-TODO
+滑块使用`<input type='range'/>`，max为视频时长
+
+```
+// 滑动滑块修改当前播放位置
+range.onchange = function() {
+	video.currentTime = range.value
+}
+// 监听播放，修改滑块位置
+video.addEventListener('timeupdate', function (){
+	range.value = video.currentTime
+}. false)
+```
 
 ### 音频 audio
 
@@ -415,3 +426,62 @@ Safair只支持mp3和wav，Chrome只支持mp3和ogg
 - localStorage - 没有时间限制的数据存储
 - sessionStorage - 针对一个 session 的数据存储，关闭窗口数据删除
 
+### 多线程 WebWorker
+
+WebWorker，开辟后台线程。必须依赖服务器环境
+
+```
+// 创建后台线程，传入js路径
+var worker = new Worker(worker.js)
+// 向后台发送数据，数字，字符串，对象
+worker.postMessage(data)
+// 接收后台处理完成的数据
+worker.onmessage = function(e) {
+	e.data
+}
+
+// worker.js
+onmessage = function(e) {
+	let data = e.data
+	postMessage(...)
+}
+```
+
+用于处理耗时长的JS程序
+
+无法访问dom、无法访问全局变量和全局函数；不支持跨域加载js
+
+### 地理位置 Geolocation
+
+navigator.geolocation
+
+getCurrentPosition()当前位置  watchPosition()监视位置  clearWatch()清除监视
+
+手机浏览器才有效果，因为HTML5就是针对手机端的
+
+### 桌面通知 Notification API
+
+必须在服务器环境才有效果
+
+```
+// Notification.permission 获取是否拥有通知权限，default默认，无回应；granted 同意 denied 拒绝
+if (Notification.permission == 'granted') {
+	var notice = new Notification(title, options)
+	options = {
+		body
+		icon
+		renotify 是否覆盖之前的通知，默认false
+		silent 是否有声音，默认false无声
+		noscreen 是否不在屏幕显示
+	}
+	// 点击通知
+	notice.onclick = function() {
+		notice.close()
+	}
+}
+
+```
+
+### canvas
+
+TODO

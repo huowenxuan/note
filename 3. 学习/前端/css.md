@@ -93,6 +93,7 @@ reset.css重置，重置元素默认样式；global.css 全局样式；theme主�
 px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，但不考虑分辨率就可作为绝对单位
 %: width、height、font-size百分比相对于父元素的相同属性值计算的；line-height相对于当前元素的font-size；vertical-align相对于当前元素line-height
 1em = 当前元素字体大小font-size的px，当前元素没定义则找父元素，浏览器默认16px。技巧：
+
 * 首行缩进使用text-indent: 2em
 * 使用em作为字体大小单位。百分比作为字体大小不符合习惯，使用em，当网页字体需要修改时直接改变根元素的大小即可
 * 使用em作为统一单位
@@ -147,7 +148,7 @@ px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，
 
 | 属性            | 说明                                                         |
 | :-------------- | :----------------------------------------------------------- |
-| text-decoration | none、下划线underline、删除线line-through、顶划线overline    |
+| text-decoration | 文本修饰。none、下划线underline、删除线line-through、顶划线overline |
 | text-transform  | （英文）文本大小写 uppercase lowercase capitalize首字母大写  |
 | font-varient    | 将英文文本转换为“小型”大写字母 normal small-caps。不常用     |
 | text-indent     | 段落首行缩进值，一个字的缩进值为font-size值                  |
@@ -155,6 +156,48 @@ px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，
 | line-height     | 行高                                                         |
 | letter-spacing  | 字距                                                         |
 | word-spacing    | 词距                                                         |
+| vertical-align  | 垂直对齐                                                     |
+
+#### text-indent
+
+* 2em首行缩进
+* -9999px: 一般情况下把网站LOGO放在h1中，标题隐藏。在搜索引擎优化中，h1是非常重要的标签，又想不显示标题，又想使用标题进行搜索引擎优化，设置-9999px。不设置为-999和-99是因为-9999可以保证一定在屏幕外。而设置display:none会被搜索引擎认为是垃圾信息忽略掉
+
+#### text-align
+
+* 可用于inline、inline-block（包含图片）元素，不可用于block
+* justify两端对齐会产生一些问题，很少用到
+* 两种水平居中的实现方式：1）text-align:center。2）margin:0 auto。2实现的是block元素的水平居中；1定义在父元素，2定义在当前元素
+
+#### line-height
+
+![1d7e6407f5294b09cc92c0a50866a32d](media/1d7e6407f5294b09cc92c0a50866a32d.png)
+
+* 一行的高度，两行文字**基线**之间的距离。设置height和line-height相等，可实现当行文字的垂直居中
+
+* 设置为百分比或em，是相对于当前元素的font-size值来计算的
+
+* 子元素继承父元素的line-height像素值，而不是百分比
+
+* 设置为无单位数字（css中只有line-height支持）：表示字体大小的倍数——当前元素font-size * 数值（系数）；设置为系数后，**子元素会继承父元素的系数**，而不是数值
+
+  ```
+  body {font-size: 30px;}
+  #father
+  {
+  	line-height: 1.5;  实际为 30px * 1.5 = 25px
+  }
+  #son
+  {
+  	font-size: 20px;   实际line-height为 20px * 1.5 = 30px
+  }
+  ```
+
+#### vertical-align
+
+TODO
+
+
 
 ### 边框样式
 
@@ -332,6 +375,8 @@ p {clear: both;}
 * table-cell 以表格单元格形式，具有td的特点
 * none 隐藏，不占据空间（visibility:hidden 不显示，但是占据空间）
 
+去除inline-block元素间距：父元素{font-size: 0;}
+
 table-cell用途：
 
 1. 图片垂直居中于元素
@@ -345,10 +390,30 @@ table-cell用途：
    img {vertical-align:middle;}
    ```
 
-2. 等高布局：同一行的单元格高度是相等的
+2. 等高布局：同一行的单元格高度是相等，而且高度由同行高度最大值决定。**自适应等高布局**，可实现左头像，右边内容+评论的样式。（如果使用浮动无法自适应高度）
 
    ```
-   TODO
+   #wrapper {display: table-row;} 父元素具备tr特点
+   #img-box 
+   {
+   	display: table-cell;
+   	vertical-align: middle; 垂直居中
+   	text-align: center;     水平居中
+   }
+   #text-box
+   {
+   	display: table-cell;
+   }
+   <div id="wrapper">
+   	<div id="img-box"></div>
+   	<div id="text-box"></div>	
+   </div>
    ```
 
-   
+3. 自动平均划分元素：并排，宽度相等的多个元素
+
+   ```
+   父元素 {display: table; width: 总宽度}
+   子元素 {display: table-cell;}
+   ```
+

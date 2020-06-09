@@ -3,7 +3,12 @@
 
 ![git](./media/git.jpg)
 
+## 安装
+
+yum install git -y
+
 # 根据commit创建分支
+
 ```
 git checkout -b <branch-name>  <commit-id>
 ```

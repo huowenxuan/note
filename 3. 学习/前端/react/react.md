@@ -80,13 +80,52 @@ render() {
 }
 ```
 
-
-
 ### 样式处理
 
-TODO
+* React使用className避免命名冲突
+* 行内样式使用对象，去掉'-'，改为驼峰
+* 宽高等可直接设为数字，react自动添加px，lineHeight等可以直接将数字作为值的属性，不自动添加px
+
+* classnames 可动态设置className
+
+css两种模块化方案：
+
+* inline style：完全使用JS来写样式，模块化能力强，但是无法使用css本身的特性，如级联、媒体查询等，伪类处理复杂，且需要框架实现，如Radium、jsxstyle、react-style
+
+* CSS Modules：依旧使用CSS，但使用JS的模块化能力来管理样式。webpack css-loader内置
+
+  《深入React技术栈》p66-p74
+
+### 组件性能优化
+
+1. 纯函数。通过拆分让方法和组件更专注，体积更小，更独立，具有复用性可可测试性
+
+   1. 给定相同的输入，返回相同的输出
+   2. 过程没有副作用。不能改变外部状态，让参数复制，Immutable、_.cloneDeep，不改变外部
+   3. 没有额外的状态依赖。方法内的状态在在方法生命周期内存货，不能使用共享变量
+
+2. PureRender（PureComponent）
+
+   纯组件在shouldComponentUpdate对新的props和state做了一层的浅比较，来进行性能优化，深比较是很昂贵的
+
+   优化：
+
+   1. `<C style={{color: 'block'}}/>`这样的组件每次渲染时都是新对象。提前赋值成常量，默认值同理
+
+      ```js
+      const defaultValue = {}
+      <C style={this.props.style || defaultValue/>
+      ```
+
+   2. 事件绑定。在constructor中提前bind，避免每次渲染都bind
+
+   3. 对于子组件，不论什么时候都会重复渲染，把shouldComponentUpdate判断放在父组件上可避免
+
+3. Immutable
+
+   TODO
 
 《深入浅出React和Redux》p56
 
-《深入React技术栈》p64
+《深入React技术栈》p103
 

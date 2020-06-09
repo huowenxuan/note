@@ -16,13 +16,13 @@ gpgcheck=0
 enabled=1
 
 
-安装
+# 安装
 yum -y install mongodb-org
-启动
+# 启动
 systemctl start mongod.service
 systemctl status mongod.service
-systemctl stop mongod.service
-开机启动
+# systemctl stop mongod.service
+# 开机启动
 sudo systemctl enable mongod.service
 
 配置文件 /etc/mongod.conf

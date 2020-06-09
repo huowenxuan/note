@@ -195,9 +195,25 @@ px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，
 
 #### vertical-align
 
+* 每行文字、每个inline-block都可看成一个行盒子，拥有基线等
+* 定义周围的 文字、inline、inline-bllock，相对于该元素基线的垂直对齐方式
+* 可定义td、table-cell元素**中**内容的对齐方式
+* 对block无效，可将div/block定义为table-cell
+
+对于inline/inline-block和tabel-cell的区别
+
+1. 给inline/inline-block设置该属性，是针对周围元素来说的，定义周围元素对于当前元素的对齐方式
+2. tabel-cell是针对自身而言，定义内部子元素相对于自身的对齐方式
+
+取值：
+
+* 负值：例-2px，表示该元素相对于基线向上偏移
+* 百分比：相对于line-height，当lineheight=20px，该值为50%，那么实际的值为10px，相对于基线向下偏移10px
+* 关键字：top 顶部对齐 middle baseline bottom
+
+### 表单效果
+
 TODO
-
-
 
 ### 边框样式
 
@@ -369,7 +385,7 @@ p {clear: both;}
 ### display
 * block 呈现为块元素。独占一行，内部可容纳块元素和行内元素，可定义宽高、margin
 * inline 呈现为行内元素。可以和其他元素同一行，内部可容纳行内不可容纳块，无法定义宽高，可定义margin-left和right，无法定义bottom、top
-* inline-block 行内块元素。可以和其他元素并列，又可以设置宽高，最常用的inline-block有img和input
+* inline-block 行内块元素。可以和其他元素并列，又可以设置宽高，**最常用的inline-block有img和input**
 * table 表格形式显示，类似table
 * table-row 表格行形式，类似tr
 * table-cell 以表格单元格形式，具有td的特点

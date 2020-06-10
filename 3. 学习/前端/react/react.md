@@ -119,13 +119,84 @@ css两种模块化方案：
 
    2. 事件绑定。在constructor中提前bind，避免每次渲染都bind
 
-   3. 对于子组件，不论什么时候都会重复渲染，把shouldComponentUpdate判断放在父组件上可避免
+   3. 对于子组件，不论什么时候都会重复渲染，把shouldComponentUpdate的判断放在父组件上可避免
 
 3. Immutable
 
-   TODO
+   保证旧数据不变，且避免深拷贝把所有节点都复制一遍带来的性能损耗，只修改发生变化的节点，其他节点进行共享
+   
+   节省内存，时间旅行。缺点是侵入性较强。容易和原生对象混淆，可约定变量名规则，例如以$$开头
+   
+   Immutable.is(map1, map2) 值比较，参数为Immutable.Map，直接判断hashCode，避免深度遍历，性能好
+   
+   ```js
+   // Immutable + shouldComponentUpdate
+   import React, { Component } from 'react';
+   import { is } from 'immutable';
+   class App extends Component {
+   	shouldComponentUpdate(nextProps, nextState) {
+   		const thisProps = this.props || {}; 
+   		const thisState = this.state || {};
+    		if (Object.keys(thisProps).length !== Object.keys(nextProps).length ||
+    			Object.keys(thisState).length !== Object.keys(nextState).length) {
+    			return true;
+    		}
+    		for (const key in nextProps) {
+    			if (nextProps.hasOwnProperty(key) &&
+    					!is(thisProps[key], nextProps[key])) {
+    				return true;
+    			}
+    		}
+   	 	for (const key in nextState) {
+   			if (nextState.hasOwnProperty(key) &&
+    					!is(thisState[key], nextState[key])) {
+    				return true;
+    			}
+    		}
+   		return false;
+    	}
+   }
+   
+   // Immutable + setState
+   // React建议this.state是不可变的，所以修改前需要深拷贝，使用Immutable可解决
+   handleAdd() {
+     this.setState(({data}) => ({
+       data: data.update('times', v => v + 1)
+     }))
+     // 此时times不会改变
+     this.state.data.get('times')
+   }
+   ```
+   
+4. key
+
+   子组件是数组或迭代器，必须有key，用来做虚拟dom的diff，标识当前项的唯一，设置为独一无二，不用遍历值或随机值，除非列表内容也不唯一
+
+5. react-addons-perf 性能检测工具
+
+   会把各组件渲染的各个阶段的时间统计出来，打印出一张表格
+
+   ```
+   Perf.start() stop()
+   ```
+
+### 动画
+
+界面的变化可分为DOM节点/组件的增减和属性变化。React的TransitionGroup可便捷地识别出增删的组件
+
+CSS动画有更好的性能和开发效率，设计简洁，适用于简单的动画，局限性：
+
+1. 只支持cubic-bezier的缓动，对缓动函数有要求则要使用JS动画
+2. 只能针对特有的CSS属性，有些属性是不支持的，例如SVG中path的d属性
+3. 把translate、rotate、skew等归结为transform属性，因此只能共用一个缓动函数。left、top实现的动画性能不如translateX和translateY
+
+CSS animation弥补了CSS transition在控制上的不足，可以使用多关键帧动画，可设置动画的反转、暂停、次数/永久等
+
+JS动画：用JS包装过的CSS动画
+
+
 
 《深入浅出React和Redux》p56
 
-《深入React技术栈》p103
+《深入React技术栈》p112
 

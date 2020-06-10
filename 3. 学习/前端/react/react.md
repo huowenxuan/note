@@ -184,19 +184,115 @@ css两种模块化方案：
 
 界面的变化可分为DOM节点/组件的增减和属性变化。React的TransitionGroup可便捷地识别出增删的组件
 
-CSS动画有更好的性能和开发效率，设计简洁，适用于简单的动画，局限性：
+#### CSS动画
+
+有更好的性能和开发效率，设计简洁，适用于简单的动画，局限性：
 
 1. 只支持cubic-bezier的缓动，对缓动函数有要求则要使用JS动画
 2. 只能针对特有的CSS属性，有些属性是不支持的，例如SVG中path的d属性
 3. 把translate、rotate、skew等归结为transform属性，因此只能共用一个缓动函数。left、top实现的动画性能不如translateX和translateY
 
-CSS animation弥补了CSS transition在控制上的不足，可以使用多关键帧动画，可设置动画的反转、暂停、次数/永久等
+```
+使用CSS实现的微互动：在不同状态加不同的样式和动画，比较繁琐
+el {
+	opacity: 1;
+	&:hover {
+		opacity: 0.8;
+		transition: opacity .4s ease;
+	}
+}
+```
 
-JS动画：用JS包装过的CSS动画
+#### CSS animation
+
+弥补了CSS transition在控制上的不足，可以使用多关键帧动画，可设置动画的反转、暂停、次数/永久等
+
+#### JS包装的CSS动画
+
+使用JS包装共同的逻辑，简化动画的开发
+
+react-smooth库来写动画，支持CSS以及各种缓动类型的JS动画，提供定制化缓动函数的插件入口
+
+```
+<Animate from={1} to={0.8} attributeName="opacity">
+	// ...
+</Animate>
+```
+
+#### JS动画
+
+包含缓动函数部分和渲染部分。渲染部分直接在缓动函数中执行setState来更新动画进度，触发页面重绘
+
+#### SVG线条动画
+
+vivus.js利用SVG path的stroke-dasharray虚线属性和getTotalLength方法
+
+```
+简单的线条动画
+el {
+	stroke-dasharray: 0, 1px;
+	&.active {
+		stroke-dashoffset: totalLength, 0;
+		transition: stroke-dasharray .4s ease;
+	}
+}
+```
+
+缺陷：使用JS实现，但是CSS动画是支持stroke-dasharray的；不支持虚线动画
+
+#### React Transition
+
+当React Transition识别到子组件的增删时候，则调用相应的生命周期函数，我们可在生命周期函数中实现动画逻辑。如果每个子组件的动效都相同，可共用一个生命周期函数，React Transition提供了childFactory，自定义封装子组件的工厂方法，为子组件加上相应的生命周期函数
+
+React Transition生命周期：componentWillAppear、componentDidAppear、componentWillEnter、componentDidEnter、componentWillLeave、componentDidLeave。在componentWillReceiveProps触发componentWillxxx即可，didxxx在willxxx中提供一个回调函数来执行?
+
+**React CSS Transition**
+
+React Transition对CSS动画做了封装，CSS3就可以让状态延迟更新，让代码专注于业务，还能提高动画性能
+
+React CSS Transition为了每个生命周期加了不同的className，可根据className的变化来实现动画
+
+```
+// 例如
+// sass
+.example-enter {
+	transform: scaleY(0);
+	&.example-enter-active {
+		transform: scaleY(1);
+		transition: transform .4s ease;
+	}
+}
+<ReactCSSTransitionGroup
+	transitionName="example"
+	transitionEnterTimeout={400}
+>
+	{items}
+</ReactCSSTransitionGroup>
+
+
+// react-smooth实现更简洁
+const enter = {
+	from: 'scaleY(0)',
+	to: 'scaleY(1)',
+	attributeName: 'transform',
+	duration: 400
+}
+
+// 列表动画
+<AnimateGroup enter={enter}>
+	{items}
+</AnimateGroup>
+```
+
+给名次发生变化的子组件设置key值，可设置为 `名次-id`
+
+#### 缓动函数
+
+TODO
 
 
 
 《深入浅出React和Redux》p56
 
-《深入React技术栈》p112
+《深入React技术栈》p116
 

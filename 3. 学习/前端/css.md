@@ -213,6 +213,115 @@ px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，
 
 ### 表单效果
 
+#### 单选框或复选框与文字垂直居中对齐
+
+默认情况下这两种元素与它们周围的文本是以vertical-align:baseline的方式对齐的，所以对不齐，解决：文字大小12px/14px时，给框定义vertical-align:-3px/-2px，相对于基线下移3px
+
+（vertical-align:middle 只对行内元素生效，不对块元素生效，即使设置了display:inline-block，对象的确呈内联元素，但内容还是呈块元素展示。可转换成table解决：）
+
+```css
+# parent{
+	display:table-cell;
+  vertical-align:middle
+}
+```
+
+#### textarea
+
+禁用拖动放大缩小，避免影响布局。css resize:none;（推荐） 或者max-width=width   max-height=height
+
+在Chrome和IE中实现相同外观，即使行列相同，每行字数和列数都不同，且IE有滚动条
+
+```
+width: 100px;   // 定义大小
+height: 100px;
+overflow: auto; // 滚动条自适应
+```
+
+#### 表单对齐
+
+左文字，右表单元素的对齐
+
+* 分为左边和右边，左边长度相等，右边长度也相等
+* 左右栏都设置为左浮动
+* 左text-align为right，文字右对齐
+* 每一行中左栏长度和右栏长度的和等于行宽，和包括width、height、margin、padding
+
+```
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    form
+    {
+      width: 320px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    /* 清除每一个p中的浮动 */
+    p {overflow: hidden;} 
+    label
+    {
+      float: left;
+      width: 60px;
+      height: 40px;
+      line-height: 40px;
+      text-align: right;
+      margin-right: 10px;
+    }
+    input:not(#submit)
+    {
+      float: left;
+      height: 16px;
+      padding: 10px;
+      border: 1px solid silver;
+    }
+    #tel,#pwd
+    {
+      width:228px;
+    }
+    #verifyCode
+    {
+      width: 118px;
+      margin-right: 10px;
+    }
+    #submit
+    {
+      width: 100px;
+      height: 40px;
+      border: 1px solid gray;
+      padding: 0;
+      background-color: #f1f1f;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <p>
+      <label>手机号</label>
+      <input id='tel' type='text' />
+    </p>
+    <p>
+      <label>密码</label>
+      <input id='pwd' type='password' />
+    </p>
+    <p>
+      <label>验证码</label>
+      <input id='verifyCode' type='text' />
+      <input id='submit' type='submit' />
+    </p>
+  </form>
+</body>
+
+</html>
+```
+
+每行的盒子宽度（width+border+padding+margin）都等于行宽320
+
+### 浮动布局
+
 TODO
 
 ### 边框样式

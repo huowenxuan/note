@@ -188,7 +188,7 @@ css两种模块化方案：
 
 有更好的性能和开发效率，设计简洁，适用于简单的动画，局限性：
 
-1. 只支持cubic-bezier的缓动，对缓动函数有要求则要使用JS动画
+1. 只支持cubic-bezier（三次贝塞尔，支持ease、linear）的缓动，对缓动函数有要求则要使用JS动画
 2. 只能针对特有的CSS属性，有些属性是不支持的，例如SVG中path的d属性
 3. 把translate、rotate、skew等归结为transform属性，因此只能共用一个缓动函数。left、top实现的动画性能不如translateX和translateY
 
@@ -252,7 +252,7 @@ React Transition对CSS动画做了封装，CSS3就可以让状态延迟更新，
 
 React CSS Transition为了每个生命周期加了不同的className，可根据className的变化来实现动画
 
-```
+```jsx
 // 例如
 // sass
 .example-enter {
@@ -288,11 +288,29 @@ const enter = {
 
 #### 缓动函数
 
-TODO
+返回当前帧动画进度的函数
+
+缓动体验 linear < ease < spring（遵循物理规律，更自然）
+
+```
+react-smooth实现弹簧动画
+<Animate from={{left: 0}} to={{left: 10}} ease="spring">...
+
+react-motion实现
+<Motion style={{x: spring(this.state.open ? 400: 0)}}>...
+```
+
+### 自动化测试
+
+这里针对React渲染的UI层
+
+Mocha测试执行器，Chai断言。测试框架Jest、Enzyme
+
+#### Jest
 
 
 
 《深入浅出React和Redux》p56
 
-《深入React技术栈》p116
+《深入React技术栈》p121
 

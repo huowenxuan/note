@@ -173,7 +173,7 @@ px属于相对单位是因为屏幕分辨率大小不同，1px大小也不同，
 
 ![1d7e6407f5294b09cc92c0a50866a32d](media/1d7e6407f5294b09cc92c0a50866a32d.png)
 
-* 一行的高度，两行文字**基线**之间的距离。设置height和line-height相等，可实现当行文字的垂直居中
+* 一行的高度，两行文字**基线**之间的距离。设置height和line-height相等，可实现当行文字的**垂直居中**
 
 * 设置为百分比或em，是相对于当前元素的font-size值来计算的
 
@@ -452,7 +452,7 @@ div {display: inline-block} /* 将块元素转换为inline-block元素 */
 
 3. 元素垂直居中：父元素position:relative; 子元素position:absolute;top:50%;left:50%;margin-top:height一半的负数;margin-left:width一半的负数
 
-### 浮动布局
+### 浮动布局 float
 
 正常文档流：从上到下分成一行一行，块元素占一行，相邻行内元素在每行中按从左到右依次排列
 
@@ -471,7 +471,7 @@ clear:left/right/both 清除浮动
 p {clear: both;}
 ```
 
-### 定位布局
+### 定位布局 position
 
 静态定位static，默认，没有定位
 

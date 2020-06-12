@@ -308,9 +308,21 @@ Mocha测试执行器，Chai断言。测试框架Jest、Enzyme
 
 #### Jest
 
+Facebook开源，DOM操作基于JSDOM（模拟DOM），语法和断言基于Jasmine
+
+引入react-addons-test-utils用来模拟浏览器时间和对DOM进行校验
+
+#### Enzyme
+
+Airbnb开源。提供类似jQuery操作DOM的语法，更灵活
+
+#### 自动化测试
+
+CI，GitHub或Gitlab使用Travis CI或Circle CI
+
 
 
 《深入浅出React和Redux》p56
 
-《深入React技术栈》p121
+《深入React技术栈》p135
 

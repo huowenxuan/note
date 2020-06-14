@@ -2,7 +2,7 @@
 
 ### HTML
 
-* 块元素block独占一行`<h1>~<h6> <p> <div> ol ul hr`，行内元素inline可以喝其他元素位于同一行`strong em u s a span img input`
+* 块元素block独占一行`<h1>~<h6> <p> <div> ol ul hr`，可设置宽高，默认为父级的100%，行内元素inline可以和其他元素位于同一行`strong em u s a span img input`，不能设置宽高，默认宽度为文字宽度
 * 加粗尽量用string不用b，更有语义
 * 斜体用em，不用i，cite
 * 水平线 `<hr/>`

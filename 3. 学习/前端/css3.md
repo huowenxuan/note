@@ -19,6 +19,8 @@
 圆角。border-radius 一个值：四个圆角相同；两个值：左上右下，右上左下；三个值：左上，右上左下，右下；四个值：左上，右上，右下，左下
   border-radius:25px;
   border-top-left-radius; top-right; bottom-right; bottom-left
+  上半圆：border-radius: 50px 50px 0 0;
+  椭圆：border-radius: 20px/40px; 表示水平半径为20，垂直半径为40
   
 阴影 box-shadow: 10px 10px 5px #888888;
 边框图片

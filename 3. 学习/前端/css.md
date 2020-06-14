@@ -322,7 +322,64 @@ overflow: auto; // 滚动条自适应
 
 ### 浮动布局
 
-TODO
+> * 正常文档流：将页面从上到下分为一行一行，块元素占一行，行内元素在每行从左向右排列，直到该行排满
+> * 脱离文档流：浮动或定位
+
+脱离文档流，使元素移到左边或右边，后面元素环绕它，填补空缺位置。可将多个块元素并列在同一行，实现水平方向并排布局。float 取值 left right none
+
+元素定义float:left/right后，变为block元素，会表现为块元素效果，可以定义width、height、padding、margin
+
+对父元素的影响：高度无法对父元素产生影响，无法撑起父元素：如果父元素未设置高度或高度低于浮动元素，浮动元素超出父元素，**父元素高度塌陷**；高度大于子元素高度才会把子元素包起来
+
+对兄弟元素的影响：
+
+1. 都是浮动：同一方向的兄弟元素会从左到右从上到下排列，不同方向的会移向两边
+2. 兄弟元素不是浮动：兄弟元素正常显示，但是浮动元素会覆盖住兄弟元素
+
+对子元素的影响：如果父元素和子元素都是浮动，则会自适应的包含子元素
+
+#### 清除浮动
+
+浮动对布局影响很大，所以使用之后要清除浮动：清除浮动元素带来的脱离文档流的影响。例如希望后面的元素回到正常文档流，而不是环绕浮动
+
+* clear:left/right/both：应用于浮动元素后面的元素，而不是应用于浮动元素本身。需要多添加一个div专门用来清除浮动，会增加多余的标签，破坏语义
+
+  ```html
+  #left {float:left;}
+  #second {float:right;}
+  #second {clear:both;}
+  <div id='first'></div>
+  <div id='second'></div>
+  <div id='clear'></div>
+  ```
+
+* overflow:hidden：应用于父元素。避免多余标签，不破坏语义，但是会隐藏超出父元素的部分
+
+  父元素塌陷：当父元素没有设置高度，所以父元素无法把子元素包裹起来，导致不能撑开，无法显示背景色，所以为父元素设置overflow:hidden来清除浮动，可将父元素撑开，显示背景色
+
+* ::after伪元素 + clear:both。最好的解决方案，不会增加多余的标签，不会导致超出父元素的内容被隐藏
+
+  ```html
+  .clearfix {*zomm:1;} /* *zoom: 1 解决IE6 7的浮动问题 */ 
+  .clearfix::after 
+  {
+  	clear: both;
+  	content: '';
+  	display: block;
+  	height: 0;
+  	visibility: hidden;
+  }
+  
+  /* 应用 */
+  #left {float:left;}
+  #second {float:right;}
+  <div id='father' class="clearfix">
+  	<div id='first'></div>
+  	<div id='second'></div>
+  </div>
+  ```
+
+  
 
 ### 边框样式
 
@@ -452,33 +509,21 @@ div {display: inline-block} /* 将块元素转换为inline-block元素 */
 
 3. 元素垂直居中：父元素position:relative; 子元素position:absolute;top:50%;left:50%;margin-top:height一半的负数;margin-left:width一半的负数
 
-### 浮动布局 float
-
-正常文档流：从上到下分成一行一行，块元素占一行，相邻行内元素在每行中按从左到右依次排列
-
-float:left/right 浮动使任何元素向左或向右浮动
-
-```css
-/* 图文混排，文字环绕图片布局 */
-img{float: left/right; margin:20px;}
-p{}
-```
-
-clear:left/right/both 清除浮动
-
-```css
-/* 对p清除浮动，p元素的前一个元素产生的浮动不会对后续元素产生影响，因此p不会环绕在浮动元素周围 */
-p {clear: both;}
-```
-
 ### 定位布局 position
+
+> 浮动灵活，但不容易控制，定位缺乏灵活性，但可精准定位
+
+* 默认情况下，固定定位和绝对定位的位置相对于浏览器（body元素）而言的，相对定位是相对于原始位置
+* 元素只有定义position属性（static除外）后，top、bottom、left、right才生效
+* position:absolute会将元素转为block元素，所以可以设置宽高等
 
 静态定位static，默认，没有定位
 
 固定定位fixed，相对于浏览器窗口位置定位
 
 ```css
-{position:fixed; left:0px; top:10px;} /* 固定元素，不会随滚动条拖动而改变位置 */
+/* 固定元素，不会随滚动条拖动而改变位置 */
+{position:fixed; left:0px; top:10px;}
 ```
 
 相对定位relative，相对于其本身位置进行定位
@@ -487,9 +532,18 @@ p {clear: both;}
 {position:relative; left:0px; top:10px;}
 ```
 
-绝对定位absolute，相对于不是 static 定位的第一个父元素进行定位。脱离文档流
+绝对定位absolute，相对于**不是 static 定位**的第一个父元素进行定位。脱离文档流
 
-**要使用position来布局，父级元素的position必须为relative；absolve不受父元素padding的影响**
+**absolve不受父元素padding的影响**
+
+例：实现子元素相对于父元素定位：（可实现二级导航等）
+
+```
+父元素 {position: relative;}
+子元素 {position: absolute; top...}
+```
+
+z-index只有设置positon（非static）时才有效，负、0、正整数
 
 ### display
 * block 呈现为块元素。独占一行，内部可容纳块元素和行内元素，可定义宽高、margin
@@ -542,3 +596,243 @@ table-cell用途：
    子元素 {display: table-cell;}
    ```
 
+### 图形
+
+用图片实现图形会影响页面加载速度，可用css实现三角形、圆角、圆、椭圆
+
+#### 三角形
+
+一般情况下，边框为：![image-20200614163150835](./media/image-20200614163150835.png)
+
+宽高设置为0后：![image-20200614163223034](./media/image-20200614163223034.png)
+
+通过定义边框的不同颜色、大的边框宽度、height=width=0
+
+```
+/* 下箭头 */
+width: 0;
+height: 0;
+border-width: 30px;
+border-style: soild;
+border-color: red transparent transparent transparent;
+
+/* 指向右上方的箭头 */
+...
+border-color: red red transparent transparent;
+```
+
+实例：向上箭头带边框的对话框
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #wrapper{
+      display: inline-block;
+      position: relative;
+      padding: 20px 30px;
+      margin-top: 100px;
+      border: 1px solid gray;
+      border-radius: 10px;
+      font-size: 14px;
+      text-align: center;
+      background-color: yellow;
+    }
+    /* 外层三角形 */
+    #triangle {
+      position: absolute;
+      top: -30px;
+      /* 实现水平居中 */
+      left: 50%;
+      margin-left: -15px;
+      width: 0;
+      height: 0;
+      border-width: 15px;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+    }
+    /* 内层三角形 */
+    #triangle div {
+      position: absolute;
+      top: -13px;
+      left: -14px;
+      width: 0;
+      height: 0;
+      border-width: 14px;
+      border-style: solid;
+      border-color: transparent transparent yellow transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='wrapper'>
+    <div id='triangle'><div></div></div>
+    提示
+  </div>
+</body>
+
+</html>
+```
+
+#### 梯形
+
+在三角形的基础上设置width
+
+```
+width: 30px;
+border: 30px solid transparent;
+border-bottom: 30px solid red;
+```
+
+#### 平行四边形
+
+```
+width: 50px;
+height: 50px;
+background-color: red;
+transform: skew(-30deg);
+```
+
+#### 书签
+
+设置一定的高度，和三角形的颜色设为相反：将下边框设为透明，其他边框设置颜色
+
+<div style="width: 0; height: 12px; background-color: red;border: 12px solid transparent; border-bottom: 12px solid white;"></div>
+
+```
+width: 0;
+height: 12px;
+background-color: red;
+border: 12px solid transparent;
+border-bottom: 12px solid white;
+```
+
+#### 下载箭头
+
+下箭头 + box-shadow实现正方形 
+
+  <div style="width: 0;color: red;border: 16px solid transparent;border-top: 16px solid;box-shadow: 0 -24px 0 -8px;"></div>
+
+```
+width: 0;
+color: red;
+border: 16px solid transparent;
+border-top: 16px solid;
+/* 实现上面的正方形 */
+box-shadow: 0 -24px 0 -8px;
+```
+
+#### 圆、椭圆
+
+css3 border-radius
+
+### 性能优化
+
+#### 缩写
+
+border、margin、padding
+
+background
+
+font
+
+color:#369 = color:#336699
+
+颜色使用16进制而不是rgb
+
+（CSS压缩工具都可以自动执行）
+
+#### 语法压缩
+
+每段css结尾分号可省略、url()中的引号可省略、属性值为0不需添加单位、属性值为以0开头的小数可省略0（0.5px->.5px）、使用群组选择器合并相同样式、利用继承合并样式
+
+#### 图片压缩
+
+JPEG色彩丰富高品质；PNG无损压缩，为了缩小体积可使用，支持透明
+
+使用 tinypng.com 进行无损压缩
+
+#### 高性能选择器
+
+浏览器是从右向左解析选择器的。`column .content div`是先遍历所有div，再找到父元素class为content的div...效率很低。
+
+选择器匹配效率从高到低：
+
+1. id
+2. class
+3. 元素
+4. 相邻
+5. 子
+6. 后代
+7. 通配符
+8. 属性
+9. 伪类
+
+技巧：
+
+1. 不要使用通配符(\*)
+2. 不要在id选择器以及class选择器前添加元素名
+3. 选择器不超过3层，位置靠右的条件尽可能精确
+4. 避免使用后代选择器，尽量少用子代选择器（少用不等于不用，不要为了减少子代选择器而增加过多的id和class选择器）
+
+### 技巧
+
+#### 居中
+
+position：可用于所有元素，可同时实现水平和垂直居中。对于高度已知的块元素，且父元素和子元素必须定义宽高。如果只想实现垂直居中，把left、margin-left去掉即可
+
+```
+father {position: relative;}
+son {
+	position: absolute;
+	top: 50%;
+	left: 50$;
+	margin-top: height一半的负值
+	margin-left: width一半的负值
+}
+```
+
+##### 水平居中
+
+**单行文字**：（父元素设置？）text-align: center
+
+**block**：margin:0 auto; 需给本身设置宽度（否则充满最大宽度），起作用的是margin-left/right: auto。可用于页面主体wrapper居中
+
+**inline、inline-***：在父元素设置 text-align: center
+
+##### 垂直居中
+
+**单行文本**：line-height = height
+
+**多行文本**
+
+```
+父元素 
+{
+	display: tabel-cell;
+	vertical-align: middle; /* 设置inline-block元素为垂直居中 */
+}
+span {display: inline-block;}
+```
+
+**inline-block**
+
+```
+父元素
+{
+	display: tabel-cell;
+	vertical-align: middle; /* 设置inline-block元素为垂直居中 */
+}
+子元素 {vertical-align: middle;}
+```
+
+**block**：使用position
+
+#### CSS Sprite
+
+CSS精灵、CSS雪碧图。将一个个小图合并为一张大图，使用background-position属性定位来取出相应图标。减少http请求次数、缩小图片整体的大小。但是开发和维护比较困难，应该在开发后期使用，前期经常改动。应该按风格、类别、大小分别存放。控制雪碧图大小在200k以内
+
+### iconfont

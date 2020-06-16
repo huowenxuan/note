@@ -871,3 +871,29 @@ stacking context，网页是三维概念，包含z轴，z轴用来设定层的�
 
 ### BFC
 
+#### 格式上下文
+
+页面中的一块渲染区域，决定其内部元素如何定位，以及和其他元素的关系
+
+任何一个元素都可以看做是一个盒子。在普通文档流中，盒子会参与一种格式上下文。一个盒子只能是块盒子（block-level box）或行内盒子（inline-level box），不能同时。块盒子参与BFC（块级格式上下文），行内盒子参与IFC（行级格式上下文）
+
+#### 盒子
+
+又称CSS盒子，css布局的基本单位，一个页面由很多个盒子组成，元素类型和display属性决定盒子的类型，不同类型的盒子参与不同的格式上下文
+
+块盒子：display为block、table、list-item会生成快盒子，并参与BFC
+
+行内盒：inline、inline-block、inline-table会生成行盒子，并参与IFC
+
+#### BFC
+
+块级格式上下文，独立的渲染区域，只有块盒子参与。规定内部的块盒子如何布局，且该区域和外部区域不相关
+
+根元素、float:left/right、position:absolute/fixed、display:inline-blick/table-caption/tabel-cell、overflow不为visible、flex/inline-flex 的元素会创建一个新的BFC
+
+block、table、list-item是参与BFC而不是创建BFC
+
+##### BFC的特点
+
+
+

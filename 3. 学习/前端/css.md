@@ -2,12 +2,11 @@
 
 ### 选择器
 
-* 子元素选择器：/#father div{...} 选择 id 为father的元素下的所有div元素
+* 相邻选择器：\#lv+div {...} 选择该元素的下一个兄弟元素
 * 群组选择器：h3,div,p,span {...}
-* 后代选择器：M N    元素内部所有子元素和后代元素
-* 子代选择器：M > N 元素内部所有一级子元素
-* 兄弟选择器：M ~ N 元素之后的所有同级
-* 相邻选择器：\#lv+div {...} 选择id为lv相邻的下一个同级元素div
+* 后代选择器：M N   元素M内部所有子元素和后代元素N
+* 子代选择器：M>N 元素M内部第一代子元素N
+* 兄弟选择器：M~N 元素M之后的所有兄弟元素N
 * :first-letter: 选中元素内容第一个字
 * :first-line：第一行
 
@@ -820,14 +819,16 @@ son {
 **多行文本**
 
 ```
-父元素 （不好用）
+// 父元素必须高度固定
+父元素
 {
 	display: tabel-cell;
 	vertical-align: middle; /* 设置inline-block元素为垂直居中 */
+	height: 300px;
 }
 span {display: inline-block;}
 
-第二种。display:table，必须设置高
+// 第二种。display:table 父元素必须设置高度
 父元素 {
 	  display: table;
     width: 100%;
@@ -842,7 +843,8 @@ span {
 **inline-block**
 
 ```
-父元素（不好用）
+// 父元素必须设置高度
+父元素
 {
 	display: tabel-cell;
 	vertical-align: middle; /* 设置inline-block元素为垂直居中 */

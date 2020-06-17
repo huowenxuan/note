@@ -15,6 +15,40 @@
 
 can i use 网站查看兼容情况
 
+### 选择器
+
+#### 属性选择器
+
+通过元素的属性来选择元素
+
+* M[attr^="xxx"] attr属性以xxx开头的M元素
+* M[attr$="xxx"] attr属性以xxx结尾的M元素
+* M[attr*="xxx"] attr属性包含xxx的M元素
+
+#### 子元素伪类选择器
+
+选择某一元素下的子元素
+
+css2：:link、:visited、:hover、:active
+
+css3新增第一类
+
+* M:first-child 父元素下的第一个子元素是M，则选择M（如果第一个子元素不是M的得不到任何元素）
+* M:last-child 父元素下的最后一个子元素是M，则选择M
+* M:nth-child(n) 父元素下的第n个子元素或奇偶元素，n取数字（第n个，从1开始）、odd奇数、even偶数。可实现隔行换色
+* M:nth-child 父元素下唯一的子元素是M，则选择M，该父元素只有一个子元素
+
+css3新增第二类
+
+* M:first-of-type 父元素下的第一个类型是M的子元素
+* :last-of-type
+* nth-of-type(n) 
+* M:nth-of-type 父元素下唯一的M类型的子元素，该父元素可以有多个子元素
+
+#### UI伪类选择器
+
+TODO
+
 ### 圆角、边框、阴影
 
 ```

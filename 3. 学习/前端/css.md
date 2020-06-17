@@ -782,6 +782,16 @@ JPEG色彩丰富高品质；PNG无损压缩，为了缩小体积可使用，支�
 
 #### 居中
 
+使用css3的fle。可同时实现水平和垂直居中
+
+```
+父元素 {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+```
+
 position：可用于所有元素，可同时实现水平和垂直居中。对于高度已知的块元素，且父元素和子元素必须定义宽高。如果只想实现垂直居中，把left、margin-left去掉即可
 
 ```
@@ -810,18 +820,29 @@ son {
 **多行文本**
 
 ```
-父元素 
+父元素 （不好用）
 {
 	display: tabel-cell;
 	vertical-align: middle; /* 设置inline-block元素为垂直居中 */
 }
 span {display: inline-block;}
+
+第二种。display:table，必须设置高
+父元素 {
+	  display: table;
+    width: 100%;
+    height: 100%;
+}
+span {
+	  display: table-cell;
+    vertical-align: middle;
+}
 ```
 
 **inline-block**
 
 ```
-父元素
+父元素（不好用）
 {
 	display: tabel-cell;
 	vertical-align: middle; /* 设置inline-block元素为垂直居中 */

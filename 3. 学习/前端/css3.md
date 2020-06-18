@@ -1,19 +1,10 @@
 [TOC]
 
-
-
-- 选择器
-- 盒模型
-- 背景和边框
-- 文本效果
-- 2D/3D 转换
-- 动画
-- 多列布局
-- 用户界面
-
 ### 基础
 
 can i use 网站查看兼容情况
+
+前端包括CSS3、canvas、svg的坐标系是W3C坐标系，原点在左上角
 
 ### 选择器
 
@@ -47,7 +38,37 @@ css3新增第二类
 
 #### UI伪类选择器
 
-TODO
+针对元素的状态来选择元素。包括可用、不可用、选中、未选中、获取焦点、失去焦点等。UI伪类选择器的共同特点是：在默认情况下不起作用，只有在处于某种状态才起作用，大多数都是针对表单元素
+
+* :focus 获取焦点时的样式。用于表单元素、超链接
+
+* ::selection（伪元素） 元素中被选中文本的样式。例：div::section p::section；直接设置::section表示整个页面
+
+* :checked 定义radio、checkbox被选中时的样式（只有Opera支持）
+
+* :enabled 和 :disabled 表单元素可用和不可用状态
+
+* :read-write 和 :read-only 表单元素如文本框的可读写和只读
+
+* :root 根元素（html）（设置整个页面的背景色是针对HTML/:root，而不是body）
+
+* :empty 不包含任何子元素的元素。可用于表格中内容为空的单元格设置不同背景色
+
+* :target 选取页面中某一个target元素，指id被当成页面的锚点链接来使用的元素
+
+  ```
+  /* 当点击a时，对应的target（div）中的h3变为红色 */
+  :target h3 {
+  	color: red;
+  }
+  <a href='#music'>音乐</a>
+  
+  <div id="music">
+  	<h3>音乐</h3>
+  </div>
+  ```
+
+* :not() 选择某个元素之外的所有元素。`ul li:not(.first)`表示ul下除了第一个li元素之外的所有li元素
 
 ### 圆角、边框、阴影
 
@@ -109,50 +130,64 @@ background-origin:content-box;
   background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
 ```
 
-### 文字、阴影
+### 文字
+
+text-shadow 文字阴影 `5px 5px 5px #FF0000`，多个阴影逗号隔开
+
+* 水平阴影x-offset px em % 正数代表阴影向右
+* 垂直阴影y-offset px em % 正数代表阴影向下
+* 模糊距离blur px em % 可为0不可为负
+* 阴影颜色color
+
+text-stroke 文字描边。`width color`。配合`color: transparent`实现镂空文字
+
+text-overflow 文字溢出样式 cllipsis省略号 clip裁切掉
 
 ```
-文字阴影，水平阴影，垂直阴影，模糊的距离，以及阴影的颜色
-text-shadow: 5px 5px 5px #FF0000;
-盒子阴影
-box-shadow: 5px 5px 5px #FF0000;
-上左下右透明度、卡片效果
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-overflow:hidden;超出的内容隐藏
-换行
-word-wrap: break-word 长单词可换行 normal 只允许断字换行
-word-break 单词拆分换行 keep-all break-all
-
-text-wrap 任何浏览器都不支持
-text-justify 主流不支持
-
-/* 显示一行，多余部分...显示，添加width属性，可以控制单行宽度 */
+单行文本实现省略号必须结合另外两个属性。添加width控制宽度
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
 
-/* 显示多行，多余部分省略号 */
+显示多行，多余部分省略号
 /* 因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端； */
 display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 3;
 overflow: hidden;
 
-/* 显示多行，多余部分不显示，设置高度为 行数x行高，超出部分省略 */
+/* 显示多行，多余部分不显示，设置高度为：行数x行高，超出部分省略 */
 line-height: 20px;
 height: 40px;
 overflow: hidden;
+
+多行省略号可使用JS或jQ实现，插件：jQuery.dotdotdot.js
 ```
 
-### 字体
+换行（两个属性都是针对英文）
 
 ```
-/* font-face可使用计算机上已安装的字体 */
+word-wrap: break-word强制换行 normal默认，自动换行
+	当url太长超出容器宽度，默认情况下会超出容器，设置为break-word会换行
+word-break: keep-all单词内换行 break-all只在半角空格或连字符换行 nomal默认,自动换行
+	break-word 长单词如果本行放不下就放在下一行，下一行也放不下才切割
+	keep-all长单词直接切割放到下一行
+```
+
+text-wrap 任何浏览器都不支持
+text-justify 主流不支持
+
+### 嵌入字体 @font-face
+
+把服务器的字体下载到本地电脑，让浏览器显示用户电脑没有安装的自已
+
+不建议嵌入中文字体，太大，可嵌入英文字体，或字体图标iconfont
+
+```
 @font-face
 {
     font-family: myFirstFont;
-    src: url(sansation_light.woff);
+    src: url(/path/to/sansation_light.woff);
     font-style: normal/italic/oblique;
     font-weight: normal/bold/100-900;
 }
@@ -162,6 +197,19 @@ div
     font-family:myFirstFont;
 }
 ```
+
+### 盒子阴影
+
+```
+盒子阴影
+box-shadow: 5px 5px 5px #FF0000;
+上左下右透明度、卡片效果
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+```
+
+### 颜色样式
+
+TODO
 
 ### 2D、3D转换
 

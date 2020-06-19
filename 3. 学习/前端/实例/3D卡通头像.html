@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+    <style type="text/css">
+        /*整体布局方式*/
+        body {background: #68b8ed;}
+        .eye-brow,.eye,.pupil,.shine,.nose,.mouth {display: inline-block;}
+        .mr-border-radius,.eye,.pupil,.shine,.nose,.mouth {position: relative;}
+        .left-eye,.left-blush {float: left;}
+        .right-eye,.right-blush {float: right;}
+        /*外层div样式*/
+        .mr-border-radius 
+        {
+            margin: auto;
+            margin-top: 10%;
+            width: 550px;
+            height: 430px;
+            background-color: #FFB010;
+            background-image: radial-gradient(circle, #FFD47F, #FFB010);
+            border: solid #CC8800;
+            border-radius: 40px;
+            border-width: 10px 20px 0 0;
+            box-shadow: 20px 10px 30px 0 rgba(0, 0, 0, .6);
+            transition: all .5s;
+        }
+        /*眉毛*/
+        .eye-brow 
+        {
+            position: absolute;
+            top: 15%;
+            width: 135px;
+            height: 90px;
+            border-radius: 100%;
+            background: transparent;
+            box-shadow: 0 -15px 0 0 #995E00;
+            transition: top .5s;
+        }
+        .left-eye-brow {left: 10%; transform: rotate(-15deg);}
+        .right-eye-brow {right: 10%;transform: rotate(15deg);}
+        /*眼睛*/
+        .eye 
+        {
+            width: 130px;
+            height: 130px;
+            margin-top: 20%;
+            border-radius: 100%;
+            background: white;
+        }
+        /*脸红*/
+        .blush 
+        {
+            width: 65px;
+            height: 55px;
+            margin-top: 43%;
+            border-radius: 90%;
+            background: #FFA249;
+        }
+        /*瞳孔*/
+        .pupil 
+        {
+            height: 80px;
+            width: 80px;
+            margin-top: 25%;
+            margin-left: 10%;
+            background: black;
+            border-radius: 100%;
+            transition: margin-left .5s;
+        }
+        .shine 
+        {
+            height: 15px;
+            width: 15px;
+            margin-top: 15%;
+            margin-left: 25%;
+            border-radius: 100%;
+            background: white;
+            transition: all .5s;
+        }
+        .shine:after 
+        {
+            content: "";
+            position: relative;
+            display: inline-block;
+            top: 65%;
+            left: -50%;
+            height: 8px;
+            width: 8px;
+            border-radius: 100%;
+            background: white;
+        }
+        .eye.left-eye {margin-left: 15%;}
+        .blush.left-blush {margin-left: -15%; }
+        .eye.right-eye { margin-right: 15%;}
+        .blush.right-blush {margin-right: -15%;}
+        /*鼻子*/
+        .nose 
+        {
+            left: 8%;
+            top: 55%;
+            width: 40px;
+            height: 35px;
+            border-radius: 100%;
+            box-shadow: 0 10px 0 0 #E59200;
+        }
+        /*嘴巴*/
+        .mouth 
+        {
+            left: 2.5%;
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background: transparent;
+            box-shadow: 0 15px 0 0;
+            transition: box-shadow .5s;
+        }
+        /*鼠标移到头像上时*/
+        .mr-border-radius:hover 
+        {
+            border-width: 10px 0 0 20px;
+            box-shadow: -20px 10px 30px 0 rgba(0, 0, 0, .6);
+        }
+        .mr-border-radius:hover .pupil {margin-left: 27%; }
+        .mr-border-radius:hover .shine {margin-left: 60%;}
+        .mr-border-radius:hover .mouth {box-shadow: 0 35px 0 0;}
+        .mr-border-radius:hover .eye-brow {top: 10%;}
+    </style>
+</head>
+<body>
+    <div class="mr-border-radius">
+        <span class="eye-brow left-eye-brow"></span>
+        <span class="eye left-eye">
+            <span class="pupil">
+                <span class="shine"></span>
+            </span>
+        </span>
+        <span class="eye-brow right-eye-brow"></span>
+        <span class="eye right-eye">
+            <span class="pupil">
+                <span class="shine"></span>
+            </span>
+        </span>
+        <span class="blush left-blush"></span>
+        <span class="blush right-blush"></span>
+        <span class="nose"></span>
+        <span class="mouth"></span>
+    </div>
+</body>
+</html>

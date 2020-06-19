@@ -112,6 +112,8 @@ rgba 只会对当前元素产生效果，可只改变背景透明度不改变文
 
 背景TODO
 
+
+
 ```
 背景图 background-image，可设置多个
 background-image: url(img_flwr.gif), url(paper.gif); 

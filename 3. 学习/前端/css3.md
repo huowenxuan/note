@@ -80,13 +80,37 @@ css3新增第二类
   椭圆：border-radius: 20px/40px; 表示水平半径为20，垂直半径为40
   
 阴影 box-shadow: 10px 10px 5px #888888;
-边框图片
-  border-image:url(border.png) 30 30 round;
-  -webkit-border-image:url(border.png) 30 30 round; /* Safari 和 Chrome */
+	x-offset
+	y-offset
+	blur
+	spread 阴影大小
+	color
+	style 外阴影 outset / 内阴影 inset
+四个方向不同阴影，逗号隔开
+	左, 上, 下, 右
+上左下右透明度、卡片效果
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+多色边框 border-colors，只有Firfox支持
 
+边框图片 border-image:url(border.png) 30 30 30 30 round;
+  			-webkit-border-image:url(border.png) 30 30 round;
+  url
+	切割宽度 上右下左
+	平铺方式 repeat round stretch
+* 一张边框图片应该是四条边，中间挖空。例如图片宽高为100，切割宽度为30，平铺repeat，那么图片四个角30*30的部分永远位于4个角，每个边中间40px都不断平铺
+* 边框图的每条边的宽度应该和边框宽度相同
 ```
 
+### 颜色
+
+opacity 会对当前元素、子元素都有效果
+
+rgba 只会对当前元素产生效果，可只改变背景透明度不改变文字透明度
+
 ### 背景、渐变
+
+背景TODO
 
 ```
 背景图 background-image，可设置多个
@@ -197,19 +221,6 @@ div
     font-family:myFirstFont;
 }
 ```
-
-### 盒子阴影
-
-```
-盒子阴影
-box-shadow: 5px 5px 5px #FF0000;
-上左下右透明度、卡片效果
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-```
-
-### 颜色样式
-
-TODO
 
 ### 2D、3D转换
 

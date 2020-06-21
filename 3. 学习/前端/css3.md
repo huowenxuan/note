@@ -110,27 +110,24 @@ rgba 只会对当前元素产生效果，可只改变背景透明度不改变文
 
 ### 背景、渐变
 
-背景TODO
-
-
+背景background可以控制背景图片的大小，img的width和height只能控制img标签的大小
 
 ```
 背景图 background-image，可设置多个
 background-image: url(img_flwr.gif), url(paper.gif); 
 background-position: right bottom, left top; 
 background-repeat: no-repeat, repeat; 
-background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+background: url(img_flwr.gif) right bottom no-repeat,url(paper.gif) left top repeat;
 
-背景图大小 background-size
-background:url(img_flwr.gif);
-background-size:80px 60px; 或者相对父元素的百分比 100% 100%;
-background-repeat:no-repeat;
+背景图大小 background-size 取值为px em 相对父元素的百分比 关键字（cover/contain）
+background-size:80px 60px;
 
-背景图位置区域，从哪里开始绘制 background-origin: content-box, padding-box, border-box
+背景图位置，从哪里开始平铺 background-origin: content-box从内容区开始; padding-box（默认）从内边距开始; border-box变宽刚开始
 background-origin:content-box;
 
-背景图哪些位置可以显示 background-clip: content-box, padding-box, border-box
-
+背景图哪些区域被裁切 content-box（默认）从边框开始, padding-box从内边距开始, border-box从内容区开始
+background-clip: 
+ 
 渐变
 线性渐变
 	background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
@@ -224,7 +221,7 @@ div
 }
 ```
 
-### 2D、3D转换
+### 2D、3D转换（变形）
 
 Chrome 和 Safari 要求前缀 -webkit- 版本
 

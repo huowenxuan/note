@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        #container
+        {
+            width:300px;
+            height:20px;
+            padding:20px;
+            border:1px solid gray;
+            color:raba(0,0,0,0.7);
+            cursor:pointer;
+            /*实现省略号效果*/
+            text-overflow:ellipsis; 
+            overflow:hidden; 
+            white-space:nowrap;
+            /*实现过渡效果*/
+            transition:all 0.5s linear;
+        }
+        #container:hover
+        {
+            height:150px;
+            background-color:azure;
+            /*必须设置white-space属性为normal*/
+            white-space:normal;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">绿叶学习网成立于2015年4月1日，是一个最富有活力的Web技术学习网站。在这里，我们只提供互联网最好的Web技术教程和最佳的学习体验。每一个教程、每一篇文章、甚至每一个知识点，都体现绿叶精品的态度。没有最好，但是我们可以做到更好！</div>
+</body>
+</html>

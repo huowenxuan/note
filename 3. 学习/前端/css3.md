@@ -221,11 +221,9 @@ div
 }
 ```
 
-### 2D、3D转换（变形）
-
+### 2D、3D转换（变形） transform
 Chrome 和 Safari 要求前缀 -webkit- 版本
-
-transform是属性，表示转换；translate是变换方法，表示移动；transition是属性，表示过渡
+transform-origin：改变元素的中心点。默认情况下都是以元素中心原点进行变换的。取值为长度值或关键字（top left、top center、top right...）
 
 | 属性                                                         | 描述                                 |
 | :----------------------------------------------------------- | :----------------------------------- |
@@ -263,9 +261,11 @@ perspective 透视视图
 matrix3d(...) 16个值的4*4矩阵
 ```
 
-### 过渡
+### 过渡 transtion
 
 元素从一种样式逐渐改变为另一种
+
+变形是结果，过渡是过程
 
 ```
 /* 宽度属性过渡，时长为2秒 */
@@ -274,28 +274,54 @@ transition: width 2s;
 
 /* 设置多个过渡 */
 transition: width 2s, height 2s, transform 2s;
--webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+/* 第二种写法 */
+transition-property: width, height;
+transition-duration: 1s;
+...其他属性...
 
-transition-property	过渡的css属性名称
+transition-property	过渡的css属性名称。可设置为all，自动判断哪些属性可过渡
 transition-duration	过渡时长
-transition-timing-function 过渡时间曲线，默认ease，linear 线性, ease-in 渐入, ease-out ease-in-out cubic-bezier(n,n,n,n)贝塞尔曲线，0-1
+transition-timing-function 过渡时间曲线
+	ease 默认，逐渐变慢
+	linear 线性
+	ease-in 渐入，越来越快
+	ease-out 渐出，越来越慢 
+	ease-in-out 先加速后减速，渐入渐出
+	cubic-bezier(n,n,n,n)贝塞尔曲线，0-1
 transition-delay 过渡延时，默认0
 
 /* 简写 */
 transition: width 1s linear 2s;
+```
 
+把transition放在普通状态（div）中，移出也会有效果，如果放在悬浮状态（div:hover）则移出没有过渡效果
+
+```
 实例：鼠标进入宽度过渡为300px，离开还原为100px
 div
 {
 	width:100px;
 	height:100px;
-	background:red;
 	transition:width 2s;
-	-webkit-transition:width 2s; /* Safari */
 }
-div:hover
-{
-	width:300px;
+div:hover {	width:300px; }
+```
+
+```
+实例：普通状态文字显示一行，带省略号。鼠标移入显示全部内容
+#container {
+	width padding border color cursor:pointer;
+	height:20px;
+	/* 省略号 */
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	/* 过渡 */
+	transition: all .5s linear;
+}
+#container:hover {
+	height: 150px;
+	white-space: normal;
 }
 ```
 

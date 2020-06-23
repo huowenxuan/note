@@ -912,11 +912,83 @@ stacking context，网页是三维概念，包含z轴，z轴用来设定层的�
 
 块级格式上下文，独立的渲染区域，只有块盒子参与。规定内部的块盒子如何布局，且该区域和外部区域不相关
 
-根元素、float:left/right、position:absolute/fixed、display:inline-blick/table-caption/tabel-cell、overflow不为visible、flex/inline-flex 的元素会创建一个新的BFC
+创建新的BFC：根元素、float:left/right、position:absolute/fixed、display:inline-blick/table-caption/tabel-cell、overflow不为visible、flex/inline-flex
 
 block、table、list-item是参与BFC而不是创建BFC
 
 ##### BFC的特点
 
+在一个BFC内部：
 
+* 盒子会在垂直方向一个接一个排列
+* 相邻的margin-top和margin-bottom会叠加（这里的相邻不仅限于兄弟元素，只要相邻就算）
+* 每个元素的左外边界会紧贴着包含盒子的容器的左边，即使存在浮动也是如此
+* 如果存在内部元素是一个新的BFC，并且存在内部元素是浮动，则该BFC的区域不会与float元素的区域重叠
+* BFC就是页面上一个隔离的盒子，该盒子内部的子元素不会影响外部的元素
+* 计算一个BFC的高度时，其内部浮动元素的高度也会参与计算
 
+##### 用途
+
+* 创建BFC来避免垂直外边距叠加
+
+  外边距叠加：同一个BFC中，两个相邻的margin-top和margin-bottom相遇，这两个外边距会合并为一个外边距，高度等于两个中的最大值，就是因为BFC的特点
+
+  ```
+  避免A、B的垂直外边距叠加，就是讲两个元素位于不同的BFC中，A位于大容器的BFC，B位于包裹自己的小容器BFC
+  如果去掉#bfc-box的overflow:hidden，也会发生叠加，因为A和B是“相邻”的
+  #wrapper {
+  	width: 200px;
+  	overflow: hidden; /* 创建BFC */
+  }
+  #bfc-box {
+  	overflow: hidden;  /* 创建BFC */
+  }
+  #a, #b {
+  	height: 60px;
+  }
+  #a { margin-bottom: 20px; }
+  #b { margin-top: 30px; }
+  
+  <div id="wrapper">
+  	<div id="a">A</div>
+  	<div id='bfc-box'>
+  		<div id="b">B</div>
+  	</div>
+  </div>
+  ```
+
+* 创建BFC来清除浮动
+
+  避免父元素塌陷：给父元素增加overflow:hidden，根据“计算一个BFC的高度时，其内部浮动元素的高度也会参与计算”，则“如果一个元素是一个BFC，则计算该元素的高度时，内部浮动子元素的高度也要算进去”
+
+  避免文字环绕：给文字div增加overflow:hidden。根据“如果存在内部元素是一个新的BFC，并且存在内部元素是浮动，则该BFC的区域不会与float元素的区域重叠”
+
+  ```
+  #content { overflow:hidden; }
+  
+  <div>
+  	<img/>
+  	<div id="content">文字文字文字文字文字文字文字文字</div>
+  </div>
+  ```
+
+* 创建BFC来实现自适应两列布局
+
+  在左右两列中，有一列宽度自适应，另一列宽度固定。可通过负marin实现，也可使用BFC
+
+  原理和避免文字环绕类似，也是创建一个新的BFC
+
+  ```
+  # sidebar {
+  	float: left;
+  	width: 100px;
+  	height: 150px;
+  }
+  #content {
+  	height: 200px;
+  	overflow: hidden; /* 这里 */
+  }
+  
+  <div id="sidebar"></div>
+  <div id="content"></div>
+  ```

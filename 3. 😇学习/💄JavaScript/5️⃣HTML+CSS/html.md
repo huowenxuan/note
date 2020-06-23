@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 避免使用center、font、basefont、s、strike、u标签，align、bgcolor、color属性，使用样式代替
 
 ### HTML
@@ -11,6 +15,57 @@
 * input type="hidden"，用于隐藏，后台传递数据（不要使用hidden来传递敏感信息）
 * button标签和 `<input type="button" />`的区别是button开始符号和结束符号中间可以插入其他标签或文本。在表单中使用input，因为需要提交数据，在开发中一般使用div+css来制作美观的按钮
 * name是HTML中的标准，而id是XHTML中的标准，现在网页的标准都是使用id
+* 表格只用来做表格数据展示，不建议使用表格布局，已被抛弃
+
+### 语义化
+
+#### 标题
+
+* 尽量一个页面只能有一个h1
+
+* h1-h6不要断层
+
+* 不要用h1-h6来定义样式
+
+  不应该使用标签来控制样式，结构（html）和样式（css）应该分开
+
+* 不要用div来代替h1-h6
+
+  标题就应该用标题
+
+* 一般只用h1-h4，不会用到那么多级标题，而且搜索引擎优化会给h1-h4一定权重，而h5、h6和普通标签差不多
+
+#### 图片
+
+图片+图注使用 figure+figcaption，而不是img+span
+
+#### 换行
+
+`<br/>`只用来做段落(p)中的换行，不能用来做其他标签之间的换行以及间距
+
+#### 列表
+
+对于列表类型使用无序列表或有序列表，而不是div
+
+大多数使用无序列表，因为有序列表数字外观是固定的，不方便定制
+
+#### strong加粗 em斜体
+
+仅仅为了实现加粗和斜体不建议使用strong和em，有强调的语义，搜索引擎也会赋予有权重，使用span
+
+一般情况下去掉strong和em的默认样，CSS重新定义，同时会保留强调语义与权重
+
+#### img和背景图
+
+如果图片作为HTMl的一部分，比如图片列表，且希望被搜索引擎识别，就用img
+
+如果不希望被搜索引擎识别，也不是html的一部分，就用背景图片
+
+#### 语义化验证
+
+想验证一个页面的语义是否良好，去掉css样式，看页面是否还具有良好的可读性
+
+使用网页调试插件`Web Developer`工具栏CSS -> Disable Styles -> Disable All Styles
 
 ### head
 
@@ -245,4 +300,12 @@ window.xxx = xxx
 | onload   | 页面加载事件。文档加载完毕再执行。在head > script中onload完成后才能对dom进行操作 |
 | onresize | 页面大小改变事件                                             |
 | onerror  | 页面或图片加载出错事件，只在IE有效 <br />`<img src="logo.jpg" onerror="alert('图片没有加载成功！')"/>` |
+
+### 其他
+
+#### 标题栏小图标
+
+小图标格式为ico，搜索“在线ico”制作
+
+`<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>`
 

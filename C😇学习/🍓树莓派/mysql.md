@@ -40,6 +40,17 @@ sudo mysql -u root -p
 
 
 
+```
+修改 /etc/mysql/conf.d/mysql.cnf，添加
+default-storage-engine=INNODB
+
+sudo service mysql restart
+```
+
+
+
+
+
 ## TODO
 
 内存优化

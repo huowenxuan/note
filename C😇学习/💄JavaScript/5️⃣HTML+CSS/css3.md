@@ -483,7 +483,7 @@ ul.pagination
 
 css设置box-sizing: border-box后，再设置宽高，会将内边距和边框也算在内
 
-###  弹性盒子
+###  弹性盒子 flex
 
 设置 display 为 flex 或 inline-flex 将容器定义为弹性容器
 

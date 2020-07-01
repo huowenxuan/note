@@ -201,7 +201,7 @@ html的文件操作都是读取、创建、上传。修改、移动、压缩做�
 
 #### input file
 
-文件上传使用 `<input type='file'/>`，mutiple表示是否选择多个文件，accept为过滤类型MIME类型（`image/jpeg、image/*、audio/*、video/*`），多个类型逗号隔开 
+文件上传使用 `<input type='file'/>`，multiple表示是否选择多个文件，accept为过滤类型MIME类型（`image/jpeg、image/*、audio/*、video/*`），多个类型逗号隔开 
 
 样式美化：使用opacity:0 将表单透明，但是还占据位置，再使用呢绝对定位在表单原来位置定义一个label
 
@@ -237,6 +237,9 @@ html的文件操作都是读取、创建、上传。修改、移动、压缩做�
       file.type
       file.size // 单位B，÷ 1024 = kb 
       file.lastModifiedDate
+      
+      // 生成url，可用于预览
+      let url = window.URL.createObjectURL(file)
     }
   </script>
 
@@ -302,7 +305,7 @@ var blob = new Blob([text], {type: "text/plain"})
 // 创建并下载txt文件（不需添加多余元素）
 let blob = new Blob([text], {type: 'text/plain'})
 let a = document.createElement('a')
-// 重点 生成网络地址。可用来预览本地图片或视频
+// !!! 生成网络地址。可用来预览本地图片或视频
 let url = window.URL.createObjectURL(blob)
 a.download = '1.txt'
 a.href = url

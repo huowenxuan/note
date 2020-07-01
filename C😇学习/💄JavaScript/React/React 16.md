@@ -17,17 +17,17 @@ ref有三种创建方式
     ```
 
 3. createRef，react 16.3新增，唯一可以直接调用HOC的ref创建方式
-    
+   
     ```
     view = React.createRef()
     <View ref={view}/>
    this.view.current
-    ```
+   ```
 
 # setState
 
 ```
-this.setState((preState, props)=>{
+this.setState((preState, props)=>({
     counter: preState.quantity + 1;
 })
 // 可替代↓↓↓，避免异步情况下多次重复操作导致值被覆盖，拿到的数据不是最新的
@@ -45,4 +45,4 @@ componentDidCatch(error, info)
 
 
 
-                      
+​                      

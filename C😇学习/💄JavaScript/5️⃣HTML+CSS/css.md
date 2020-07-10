@@ -612,7 +612,7 @@ table-cell用途：
 width: 0;
 height: 0;
 border-width: 30px;
-border-style: soild;
+border-style: solid;
 border-color: red transparent transparent transparent;
 
 /* 指向右上方的箭头 */

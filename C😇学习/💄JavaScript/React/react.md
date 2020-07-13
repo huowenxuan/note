@@ -18,7 +18,7 @@
 
 * 无状态组件：不存在state，内部状态无需变化，不需要this、bind来调用方法、没有生命周期（无法使用shouldComponentUpdate来优化），并不比有状态组件性能好、容易复用
 
-  对于无法使用shouldComponentUpdate的问题，可使用Recompose的pure方法 `const OptimizedComponent = pure(ExpensiveComponent)`
+  **对于无法使用shouldComponentUpdate的问题，可使用Recompose的pure方法 `const OptimizedComponent = pure(ExpensiveComponent)`**
 
 * findDOMNode得到实际dom
 

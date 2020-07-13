@@ -166,27 +166,6 @@ text-stroke 文字描边。`width color`。配合`color: transparent`实现镂�
 
 text-overflow 文字溢出样式 cllipsis省略号 clip裁切掉
 
-```
-单行文本实现省略号必须结合另外两个属性。添加width控制宽度
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-
-显示多行，多余部分省略号
-/* 因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端； */
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 3;
-overflow: hidden;
-
-/* 显示多行，多余部分不显示，设置高度为：行数x行高，超出部分省略 */
-line-height: 20px;
-height: 40px;
-overflow: hidden;
-
-多行省略号可使用JS或jQ实现，插件：jQuery.dotdotdot.js
-```
-
 换行（两个属性都是针对英文）
 
 ```

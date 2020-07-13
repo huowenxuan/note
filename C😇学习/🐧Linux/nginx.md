@@ -28,7 +28,17 @@ nginx -c /etc/nginx/nginx.conf
 nginx -s reload
 ```
 
+### nginx: [emerg] mkdir() "/usr/local/var/run/nginx/client_body_temp" failed (2: No such file or directory)
+
+```
+sudo mkdir -p /usr/local/var/run/nginx
+sudo nginx
+```
+
+
+
 ## 例子
+
 ###  nginx.conf
 ```
 user  root;

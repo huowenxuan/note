@@ -1,3 +1,5 @@
+[TOC]
+
 # less
 
 ## react16引入less
@@ -56,7 +58,7 @@
    }
    ```
 
-4. 报错`Invalid options object. Less Loader has been initialized using an options ob`
+4. 报错`Invalid options object. Less Loader has been initialized using an options ...`
 
    降级css-loader，安装@5.0.0
 
@@ -65,5 +67,19 @@
    yarn add css-loader@5.0.0 -D
    ```
 
-   
+
+## 用法
+
+### & 父选择器
+
+```less
+// less
+a {
+  &:hover {}
+}
+
+// 转为css
+a {}
+a:hover {}
+```
 

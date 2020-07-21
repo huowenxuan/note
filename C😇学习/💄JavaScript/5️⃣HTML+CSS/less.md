@@ -83,3 +83,32 @@ a {}
 a:hover {}
 ```
 
+### extend 扩展
+
+```less
+// less
+h2 {
+  &:extend(.style, .img);
+  font-style: italic;
+}
+.style {
+  background: green;
+}
+.img{
+   font-size: 30px;
+ }
+
+// css
+h2 {
+  font-style: italic;
+}
+.style,
+h2 {
+  background: green;
+}
+.img,
+h2 {
+   font-size: 30px;
+}
+```
+

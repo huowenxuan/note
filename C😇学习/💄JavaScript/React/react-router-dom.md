@@ -22,3 +22,12 @@ this.props.match.params
 this.props.history.location.state
 ```
 
+### 问号
+
+```
+let search = props.location.search // ?aaa=bbb
+// 不需要判断字符串长度，直接去掉第一个字符问号；然后使用qs解码为对象
+qs.decode(search.substr(1))
+
+```
+
